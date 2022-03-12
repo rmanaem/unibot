@@ -1,4 +1,4 @@
-from SPARQLWrapper import SPARQLWrapper, CSV, JSON, XML, N3, RDFXML, TURTLE
+from SPARQLWrapper import SPARQLWrapper, N3
 
 if __name__ == '__main__':
     # Get all canadian universities' information
