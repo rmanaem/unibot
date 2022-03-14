@@ -46,7 +46,6 @@ focu:name
 
 focu:link
   a rdfs:Property;
-  rdfs:domain focu:University;
   rdfs:label "Link"@en;
   rdfs:comment "Link to entry in DBpedia and/or Wikidata."@en.
 
