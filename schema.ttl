@@ -28,7 +28,7 @@ focu:Lecture
 focu:Topic
   a rdfs:Class;
   rdfs:label "Topic"@en;
-  rdfs:comment "A particular subject."@en.
+  rdfs:comment "A particular subject covered in a course."@en.
 
 focu:Student
   a rdfs:Class;
