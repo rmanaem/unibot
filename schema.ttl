@@ -1,0 +1,42 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix focu: <http://focu.io/schema#>.
+
+# Classes
+
+focu:University
+  a rdfs:Class;
+  owl:sameAs dbr:university;
+  rdfs:label "University"@en;
+  rdfs:comment "An educational institution designed for instruction and examination of students in many branches of advanced learning and conferring degrees in various faculties."@en.
+
+focu:Course
+  a rdfs:Class;
+  rdfs:label "Course"@en;
+  rdfs:comment "A unit of teaching in a higher education institution."@en.
+
+focu:Lecture
+  a rdfs:Class;
+  rdfs:label "Lecture"@en;
+  rdfs:comment "An educational talk to students in a university."@en.
+
+focu:Topic
+  a rdfs:Class;
+  rdfs:label "Topic"@en;
+  rdfs:comment "A particular subject."@en.
+
+focu:Student
+  a rdfs:Class;
+  rdfs:subClassOf foaf:Person;
+  rdfs:label "Student"@en;
+  rdfs:comment "A person who is studying at a university."@en.
+
+
+
+
+
+
