@@ -5,6 +5,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix focu: <http://focu.io/schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 # Classes
 
@@ -49,6 +50,36 @@ focu:link
   rdfs:label "Link"@en;
   rdfs:comment "Link to entry in DBpedia and/or Wikidata."@en.
 
+focu:subject
+  a rdfs:Property;
+  rdfs:domain focu:Course;
+  rdfs:range xsd:string;
+  rdfs:label "Subject"@en;
+  rdfs:comment "A word or set of words used to refer to course subject."@en.
+
+focu:number
+  a rdfs:Property;
+  rdfs:label "Number"@en;
+  rdfs:comment "An arithmetical value used to refer to course number or lecture number."@en.
+
+focu:credits
+  a rdfs:Property;
+  rdfs:domain focu:Course;
+  rdfs:label "Credits"@en;
+  rdfs:comment "An arithmetical value used to refer to course credits."@en.
+
+focu:description
+  a rdfs:Property;
+  rdfs:domain focu:Course;
+  rdfs:range xsd:string;
+  rdfs:label "Description"@en;
+  rdfs:comment "A word or set of words used to describe a course."@en.
+
+focu:outline
+  a rdfs:Property;
+  rdfs:domain focu:Course;
+  rdfs:label "Outline"@en;
+  rdfs:comment "A document used to communicate important information regarding a course."@en.
 
 
 
