@@ -80,6 +80,13 @@ focu:outline
   rdfs:label "Outline"@en;
   rdfs:comment "A document used to communicate important information regarding a course."@en.
 
+focu:covers
+  a rdfs:Property;
+  rdfs:domain focu:Course;
+  rdfs:range focu:Topic;
+  rdfs:label "Covers"@en;
+  rdfs:comment "Identifies a topic covered by a course."@en.
+
 focu:content
   a rdfs:Property;
   rdfs:domain focu:Lecture;
