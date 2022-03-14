@@ -91,3 +91,29 @@ focu:prov
   rdfs:domain focu:Topic;
   rdfs:label "Provenance"@en;
   rdfs:comment "Provenance information, stating where the topic was identified as being covered in the course (e.g., the graduate calendar, the course outline or a specific lecture)."@en.
+
+focu:id
+  a rdfs:Property;
+  rdfs:domain focu:Student;
+  rdfs:label "ID Number"@en;
+  rdfs:comment "An arithmetical value referring to a student's identification number."@en.
+
+focu:email
+  a rdfs:Property;
+  rdfs:domain focu:Student;
+  rdfs:range xsd:string;
+  rdfs:label "Email"@en;
+  rdfs:comment "Electronic mail address."@en.
+
+focu:completed
+  a rdfs:Property;
+  rdfs:domain focu:Student;
+  rdfs:label "Completed Course"@en;
+  rdfs:comment "A course with its grade that student completed."@en.
+
+focu:competent
+  a rdfs:Property;
+  rdfs:domain focu:Student;
+  rdfs:range focu:Topic;
+  rdfs:label "Competent"@en;
+  rdfs:comment "Competency in a topic based on the course a student successfully passed."@en.
