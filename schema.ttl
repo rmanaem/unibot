@@ -85,3 +85,9 @@ focu:content
   rdfs:domain focu:Lecture;
   rdfs:label "Content"@en;
   rdfs:comment "Lecture content including slides, worksheets, readings(book chapters, webpages, etc), other material(videos, images, etc)."@en.
+
+focu:prov
+  a rdfs:Property;
+  rdfs:domain focu:Topic;
+  rdfs:label "Provenance"@en;
+  rdfs:comment "Provenance information, stating where the topic was identified as being covered in the course (e.g., the graduate calendar, the course outline or a specific lecture)."@en.
