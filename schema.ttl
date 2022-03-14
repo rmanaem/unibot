@@ -35,6 +35,19 @@ focu:Student
   rdfs:label "Student"@en;
   rdfs:comment "A person who is studying at a university."@en.
 
+# Properties
+
+focu:name
+  a rdfs:Property;
+  owl:sameAs foaf:name;
+  rdfs:label "Name"@en;
+  rdfs:comment "A word or set of words by which a person or thing is referred to."@en.
+
+focu:link
+  a rdfs:Property;
+  rdfs:domain focu:University;
+  rdfs:label "Link"@en;
+  rdfs:comment "Link to entry in DBpedia and/or Wikidata."@en.
 
 
 
