@@ -4,7 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix focu: <http://focu.io/schema#>.
-@prefix focudata: <http://focudata.io/schema#>.
+@prefix focudata: <http://focu.io/data#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix vivo: <http://vivoweb.org/ontology/core#>.
 
