@@ -1,126 +1,90 @@
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dbr: <http://dbpedia.org/resource/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix focu: <http://focu.io/schema#>.
+@prefix focudata: <http://focudata.io/schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vivo: <http://vivoweb.org/ontology/core#>.
 
 # Classes
+focu:outline
+  a rdf:Property;
+  rdfs:label "Outline"@en;
+  rdfs:comment "A document used to communicate important information regarding a course."@en.
 
-focu:University
-  a rdfs:Class;
-  owl:sameAs dbr:university;
-  rdfs:label "University"@en;
-  rdfs:comment "An educational institution designed for instruction and examination of students in many branches of advanced learning and conferring degrees in various faculties."@en.
-
-focu:Course
-  a rdfs:Class;
-  rdfs:label "Course"@en;
-  rdfs:comment "A unit of teaching in a higher education institution."@en.
-
-focu:Lecture
+focu:lecture
   a rdfs:Class;
   rdfs:label "Lecture"@en;
   rdfs:comment "An educational talk to students in a university."@en.
 
-focu:Topic
+focu:worksheet
   a rdfs:Class;
-  rdfs:label "Topic"@en;
-  rdfs:comment "A particular subject covered in a course."@en.
+  rdfs:label "Worksheet"@en;
+  rdfs:comment "A worksheet of problems to practice offered during each lecture".
 
-focu:Student
+focu:otherMaterial
   a rdfs:Class;
-  rdfs:subClassOf foaf:Person;
-  rdfs:label "Student"@en;
-  rdfs:comment "A person who is studying at a university."@en.
+  rdfs:label "Other Material"@en;
+  rdfs:comment "Includes videos and images usually included in lecture slides".
+
+focu:slide
+  a rdfs:Class;
+  rdfs:label "Slide";
+  rdfs:comment "Slides are offered by the instructor during a lecture".
+
+focu:expertise
+  a rdfs:Class;
+  rdfs:label "Expertise"@en;
+  rdfs:comment "is the set of competencies that a student is expert at (iff student passed course with better than F)".
+
+focu:completedCourse
+  a rdfs:Class;
+  rdfs:label "completed course"@en;
+  rdfs:comment "A course completed by a student".
 
 # Properties
+focu:hasExpertise
+  a rdf:Property;
+  rdfs:label "has expertise"@en;
+  rdfs:comment "links the student to the set of expertise that he/she acquires";
+  rdfs:domain vivo:Student;
+  rdfs:range focu:expertise.
 
-focu:name
-  a rdfs:Property;
-  owl:sameAs foaf:name;
-  rdfs:label "Name"@en;
-  rdfs:comment "A word or set of words by which a person or thing is referred to."@en.
+focu:hasContent
+  a rdf:Property;
+  rdfs:label "has content"@en;
+  rdfs:comment "Link between course and its contents";
+  rdfs:domain vivo:Course;
+  rdfs:range focu:Lecture.
 
-focu:link
-  a rdfs:Property;
-  rdfs:label "Link"@en;
-  rdfs:comment "Link to entry in DBpedia and/or Wikidata."@en.
+focu:hasHighestGrade
+  a rdf:Property;
+  rdfs:label "has highest grade"@en;
+  rdfs:comment "highest grade by student at a course";
+  rdfs:domain focu:completedCourse;
+  rdfs:range xsd:string.
 
-focu:subject
-  a rdfs:Property;
-  rdfs:domain focu:Course;
-  rdfs:range xsd:string;
-  rdfs:label "Subject"@en;
-  rdfs:comment "A word or set of words used to refer to course subject."@en.
+focu:StudentAt
+  a rdf:Property;
+  rdfs:label "student at"@en;
+  rdfs:comment "links the student to the university at which he/she is enrolled";
+  rdfs:domain vivo:Student;
+  rdfs:range vivo:University.
 
-focu:number
-  a rdfs:Property;
-  rdfs:label "Number"@en;
-  rdfs:comment "An arithmetical value used to refer to course number or lecture number."@en.
+focu:hasTaken
+  a rdf:Property;
+  rdfs:label "has taken"@en;
+  rdfs:comment "links the student to the classes that he/she takes";
+  rdfs:domain vivo:Student;
+  rdfs:range focu:completedCourse.
 
-focu:credits
-  a rdfs:Property;
-  rdfs:domain focu:Course;
-  rdfs:label "Credits"@en;
-  rdfs:comment "An arithmetical value used to refer to course credits."@en.
+focu:refersTo
+  a rdf:Property;
+  rdfs:label "refers to"@en;
+  rdfs:comment "links a blank node to a course. The blank node's domain is student and range is course";
+  rdfs:domain focu:completedCourse;
+  rdfs:range vivo:Course.
 
-focu:description
-  a rdfs:Property;
-  rdfs:domain focu:Course;
-  rdfs:range xsd:string;
-  rdfs:label "Description"@en;
-  rdfs:comment "A word or set of words used to describe a course."@en.
-
-focu:outline
-  a rdfs:Property;
-  rdfs:domain focu:Course;
-  rdfs:label "Outline"@en;
-  rdfs:comment "A document used to communicate important information regarding a course."@en.
-
-focu:covers
-  a rdfs:Property;
-  rdfs:domain focu:Course;
-  rdfs:range focu:Topic;
-  rdfs:label "Covers"@en;
-  rdfs:comment "Identifies a topic covered by a course."@en.
-
-focu:content
-  a rdfs:Property;
-  rdfs:domain focu:Lecture;
-  rdfs:label "Content"@en;
-  rdfs:comment "Lecture content including slides, worksheets, readings(book chapters, webpages, etc), other material(videos, images, etc)."@en.
-
-focu:prov
-  a rdfs:Property;
-  rdfs:domain focu:Topic;
-  rdfs:label "Provenance"@en;
-  rdfs:comment "Provenance information, stating where the topic was identified as being covered in the course (e.g., the graduate calendar, the course outline or a specific lecture)."@en.
-
-focu:id
-  a rdfs:Property;
-  rdfs:domain focu:Student;
-  rdfs:label "ID Number"@en;
-  rdfs:comment "An arithmetical value referring to a student's identification number."@en.
-
-focu:email
-  a rdfs:Property;
-  rdfs:domain focu:Student;
-  rdfs:range xsd:string;
-  rdfs:label "Email"@en;
-  rdfs:comment "Electronic mail address."@en.
-
-focu:completed
-  a rdfs:Property;
-  rdfs:domain focu:Student;
-  rdfs:label "Completed Course"@en;
-  rdfs:comment "A course with its grade that student completed."@en.
-
-focu:competent
-  a rdfs:Property;
-  rdfs:domain focu:Student;
-  rdfs:range focu:Topic;
-  rdfs:label "Competent"@en;
-  rdfs:comment "Competency in a topic based on the course a student successfully passed."@en.
+# Data
