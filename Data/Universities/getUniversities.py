@@ -12,25 +12,25 @@ def getUniversities():
     :return: rdf data in turtle format
     """
     query = """
-                @prefix vivo: <http://vivoweb.org/ontology/core#> .
-                CONSTRUCT{
-                ?dbp_uri rdf:type vivo:University ;
-                rdfs:label ?name ;
-                owl:sameAs ?wd_uri .
-                }
-                WHERE {
-                    {?dbp_uri rdf:type dbo:EducationalInstitution} 
-                        UNION
-                    {?dbp_uri rdf:type schema:CollegeOrUniversity} .
+        @prefix vivo: <http://vivoweb.org/ontology/core#> .
+        CONSTRUCT{
+        ?dbp_uri rdf:type vivo:University ;
+        rdfs:label ?name ;
+        owl:sameAs ?wd_uri .
+        }
+        WHERE {
+            {?dbp_uri rdf:type dbo:EducationalInstitution} 
+                UNION
+            {?dbp_uri rdf:type schema:CollegeOrUniversity} .
 
-                    dbr:List_of_universities_in_Canada dbo:wikiPageWikiLink ?dbp_uri .
-                    ?dbp_uri rdfs:label ?name .
-                    ?dbp_uri owl:sameAs ?wd_uri .
+            dbr:List_of_universities_in_Canada dbo:wikiPageWikiLink ?dbp_uri .
+            ?dbp_uri rdfs:label ?name .
+            ?dbp_uri owl:sameAs ?wd_uri .
 
-                    FILTER(regex(str(?wd_uri), "www.wikidata.org"))
-                    FILTER(lang(?name) = 'en')
-                } ORDER BY ?name
-                """
+            FILTER(regex(str(?wd_uri), "www.wikidata.org"))
+            FILTER(lang(?name) = 'en')
+        } ORDER BY ?name
+        """
 
     sparql = SPARQLWrapper('http://dbpedia.org/sparql')
     sparql.setQuery(query)
