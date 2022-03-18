@@ -10,7 +10,7 @@
 
 # Classes
 focu:outline
-  a rdf:Property;
+  a rdfs:Class;
   rdfs:label "Outline"@en;
   rdfs:comment "A document used to communicate important information regarding a course."@en.
 
