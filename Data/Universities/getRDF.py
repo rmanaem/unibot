@@ -1,3 +1,5 @@
+import os.path
+from __init__ import ROOT_DIR
 from SPARQLWrapper import SPARQLWrapper, CSV, JSON, XML, N3, RDFXML, TURTLE
 
 
@@ -42,5 +44,6 @@ def getUniversities():
 
 
 if __name__ == '__main__':
-    with open('Universities.ttl', 'wb') as f:
+    universities_pathname = os.path.join(ROOT_DIR, 'Data', 'Universities', 'Universities.ttl')
+    with open(universities_pathname, 'wb') as f:
         f.write(getUniversities())
