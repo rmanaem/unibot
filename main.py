@@ -9,6 +9,7 @@ def main():
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX ns2: <http://vivoweb.org/ontology/core#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     SELECT * WHERE { 
       ?university rdf:type ns2:University;
     } LIMIT 25
@@ -35,6 +36,16 @@ def main():
         courseName = re.split("\s", trimmed)[3]
         courseNumber = re.split("\s", trimmed)[4]
         qres1 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            
             SELECT ?courseDesc
             WHERE{{
     		    ?x vivo:hasSubjectArea '{courseName}'
@@ -51,6 +62,16 @@ def main():
         givenName = re.split("\s", trimmed)[3]
         familyName = re.split("\s", trimmed)[4]
         qres2 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            
     	    SELECT ?competency
     	    WHERE{{
     		    ?x foaf:givenName '{givenName}'
@@ -68,6 +89,16 @@ def main():
         university = re.split("\s", trimmed)[3]
         topic = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
         qres3 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            
         	SELECT ?course
         	WHERE {{
         		?x rdfs:label '{university}'
@@ -83,6 +114,16 @@ def main():
         trimmed = re.sub("[.,?!]", "", user_input)
         courseName = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1]
         qres4 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
 	        SELECT DISTINCT ?course ?courseNumber
 	        WHERE {{
 		        ?course vivo:hasSubjectArea '{courseName}'
@@ -98,6 +139,16 @@ def main():
         courseName = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 2]
         courseNumber = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1]
         qres5 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
 	        SELECT (COUNT(?student) as ?numberOfStudents) 
 	        WHERE {{
 	    	    ?student docu:HasTaken ?x
@@ -115,6 +166,16 @@ def main():
         courseName = re.split("\s",trimmed)[1]
         courseNumber = re.split("\s",trimmed)[2]
         qres6 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
             ASK {{
                 ?y rdfs:label '{university}'
 	            ?y vivo:offers ?x
@@ -132,6 +193,16 @@ def main():
         familyName = re.split("\s", trimmed)[2]
         university = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
         qres7 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
             ASK {{
     		    ?x foaf:givenName '{givenName}'
     		    ?x foaf:familyName '{familyName}'
@@ -148,6 +219,16 @@ def main():
         courseName = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 2]
         courseNumber = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
         qres8 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
     	    SELECT ?university
     	    WHERE{{
     	    	?university vivo:offers ?x
@@ -164,6 +245,16 @@ def main():
         givenName = re.split("\s", trimmed)[3]
         familyName = re.split("\s", trimmed)[4]
         qres9 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
     	    SELECT DISTINCT ?course
     	    WHERE{{
     		    ?x foaf:givenName '{givenName}'
@@ -183,6 +274,16 @@ def main():
         givenName = re.split("\s", trimmed)[3]
         familyName = re.split("\s", trimmed)[4]
         qres10 = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX focu: <http://focu.io/schema#>
+            PREFIX focudata: <http://focu.io/data#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                    
     	    SELECT DISTINCT ?course
     	    WHERE{{
     	    	?x foaf:givenName '{givenName}'
