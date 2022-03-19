@@ -24,10 +24,15 @@ focu:worksheet
   rdfs:label "Worksheet"@en;
   rdfs:comment "A worksheet of problems to practice offered during each lecture".
 
+focu:readings
+  a rdfs:Class;
+  rdfs:label "readings"@en;
+  rdfs:comment "A list of readings assigned by the professor specific to a lecture".
+
 focu:reading
   a rdfs:Class;
   rdfs:label "reading"@en;
-  rdfs:comment "A list of readings assigned by the professor specific to a lecture".
+  rdfs:comment "an instance of readings assigned by the professor specific to a lecture".
 
 focu:otherMaterial
   a rdfs:Class;
