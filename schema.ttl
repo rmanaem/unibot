@@ -24,6 +24,11 @@ focu:worksheet
   rdfs:label "Worksheet"@en;
   rdfs:comment "A worksheet of problems to practice offered during each lecture".
 
+focu:reading
+  a rdfs:Class;
+  rdfs:label "reading"@en;
+  rdfs:comment "A list of readings assigned by the professor specific to a lecture".
+
 focu:otherMaterial
   a rdfs:Class;
   rdfs:label "Other Material"@en;
@@ -43,6 +48,16 @@ focu:completedCourse
   a rdfs:Class;
   rdfs:label "completed course"@en;
   rdfs:comment "A course completed by a student".
+
+focu:required
+  a rdfs:Class;
+  rdfs:label "required"@en;
+  rdfs:comment "A classification of a reading".
+
+focu:supplemental
+  a rdfs:Class;
+  rdfs:label "supplemental"@en;
+  rdfs:comment "A classification of a reading".
 
 # Properties
 focu:hasExpertise
