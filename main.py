@@ -14,7 +14,7 @@ def main():
       ?university rdf:type ns2:University;
     } LIMIT 25
     """
-    executeQuey(exampleQuery)
+    executeQuery(exampleQuery)
     print("""
     Enter one of the questions below to test the knowledge base:
     1. What is course [COURSE NAME][COURSE NUMBER] about?
@@ -53,7 +53,7 @@ def main():
     		    ?x vivo:shortDescription ?courseDesc
             }}
         """
-        executeQuey(qres1)
+        executeQuery(qres1)
 
     #-----------------------------------competency q2-------------------------------------------------
     # Which topics is [STUDENT FIRSTNAME] [STUDENT LASTNAME]competent in?
@@ -80,7 +80,7 @@ def main():
     		    ?y vivo:contains ?competency
     	    }}
         """
-        executeQuey(qres2)
+        executeQuery(qres2)
 
     #-----------------------------------competency q3-------------------------------------------------
     # Which courses at [UNIVERSITY] teaches [TOPIC]
@@ -106,7 +106,7 @@ def main():
         		?course vivo:Title '{topic}'
         	}}
         """
-        executeQuey(qres3)
+        executeQuery(qres3)
 
     #-----------------------------------competency q4-------------------------------------------------
     # What are all the courses for [COURSE NAME]
@@ -130,7 +130,7 @@ def main():
 		        ?course vivo:catalog ?courseNumber
 	        }}
         """
-        executeQuey(qres4)
+        executeQuery(qres4)
 
     #-----------------------------------competency q5-------------------------------------------------
     # How many students are registered for [COURSE NAME][COURSE NUMBER]
@@ -156,7 +156,7 @@ def main():
 	    	    ?x vivo:Catalog '{courseNumber}'
 	     }}
         """
-        executeQuey(qres5)
+        executeQuery(qres5)
 
     #-----------------------------------competency q6-------------------------------------------------
     # Is [COURSE NAME][COURSE NUMBER] offered by [UNIVERSITY]
@@ -183,7 +183,7 @@ def main():
 	            ?x vivo:catalog '{courseNumber}'
 	        }}
         """
-        executeQuey(qres6)
+        executeQuery(qres6)
 
     #-----------------------------------competency q7-------------------------------------------------
     # Is [STUDENT FIRSTNAME][STUDENT LASTNAME] enrolled at [UNIVERSITY]
@@ -210,7 +210,7 @@ def main():
     	        ?y rdfs:label '{university}'
         	}}
         """
-        # executeQuey(qres7)
+        executeQuery(qres7)
 
     # -----------------------------------competency q8-------------------------------------------------
     # Which universities offer [COURSE NAME][COURSE NUMBER]
@@ -236,7 +236,7 @@ def main():
         		?x vivo:Catalog '{courseNumber}'
         	}}
         """
-        executeQuey(qres8)
+        executeQuery(qres8)
 
     # -----------------------------------competency q9-------------------------------------------------
     # What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] completed
@@ -265,7 +265,7 @@ def main():
     		    ?taken docu:refersTo ?course
     	    }}
         """
-        executeQuey(qres9)
+        executeQuery(qres9)
 
     # -----------------------------------competency q10-------------------------------------------------
     # What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] failed
@@ -293,11 +293,11 @@ def main():
     	    	?taken docu:refersTo ?course
     	    }}
         """
-        executeQuey(qres10)
+        executeQuery(qres10)
     else:
         print("Query not recognized")
 
-def executeQuey(query):
+def executeQuery(query):
     #send post request to fuseki server to access dataset : Project1
     response = requests.post('http://localhost:3030/Project1/sparql',
                              data={'query': query})
