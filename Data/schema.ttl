@@ -64,6 +64,11 @@ focu:supplemental
   rdfs:label "supplemental"@en;
   rdfs:comment "A classification of a reading"@en.
 
+focu:topic
+  a rdfs:Class;
+  rdfs:label "topic"@en;
+  rdfs:comment "A topic that is covered in a course."@en.
+
 # Properties
 focu:hasExpertise
   a rdf:Property;
