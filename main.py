@@ -53,7 +53,7 @@ def main():
     		    ?x vivo:shortDescription ?courseDesc
             }}
         """
-        #executeQuey(qres1)
+        executeQuey(qres1)
 
     #-----------------------------------competency q2-------------------------------------------------
     # Which topics is [STUDENT FIRSTNAME] [STUDENT LASTNAME]competent in?
@@ -80,7 +80,7 @@ def main():
     		    ?y vivo:contains ?competency
     	    }}
         """
-        # executeQuey(qres2)
+        executeQuey(qres2)
 
     #-----------------------------------competency q3-------------------------------------------------
     # Which courses at [UNIVERSITY] teaches [TOPIC]
@@ -106,7 +106,7 @@ def main():
         		?course vivo:Title '{topic}'
         	}}
         """
-        #executeQuey(qres3)
+        executeQuey(qres3)
 
     #-----------------------------------competency q4-------------------------------------------------
     # What are all the courses for [COURSE NAME]
@@ -130,7 +130,7 @@ def main():
 		        ?course vivo:catalog ?courseNumber
 	        }}
         """
-        #executeQuey(qres4)
+        executeQuey(qres4)
 
     #-----------------------------------competency q5-------------------------------------------------
     # How many students are registered for [COURSE NAME][COURSE NUMBER]
@@ -156,7 +156,7 @@ def main():
 	    	    ?x vivo:Catalog '{courseNumber}'
 	     }}
         """
-        #executeQuey(qres5)
+        executeQuey(qres5)
 
     #-----------------------------------competency q6-------------------------------------------------
     # Is [COURSE NAME][COURSE NUMBER] offered by [UNIVERSITY]
@@ -183,7 +183,7 @@ def main():
 	            ?x vivo:catalog '{courseNumber}'
 	        }}
         """
-        # executeQuey(qres6)
+        executeQuey(qres6)
 
     #-----------------------------------competency q7-------------------------------------------------
     # Is [STUDENT FIRSTNAME][STUDENT LASTNAME] enrolled at [UNIVERSITY]
@@ -236,7 +236,7 @@ def main():
         		?x vivo:Catalog '{courseNumber}'
         	}}
         """
-        # executeQuey(qres8)
+        executeQuey(qres8)
 
     # -----------------------------------competency q9-------------------------------------------------
     # What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] completed
@@ -265,7 +265,7 @@ def main():
     		    ?taken docu:refersTo ?course
     	    }}
         """
-        # executeQuey(qres9)
+        executeQuey(qres9)
 
     # -----------------------------------competency q10-------------------------------------------------
     # What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] failed
@@ -293,7 +293,7 @@ def main():
     	    	?taken docu:refersTo ?course
     	    }}
         """
-        # executeQuey(qres10)
+        executeQuey(qres10)
     else:
         print("Query not recognized")
 
