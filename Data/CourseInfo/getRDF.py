@@ -6,10 +6,14 @@ from rdflib.namespace import FOAF, RDFS, XSD
 from __init__ import ROOT_DIR
 
 if __name__ == '__main__':
-    course_data = pd.read_csv('course_catalog.csv',
+    data_pathname = os.path.join(ROOT_DIR, 'Data')
+    catalog_pathname = os.path.join(data_pathname, 'CourseInfo', 'course_catalog.csv')
+    course_description_pathname = os.path.join(data_pathname, 'CourseInfo', 'course_description.csv')
+
+    course_data = pd.read_csv(catalog_pathname,
                               delimiter=',',
                               encoding='unicode_escape')
-    course_description = pd.read_csv('course_description.csv',
+    course_description = pd.read_csv(course_description_pathname,
                                      delimiter=',',
                                      encoding='unicode_escape')
     df = course_data.merge(course_description, how='left', on='Course ID')
@@ -44,8 +48,8 @@ if __name__ == '__main__':
     # add outline and seeAlso to comp474
     comp474_uri = URIRef(FOCUDATA + str(5484))
     g.add((comp474_uri, VIVO.description,
-           URIRef('file///' + os.path.join(ROOT_DIR, 'Data', 'CourseInfo', 'comp474_outline.pdf').replace('\\', '/'))))
+           URIRef('file///' + os.path.join(data_pathname, 'CourseInfo', 'comp474_outline.pdf').replace('\\', '/'))))
     g.add((comp474_uri, RDFS.seeAlso,
            URIRef('https://aits.encs.concordia.ca/aits/public/top/courses/20194/05/COMP474.html')))
 
-    g.serialize('CourseInfo.ttl', format='turtle')
+    g.serialize(os.path.join(data_pathname, 'CourseInfo', 'CourseInfo.ttl'), format='turtle')
