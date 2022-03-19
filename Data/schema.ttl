@@ -22,88 +22,88 @@ focu:lecture
 focu:worksheet
   a rdfs:Class;
   rdfs:label "Worksheet"@en;
-  rdfs:comment "A worksheet of problems to practice offered during each lecture".
+  rdfs:comment "A worksheet of problems to practice offered during each lecture"@en.
 
 focu:readings
   a rdfs:Class;
   rdfs:label "readings"@en;
-  rdfs:comment "A list of readings assigned by the professor specific to a lecture".
+  rdfs:comment "A list of readings assigned by the professor specific to a lecture"@en.
 
 focu:reading
   a rdfs:Class;
   rdfs:label "reading"@en;
-  rdfs:comment "an instance of readings assigned by the professor specific to a lecture".
+  rdfs:comment "an instance of readings assigned by the professor specific to a lecture"@en.
 
 focu:otherMaterial
   a rdfs:Class;
   rdfs:label "Other Material"@en;
-  rdfs:comment "Includes videos and images usually included in lecture slides".
+  rdfs:comment "Includes videos and images usually included in lecture slides"@en.
 
 focu:slide
   a rdfs:Class;
-  rdfs:label "Slide";
-  rdfs:comment "Slides are offered by the instructor during a lecture".
+  rdfs:label "Slide"@en;
+  rdfs:comment "Slides are offered by the instructor during a lecture"@en.
 
 focu:expertise
   a rdfs:Class;
   rdfs:label "Expertise"@en;
-  rdfs:comment "is the set of competencies that a student is expert at (iff student passed course with better than F)".
+  rdfs:comment "is the set of competencies that a student is expert at (iff student passed course with better than F)"@en.
 
 focu:completedCourse
   a rdfs:Class;
   rdfs:label "completed course"@en;
-  rdfs:comment "A course completed by a student".
+  rdfs:comment "A course completed by a student"@en.
 
 focu:required
   a rdfs:Class;
   rdfs:label "required"@en;
-  rdfs:comment "A classification of a reading".
+  rdfs:comment "A classification of a reading"@en.
 
 focu:supplemental
   a rdfs:Class;
   rdfs:label "supplemental"@en;
-  rdfs:comment "A classification of a reading".
+  rdfs:comment "A classification of a reading"@en.
 
 # Properties
 focu:hasExpertise
   a rdf:Property;
   rdfs:label "has expertise"@en;
-  rdfs:comment "links the student to the set of expertise that he/she acquires";
+  rdfs:comment "links the student to the set of expertise that he/she acquires"@en;
   rdfs:domain vivo:Student;
   rdfs:range focu:expertise.
 
 focu:hasContent
   a rdf:Property;
   rdfs:label "has content"@en;
-  rdfs:comment "Link between course and its contents";
+  rdfs:comment "Link between course and its contents"@en;
   rdfs:domain vivo:Course;
   rdfs:range focu:Lecture.
 
 focu:hasHighestGrade
   a rdf:Property;
   rdfs:label "has highest grade"@en;
-  rdfs:comment "highest grade by student at a course";
+  rdfs:comment "highest grade by student at a course"@en;
   rdfs:domain focu:completedCourse;
   rdfs:range xsd:string.
 
 focu:StudentAt
   a rdf:Property;
   rdfs:label "student at"@en;
-  rdfs:comment "links the student to the university at which he/she is enrolled";
+  rdfs:comment "links the student to the university at which he/she is enrolled"@en;
   rdfs:domain vivo:Student;
   rdfs:range vivo:University.
 
 focu:hasTaken
   a rdf:Property;
   rdfs:label "has taken"@en;
-  rdfs:comment "links the student to the classes that he/she takes";
+  rdfs:comment "links the student to the classes that he/she takes"@en;
   rdfs:domain vivo:Student;
   rdfs:range focu:completedCourse.
 
 focu:refersTo
   a rdf:Property;
   rdfs:label "refers to"@en;
-  rdfs:comment "links a blank node to a course. The blank node's domain is student and range is course";
+  rdfs:comment "links a blank node to a course. The blank node's domain is student and range is course"@en;
   rdfs:domain focu:completedCourse;
   rdfs:range vivo:Course.
 
