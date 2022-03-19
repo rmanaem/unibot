@@ -7,42 +7,37 @@ from pathlib import Path
 
 from __init__ import ROOT_DIR
 
-if __name__ == '__main__':
 
-    slidesDir = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'Slides')
-    slidesCount = len(os.listdir(slidesDir))
-    filepaths = [os.path.join(slidesDir, 'slides') + "%02d" % num + '.pdf' for num in range(1, slidesCount + 1)]
+def extractImages(filepath):
 
-    pdf_file = fitz.open(filepaths[0])
+    print('\nextracting images\n')
+    pdf_file = fitz.open(filepath)
 
-    for filepath in filepaths:
-        # open each slide0X.pdf
-        with fitz.open(filepath) as pdf_file:
-            for page_index in range(len(pdf_file)):
+    with fitz.open(filepath) as pdf_file:
+        for page_index in range(len(pdf_file)):
 
-                page = pdf_file[page_index]
-                image_list = page.get_images()
+            page = pdf_file[page_index]
 
-                for image_index, img in enumerate(page.getImageList(), start=1):
-                    # get image XREF
-                    xref = img[0]
+            for image_index, img in enumerate(page.getImageList(), start=1):
+                # get image XREF
+                xref = img[0]
 
-                    # extract image bytes
-                    base_image = pdf_file.extract_image(xref)
-                    image_bytes = base_image["image"]
+                # extract image bytes
+                base_image = pdf_file.extract_image(xref)
+                image_bytes = base_image["image"]
 
-                    # get image extension
-                    image_ext = base_image["ext"]
+                # get image extension
+                image_ext = base_image["ext"]
 
-                    # load image to PIL
-                    image = Image.open(io.BytesIO(image_bytes))
+                # load image to PIL
+                image = Image.open(io.BytesIO(image_bytes))
 
-                    lectureName = Path(filepath).stem
-                    images0XDir = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'Images', lectureName)
+                lectureName = Path(filepath).stem
+                images0XDir = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'OtherMaterial', 'Images', lectureName)
 
-                    # create nested folder if not exists
-                    Path(images0XDir).mkdir(parents=True, exist_ok=True)
+                # create nested folder if not exists
+                Path(images0XDir).mkdir(parents=True, exist_ok=True)
 
-                    # export image
-                    path = os.path.join(images0XDir, f'page{page_index + 1}_image{image_index}.{image_ext}')
-                    image.save(open(path, "wb"))
+                # export image
+                path = os.path.join(images0XDir, f'page{page_index + 1}_image{image_index}.{image_ext}')
+                image.save(open(path, "wb"))
