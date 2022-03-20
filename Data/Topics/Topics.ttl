@@ -1,0 +1,149 @@
+@prefix focu: <http://focu.io/schema#> .
+@prefix focudata: <http://focu.io/data#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+focudata:courseID_40353_topic_1 a focu:topic ;
+    rdfs:label "State Space Search" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2033871> .
+
+focudata:courseID_40353_topic_10 a focu:topic ;
+    rdfs:label "Intelligent Agents" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1142726> .
+
+focudata:courseID_40353_topic_11 a focu:topic ;
+    rdfs:label "NLP" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q30642> .
+
+focudata:courseID_40353_topic_12 a focu:topic ;
+    rdfs:label "Convolutional Neural Networks" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q17084460> .
+
+focudata:courseID_40353_topic_2 a focu:topic ;
+    rdfs:label "Alpha-Beta Pruning" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q570496> .
+
+focudata:courseID_40353_topic_3 a focu:topic ;
+    rdfs:label "Naive Bayes Classifier" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q812530> .
+
+focudata:courseID_40353_topic_4 a focu:topic ;
+    rdfs:label "Decision Trees" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q831366> .
+
+focudata:courseID_40353_topic_5 a focu:topic ;
+    rdfs:label "Unsupervised learning" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1152135> .
+
+focudata:courseID_40353_topic_6 a focu:topic ;
+    rdfs:label "K-Means Clustering" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q310401> .
+
+focudata:courseID_40353_topic_7 a focu:topic ;
+    rdfs:label "Artificial Neural Networks" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q192776> .
+
+focudata:courseID_40353_topic_8 a focu:topic ;
+    rdfs:label "Deep Learning" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q197536> .
+
+focudata:courseID_40353_topic_9 a focu:topic ;
+    rdfs:label "Knowledge Graphs" ;
+    focu:coveredIn focudata:courseID_40353 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP6721/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q33002955> .
+
+focudata:courseID_5484_topic_1 a focu:topic ;
+    rdfs:label "Intelligent Systems" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q150001> .
+
+focudata:courseID_5484_topic_10 a focu:topic ;
+    rdfs:label "Text Mining" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q676880> .
+
+focudata:courseID_5484_topic_11 a focu:topic ;
+    rdfs:label "Artificial Neural Network" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q192776> .
+
+focudata:courseID_5484_topic_12 a focu:topic ;
+    rdfs:label "Deep Learning" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q197536> .
+
+focudata:courseID_5484_topic_2 a focu:topic ;
+    rdfs:label "Knowledge Graphs" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q33002955> .
+
+focudata:courseID_5484_topic_3 a focu:topic ;
+    rdfs:label "Vocabularies & Ontologies" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q324254> .
+
+focudata:courseID_5484_topic_4 a focu:topic ;
+    rdfs:label "SPARQL" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q54871> .
+
+focudata:courseID_5484_topic_5 a focu:topic ;
+    rdfs:label "Linked Open Data" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q18692990> .
+
+focudata:courseID_5484_topic_6 a focu:topic ;
+    rdfs:label "Recommender Systems" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q554950> .
+
+focudata:courseID_5484_topic_7 a focu:topic ;
+    rdfs:label "Machine Learning" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2539> .
+
+focudata:courseID_5484_topic_8 a focu:topic ;
+    rdfs:label "Intelligent Agents" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1142726> .
+
+focudata:courseID_5484_topic_9 a focu:topic ;
+    rdfs:label "NLP" ;
+    focu:coveredIn focudata:courseID_5484 ;
+    focu:source <file///C:/Users/Admin/PycharmProjects/unibot/data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q30642> .
+
