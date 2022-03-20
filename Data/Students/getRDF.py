@@ -1,12 +1,10 @@
 import os
-from re import L
 
 import numpy as np
 import pandas as pd
 from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import FOAF, RDFS, XSD
 from __init__ import ROOT_DIR
-
 
 if __name__ == '__main__':
 
@@ -20,17 +18,20 @@ if __name__ == '__main__':
     # Generate the information for students
     first = pd.read_csv(first_pathname, sep="\n").sample(
         n=nb_students).transpose().values.tolist()[0]
-    last = pd.read_csv("last.txt", sep="\n").sample(
+    last = pd.read_csv(last_pathname, sep="\n").sample(
         n=nb_students).transpose().values.tolist()[0]
     ids = np.random.randint(40000000, 50000000, nb_students)
-    cg = Graph().parse('../COMP474/CourseInfo/CourseInfo.ttl')
+
+    courseTTL = os.path.join(ROOT_DIR, 'Data', 'Courses', 'COMP474', 'CourseInfo', 'CourseInfo.ttl')
+    cg = Graph().parse(courseTTL)
+
     courses = [str(s)[20:] for s, p, o in cg]
     grades = [l + '+' for l in 'ABCD'] + \
-        [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
+             [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
     terms = ['FALL-2019', 'WINTER-2020', 'SUMMER-1-2020', 'SUMMER-2-2020',
              'FALL-2020', 'WINTER-2021', 'SUMMER-1-2021', 'SUMMER-2-2021', 'WINTER-2022']
     df = pd.DataFrame({'Firstname': first, 'Lastname': last,
-                      'ID': ids, 'University': 'Concordia_University'})
+                       'ID': ids, 'University': 'Concordia_University'})
 
     FOCU = Namespace("http://focu.io/schema#")
     FOCUDATA = Namespace("http://focu.io/data#")
@@ -52,9 +53,10 @@ if __name__ == '__main__':
     # TODO FOCU.hasExpertise to be implemented
     for index, row in df.iterrows():
         student_uri = URIRef(FOCUDATA + 'studentID_' + str(row['ID']))
-        university_uri = URIRef(DBR+row['University'])
+        university_uri = URIRef(DBR + row['University'])
+
         g.add((student_uri, RDF.type, VIVO.Student))
-        g.add((student_uri,  VIVO.identification, Literal(row['ID'])))
+        g.add((student_uri, VIVO.identification, Literal(row['ID'])))
         g.add((student_uri, FOAF.givenName, Literal(row['Firstname'])))
         g.add((student_uri, FOAF.familyName, Literal(row['Lastname'])))
         g.add((student_uri, FOCU.studentAt, university_uri))
@@ -66,27 +68,23 @@ if __name__ == '__main__':
             course_index = np.random.randint(len(courses))
             grade_index = np.random.randint(len(grades))
             term_index = np.random.randint(len(terms))
-            course_uri = URIRef(FOCUDATA + 'courseID' +
-                                '_' + courses[course_index])
-            completed_course_uri = URIRef(
-                FOCUDATA + str(row['ID']) + '_' + courses[course_index])
-            academic_term_uri = URIRef(
-                FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
+            course_uri = URIRef(FOCUDATA + 'courseID' + '_' + courses[course_index])
+            completed_course_uri = URIRef(FOCUDATA + str(row['ID']) + '_' + courses[course_index])
+            academic_term_uri = URIRef(FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
+
             g.add((completed_course_uri, RDF.type, FOCU.completedCourse))
             g.add((completed_course_uri, FOCU.refersTo, course_uri))
-            g.add((completed_course_uri, FOCU.hasHighestGrade,
-                  Literal(grades[grade_index])))
+            g.add((completed_course_uri, FOCU.hasHighestGrade, Literal(grades[grade_index])))
             g.add((academic_term_uri, RDF.type, VIVO.AcademicTerm))
-            g.add((academic_term_uri, VIVO.contains,
-                  Literal(terms[term_index])))
+            g.add((academic_term_uri, VIVO.contains, Literal(terms[term_index])))
 
             # Cases where student retakes a course
             if index % 73 == 0 and i % 2 == 1:
                 term_index_1 = np.random.randint(len(terms))
                 g.add((academic_term_uri, VIVO.contains,
-                      Literal(terms[term_index_1])))
+                       Literal(terms[term_index_1])))
 
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
-    g.serialize('Students.ttl', format='turtle')
+    g.serialize(os.path.join(students_pathname, 'Students.ttl'), format='turtle')

@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from pytube import YouTube
 
-from Data.Lectures.pdfOperations import getYtURLs
+from Data.Courses.pdfOperations import getYtURLs
 from __init__ import ROOT_DIR
 
 

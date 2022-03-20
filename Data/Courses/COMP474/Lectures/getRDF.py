@@ -5,19 +5,17 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
 from rdflib.namespace import FOAF, RDFS, XSD, OWL
 from PyPDF2 import PdfFileReader
 
-from Data.Lectures.extractImages import extractImages
-from Data.Lectures.extractVideos import extractVideos
-from Data.Lectures.pdfOperations import extractFromPdf
+from Data.Courses.extractImages import extractImages
+from Data.Courses.extractVideos import extractVideos
+from Data.Courses.pdfOperations import extractFromPdf
 from __init__ import ROOT_DIR
 import os
 
 if __name__ == '__main__':
 
-    data_pathname = os.path.join(ROOT_DIR, 'Data')
+    comp474_Lectures = os.path.join(ROOT_DIR, 'Data', 'Courses', 'COMP474', 'Lectures')
 
     g = Graph()
-    g.parse(os.path.join(data_pathname, 'schema.ttl'))
-    # g.parse('http://vivoweb.org/ontology/core', format='xml')
 
     FOCU = Namespace("http://focu.io/schema#")
     FOCUDATA = Namespace("http://focu.io/data#")
@@ -33,7 +31,7 @@ if __name__ == '__main__':
     g.bind('vivo', VIVO)
     g.bind('vcard', VCARD)
 
-    slidesDir = os.path.join(data_pathname, 'Lectures', 'Slides')
+    slidesDir = os.path.join(comp474_Lectures, 'Slides')
     slidesCount = len(os.listdir(slidesDir))
     filepaths = [os.path.join(slidesDir, 'slides') + "%02d" % num + '.pdf' for num in range(1, slidesCount + 1)]
 
@@ -107,5 +105,5 @@ if __name__ == '__main__':
     g.add(((URIRef(FOCUDATA + 'Lecture01')), RDFS.seeAlso,
            URIRef('https://www.coursehero.com/file/58197534/slides01pdf/')))
 
-    lectures_pathname = os.path.join(data_pathname, 'Lectures', 'Lectures.ttl')
+    lectures_pathname = os.path.join(comp474_Lectures, 'Lectures.ttl')
     g.serialize(lectures_pathname, format='turtle')
