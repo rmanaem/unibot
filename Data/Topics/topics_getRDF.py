@@ -79,8 +79,43 @@ if __name__ == '__main__':
         ROOT_DIR, "data", "Lectures", "COMP6721", "CourseInfo", "Outline.pdf")
 
     df = pd.DataFrame({
-        'label': comp474_topics + comp6721_topics,
-        'wikidata': comp474_wikidata + comp6721_wikidata,
-        'course': [comp474_course_id]*12 + [comp6721_course_id]*12,
-        'outline': [comp474_outline_path]*12 + [comp6721_outline_path]*12
+        'Label': comp474_topics + comp6721_topics,
+        'Topic_Index': [i for i in range(1, 13)]*2,
+        'Wikidata': comp474_wikidata + comp6721_wikidata,
+        'Course': [comp474_course_id]*12 + [comp6721_course_id]*12,
+        'Outline': [comp474_outline_path]*12 + [comp6721_outline_path]*12,
     })
+
+    FOCU = Namespace("http://focu.io/schema#")
+    FOCUDATA = Namespace("http://focu.io/data#")
+    DBR = Namespace("http://dbpedia.org/resource/")
+    DBO = Namespace("http://dbpedia.org/ontology/")
+    VIVO = Namespace("http://vivoweb.org/ontology/core#")
+    OWL = Namespace("http://www.w3.org/2002/07/owl#")
+    WIKIDATA = Namespace("http://www.wikidata.org/entity/")
+
+    g = Graph()
+    g.bind("rdfs", RDFS)
+    g.bind("rdf", RDF)
+    g.bind("xsd", XSD)
+    g.bind("foaf", FOAF)
+    g.bind("dbr", DBR)
+    g.bind("dbo", DBO)
+    g.bind("focu", FOCU)
+    g.bind("focudata", FOCUDATA)
+    g.bind('vivo', VIVO)
+    g.bind('owl', OWL)
+
+    for index, row in df.iterrows():
+        topic_uri = URIRef(
+            FOCUDATA + row['Course'] + '_topic_' + str(row['Topic_Index']))
+        wikidata_uri = URIRef(WIKIDATA + row['Wikidata'])
+        course_uri = URIRef(FOCUDATA + row['Course'])
+        outline_uri = URIRef('file///' + row['Outline'].replace('\\', '/'))
+        g.add((topic_uri, RDF.type, FOCU.topic))
+        g.add((topic_uri, RDFS.label, Literal(row['Label'])))
+        g.add((topic_uri, OWL.sameAs, wikidata_uri))
+        g.add((topic_uri, FOCU.coveredIn, course_uri))
+        g.add((topic_uri, FOCU.source, outline_uri))
+
+    g.serialize('Topics.ttl', format='turtle')
