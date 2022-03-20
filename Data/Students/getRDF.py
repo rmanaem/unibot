@@ -1,4 +1,5 @@
 import os
+from re import L
 
 import numpy as np
 import pandas as pd
@@ -13,14 +14,21 @@ if __name__ == '__main__':
     first_pathname = os.path.join(students_pathname, 'first.txt')
     last_pathname = os.path.join(students_pathname, 'last.txt')
     np.random.seed(0)
-    count = 900
+    nb_students = 900
+    nb_courses = 3
 
     # Generate the information for students
     first = pd.read_csv(first_pathname, sep="\n").sample(
-        n=count).transpose().values.tolist()[0]
+        n=nb_students).transpose().values.tolist()[0]
     last = pd.read_csv("last.txt", sep="\n").sample(
-        n=count).transpose().values.tolist()[0]
-    ids = np.random.randint(40000000, 50000000, count)
+        n=nb_students).transpose().values.tolist()[0]
+    ids = np.random.randint(40000000, 50000000, nb_students)
+    cg = Graph().parse('../COMP474/CourseInfo/CourseInfo.ttl')
+    courses = [str(s)[20:] for s, p, o in cg]
+    grades = [l + '+' for l in 'ABCD'] + \
+        [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
+    terms = ['FALL-2019', 'WINTER-2020', 'SUMMER-1-2020', 'SUMMER-2-2020',
+             'FALL-2020', 'WINTER-2021', 'SUMMER-1-2021', 'SUMMER-2-2021', 'WINTER-2022']
     df = pd.DataFrame({'Firstname': first, 'Lastname': last,
                       'ID': ids, 'University': 'Concordia_University'})
 
@@ -41,15 +49,47 @@ if __name__ == '__main__':
     g.bind("focudata", FOCUDATA)
     g.bind('vivo', VIVO)
 
+    # TODO FOCU.hasExpertise to be implemented
     for index, row in df.iterrows():
-        uri = URIRef(FOCUDATA + 'studentID_' + str(row['ID']))
-        uni_uri = URIRef(DBR+row['University'])
-        g.add((uri, RDF.type, VIVO.Student))
-        g.add((uri,  VIVO.identification, Literal(str(row['ID']))))
-        g.add((uri, FOAF.givenName, Literal(row['Firstname'])))
-        g.add((uri, FOAF.familyName, Literal(row['Lastname'])))
-        g.add((uri, FOCU.studentAt, uni_uri))
-        g.add((uri, FOAF.mbox, Literal(
+        student_uri = URIRef(FOCUDATA + 'studentID_' + str(row['ID']))
+        university_uri = URIRef(DBR+row['University'])
+        g.add((student_uri, RDF.type, VIVO.Student))
+        g.add((student_uri,  VIVO.identification, Literal(row['ID'])))
+        g.add((student_uri, FOAF.givenName, Literal(row['Firstname'])))
+        g.add((student_uri, FOAF.familyName, Literal(row['Lastname'])))
+        g.add((student_uri, FOCU.studentAt, university_uri))
+        g.add((student_uri, FOAF.mbox, Literal(
             row['Firstname'][:1] + '_' + row['Lastname'] + '@' + row['University'] + '.com')))
 
+        # Generate the completed course triples
+        for i in range(nb_courses):
+            course_index = np.random.randint(len(courses))
+            grade_index = np.random.randint(len(grades))
+            term_index = np.random.randint(len(terms))
+            course_uri = URIRef(FOCUDATA + 'courseID' +
+                                '_' + courses[course_index])
+            completed_course_uri = URIRef(
+                FOCUDATA + str(row['ID']) + '_' + courses[course_index])
+            academic_term_uri = URIRef(
+                FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
+            g.add((completed_course_uri, RDF.type, FOCU.completedCourse))
+            g.add((completed_course_uri, FOCU.refersTo, course_uri))
+            g.add((completed_course_uri, FOCU.hasHighestGrade,
+                  Literal(grades[grade_index])))
+            g.add((academic_term_uri, RDF.type, VIVO.AcademicTerm))
+            g.add((academic_term_uri, VIVO.contains,
+                  Literal(terms[term_index])))
+
+            # Considering cases where student retakes a course
+            if index % 73 == 0 and i%2 == 1:
+                print(index, i, row['ID'])
+                term_index_1 = np.random.randint(len(terms))
+                g.add((academic_term_uri, VIVO.contains,
+                      Literal(terms[term_index_1])))
+
+            g.add((completed_course_uri, FOCU.history, academic_term_uri))
+            g.add((student_uri, FOCU.hasTaken, completed_course_uri))
+
     g.serialize('Students.ttl', format='turtle')
+
+    print(df.iloc[73]['ID'])
