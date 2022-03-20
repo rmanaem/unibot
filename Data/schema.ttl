@@ -112,4 +112,11 @@ focu:refersTo
   rdfs:domain focu:completedCourse;
   rdfs:range vivo:Course.
 
+focu:source
+  a rdf:Property
+  rdfs:label "source"@en;
+  rdfs:comment "Source that recorded a topic as being covered in a course."@en;
+  rdfs:domain focu:topic.
+
+
 # Data
