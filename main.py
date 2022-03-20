@@ -22,9 +22,9 @@ def main():
     3. Which courses at [UNIVERSITY] teaches [TOPIC].
     4. What are all the courses for [COURSE NAME].
     5. How many students are registered for [COURSE NAME][COURSE NUMBER]
-    6. Is [COURSE NAME][COURSE NUMBER] offered by [UNIVERSITY]?
-    7. Is [STUDENT FIRSTNAME][STUDENT LASTNAME] enrolled at [UNIVERSITY]?
-    8. Which universities offer [COURSE NAME][COURSE NUMBER].
+    6. What courses are worth [CREDITS] credits?
+    7. Give me a list of all universities.
+    8. What courses are in [SUBJECT_AREA] subject and are worth [CREDITS] credits?
     9. What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] completed
     10. What courses has [STUDENT FIRSTNAME][STUDENT LASTNAME] failed
     """)
@@ -102,11 +102,14 @@ def main():
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             PREFIX vivo: <http://vivoweb.org/ontology/core#>
             
-        	SELECT ?course
+        	SELECT ?title ?subjectArea ?subjectCode ?courseNum ?courseDesc 
         	WHERE {{
-        		?x rdfs:label '{university}'.
-        		?x vivo:offers ?course.
-        		?course vivo:Title '{topic}'.
+                ?x vivo:hasSubjectArea ?subjectArea.
+                ?x vivo:Title ?title.
+                ?x vivo:hasSubjectArea ?subjectCode.
+                ?x vivo:Catalog ?courseNum.
+                ?x vivo:shortDescription ?courseDesc.
+                filter(regex(?courseDesc,'{topic}')).
         	}}
         """
         executeQuery(qres3)
@@ -127,10 +130,13 @@ def main():
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             PREFIX vivo: <http://vivoweb.org/ontology/core#>
                     
-	        SELECT DISTINCT ?course ?courseNumber
+	        SELECT ?course ?subjectCode ?courseNum
 	        WHERE {{
-		        ?course vivo:hasSubjectArea '{courseName}'.
-		        ?course vivo:catalog ?courseNumber.
+		        ?x vivo:hasSubjectArea '{courseName}'.
+		        ?x vivo:Title ?course.
+                ?x vivo:hasSubjectArea ?subjectCode.
+                ?x vivo:Catalog ?courseNum.
+
 	        }}
         """
         executeQuery(qres4)
@@ -162,14 +168,12 @@ def main():
         executeQuery(qres5)
 
     #-----------------------------------competency q6-------------------------------------------------
-    # Is [COURSE NAME][COURSE NUMBER] offered by [UNIVERSITY]
-    elif re.search("^Is.*offered by.", user_input): # Need to better differentiate from Q7 below
-        trimmed = re.sub("[.,?!]", "", user_input)
-        if re.search("offered by (.*)", trimmed):
-            university = re.search("offered by (.*)", trimmed).group(1)
+    # What courses are worth [CREDITS] credits?
+    elif re.search("^What courses are worth .", user_input):
+        trimmed = re.sub("[,?!]", "", user_input)
+        if re.search("are worth (.*) credits", trimmed):
+            credits = float(re.search("are worth (.*) credits", trimmed).group(1))
 
-        courseName = re.split("\s",trimmed)[1]
-        courseNumber = int(re.split("\s",trimmed)[2])
         qres6 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -181,67 +185,60 @@ def main():
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             PREFIX vivo: <http://vivoweb.org/ontology/core#>
                     
-            ASK {{
-                ?y rdfs:label '{university}'.
-	            ?y vivo:offers ?x.
-	            ?x vivo:hasSubjectArea '{courseName}'.
-	            ?x vivo:catalog {courseNumber}.
-	        }}
+            SELECT ?title ?subjectCode ?courseNum ?credit
+            WHERE {{
+                ?x vivo:CourseCredits {credits}.
+                ?x vivo:Title ?title.
+                ?x vivo:hasSubjectArea ?subjectCode.
+                ?x vivo:Catalog ?courseNum.
+                ?x vivo:CourseCredits ?credit
+            }}
         """
         executeQuery(qres6)
 
     #-----------------------------------competency q7-------------------------------------------------
-    # Is [STUDENT FIRSTNAME][STUDENT LASTNAME] enrolled at [UNIVERSITY]
-    elif re.search("^Is.*enrolled at.", user_input):
-        trimmed = re.sub("[.,?!]", "", user_input)
-        givenName = re.split("\s", trimmed)[1]
-        familyName = re.split("\s", trimmed)[2]
-        if re.search("enrolled at (.*)", trimmed):
-            university = re.search("enrolled at (.*)", trimmed).group(1)
-
+    # Give me a list of all universities.
+    elif re.search("^Give me a list of all universities.", user_input):
         qres7 = f"""
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-            PREFIX dbr: <http://dbpedia.org/resource/>
-            PREFIX owl: <http://www.w3.org/2002/07/owl#>
-            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            PREFIX focu: <http://focu.io/schema#>
-            PREFIX focudata: <http://focu.io/data#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-            PREFIX vivo: <http://vivoweb.org/ontology/core#>
-                    
-            ASK {{
-    		    ?x foaf:givenName '{givenName}'.
-    		    ?x foaf:familyName '{familyName}'.
-    	        ?x vivo:Student ?y.
-    	        ?y rdfs:label '{university}'.
-        	}}
+                PREFIX owl: <http://www.w3.org/2002/07/owl#>
+                PREFIX ns2: <http://vivoweb.org/ontology/core#>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                SELECT ?title ?wiki
+                WHERE {{
+                      ?x rdf:type ns2:University.
+                      ?x rdfs:label ?title.
+                      ?x owl:sameAs ?wiki.
+                }}
         """
         executeQuery(qres7)
 
     # -----------------------------------competency q8-------------------------------------------------
-    # Which universities offer [COURSE NAME][COURSE NUMBER]
-    elif re.search("^Which universities offer.", user_input):
-        trimmed = re.sub("[.,?!]", "", user_input)
-        courseName = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 2]
-        courseNumber = int(re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1])
+    # What courses are in [subject_area] subject and are worth [credits] credits?
+    elif re.search("^What courses are in.", user_input):
+        trimmed = re.sub("[,?!]", "", user_input)
+        if re.search("What courses are in (.*) subject", trimmed):
+            courseName = re.search("What courses are in (.*) subject", trimmed).group(1)
+        if re.search("are worth (.*) credits", trimmed):
+            credits = float(re.search("are worth (.*) credits", trimmed).group(1))
         qres8 = f"""
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-            PREFIX dbr: <http://dbpedia.org/resource/>
-            PREFIX owl: <http://www.w3.org/2002/07/owl#>
-            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            PREFIX focu: <http://focu.io/schema#>
-            PREFIX focudata: <http://focu.io/data#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-            PREFIX vivo: <http://vivoweb.org/ontology/core#>
-                    
-    	    SELECT ?university
-    	    WHERE{{
-    	    	?university vivo:offers ?x.
-        		?x vivo:hasSubjectArea '{courseName}'.
-        		?x vivo:Catalog {courseNumber}.
-        	}}
+                PREFIX vivo: <http://vivoweb.org/ontology/core#>
+                PREFIX ns2: <http://vivoweb.org/ontology/core#>
+                PREFIX dbr: <http://dbpedia.org/resource/>
+                PREFIX dbo: <http://dbpedia.org/ontology/>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+                SELECT ?title ?subjectCode ?courseNum ?credit
+                WHERE {{
+                      ?x vivo:CourseCredits {credits}.
+                      ?x vivo:Title ?title.
+                      ?x vivo:hasSubjectArea '{courseName}'.
+                      ?x vivo:hasSubjectArea ?subjectCode.
+                      ?x vivo:Catalog ?courseNum.
+                      ?x vivo:CourseCredits ?credit.
+                }}
         """
         executeQuery(qres8)
 
