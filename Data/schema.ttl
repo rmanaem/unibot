@@ -118,5 +118,12 @@ focu:source
   rdfs:comment "Source that recorded a topic as being covered in a course."@en;
   rdfs:domain focu:topic.
 
+focu:coveredIn
+  a rdf:Property;
+  rdfs:label "covered in"@en;
+  rdfs:comment "Links a topic to a course that it was covered in."@en;
+  rdfs:domain focu:topic;
+  rdfs:range vivo:Course.
+
 
 # Data
