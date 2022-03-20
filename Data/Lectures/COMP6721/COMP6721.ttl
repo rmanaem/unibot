@@ -1,0 +1,75 @@
+@prefix focu: <http://focu.io/schema#> .
+@prefix focudata: <http://focu.io/data#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture01 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture02 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture03 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture04 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture05 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture06 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf> a focu:slide ;
+    rdfs:subClassOf focudata:40353_Lecture07 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture01 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture02 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture03 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture04 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture05 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture06 .
+
+<file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> a focu:worksheet ;
+    rdfs:subClassOf focudata:40353_Lecture07 .
+
+focudata:40353_Lecture01 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> .
+
+focudata:40353_Lecture02 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> .
+
+focudata:40353_Lecture03 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> .
+
+focudata:40353_Lecture04 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> .
+
+focudata:40353_Lecture05 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> .
+
+focudata:40353_Lecture06 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> .
+
+focudata:40353_Lecture07 a focu:lecture ;
+    vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf>,
+        <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> .
+

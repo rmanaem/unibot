@@ -1,0 +1,11 @@
+@prefix focu: <http://focu.io/schema#> .
+@prefix focudata: <http://focu.io/data#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+focudata:005484_Lecture01 rdfs:seeAlso <https://www.coursehero.com/file/58197534/slides01pdf/> .
+
+focudata:courseID_005484 focu:outline <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/CourseInfo/Outline.pdf> ;
+    rdfs:seeAlso <https://aits.encs.concordia.ca/aits/public/top/courses/20194/05/COMP474.html> .
+
+focudata:courseID_040353 focu:outline <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/CourseInfo/Outline.pdf> .
+
