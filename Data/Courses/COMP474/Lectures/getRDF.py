@@ -35,6 +35,7 @@ if __name__ == '__main__':
     slidesCount = len(os.listdir(slidesDir))
     filepaths = [os.path.join(slidesDir, 'slides') + "%02d" % num + '.pdf' for num in range(1, slidesCount + 1)]
 
+    courseName = 'COMP474'
     for filepath in filepaths:
         with open(filepath, mode='rb') as f:
             reader = PdfFileReader(f)
@@ -94,7 +95,7 @@ if __name__ == '__main__':
                 g.add((otherMaterialURI, VIVO.contains, imageURI))
                 g.add((imageURI, RDF.type, VIVO.Image))
 
-            extractVideos(reader)
+            extractVideos(reader, courseName, lectureName, lectureNum)
             folder = glob.glob(
                 os.path.join(ROOT_DIR, 'Data', 'Lectures', 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
             for video in folder:
