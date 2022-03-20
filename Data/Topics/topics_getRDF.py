@@ -1,6 +1,5 @@
 import os
 
-import numpy as np
 import pandas as pd
 from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import FOAF, RDFS, XSD
@@ -118,4 +117,4 @@ if __name__ == '__main__':
         g.add((topic_uri, FOCU.coveredIn, course_uri))
         g.add((topic_uri, FOCU.source, outline_uri))
 
-    g.serialize('Topics.ttl', format='turtle')
+    g.serialize(os.path.join(ROOT_DIR, 'Data', 'Topics', 'Topics.ttl'), format='turtle')
