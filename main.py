@@ -34,7 +34,10 @@ def main():
     if re.search("^What is course.", user_input):
         trimmed = re.sub("[.,?!]", "", user_input)
         courseName = re.split("\s", trimmed)[3]
-        courseNumber = re.split("\s", trimmed)[4]
+        courseNumber = int(re.split("\s", trimmed)[4])
+        print(courseName)
+        print(courseNumber)
+        print(type(courseNumber))
         qres1 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -48,11 +51,12 @@ def main():
             
             SELECT ?courseDesc
             WHERE{{
-    		    ?x vivo:hasSubjectArea '{courseName}'
-    		    ?x vivo:Catalog '{courseNumber}'
-    		    ?x vivo:shortDescription ?courseDesc
+    		    ?x vivo:hasSubjectArea '{courseName}'.
+    		    ?x vivo:Catalog {courseNumber}.
+    		    ?x vivo:shortDescription ?courseDesc.
             }}
         """
+        print(qres1)
         executeQuery(qres1)
 
     #-----------------------------------competency q2-------------------------------------------------
@@ -74,10 +78,10 @@ def main():
             
     	    SELECT ?competency
     	    WHERE{{
-    		    ?x foaf:givenName '{givenName}'
-    		    ?x foaf:familyName '{familyName}'
-    		    ?x docu:expertise ?y
-    		    ?y vivo:contains ?competency
+    		    ?x foaf:givenName '{givenName}'.
+    		    ?x foaf:familyName '{familyName}'.
+    		    ?x docu:expertise ?y.
+    		    ?y vivo:contains ?competency.
     	    }}
         """
         executeQuery(qres2)
@@ -101,9 +105,9 @@ def main():
             
         	SELECT ?course
         	WHERE {{
-        		?x rdfs:label '{university}'
-        		?x vivo:offers ?course
-        		?course vivo:Title '{topic}'
+        		?x rdfs:label '{university}'.
+        		?x vivo:offers ?course.
+        		?course vivo:Title '{topic}'.
         	}}
         """
         executeQuery(qres3)
@@ -126,8 +130,8 @@ def main():
                     
 	        SELECT DISTINCT ?course ?courseNumber
 	        WHERE {{
-		        ?course vivo:hasSubjectArea '{courseName}'
-		        ?course vivo:catalog ?courseNumber
+		        ?course vivo:hasSubjectArea '{courseName}'.
+		        ?course vivo:catalog ?courseNumber.
 	        }}
         """
         executeQuery(qres4)
@@ -137,7 +141,7 @@ def main():
     elif re.search("^How many students are registered for.", user_input):
         trimmed = re.sub("[.,?!]", "", user_input)
         courseName = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 2]
-        courseNumber = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1]
+        courseNumber = int(re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1])
         qres5 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -151,9 +155,9 @@ def main():
                     
 	        SELECT (COUNT(?student) as ?numberOfStudents) 
 	        WHERE {{
-	    	    ?student docu:HasTaken ?x
-    		    ?x vivo:hasSubjectArea '{courseName}'
-	    	    ?x vivo:Catalog '{courseNumber}'
+	    	    ?student docu:HasTaken ?x.
+    		    ?x vivo:hasSubjectArea '{courseName}'.
+	    	    ?x vivo:Catalog {courseNumber}.
 	     }}
         """
         executeQuery(qres5)
@@ -164,7 +168,7 @@ def main():
         trimmed = re.sub("[.,?!]", "", user_input)
         university = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1]
         courseName = re.split("\s",trimmed)[1]
-        courseNumber = re.split("\s",trimmed)[2]
+        courseNumber = int(re.split("\s",trimmed)[2])
         qres6 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -177,10 +181,10 @@ def main():
             PREFIX vivo: <http://vivoweb.org/ontology/core#>
                     
             ASK {{
-                ?y rdfs:label '{university}'
-	            ?y vivo:offers ?x
-	            ?x vivo:hasSubjectArea '{courseName}'
-	            ?x vivo:catalog '{courseNumber}'
+                ?y rdfs:label '{university}'.
+	            ?y vivo:offers ?x.
+	            ?x vivo:hasSubjectArea '{courseName}'.
+	            ?x vivo:catalog {courseNumber}.
 	        }}
         """
         executeQuery(qres6)
@@ -204,10 +208,10 @@ def main():
             PREFIX vivo: <http://vivoweb.org/ontology/core#>
                     
             ASK {{
-    		    ?x foaf:givenName '{givenName}'
-    		    ?x foaf:familyName '{familyName}'
-    	        ?x vivo:Student ?y
-    	        ?y rdfs:label '{university}'
+    		    ?x foaf:givenName '{givenName}'.
+    		    ?x foaf:familyName '{familyName}'.
+    	        ?x vivo:Student ?y.
+    	        ?y rdfs:label '{university}'.
         	}}
         """
         executeQuery(qres7)
@@ -217,7 +221,7 @@ def main():
     elif re.search("^Which universities offer.", user_input):
         trimmed = re.sub("[.,?!]", "", user_input)
         courseName = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 2]
-        courseNumber = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
+        courseNumber = int(re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1])
         qres8 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -231,9 +235,9 @@ def main():
                     
     	    SELECT ?university
     	    WHERE{{
-    	    	?university vivo:offers ?x
-        		?x vivo:hasSubjectArea '{courseName}'
-        		?x vivo:Catalog '{courseNumber}'
+    	    	?university vivo:offers ?x.
+        		?x vivo:hasSubjectArea '{courseName}'.
+        		?x vivo:Catalog {courseNumber}.
         	}}
         """
         executeQuery(qres8)
@@ -257,12 +261,12 @@ def main():
                     
     	    SELECT DISTINCT ?course
     	    WHERE{{
-    		    ?x foaf:givenName '{givenName}'
-    		    ?x foaf:familyName '{familyName}'  
-    		    ?x docu:HasTaken ?taken
-    		    ?taken docu:grade ?grade
-    		    FILTER regex(?grade, "^") #Figure out how to REGEX to ignore anything that contains "F"
-    		    ?taken docu:refersTo ?course
+    		    ?x foaf:givenName '{givenName}'.
+    		    ?x foaf:familyName '{familyName}'.
+    		    ?x docu:HasTaken ?taken.
+    		    ?taken docu:grade ?grade.
+    		    FILTER regex(?grade != 'F').
+    		    ?taken docu:refersTo ?course.
     	    }}
         """
         executeQuery(qres9)
@@ -286,11 +290,11 @@ def main():
                     
     	    SELECT DISTINCT ?course
     	    WHERE{{
-    	    	?x foaf:givenName '{givenName}'
-    	    	?x foaf:familyName '{familyName}'  
-    	    	?x docu:HasTaken ?taken
-    	    	?taken docu:grade 'F'
-    	    	?taken docu:refersTo ?course
+    	    	?x foaf:givenName '{givenName}'.
+    	    	?x foaf:familyName '{familyName}'.
+    	    	?x docu:HasTaken ?taken.
+    	    	?taken docu:grade 'F'.
+    	    	?taken docu:refersTo ?course.
     	    }}
         """
         executeQuery(qres10)
