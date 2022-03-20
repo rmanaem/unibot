@@ -26,4 +26,4 @@ if __name__ == '__main__':
                 g.parse(pathname)
 
     database_pathname = os.path.join(ROOT_DIR, 'database.ttl')
-    g.serialize(database_pathname, format='turtle')
+    g.serialize(database_pathname, format='nt')
