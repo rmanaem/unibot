@@ -8,7 +8,7 @@ from __init__ import ROOT_DIR
 
 if __name__ == '__main__':
     TTL_pattern = "*.ttl"
-    GET_RDF_pattern = "getRDF.py"
+    GET_RDF_pattern = "*getRDF.py"
 
     g = Graph()
     for path, subdir, files in os.walk(os.path.join(ROOT_DIR, 'Data')):
