@@ -39,9 +39,9 @@ if __name__ == '__main__':
         g.bind('vcard', VCARD)
 
         print(courseName, '\n\n')
-        Lectures = os.path.join(lecturesParentDir, courseName, 'Lectures')
+        courseNamePath = os.path.join(lecturesParentDir, courseName)
 
-        slidesDir = os.path.join(Lectures, 'Slides')
+        slidesDir = os.path.join(courseNamePath, 'Slides')
         slidesCount = len(os.listdir(slidesDir))
         filepaths = [os.path.join(slidesDir, 'slides') + "%02d" % num + '.pdf' for num in range(1, slidesCount + 1)]
 
@@ -63,13 +63,13 @@ if __name__ == '__main__':
                 lectureURI = URIRef(FOCUDATA + courseID + '_Lecture' + str("%02d" % lectureNum))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
 
-                slideURI = URIRef('file///' + os.path.join(Lectures, 'Slides',
+                slideURI = URIRef('file///' + os.path.join(courseNamePath, 'Slides',
                                                            'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
                 g.add((lectureURI, VIVO.contains, slideURI))
                 g.add((slideURI, RDF.type, FOCU.slide))
                 g.add((slideURI, RDFS.subClassOf, lectureURI))
 
-                worksheetURI = URIRef('file///' + os.path.join(Lectures, 'Worksheets',
+                worksheetURI = URIRef('file///' + os.path.join(courseNamePath, 'Worksheets',
                                                                'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\',
                                                                                                                    '/'))
                 g.add((lectureURI, VIVO.contains, worksheetURI))
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
                     extractImages(filepath, courseName)
                     folder = glob.glob(
-                        os.path.join(Lectures, 'OtherMaterial', 'Images', Path(filepath).stem, '*'))
+                        os.path.join(courseNamePath, 'OtherMaterial', 'Images', Path(filepath).stem, '*'))
                     for image in folder:
                         imageURI = URIRef(image.replace('\\', '/').replace(' ', '_'))
                         g.add((otherMaterialURI, VIVO.contains, imageURI))
@@ -111,11 +111,11 @@ if __name__ == '__main__':
 
                     extractVideos(reader, courseName, lectureNum)
                     folder = glob.glob(
-                        os.path.join(Lectures, 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
+                        os.path.join(courseNamePath, 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
                     for video in folder:
                         videoURI = URIRef(video.replace('\\', '/').replace(' ', '_'))
                         g.add((otherMaterialURI, VIVO.contains, videoURI))
                         g.add((videoURI, RDF.type, VIVO.Video))
 
-                lectures_pathname = os.path.join(os.path.join(lecturesParentDir, courseName), courseName + '.ttl')
+                lectures_pathname = os.path.join(courseNamePath, courseName + '.ttl')
                 g.serialize(lectures_pathname, format='turtle')

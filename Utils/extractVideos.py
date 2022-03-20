@@ -8,7 +8,7 @@ from __init__ import ROOT_DIR
 
 def extractVideos(readerObj, course_name, lecture_num):
     URLs = getYtURLs(readerObj)
-    SAVE_PATH = os.path.join(ROOT_DIR, 'Data', 'Courses', course_name, 'Lectures', 'OtherMaterial', 'Videos',
+    SAVE_PATH = os.path.join(ROOT_DIR, 'Data', 'Lectures', course_name, 'OtherMaterial', 'Videos',
                              "slides%02d" % lecture_num)
     Path(SAVE_PATH).mkdir(parents=True, exist_ok=True)
 

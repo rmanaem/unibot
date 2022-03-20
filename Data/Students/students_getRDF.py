@@ -22,7 +22,7 @@ if __name__ == '__main__':
         n=nb_students).transpose().values.tolist()[0]
     ids = np.random.randint(40000000, 50000000, nb_students)
 
-    courseTTL = os.path.join(ROOT_DIR, 'Data', 'Courses', 'COMP474', 'CourseInfo', 'CourseInfo.ttl')
+    courseTTL = os.path.join(ROOT_DIR, 'Data', 'Courses', 'Courses.ttl')
     cg = Graph().parse(courseTTL)
 
     courses = [str(s)[20:] for s, p, o in cg]
