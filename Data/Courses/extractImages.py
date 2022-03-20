@@ -6,10 +6,12 @@ from PIL import Image
 from pathlib import Path
 
 from __init__ import ROOT_DIR
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 def extractImages(filepath):
-
     print('\nextracting images\n')
     pdf_file = fitz.open(filepath)
 
