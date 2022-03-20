@@ -91,7 +91,7 @@ focu:hasHighestGrade
   rdfs:domain focu:completedCourse;
   rdfs:range xsd:string.
 
-focu:StudentAt
+focu:studentAt
   a rdf:Property;
   rdfs:label "student at"@en;
   rdfs:comment "links the student to the university at which he/she is enrolled"@en;
