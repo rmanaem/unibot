@@ -80,9 +80,8 @@ if __name__ == '__main__':
             g.add((academic_term_uri, VIVO.contains,
                   Literal(terms[term_index])))
 
-            # Considering cases where student retakes a course
-            if index % 73 == 0 and i%2 == 1:
-                print(index, i, row['ID'])
+            # Cases where student retakes a course
+            if index % 73 == 0 and i % 2 == 1:
                 term_index_1 = np.random.randint(len(terms))
                 g.add((academic_term_uri, VIVO.contains,
                       Literal(terms[term_index_1])))
@@ -91,5 +90,3 @@ if __name__ == '__main__':
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
     g.serialize('Students.ttl', format='turtle')
-
-    print(df.iloc[73]['ID'])
