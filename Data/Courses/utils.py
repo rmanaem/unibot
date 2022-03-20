@@ -1,5 +1,7 @@
 import re
 from urllib.parse import urlparse
+import pandas
+import pandas as pd
 
 
 def insertToList(index, element, arr):
@@ -67,6 +69,17 @@ def removeTableContents(arr):
         if new_arr[1] == 'Outline':
             return []
     return new_arr
+
+
+def getCourseId(csvFile, courseName):
+    """
+    extracts courseID from a dataset given a courseName
+    :param csvFile: csv
+    :return: int
+    """
+    df = pd.read_csv(csvFile, delimiter=',')
+    nameArr = re.split(r'(\d+)', courseName)[:2]
+    return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID']
 
 
 def extractFromPdf(readerObj, choice):
