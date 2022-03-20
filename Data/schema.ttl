@@ -125,5 +125,12 @@ focu:coveredIn
   rdfs:domain focu:topic;
   rdfs:range vivo:Course.
 
+focu:history
+  a rdfs:Property;
+  rdfs:label "completed course history"@en;
+  rdfs:comment "Links a completed course to it's academic term history(to highlight when it was taken)."@en;
+  rdfs:domain focu:completedCourse;
+  rdfs:range vivo:AcademicTerm.
+
 
 # Data
