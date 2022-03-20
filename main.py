@@ -6,6 +6,10 @@ from rdflib import Graph
 
 from __init__ import ROOT_DIR
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 if __name__ == '__main__':
     TTL_pattern = "*.ttl"
     GET_RDF_pattern = "*getRDF.py"
@@ -25,5 +29,8 @@ if __name__ == '__main__':
                 pathname = os.path.join(path, name)
                 g.parse(pathname)
 
-    database_pathname = os.path.join(ROOT_DIR, 'database.ttl')
-    g.serialize(database_pathname, format='nt')
+    database_ttl = os.path.join(ROOT_DIR, 'database.ttl')
+    g.serialize(database_ttl, format='ttl')
+
+    database_ttl = os.path.join(ROOT_DIR, 'database.nt')
+    g.serialize(database_ttl, format='nt')
