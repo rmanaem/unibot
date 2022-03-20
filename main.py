@@ -35,9 +35,6 @@ def main():
         trimmed = re.sub("[.,?!]", "", user_input)
         courseName = re.split("\s", trimmed)[3]
         courseNumber = int(re.split("\s", trimmed)[4])
-        print(courseName)
-        print(courseNumber)
-        print(type(courseNumber))
         qres1 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -56,7 +53,6 @@ def main():
     		    ?x vivo:shortDescription ?courseDesc.
             }}
         """
-        print(qres1)
         executeQuery(qres1)
 
     #-----------------------------------competency q2-------------------------------------------------
@@ -90,8 +86,11 @@ def main():
     # Which courses at [UNIVERSITY] teaches [TOPIC]
     elif re.search("^Which courses at.", user_input):
         trimmed = re.sub("[.,?!]", "", user_input)
-        university = re.split("\s", trimmed)[3]
-        topic = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
+        if re.search("Which courses at (.*) teaches", trimmed):
+            university = re.search("Which courses at (.*) teaches", trimmed).group(1)
+        if re.search("teaches (.*)", trimmed):
+            topic = re.search("teaches (.*)", trimmed).group(1)
+
         qres3 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -166,7 +165,9 @@ def main():
     # Is [COURSE NAME][COURSE NUMBER] offered by [UNIVERSITY]
     elif re.search("^Is.*offered by.", user_input): # Need to better differentiate from Q7 below
         trimmed = re.sub("[.,?!]", "", user_input)
-        university = re.split("\s",trimmed)[len(re.split("\s",trimmed)) - 1]
+        if re.search("offered by (.*)", trimmed):
+            university = re.search("offered by (.*)", trimmed).group(1)
+
         courseName = re.split("\s",trimmed)[1]
         courseNumber = int(re.split("\s",trimmed)[2])
         qres6 = f"""
@@ -195,7 +196,9 @@ def main():
         trimmed = re.sub("[.,?!]", "", user_input)
         givenName = re.split("\s", trimmed)[1]
         familyName = re.split("\s", trimmed)[2]
-        university = re.split("\s", trimmed)[len(re.split("\s", trimmed)) - 1]
+        if re.search("enrolled at (.*)", trimmed):
+            university = re.search("enrolled at (.*)", trimmed).group(1)
+
         qres7 = f"""
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -303,6 +306,7 @@ def main():
 
 def executeQuery(query):
     #send post request to fuseki server to access dataset : Project1
+    print(query)
     response = requests.post('http://localhost:3030/Project1/sparql',
                              data={'query': query})
     res = response.json()
