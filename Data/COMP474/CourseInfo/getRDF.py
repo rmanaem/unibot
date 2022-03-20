@@ -7,8 +7,10 @@ from __init__ import ROOT_DIR
 
 if __name__ == '__main__':
     data_pathname = os.path.join(ROOT_DIR, 'Data')
-    catalog_pathname = os.path.join(data_pathname, 'CourseInfo', 'course_catalog.csv')
-    course_description_pathname = os.path.join(data_pathname, 'CourseInfo', 'course_description.csv')
+    catalog_pathname = os.path.join(
+        data_pathname, 'CourseInfo', 'course_catalog.csv')
+    course_description_pathname = os.path.join(
+        data_pathname, 'CourseInfo', 'course_description.csv')
 
     course_data = pd.read_csv(catalog_pathname,
                               delimiter=',',
@@ -37,13 +39,19 @@ if __name__ == '__main__':
 
     # Get Concordia courses' information
     for index, row in df.iterrows():
-        uri = URIRef(FOCUDATA + str(row['Course ID']))
-        g.add((uri, VIVO.Identification, Literal(row['Course ID'], datatype=XSD.integer)))
-        g.add((uri, VIVO.hasSubjectArea, Literal(row['Subject'], datatype=XSD.string)))
-        g.add((uri, VIVO.Catalog, Literal(row['Catalog'], datatype=XSD.integer)))
-        g.add((uri, VIVO.Title, Literal(row['Long Title'], datatype=XSD.string)))
-        g.add((uri, VIVO.CourseCredits, Literal(row['Class Units'], datatype=XSD.integer)))
-        g.add((uri, VIVO.shortDescription, Literal(row['Descr'], datatype=XSD.string)))
+        uri = URIRef(FOCUDATA + "courseID" + "_" + str(row['Course ID']))
+        g.add((uri, VIVO.Identification, Literal(
+            row['Course ID'], datatype=XSD.integer)))
+        g.add((uri, VIVO.hasSubjectArea, Literal(
+            row['Subject'], datatype=XSD.string)))
+        g.add((uri, VIVO.Catalog, Literal(
+            row['Catalog'], datatype=XSD.integer)))
+        g.add((uri, VIVO.Title, Literal(
+            row['Long Title'], datatype=XSD.string)))
+        g.add((uri, VIVO.CourseCredits, Literal(
+            row['Class Units'], datatype=XSD.integer)))
+        g.add((uri, VIVO.shortDescription, Literal(
+            row['Descr'], datatype=XSD.string)))
 
     # add outline and seeAlso to comp474
     comp474_uri = URIRef(FOCUDATA + str(5484))
@@ -52,4 +60,5 @@ if __name__ == '__main__':
     g.add((comp474_uri, RDFS.seeAlso,
            URIRef('https://aits.encs.concordia.ca/aits/public/top/courses/20194/05/COMP474.html')))
 
-    g.serialize(os.path.join(data_pathname, 'CourseInfo', 'CourseInfo.ttl'), format='turtle')
+    g.serialize(os.path.join(data_pathname, 'CourseInfo',
+                'CourseInfo.ttl'), format='turtle')
