@@ -1,54 +1,8 @@
 @prefix focu: <http://focu.io/schema#> .
 @prefix focudata: <http://focu.io/data#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-focu:completedCourse a rdfs:Class ;
-    rdfs:label "completed course"@en ;
-    rdfs:comment "A course completed by a student" .
-
-focu:expertise a rdfs:Class ;
-    rdfs:label "Expertise"@en ;
-    rdfs:comment "is the set of competencies that a student is expert at (iff student passed course with better than F)" .
-
-focu:lecture a rdfs:Class ;
-    rdfs:label "Lecture"@en ;
-    rdfs:comment "An educational talk to students in a university."@en .
-
-focu:otherMaterial a rdfs:Class ;
-    rdfs:label "Other Material"@en ;
-    rdfs:comment "Includes videos and images usually included in lecture slides" .
-
-focu:outline a rdfs:Class ;
-    rdfs:label "Outline"@en ;
-    rdfs:comment "A document used to communicate important information regarding a course."@en .
-
-focu:reading a rdfs:Class ;
-    rdfs:label "reading"@en ;
-    rdfs:comment "an instance of readings assigned by the professor specific to a lecture" .
-
-focu:readings a rdfs:Class ;
-    rdfs:label "readings"@en ;
-    rdfs:comment "A list of readings assigned by the professor specific to a lecture" .
-
-focu:required a rdfs:Class ;
-    rdfs:label "required"@en ;
-    rdfs:comment "A classification of a reading" .
-
-focu:slide a rdfs:Class ;
-    rdfs:label "Slide" ;
-    rdfs:comment "Slides are offered by the instructor during a lecture" .
-
-focu:supplemental a rdfs:Class ;
-    rdfs:label "supplemental"@en ;
-    rdfs:comment "A classification of a reading" .
-
-focu:worksheet a rdfs:Class ;
-    rdfs:label "Worksheet"@en ;
-    rdfs:comment "A worksheet of problems to practice offered during each lecture" .
 
 focudata:Readings01 a focu:readings ;
     vivo:contains focudata:Reading01 ;
@@ -2364,42 +2318,6 @@ focudata:otherMaterial07 a focu:otherMaterial ;
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/OtherMaterial/Images/slides07/page9_image1.png>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/OtherMaterial/Images/slides07/page9_image2.png> ;
     rdfs:subClassOf focudata:Lecture07 .
-
-focu:StudentAt a rdf:Property ;
-    rdfs:label "student at"@en ;
-    rdfs:comment "links the student to the university at which he/she is enrolled" ;
-    rdfs:domain vivo:Student ;
-    rdfs:range vivo:University .
-
-focu:hasContent a rdf:Property ;
-    rdfs:label "has content"@en ;
-    rdfs:comment "Link between course and its contents" ;
-    rdfs:domain vivo:Course ;
-    rdfs:range focu:Lecture .
-
-focu:hasExpertise a rdf:Property ;
-    rdfs:label "has expertise"@en ;
-    rdfs:comment "links the student to the set of expertise that he/she acquires" ;
-    rdfs:domain vivo:Student ;
-    rdfs:range focu:expertise .
-
-focu:hasHighestGrade a rdf:Property ;
-    rdfs:label "has highest grade"@en ;
-    rdfs:comment "highest grade by student at a course" ;
-    rdfs:domain focu:completedCourse ;
-    rdfs:range xsd:string .
-
-focu:hasTaken a rdf:Property ;
-    rdfs:label "has taken"@en ;
-    rdfs:comment "links the student to the classes that he/she takes" ;
-    rdfs:domain vivo:Student ;
-    rdfs:range focu:completedCourse .
-
-focu:refersTo a rdf:Property ;
-    rdfs:label "refers to"@en ;
-    rdfs:comment "links a blank node to a course. The blank node's domain is student and range is course" ;
-    rdfs:domain focu:completedCourse ;
-    rdfs:range vivo:Course .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/OtherMaterial/Images/slides01/page10_image1.png> a vivo:Image .
 
