@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 g.add((otherMaterialURI, VIVO.contains, imageURI))
                 g.add((imageURI, RDF.type, VIVO.Image))
 
-            extractVideos(reader, courseName, lectureName, lectureNum)
+            extractVideos(reader, courseName, lectureNum)
             folder = glob.glob(
                 os.path.join(ROOT_DIR, 'Data', 'Lectures', 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
             for video in folder:
