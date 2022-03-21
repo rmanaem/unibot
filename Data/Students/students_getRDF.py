@@ -68,15 +68,19 @@ if __name__ == '__main__':
             course_index = np.random.randint(len(courses))
             grade_index = np.random.randint(len(grades))
             term_index = np.random.randint(len(terms))
-            course_uri = URIRef(FOCUDATA + 'courseID' + '_' + courses[course_index])
-            completed_course_uri = URIRef(FOCUDATA + str(row['ID']) + '_' + courses[course_index])
-            academic_term_uri = URIRef(FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
+            course_uri = URIRef(FOCUDATA + courses[course_index])
+            completed_course_uri = URIRef(
+                FOCUDATA + str(row['ID']) + '_' + courses[course_index])
+            academic_term_uri = URIRef(
+                FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
 
             g.add((completed_course_uri, RDF.type, FOCU.completedCourse))
             g.add((completed_course_uri, FOCU.refersTo, course_uri))
-            g.add((completed_course_uri, FOCU.hasHighestGrade, Literal(grades[grade_index])))
+            g.add((completed_course_uri, FOCU.hasHighestGrade,
+                  Literal(grades[grade_index])))
             g.add((academic_term_uri, RDF.type, VIVO.AcademicTerm))
-            g.add((academic_term_uri, VIVO.contains, Literal(terms[term_index])))
+            g.add((academic_term_uri, VIVO.contains,
+                  Literal(terms[term_index])))
 
             # Cases where student retakes a course
             if index % 73 == 0 and i % 2 == 1:
@@ -87,4 +91,5 @@ if __name__ == '__main__':
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
-    g.serialize(os.path.join(students_pathname, 'Students.ttl'), format='turtle')
+    g.serialize(os.path.join(students_pathname,
+                'Students.ttl'), format='turtle')
