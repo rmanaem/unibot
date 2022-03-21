@@ -35,7 +35,7 @@ def extractImages(filepath, courseName):
                 image = Image.open(io.BytesIO(image_bytes))
 
                 lectureName = Path(filepath).stem
-                images0XDir = os.path.join(ROOT_DIR, 'Lectures', courseName, 'OtherMaterial', 'Images', lectureName)
+                images0XDir = os.path.join(ROOT_DIR, 'Data', 'Lectures', courseName, 'OtherMaterial', 'Images', lectureName)
 
                 # create nested folder if not exists
                 Path(images0XDir).mkdir(parents=True, exist_ok=True)
