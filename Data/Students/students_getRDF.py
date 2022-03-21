@@ -11,9 +11,9 @@ if __name__ == '__main__':
     students_pathname = os.path.join(ROOT_DIR, 'Data', 'Students')
     first_pathname = os.path.join(students_pathname, 'first.txt')
     last_pathname = os.path.join(students_pathname, 'last.txt')
-    np.random.seed(0)
+    np.random.seed(77)
     nb_students = 900
-    nb_courses = 3
+    nb_courses = 20
 
     # Generate the information for students
     first = pd.read_csv(first_pathname, sep="\n").sample(
@@ -32,6 +32,8 @@ if __name__ == '__main__':
              'FALL-2020', 'WINTER-2021', 'SUMMER-1-2021', 'SUMMER-2-2021', 'WINTER-2022']
     df = pd.DataFrame({'Firstname': first, 'Lastname': last,
                        'ID': ids, 'University': 'Concordia_University'})
+    # Courses with topics, hard coded in phase 1
+    topic_courses = ["courseID_5484", "courseID_40353"]
 
     FOCU = Namespace("http://focu.io/schema#")
     FOCUDATA = Namespace("http://focu.io/data#")
@@ -90,6 +92,16 @@ if __name__ == '__main__':
 
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
+
+            if courses[course_index] in topic_courses:
+                print("Yes")
+                topicTTL = os.path.join(
+                    ROOT_DIR, 'Data', 'Topics', 'Topics.ttl')
+                tg = Graph().parse(topicTTL)
+                topics = []
+                for s, p, o in tg:
+                    if p is FOCU.coveredIn and o is course_uri:
+                        print("Yass")
 
     g.serialize(os.path.join(students_pathname,
                 'Students.ttl'), format='turtle')
