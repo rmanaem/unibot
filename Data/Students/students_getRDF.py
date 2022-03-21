@@ -33,7 +33,7 @@ if __name__ == '__main__':
     df = pd.DataFrame({'Firstname': first, 'Lastname': last,
                        'ID': ids, 'University': 'Concordia_University'})
     # Courses with topics, hard coded in phase 1
-    topic_courses = ["courseID_5484", "courseID_40353"]
+    topic_courses = ["courseID_005484", "courseID_040353 "]
 
     FOCU = Namespace("http://focu.io/schema#")
     FOCUDATA = Namespace("http://focu.io/data#")
