@@ -52,7 +52,6 @@ if __name__ == '__main__':
     g.bind("focudata", FOCUDATA)
     g.bind('vivo', VIVO)
 
-    # TODO FOCU.hasExpertise to be implemented
     for index, row in df.iterrows():
         student_uri = URIRef(FOCUDATA + 'studentID_' + str(row['ID']))
         university_uri = URIRef(DBR + row['University'])
@@ -93,15 +92,16 @@ if __name__ == '__main__':
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
+            # Adding triples for focu:hasExpertise
+            # Hard coded for phase 1
             if courses[course_index] in topic_courses:
-                print("Yes")
                 topicTTL = os.path.join(
                     ROOT_DIR, 'Data', 'Topics', 'Topics.ttl')
                 tg = Graph().parse(topicTTL)
-                topics = []
                 for s, p, o in tg:
-                    if p is FOCU.coveredIn and o is course_uri:
-                        print("Yass")
+                    # Add the topic as the expertise if the student has a passing grade
+                    if p == FOCU.coveredIn and o == course_uri and grades[grade_index] != 'F':
+                        g.add((student_uri, FOCU.hasExpertise, s))
 
     g.serialize(os.path.join(students_pathname,
                 'Students.ttl'), format='turtle')
