@@ -12,8 +12,8 @@ if __name__ == '__main__':
     first_pathname = os.path.join(students_pathname, 'first.txt')
     last_pathname = os.path.join(students_pathname, 'last.txt')
     np.random.seed(77)
-    nb_students = 900
-    nb_courses = 20
+    nb_students = 997
+    nb_courses = 40
 
     # Generate the information for students
     first = pd.read_csv(first_pathname, sep="\n").sample(
