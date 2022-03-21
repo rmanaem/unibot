@@ -78,7 +78,7 @@ def getCourseId(csvFile, courseName):
     :param csvFile: csv
     :return: int
     """
-    df = pd.read_csv(csvFile, delimiter=',', encoding='unicode_escape')
+    df = pd.read_csv(csvFile, delimiter=',', encoding='unicode_escape', dtype={'Course ID': object})
     nameArr = re.split(r'(\d+)', courseName)[:2]
     return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID'].values[0]
 

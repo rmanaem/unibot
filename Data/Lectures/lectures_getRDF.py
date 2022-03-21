@@ -28,6 +28,7 @@ if __name__ == '__main__':
         FOCUDATA = Namespace("http://focu.io/data#")
         VIVO = Namespace("http://vivoweb.org/ontology/core#")
         VCARD = Namespace("http://www.w3.org/2006/vcard/ns#")
+        BIBO = Namespace('http://purl.org/ontology/bibo/')
 
         g.bind("rdfs", RDFS)
         g.bind("rdf", RDF)
@@ -37,6 +38,7 @@ if __name__ == '__main__':
         g.bind("focudata", FOCUDATA)
         g.bind('vivo', VIVO)
         g.bind('vcard', VCARD)
+        g.bind('bibo', BIBO)
 
         print(courseName, '\n\n')
         courseNamePath = os.path.join(lecturesParentDir, courseName)
@@ -61,6 +63,7 @@ if __name__ == '__main__':
                     print('Supplemental readings', supplemental, '\n\n')
 
                 lectureURI = URIRef(FOCUDATA + courseID + '_Lecture' + str("%02d" % lectureNum))
+                g.add((lectureURI, BIBO.number, Literal(lectureNum, datatype=XSD.integer)))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
 
                 slideURI = URIRef('file///' + os.path.join(courseNamePath, 'Slides',

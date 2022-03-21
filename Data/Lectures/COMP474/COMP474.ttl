@@ -1,38 +1,40 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix focu: <http://focu.io/schema#> .
 @prefix focudata: <http://focu.io/data#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-focudata:5484_Readings01 a focu:readings ;
-    vivo:contains focudata:5484_Reading01 ;
-    rdfs:subClassOf focudata:5484_Lecture01 .
+focudata:005484_Readings01 a focu:readings ;
+    vivo:contains focudata:005484_Reading01 ;
+    rdfs:subClassOf focudata:005484_Lecture01 .
 
-focudata:5484_Readings02 a focu:readings ;
-    vivo:contains focudata:5484_Reading02 ;
-    rdfs:subClassOf focudata:5484_Lecture02 .
+focudata:005484_Readings02 a focu:readings ;
+    vivo:contains focudata:005484_Reading02 ;
+    rdfs:subClassOf focudata:005484_Lecture02 .
 
-focudata:5484_Readings03 a focu:readings ;
-    vivo:contains focudata:5484_Reading03 ;
-    rdfs:subClassOf focudata:5484_Lecture03 .
+focudata:005484_Readings03 a focu:readings ;
+    vivo:contains focudata:005484_Reading03 ;
+    rdfs:subClassOf focudata:005484_Lecture03 .
 
-focudata:5484_Readings04 a focu:readings ;
-    vivo:contains focudata:5484_Reading04 ;
-    rdfs:subClassOf focudata:5484_Lecture04 .
+focudata:005484_Readings04 a focu:readings ;
+    vivo:contains focudata:005484_Reading04 ;
+    rdfs:subClassOf focudata:005484_Lecture04 .
 
-focudata:5484_Readings05 a focu:readings ;
-    vivo:contains focudata:5484_Reading05 ;
-    rdfs:subClassOf focudata:5484_Lecture05 .
+focudata:005484_Readings05 a focu:readings ;
+    vivo:contains focudata:005484_Reading05 ;
+    rdfs:subClassOf focudata:005484_Lecture05 .
 
-focudata:5484_Readings06 a focu:readings ;
-    vivo:contains focudata:5484_Reading06 ;
-    rdfs:subClassOf focudata:5484_Lecture06 .
+focudata:005484_Readings06 a focu:readings ;
+    vivo:contains focudata:005484_Reading06 ;
+    rdfs:subClassOf focudata:005484_Lecture06 .
 
-focudata:5484_Readings07 a focu:readings ;
-    vivo:contains focudata:5484_Reading07 ;
-    rdfs:subClassOf focudata:5484_Lecture07 .
+focudata:005484_Readings07 a focu:readings ;
+    vivo:contains focudata:005484_Reading07 ;
+    rdfs:subClassOf focudata:005484_Lecture07 .
 
-focudata:5484_otherMaterial01 a focu:otherMaterial ;
+focudata:005484_otherMaterial01 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image2.jpeg>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page11_image1.png>,
@@ -220,9 +222,9 @@ focudata:5484_otherMaterial01 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page7_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page8_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page9_image1.png> ;
-    rdfs:subClassOf focudata:5484_Lecture01 .
+    rdfs:subClassOf focudata:005484_Lecture01 .
 
-focudata:5484_otherMaterial02 a focu:otherMaterial ;
+focudata:005484_otherMaterial02 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides02/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides02/page11_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides02/page11_image2.jpeg>,
@@ -737,9 +739,9 @@ focudata:5484_otherMaterial02 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides02/page9_image7.jpeg>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides02/Apple_Knowledge_Navigator_Video_(1987).3gpp>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides02/Graph_databases_The_best_kept_secret_for_effective_AI.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture02 .
+    rdfs:subClassOf focudata:005484_Lecture02 .
 
-focudata:5484_otherMaterial03 a focu:otherMaterial ;
+focudata:005484_otherMaterial03 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides03/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides03/page10_image10.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides03/page10_image11.png>,
@@ -1038,9 +1040,9 @@ focudata:5484_otherMaterial03 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides03/page8_image9.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides03/page9_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides03/Tim_Berners-Lee_The_next_Web_of_open_linked_data.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture03 .
+    rdfs:subClassOf focudata:005484_Lecture03 .
 
-focudata:5484_otherMaterial04 a focu:otherMaterial ;
+focudata:005484_otherMaterial04 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides04/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides04/page10_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides04/page10_image3.png>,
@@ -1727,9 +1729,9 @@ focudata:5484_otherMaterial04 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides04/page9_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides04/page9_image3.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides04/AWS_reInvent_2017_-_Amazon_Neptune_Fast_Reliable_Graph_Database_Built_for_the_Cloud.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture04 .
+    rdfs:subClassOf focudata:005484_Lecture04 .
 
-focudata:5484_otherMaterial05 a focu:otherMaterial ;
+focudata:005484_otherMaterial05 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides05/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides05/page10_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides05/page10_image3.png>,
@@ -2126,9 +2128,9 @@ focudata:5484_otherMaterial05 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides05/page9_image3.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides05/Introducing_the_Knowledge_Graph.3gpp>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides05/Tim_Berners-Lee_The_year_open_data_went_worldwide.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture05 .
+    rdfs:subClassOf focudata:005484_Lecture05 .
 
-focudata:5484_otherMaterial06 a focu:otherMaterial ;
+focudata:005484_otherMaterial06 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides06/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides06/page10_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides06/page11_image1.png>,
@@ -2206,9 +2208,9 @@ focudata:5484_otherMaterial06 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides06/page9_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides06/page9_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides06/Why_Netflix’s_Algorithm_Is_So_Binge-Worthy__Mach__NBC_News.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture06 .
+    rdfs:subClassOf focudata:005484_Lecture06 .
 
-focudata:5484_otherMaterial07 a focu:otherMaterial ;
+focudata:005484_otherMaterial07 a focu:otherMaterial ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides07/page10_image1.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides07/page10_image2.png>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides07/page11_image1.png>,
@@ -2328,7 +2330,7 @@ focudata:5484_otherMaterial07 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides07/Analyzing_US_National_Science_Foundation_research_proposals_using_Lingo4G_text_clustering_engine.3gpp>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides07/Netflix_Research_Machine_Learning.3gpp>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides07/k-means_clustering.3gpp> ;
-    rdfs:subClassOf focudata:5484_Lecture07 .
+    rdfs:subClassOf focudata:005484_Lecture07 .
 
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image1.png> a vivo:Image .
 
@@ -6885,48 +6887,48 @@ focudata:5484_otherMaterial07 a focu:otherMaterial ;
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides07/k-means_clustering.3gpp> a vivo:Video .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture01 .
+    rdfs:subClassOf focudata:005484_Lecture01 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture02 .
+    rdfs:subClassOf focudata:005484_Lecture02 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture03 .
+    rdfs:subClassOf focudata:005484_Lecture03 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture04 .
+    rdfs:subClassOf focudata:005484_Lecture04 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture05 .
+    rdfs:subClassOf focudata:005484_Lecture05 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture06 .
+    rdfs:subClassOf focudata:005484_Lecture06 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:5484_Lecture07 .
+    rdfs:subClassOf focudata:005484_Lecture07 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture01 .
+    rdfs:subClassOf focudata:005484_Lecture01 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture02 .
+    rdfs:subClassOf focudata:005484_Lecture02 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture03 .
+    rdfs:subClassOf focudata:005484_Lecture03 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture04 .
+    rdfs:subClassOf focudata:005484_Lecture04 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture05 .
+    rdfs:subClassOf focudata:005484_Lecture05 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture06 .
+    rdfs:subClassOf focudata:005484_Lecture06 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:5484_Lecture07 .
+    rdfs:subClassOf focudata:005484_Lecture07 .
 
-focudata:5484_Reading01 a focu:reading ;
+focudata:005484_Reading01 a focu:reading ;
     vivo:Title "Eliza",
         "IBMWatson",
         "IntroductiontoArIntelligence" ;
@@ -6935,71 +6937,78 @@ focudata:5484_Reading01 a focu:reading ;
         <https://en.wikipedia.org/wiki/Watson_(computer)>,
         <https://plato.stanford.edu/entries/arintelligence/> .
 
-focudata:5484_Reading02 a focu:reading ;
+focudata:005484_Reading02 a focu:reading ;
     vivo:Title "[Yu14,Chapters1,2](Introduction,RDF)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:5484_Reading03 a focu:reading ;
+focudata:005484_Reading03 a focu:reading ;
     vivo:Title "[Yu14,Chapter4](RDFS)",
         "[Yu14,Chapter7](FOAF)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:5484_Reading04 a focu:reading ;
+focudata:005484_Reading04 a focu:reading ;
     vivo:Title "[Yu14,Chapter6](SPARQL)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:5484_Reading05 a focu:reading ;
+focudata:005484_Reading05 a focu:reading ;
     vivo:Title "[Yu14,Chapter11.2](Facebook'sOpenGraphProtocol)",
         "[Yu14,Chapter9](LinkedOpenData)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:5484_Reading06 a focu:reading ;
+focudata:005484_Reading06 a focu:reading ;
     vivo:Title "[Ala09,Chapters2,3](Recommendations)",
         "[MRS08,Chapter8](Evaluation)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <http://informationretrieval.org>,
         <https://concordiauniversity.on.worldcat.org/oclc/314121652> .
 
-focudata:5484_Reading07 a focu:reading ;
+focudata:005484_Reading07 a focu:reading ;
     vivo:Title "[MG17,Chapters2,3,5](kNN,k-Means,Evaluation)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/960211579> .
 
-focudata:5484_Lecture01 a focu:lecture ;
+focudata:005484_Lecture01 a focu:lecture ;
+    bibo:number 1 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture02 a focu:lecture ;
+focudata:005484_Lecture02 a focu:lecture ;
+    bibo:number 2 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture03 a focu:lecture ;
+focudata:005484_Lecture03 a focu:lecture ;
+    bibo:number 3 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture04 a focu:lecture ;
+focudata:005484_Lecture04 a focu:lecture ;
+    bibo:number 4 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture05 a focu:lecture ;
+focudata:005484_Lecture05 a focu:lecture ;
+    bibo:number 5 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture06 a focu:lecture ;
+focudata:005484_Lecture06 a focu:lecture ;
+    bibo:number 6 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf>,
         focu:otherMaterial .
 
-focudata:5484_Lecture07 a focu:lecture ;
+focudata:005484_Lecture07 a focu:lecture ;
+    bibo:number 7 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf>,
         focu:otherMaterial .

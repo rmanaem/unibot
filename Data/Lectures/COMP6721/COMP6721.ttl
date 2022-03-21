@@ -1,75 +1,84 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix focu: <http://focu.io/schema#> .
 @prefix focudata: <http://focu.io/data#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture01 .
+    rdfs:subClassOf focudata:040353_Lecture01 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture02 .
+    rdfs:subClassOf focudata:040353_Lecture02 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture03 .
+    rdfs:subClassOf focudata:040353_Lecture03 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture04 .
+    rdfs:subClassOf focudata:040353_Lecture04 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture05 .
+    rdfs:subClassOf focudata:040353_Lecture05 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture06 .
+    rdfs:subClassOf focudata:040353_Lecture06 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf> a focu:slide ;
-    rdfs:subClassOf focudata:40353_Lecture07 .
+    rdfs:subClassOf focudata:040353_Lecture07 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture01 .
+    rdfs:subClassOf focudata:040353_Lecture01 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture02 .
+    rdfs:subClassOf focudata:040353_Lecture02 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture03 .
+    rdfs:subClassOf focudata:040353_Lecture03 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture04 .
+    rdfs:subClassOf focudata:040353_Lecture04 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture05 .
+    rdfs:subClassOf focudata:040353_Lecture05 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture06 .
+    rdfs:subClassOf focudata:040353_Lecture06 .
 
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> a focu:worksheet ;
-    rdfs:subClassOf focudata:40353_Lecture07 .
+    rdfs:subClassOf focudata:040353_Lecture07 .
 
-focudata:40353_Lecture01 a focu:lecture ;
+focudata:040353_Lecture01 a focu:lecture ;
+    bibo:number 1 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> .
 
-focudata:40353_Lecture02 a focu:lecture ;
+focudata:040353_Lecture02 a focu:lecture ;
+    bibo:number 2 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> .
 
-focudata:40353_Lecture03 a focu:lecture ;
+focudata:040353_Lecture03 a focu:lecture ;
+    bibo:number 3 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> .
 
-focudata:40353_Lecture04 a focu:lecture ;
+focudata:040353_Lecture04 a focu:lecture ;
+    bibo:number 4 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> .
 
-focudata:40353_Lecture05 a focu:lecture ;
+focudata:040353_Lecture05 a focu:lecture ;
+    bibo:number 5 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> .
 
-focudata:40353_Lecture06 a focu:lecture ;
+focudata:040353_Lecture06 a focu:lecture ;
+    bibo:number 6 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> .
 
-focudata:40353_Lecture07 a focu:lecture ;
+focudata:040353_Lecture07 a focu:lecture ;
+    bibo:number 7 ;
     vivo:contains <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf>,
         <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> .
 
