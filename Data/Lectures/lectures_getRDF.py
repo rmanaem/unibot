@@ -86,25 +86,40 @@ if __name__ == '__main__':
                 g.add((lectureURI, VIVO.contains, readingsURI))
                 g.add((readingsURI, RDF.type, FOCU.readings))
 
-                lastReading = None
-                for index, reading in enumerate(required):
-                    # the pattern in the reading array is: [title, URI, title, URI, ...]
-                    if index % 2 == 0:
-                        lastReading = reading
-                        continue
+                # [title, URI, title, URI, ...] becomes [(title, URI), (title, URI), (...]
+                it = iter(required)
+                required = list(zip(it, it))
 
-                    readingURI = URIRef(FOCUDATA + courseID + '_Reading' + str("%02d" % lectureNum))
+                it = iter(supplemental)
+                supplemental = list(zip(it, it))
+
+                for index, reading in enumerate(required):
+                    readingURI = URIRef(FOCUDATA + courseID + '_req_readings' + str("%02d" % lectureNum) + str("_reading%02d" % (index+1)))
 
                     g.add((readingsURI, VIVO.contains, readingURI))
 
                     g.add((readingURI, RDFS.subClassOf, FOCUDATA.required))
-                    g.add((readingURI, VCARD.URL, URIRef(reading)))
-                    g.add((readingURI, VIVO.Title, Literal(lastReading)))
+                    g.add((readingURI, VCARD.URL, URIRef(reading[1])))
+                    g.add((readingURI, VIVO.Title, Literal(reading[0])))
                     g.add((readingURI, RDF.type, FOCU.reading))
+
+                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.Integer)))
+
+                for index, reading in enumerate(supplemental):
+                    readingURI = URIRef(FOCUDATA + courseID + '_sup_readings' + str("%02d" % lectureNum) + str("_reading%02d" % (index+1)))
+
+                    g.add((readingsURI, VIVO.contains, readingURI))
+
+                    g.add((readingURI, RDFS.subClassOf, FOCUDATA.supplemental))
+                    g.add((readingURI, VCARD.URL, URIRef(reading[1])))
+                    g.add((readingURI, VIVO.Title, Literal(reading[0])))
+                    g.add((readingURI, RDF.type, FOCU.reading))
+
+                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.Integer)))
 
                 if courseName != 'COMP6721':
                     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
-                    g.add((lectureURI, VIVO.contains, FOCU.otherMaterial))
+                    g.add((lectureURI, VIVO.contains, FOCU.otherMaterialURI))
                     g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
                     g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
 

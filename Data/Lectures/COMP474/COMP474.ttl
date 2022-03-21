@@ -6908,123 +6908,297 @@ focudata:courseID_005484 focu:hasContent focudata:005484_Lecture01,
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf> a focu:worksheet ;
     rdfs:subClassOf focudata:005484_Lecture07 .
 
-focudata:005484_Reading01 a focu:reading ;
-    vivo:Title "Eliza",
-        "IBMWatson",
-        "IntroductiontoArIntelligence" ;
-    rdfs:subClassOf focudata:required ;
-    vcard:URL <https://en.wikipedia.org/wiki/ELIZA>,
-        <https://en.wikipedia.org/wiki/Watson_(computer)>,
-        <https://plato.stanford.edu/entries/arintelligence/> .
+focudata:005484_Readings01 a focu:readings ;
+    vivo:contains focudata:005484_req_readings01_reading01,
+        focudata:005484_req_readings01_reading02,
+        focudata:005484_req_readings01_reading03,
+        focudata:005484_sup_readings01_reading01,
+        focudata:005484_sup_readings01_reading02,
+        focudata:005484_sup_readings01_reading03 ;
+    rdfs:subClassOf focudata:005484_Lecture01 .
 
-focudata:005484_Reading02 a focu:reading ;
+focudata:005484_Readings02 a focu:readings ;
+    vivo:contains focudata:005484_req_readings02_reading01,
+        focudata:005484_sup_readings02_reading01,
+        focudata:005484_sup_readings02_reading02,
+        focudata:005484_sup_readings02_reading03 ;
+    rdfs:subClassOf focudata:005484_Lecture02 .
+
+focudata:005484_Readings03 a focu:readings ;
+    vivo:contains focudata:005484_req_readings03_reading01,
+        focudata:005484_req_readings03_reading02,
+        focudata:005484_sup_readings03_reading01,
+        focudata:005484_sup_readings03_reading02,
+        focudata:005484_sup_readings03_reading03 ;
+    rdfs:subClassOf focudata:005484_Lecture03 .
+
+focudata:005484_Readings04 a focu:readings ;
+    vivo:contains focudata:005484_req_readings04_reading01,
+        focudata:005484_sup_readings04_reading01,
+        focudata:005484_sup_readings04_reading02,
+        focudata:005484_sup_readings04_reading03 ;
+    rdfs:subClassOf focudata:005484_Lecture04 .
+
+focudata:005484_Readings05 a focu:readings ;
+    vivo:contains focudata:005484_req_readings05_reading01,
+        focudata:005484_req_readings05_reading02,
+        focudata:005484_sup_readings05_reading01,
+        focudata:005484_sup_readings05_reading02,
+        focudata:005484_sup_readings05_reading03,
+        focudata:005484_sup_readings05_reading04,
+        focudata:005484_sup_readings05_reading05 ;
+    rdfs:subClassOf focudata:005484_Lecture05 .
+
+focudata:005484_Readings06 a focu:readings ;
+    vivo:contains focudata:005484_req_readings06_reading01,
+        focudata:005484_req_readings06_reading02,
+        focudata:005484_sup_readings06_reading01 ;
+    rdfs:subClassOf focudata:005484_Lecture06 .
+
+focudata:005484_Readings07 a focu:readings ;
+    vivo:contains focudata:005484_req_readings07_reading01,
+        focudata:005484_sup_readings07_reading01,
+        focudata:005484_sup_readings07_reading02 ;
+    rdfs:subClassOf focudata:005484_Lecture07 .
+
+focudata:005484_req_readings01_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "IntroductiontoArIntelligence" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <https://plato.stanford.edu/entries/arintelligence/> .
+
+focudata:005484_req_readings01_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "Eliza" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <https://en.wikipedia.org/wiki/ELIZA> .
+
+focudata:005484_req_readings01_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "IBMWatson" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <https://en.wikipedia.org/wiki/Watson_(computer)> .
+
+focudata:005484_req_readings02_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
     vivo:Title "[Yu14,Chapters1,2](Introduction,RDF)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:005484_Reading03 a focu:reading ;
-    vivo:Title "[Yu14,Chapter4](RDFS)",
-        "[Yu14,Chapter7](FOAF)" ;
+focudata:005484_req_readings03_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter4](RDFS)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:005484_Reading04 a focu:reading ;
+focudata:005484_req_readings03_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter7](FOAF)" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
+
+focudata:005484_req_readings04_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
     vivo:Title "[Yu14,Chapter6](SPARQL)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:005484_Reading05 a focu:reading ;
-    vivo:Title "[Yu14,Chapter11.2](Facebook'sOpenGraphProtocol)",
-        "[Yu14,Chapter9](LinkedOpenData)" ;
+focudata:005484_req_readings05_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter9](LinkedOpenData)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:005484_Reading06 a focu:reading ;
-    vivo:Title "[Ala09,Chapters2,3](Recommendations)",
-        "[MRS08,Chapter8](Evaluation)" ;
+focudata:005484_req_readings05_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter11.2](Facebook'sOpenGraphProtocol)" ;
     rdfs:subClassOf focudata:required ;
-    vcard:URL <http://informationretrieval.org>,
-        <https://concordiauniversity.on.worldcat.org/oclc/314121652> .
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
 
-focudata:005484_Reading07 a focu:reading ;
+focudata:005484_req_readings06_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[Ala09,Chapters2,3](Recommendations)" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/314121652> .
+
+focudata:005484_req_readings06_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[MRS08,Chapter8](Evaluation)" ;
+    rdfs:subClassOf focudata:required ;
+    vcard:URL <http://informationretrieval.org> .
+
+focudata:005484_req_readings07_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
     vivo:Title "[MG17,Chapters2,3,5](kNN,k-Means,Evaluation)" ;
     rdfs:subClassOf focudata:required ;
     vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/960211579> .
 
-focudata:005484_Readings01 a focu:readings ;
-    vivo:contains focudata:005484_Reading01 ;
-    rdfs:subClassOf focudata:005484_Lecture01 .
+focudata:005484_sup_readings01_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "155chatbotsinthisbrandnewlandscape.Wheredoesyourbot" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://venturebeat.com/2017/06/26/bot-analytics-platform-releases-new-chatbot-landscape/> .
 
-focudata:005484_Readings02 a focu:readings ;
-    vivo:contains focudata:005484_Reading02 ;
-    rdfs:subClassOf focudata:005484_Lecture02 .
+focudata:005484_sup_readings01_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "UltimateGuidetoLeveragingNLP&MachineLearningforyourChatbot" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://chatbotslife.com/ultimate-guide-to-leveraging-nlp-machine-learning-for-you-chatbot-531ff2dd870c> .
 
-focudata:005484_Readings03 a focu:readings ;
-    vivo:contains focudata:005484_Reading03 ;
-    rdfs:subClassOf focudata:005484_Lecture03 .
+focudata:005484_sup_readings01_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "TheAIBehindWatson" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <http://www.aaai.org/Magazine/Watson/watson.php> .
 
-focudata:005484_Readings04 a focu:readings ;
-    vivo:contains focudata:005484_Reading04 ;
-    rdfs:subClassOf focudata:005484_Lecture04 .
+focudata:005484_sup_readings02_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[Wor14](RDFPrimer)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <http://www.w3.org/TR/rdf11-primer/> .
 
-focudata:005484_Readings05 a focu:readings ;
-    vivo:contains focudata:005484_Reading05 ;
-    rdfs:subClassOf focudata:005484_Lecture05 .
+focudata:005484_sup_readings02_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[RN10,Chapter12](KnowledgeRepresentation)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/359890490> .
 
-focudata:005484_Readings06 a focu:readings ;
-    vivo:contains focudata:005484_Reading06 ;
-    rdfs:subClassOf focudata:005484_Lecture06 .
+focudata:005484_sup_readings02_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "Graphdatabases:ThebestkeptsecretforeffectiveAI" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://www.youtube.com/watch?v=2ZzGMzitNgo> .
 
-focudata:005484_Readings07 a focu:readings ;
-    vivo:contains focudata:005484_Reading07 ;
-    rdfs:subClassOf focudata:005484_Lecture07 .
+focudata:005484_sup_readings03_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[Wor14](RDFPrimer)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <http://www.w3.org/TR/rdf11-primer/> .
+
+focudata:005484_sup_readings03_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter10](Schema.org)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
+
+focudata:005484_sup_readings03_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "[WZRH14,Chapters2,4](RDF,FOAF)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/871683907> .
+
+focudata:005484_sup_readings04_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[DuC13](LearningSPARQL)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/853679890> .
+
+focudata:005484_sup_readings04_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[WZRH14,Chapter5](SPARQL)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/871683907> .
+
+focudata:005484_sup_readings04_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "SPARQL1.1Overview" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://www.w3.org/TR/sparql11-overview/> .
+
+focudata:005484_sup_readings05_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[HB11,WZRH14](BooksonLinkedData)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/704257552> .
+
+focudata:005484_sup_readings05_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter3.3](RDFa)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
+
+focudata:005484_sup_readings05_reading03 a focu:reading ;
+    bibo:number "2"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter8](DBpedia)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
+
+focudata:005484_sup_readings05_reading04 a focu:reading ;
+    bibo:number "3"^^xsd:Integer ;
+    vivo:Title "[Yu14,Chapter12](Wikidata)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/897466408> .
+
+focudata:005484_sup_readings05_reading05 a focu:reading ;
+    bibo:number "4"^^xsd:Integer ;
+    vivo:Title "[HHDF20](DBpediaReleaseCycle)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://link.springer.com/chapter/10.1007/978-3-030-59833-4_1> .
+
+focudata:005484_sup_readings06_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[MRS08,Chapter6](VectorSpaceModel,tf-idf)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <http://informationretrieval.org> .
+
+focudata:005484_sup_readings07_reading01 a focu:reading ;
+    bibo:number "0"^^xsd:Integer ;
+    vivo:Title "[PS12,Chapter7](MLTraining)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/801812987> .
+
+focudata:005484_sup_readings07_reading02 a focu:reading ;
+    bibo:number "1"^^xsd:Integer ;
+    vivo:Title "[PS12,Chapter8](TestingandEvaluation)" ;
+    rdfs:subClassOf focudata:supplemental ;
+    vcard:URL <https://concordiauniversity.on.worldcat.org/oclc/801812987> .
 
 focudata:005484_Lecture01 a focu:lecture ;
     bibo:number 1 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf>,
         focudata:005484_Readings01,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture02 a focu:lecture ;
     bibo:number 2 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf>,
         focudata:005484_Readings02,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture03 a focu:lecture ;
     bibo:number 3 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf>,
         focudata:005484_Readings03,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture04 a focu:lecture ;
     bibo:number 4 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf>,
         focudata:005484_Readings04,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture05 a focu:lecture ;
     bibo:number 5 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf>,
         focudata:005484_Readings05,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture06 a focu:lecture ;
     bibo:number 6 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf>,
         focudata:005484_Readings06,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
 focudata:005484_Lecture07 a focu:lecture ;
     bibo:number 7 ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf>,
         focudata:005484_Readings07,
-        focu:otherMaterial .
+        focu:otherMaterialURI .
 
