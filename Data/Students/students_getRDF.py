@@ -92,8 +92,7 @@ if __name__ == '__main__':
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
-            # Adding triples for focu:hasExpertise
-            # Hard coded for phase 1
+            # Add triples for focu:hasExpertise only for courses that have topics, hard coded for phase 1
             if courses[course_index] in topic_courses:
                 topicTTL = os.path.join(
                     ROOT_DIR, 'Data', 'Topics', 'Topics.ttl')
