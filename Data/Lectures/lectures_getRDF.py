@@ -69,18 +69,22 @@ if __name__ == '__main__':
                 g.add((courseURI, FOCU.hasContent, lectureURI))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
 
-                slideURI = URIRef('file///' + os.path.join(courseNamePath, 'Slides',
-                                                           'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+                slideURI = URIRef(os.path.join(courseNamePath, 'Slides',
+                                               'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
                 g.add((lectureURI, VIVO.contains, slideURI))
                 g.add((slideURI, RDF.type, FOCU.slide))
                 g.add((slideURI, RDFS.subClassOf, lectureURI))
 
-                worksheetURI = URIRef('file///' + os.path.join(courseNamePath, 'Worksheets',
-                                                               'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\',
-                                                                                                                   '/'))
+                worksheetURI = URIRef(os.path.join(courseNamePath, 'Worksheets',
+                                                   'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
                 g.add((lectureURI, VIVO.contains, worksheetURI))
                 g.add((worksheetURI, RDF.type, FOCU.worksheet))
                 g.add((worksheetURI, RDFS.subClassOf, lectureURI))
+
+                readingsURI = URIRef(FOCUDATA + courseID + '_Readings' + str("%02d" % lectureNum))
+                g.add((readingsURI, RDFS.subClassOf, lectureURI))
+                g.add((lectureURI, VIVO.contains, readingsURI))
+                g.add((readingsURI, RDF.type, FOCU.readings))
 
                 lastReading = None
                 for index, reading in enumerate(required):
@@ -89,12 +93,9 @@ if __name__ == '__main__':
                         lastReading = reading
                         continue
 
-                    readingsURI = URIRef(FOCUDATA + courseID + '_Readings' + str("%02d" % lectureNum))
                     readingURI = URIRef(FOCUDATA + courseID + '_Reading' + str("%02d" % lectureNum))
 
-                    g.add((readingsURI, RDFS.subClassOf, lectureURI))
                     g.add((readingsURI, VIVO.contains, readingURI))
-                    g.add((readingsURI, RDF.type, FOCU.readings))
 
                     g.add((readingURI, RDFS.subClassOf, FOCUDATA.required))
                     g.add((readingURI, VCARD.URL, URIRef(reading)))
@@ -103,8 +104,8 @@ if __name__ == '__main__':
 
                 if courseName != 'COMP6721':
                     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
-                    g.add((lectureURI, VIVO.contains, URIRef(FOCU.otherMaterial)))
-                    g.add((otherMaterialURI, RDF.type, URIRef(FOCU.otherMaterial)))
+                    g.add((lectureURI, VIVO.contains, FOCU.otherMaterial))
+                    g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
                     g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
 
                     extractImages(filepath, courseName)
