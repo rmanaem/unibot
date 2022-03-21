@@ -39,7 +39,7 @@ if __name__ == '__main__':
         "Q197536"
     ]
 
-    comp474_course_id = "courseID_5484"
+    comp474_course_id = "courseID_005484"
     comp474_outline_path = os.path.join(
         ROOT_DIR, "data", "Lectures", "COMP474", "CourseInfo", "Outline.pdf")
 
@@ -73,7 +73,7 @@ if __name__ == '__main__':
         "Q17084460"
     ]
 
-    comp6721_course_id = "courseID_40353"
+    comp6721_course_id = "courseID_040353"
     comp6721_outline_path = os.path.join(
         ROOT_DIR, "data", "Lectures", "COMP6721", "CourseInfo", "Outline.pdf")
 
@@ -117,4 +117,5 @@ if __name__ == '__main__':
         g.add((topic_uri, FOCU.coveredIn, course_uri))
         g.add((topic_uri, FOCU.source, outline_uri))
 
-    g.serialize(os.path.join(ROOT_DIR, 'Data', 'Topics', 'Topics.ttl'), format='turtle')
+    g.serialize(os.path.join(ROOT_DIR, 'Data', 'Topics',
+                'Topics.ttl'), format='turtle')
