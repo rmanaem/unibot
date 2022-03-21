@@ -126,8 +126,3 @@ focu:history
   rdfs:comment "Links a completed course to it's academic term history(to highlight when it was taken)."@en;
   rdfs:domain focu:completedCourse;
   rdfs:range vivo:AcademicTerm.
-
-#focudata
-
-
-#        same for soen342
