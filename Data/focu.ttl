@@ -75,7 +75,7 @@ focu:hasExpertise
   rdfs:label "has expertise"@en;
   rdfs:comment "links the student to the set of expertise that he/she acquires"@en;
   rdfs:domain vivo:Student;
-  rdfs:range focu:expertise.
+  rdfs:range focu:topic.
 
 focu:hasContent
   a rdf:Property;
