@@ -12,8 +12,9 @@ if __name__ == '__main__':
     catalog = os.path.join(courses, 'course_catalog.csv')
     course_description = os.path.join(courses, 'course_description.csv')
 
-    course_data = pd.read_csv(catalog, delimiter=',', encoding='unicode_escape')
-    course_description = pd.read_csv(course_description, delimiter=',', encoding='unicode_escape')
+    course_data = pd.read_csv(catalog, delimiter=',', encoding='unicode_escape', dtype={'Course ID': object})
+    course_description = pd.read_csv(course_description, delimiter=',', encoding='unicode_escape',
+                                     dtype={'Course ID': object})
 
     df = course_data.merge(course_description, how='left', on='Course ID')
 
@@ -43,6 +44,7 @@ if __name__ == '__main__':
         g.add((uri, VIVO.Catalog, Literal(row['Catalog'], datatype=XSD.integer)))
         g.add((uri, VIVO.Title, Literal(row['Long Title'], datatype=XSD.string)))
         g.add((uri, VIVO.CourseCredits, Literal(row['Class Units'], datatype=XSD.integer)))
-        g.add((uri, VIVO.shortDescription, Literal(row['Descr'], datatype=XSD.string)))
+        g.add((uri, VIVO.description, Literal(row['Descr'], datatype=XSD.string)))
+        g.add((uri, RDF.type, VIVO.Course))
 
     g.serialize(os.path.join(courses, 'Courses.ttl'), format='turtle')
