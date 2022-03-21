@@ -5,6 +5,14 @@
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+focudata:courseID_040353 focu:hasContent focudata:040353_Lecture01,
+        focudata:040353_Lecture02,
+        focudata:040353_Lecture03,
+        focudata:040353_Lecture04,
+        focudata:040353_Lecture05,
+        focudata:040353_Lecture06,
+        focudata:040353_Lecture07 .
+
 <file///C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf> a focu:slide ;
     rdfs:subClassOf focudata:040353_Lecture01 .
 

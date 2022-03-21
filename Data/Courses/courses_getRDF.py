@@ -47,4 +47,6 @@ if __name__ == '__main__':
         g.add((uri, VIVO.description, Literal(row['Descr'], datatype=XSD.string)))
         g.add((uri, RDF.type, VIVO.Course))
 
+        g.add((DBR.Concordia_University, VIVO.offers, uri))
+
     g.serialize(os.path.join(courses, 'Courses.ttl'), format='turtle')

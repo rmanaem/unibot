@@ -63,7 +63,10 @@ if __name__ == '__main__':
                     print('Supplemental readings', supplemental, '\n\n')
 
                 lectureURI = URIRef(FOCUDATA + courseID + '_Lecture' + str("%02d" % lectureNum))
+                courseURI = URIRef(FOCUDATA + 'courseID_' + courseID)
+
                 g.add((lectureURI, BIBO.number, Literal(lectureNum, datatype=XSD.integer)))
+                g.add((courseURI, FOCU.hasContent, lectureURI))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
 
                 slideURI = URIRef('file///' + os.path.join(courseNamePath, 'Slides',

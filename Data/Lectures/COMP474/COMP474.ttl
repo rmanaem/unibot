@@ -2332,6 +2332,14 @@ focudata:005484_otherMaterial07 a focu:otherMaterial ;
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Videos/slides07/k-means_clustering.3gpp> ;
     rdfs:subClassOf focudata:005484_Lecture07 .
 
+focudata:courseID_005484 focu:hasContent focudata:005484_Lecture01,
+        focudata:005484_Lecture02,
+        focudata:005484_Lecture03,
+        focudata:005484_Lecture04,
+        focudata:005484_Lecture05,
+        focudata:005484_Lecture06,
+        focudata:005484_Lecture07 .
+
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image1.png> a vivo:Image .
 
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image2.jpeg> a vivo:Image .
