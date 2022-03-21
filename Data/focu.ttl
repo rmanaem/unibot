@@ -44,11 +44,6 @@ focu:slide
   rdfs:label "Slide"@en;
   rdfs:comment "Slides are offered by the instructor during a lecture"@en.
 
-focu:expertise
-  a rdfs:Class;
-  rdfs:label "Expertise"@en;
-  rdfs:comment "is the set of competencies that a student is expert at (iff student passed course with better than F)"@en.
-
 focu:completedCourse
   a rdfs:Class;
   rdfs:label "completed course"@en;
