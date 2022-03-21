@@ -119,7 +119,7 @@ if __name__ == '__main__':
 
                 if courseName != 'COMP6721':
                     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
-                    g.add((lectureURI, VIVO.contains, FOCU.otherMaterialURI))
+                    g.add((lectureURI, VIVO.contains, otherMaterialURI))
                     g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
                     g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
 
