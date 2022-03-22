@@ -1,13 +1,13 @@
-"label","expertises"
-"State Space Search","http://focu.io/data#courseID_040353_topic_1"
-"Alpha-Beta Pruning","http://focu.io/data#courseID_040353_topic_2"
-"Artificial Neural Networks","http://focu.io/data#courseID_040353_topic_7"
-"K-Means Clustering","http://focu.io/data#courseID_040353_topic_6"
-"Naive Bayes Classifier","http://focu.io/data#courseID_040353_topic_3"
-"Convolutional Neural Networks","http://focu.io/data#courseID_040353_topic_12"
-"Decision Trees","http://focu.io/data#courseID_040353_topic_4"
-"Knowledge Graphs","http://focu.io/data#courseID_040353_topic_9"
-"Intelligent Agents","http://focu.io/data#courseID_040353_topic_10"
-"Deep Learning","http://focu.io/data#courseID_040353_topic_8"
-"NLP","http://focu.io/data#courseID_040353_topic_11"
-"Unsupervised learning","http://focu.io/data#courseID_040353_topic_5"
+ "label" , "expertises" ,
+ "State Space Search" , "http://focu.io/data#courseID_040353_topic_1" ,
+ "Alpha-Beta Pruning" , "http://focu.io/data#courseID_040353_topic_2" ,
+ "Artificial Neural Networks" , "http://focu.io/data#courseID_040353_topic_7" ,
+ "K-Means Clustering" , "http://focu.io/data#courseID_040353_topic_6" ,
+ "Naive Bayes Classifier" , "http://focu.io/data#courseID_040353_topic_3" ,
+ "Convolutional Neural Networks" , "http://focu.io/data#courseID_040353_topic_12" ,
+ "Decision Trees" , "http://focu.io/data#courseID_040353_topic_4" ,
+ "Knowledge Graphs" , "http://focu.io/data#courseID_040353_topic_9" ,
+ "Intelligent Agents" , "http://focu.io/data#courseID_040353_topic_10" ,
+ "Deep Learning" , "http://focu.io/data#courseID_040353_topic_8" ,
+ "NLP" , "http://focu.io/data#courseID_040353_topic_11" ,
+ "Unsupervised learning" , "http://focu.io/data#courseID_040353_topic_5" ,

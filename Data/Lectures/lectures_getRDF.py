@@ -50,14 +50,14 @@ if __name__ == '__main__':
         for index, filepath in enumerate(filepaths):
             with open(filepath, mode='rb') as f:
                 reader = PdfFileReader(f)
-                lectureNum = index + 1 if courseName == 'COMP6721' else extractFromPdf(reader, 'num')
-                lectureName = 'Lecture' if courseName == 'COMP6721' else extractFromPdf(reader, 'name')
+                lectureNum = index + 1 if courseName != 'COMP474' else extractFromPdf(reader, 'num')
+                lectureName = 'Lecture' + str(lectureNum) if courseName != 'COMP474' else extractFromPdf(reader, 'name')
                 courseID = str(getCourseId(course_catalog, courseName))
 
                 print(lectureNum, lectureName)
 
                 required, supplemental = [], []
-                if courseName != 'COMP6721':
+                if courseName == 'COMP474':
                     required, supplemental = extractFromPdf(reader, 'readings')
                     print('Required readings', required)
                     print('Supplemental readings', supplemental, '\n\n')
@@ -65,6 +65,7 @@ if __name__ == '__main__':
                 lectureURI = URIRef(FOCUDATA + courseID + '_Lecture' + str("%02d" % lectureNum))
                 courseURI = URIRef(FOCUDATA + 'courseID_' + courseID)
 
+                g.add((lectureURI, VIVO.Title, Literal(lectureName, datatype=XSD.string)))
                 g.add((lectureURI, BIBO.number, Literal(lectureNum, datatype=XSD.integer)))
                 g.add((courseURI, FOCU.hasContent, lectureURI))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
@@ -94,7 +95,8 @@ if __name__ == '__main__':
                 supplemental = list(zip(it, it))
 
                 for index, reading in enumerate(required):
-                    readingURI = URIRef(FOCUDATA + courseID + '_req_readings' + str("%02d" % lectureNum) + str("_reading%02d" % (index+1)))
+                    readingURI = URIRef(FOCUDATA + courseID + '_req_readings' + str("%02d" % lectureNum) + str(
+                        "_reading%02d" % (index + 1)))
 
                     g.add((readingsURI, VIVO.contains, readingURI))
 
@@ -103,10 +105,11 @@ if __name__ == '__main__':
                     g.add((readingURI, VIVO.Title, Literal(reading[0])))
                     g.add((readingURI, RDF.type, FOCU.reading))
 
-                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.Integer)))
+                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
                 for index, reading in enumerate(supplemental):
-                    readingURI = URIRef(FOCUDATA + courseID + '_sup_readings' + str("%02d" % lectureNum) + str("_reading%02d" % (index+1)))
+                    readingURI = URIRef(FOCUDATA + courseID + '_sup_readings' + str("%02d" % lectureNum) + str(
+                        "_reading%02d" % (index + 1)))
 
                     g.add((readingsURI, VIVO.contains, readingURI))
 
@@ -115,9 +118,9 @@ if __name__ == '__main__':
                     g.add((readingURI, VIVO.Title, Literal(reading[0])))
                     g.add((readingURI, RDF.type, FOCU.reading))
 
-                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.Integer)))
+                    g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
-                if courseName != 'COMP6721':
+                if courseName == 'COMP474':
                     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
                     g.add((lectureURI, VIVO.contains, otherMaterialURI))
                     g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))

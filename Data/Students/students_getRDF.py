@@ -57,12 +57,12 @@ if __name__ == '__main__':
         university_uri = URIRef(DBR + row['University'])
 
         g.add((student_uri, RDF.type, VIVO.Student))
-        g.add((student_uri, VIVO.identification, Literal(row['ID'])))
-        g.add((student_uri, FOAF.givenName, Literal(row['Firstname'])))
-        g.add((student_uri, FOAF.familyName, Literal(row['Lastname'])))
+        g.add((student_uri, VIVO.identification, Literal(row['ID'], datatype=XSD.integer)))
+        g.add((student_uri, FOAF.givenName, Literal(row['Firstname'], datatype=XSD.string)))
+        g.add((student_uri, FOAF.familyName, Literal(row['Lastname'], datatype=XSD.string)))
         g.add((student_uri, FOCU.studentAt, university_uri))
         g.add((student_uri, FOAF.mbox, Literal(
-            row['Firstname'][:1] + '_' + row['Lastname'] + '@' + row['University'] + '.com')))
+            row['Firstname'][:1] + '_' + row['Lastname'] + '@' + row['University'] + '.com', datatype=XSD.string)))
 
         # Generate the completed course triples
         for i in range(nb_courses):
@@ -78,16 +78,16 @@ if __name__ == '__main__':
             g.add((completed_course_uri, RDF.type, FOCU.completedCourse))
             g.add((completed_course_uri, FOCU.refersTo, course_uri))
             g.add((completed_course_uri, FOCU.hasHighestGrade,
-                  Literal(grades[grade_index])))
+                  Literal(grades[grade_index], datatype=XSD.string)))
             g.add((academic_term_uri, RDF.type, VIVO.AcademicTerm))
             g.add((academic_term_uri, VIVO.contains,
-                  Literal(terms[term_index])))
+                  Literal(terms[term_index], datatype=XSD.string)))
 
             # Cases where student retakes a course
             if index % 73 == 0 and i % 2 == 1:
                 term_index_1 = np.random.randint(len(terms))
                 g.add((academic_term_uri, VIVO.contains,
-                       Literal(terms[term_index_1])))
+                       Literal(terms[term_index_1], datatype=XSD.string)))
 
             g.add((completed_course_uri, FOCU.history, academic_term_uri))
             g.add((student_uri, FOCU.hasTaken, completed_course_uri))

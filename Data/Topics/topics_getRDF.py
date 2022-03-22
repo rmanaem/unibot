@@ -112,7 +112,7 @@ if __name__ == '__main__':
         course_uri = URIRef(FOCUDATA + row['Course'])
         outline_uri = URIRef('file///' + row['Outline'].replace('\\', '/'))
         g.add((topic_uri, RDF.type, FOCU.topic))
-        g.add((topic_uri, RDFS.label, Literal(row['Label'])))
+        g.add((topic_uri, RDFS.label, Literal(row['Label'], datatype=XSD.string)))
         g.add((topic_uri, OWL.sameAs, wikidata_uri))
         g.add((topic_uri, FOCU.coveredIn, course_uri))
         g.add((topic_uri, FOCU.source, outline_uri))

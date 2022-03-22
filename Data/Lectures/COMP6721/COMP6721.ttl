@@ -78,42 +78,49 @@ focudata:040353_Readings07 a focu:readings ;
 
 focudata:040353_Lecture01 a focu:lecture ;
     bibo:number 1 ;
+    vivo:Title "Lecture1"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf>,
         focudata:040353_Readings01 .
 
 focudata:040353_Lecture02 a focu:lecture ;
     bibo:number 2 ;
+    vivo:Title "Lecture2"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf>,
         focudata:040353_Readings02 .
 
 focudata:040353_Lecture03 a focu:lecture ;
     bibo:number 3 ;
+    vivo:Title "Lecture3"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf>,
         focudata:040353_Readings03 .
 
 focudata:040353_Lecture04 a focu:lecture ;
     bibo:number 4 ;
+    vivo:Title "Lecture4"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf>,
         focudata:040353_Readings04 .
 
 focudata:040353_Lecture05 a focu:lecture ;
     bibo:number 5 ;
+    vivo:Title "Lecture5"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf>,
         focudata:040353_Readings05 .
 
 focudata:040353_Lecture06 a focu:lecture ;
     bibo:number 6 ;
+    vivo:Title "Lecture6"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf>,
         focudata:040353_Readings06 .
 
 focudata:040353_Lecture07 a focu:lecture ;
     bibo:number 7 ;
+    vivo:Title "Lecture7"^^xsd:string ;
     vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf>,
         focudata:040353_Readings07 .

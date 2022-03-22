@@ -23,6 +23,6 @@ WHERE {
   ?course vivo:Catalog ?catalog
   
   Filter(?highestGrade = 'F') 
-  Filter(?subjectArea = "HIST")
-  Filter(?catalog = 366)
+  Filter(?subjectArea = "CERA")
+  Filter(?catalog = 452)
 }

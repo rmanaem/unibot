@@ -13,12 +13,12 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 
 SELECT ?label ?expertises
   WHERE {
-        ?student rdf:type vivo:Student.
-	?student foaf:givenName ?givenName .
-    	?student foaf:familyName ?familyName .
-    	?student focu:hasExpertise ?expertises .
-    	?expertises rdfs:label ?label
+    ?student rdf:type vivo:Student.
+    ?student foaf:givenName ?givenName .
+    ?student foaf:familyName ?familyName .
+    ?student focu:hasExpertise ?expertises .
+    ?expertises rdfs:label ?label
       
-    FILTER(?givenName = 'Alva')
-    FILTER(?familyName = 'Fernandez')
-    }
+    FILTER(?givenName = 'Karra')
+    FILTER(?familyName = 'Walton')
+  }
