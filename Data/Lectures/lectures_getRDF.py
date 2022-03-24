@@ -1,4 +1,5 @@
 import glob
+import hashlib
 
 from pathlib import Path
 from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
@@ -29,6 +30,7 @@ if __name__ == '__main__':
         VIVO = Namespace("http://vivoweb.org/ontology/core#")
         VCARD = Namespace("http://www.w3.org/2006/vcard/ns#")
         BIBO = Namespace('http://purl.org/ontology/bibo/')
+        DBR = Namespace('http://dbpedia.org/resource/')
 
         g.bind("rdfs", RDFS)
         g.bind("rdf", RDF)
@@ -89,6 +91,24 @@ if __name__ == '__main__':
                 g.add((lectureURI, VIVO.contains, worksheetURI))
                 g.add((worksheetURI, RDF.type, FOCU.worksheet))
                 g.add((worksheetURI, RDFS.subClassOf, lectureURI))
+
+                # automated extraction of topics from slides and worksheets
+                topics = []
+                if courseName == 'COMP474':
+                    for source in [('slides', 'Slides'), ('worksheet', 'Worksheet')]:
+                        slidePath = os.path.join(courseNamePath, source[1], source[0] + "%02d" % lectureNum + '.pdf')
+                        topics = getTopics(slidePath)
+                        for topic in topics:
+                            m = hashlib.md5()
+                            m.update(courseName + topic)
+                            uniqueID = str(int(m.hexdigest(), 16))[0:5]
+                            topicURI = URIRef(FOCUDATA + source[0] + uniqueID)
+                            dbpediaURI = URIRef(DBR + DBLookup(topic))
+                            g.add((slideURI, FOCU.covers, topicURI))
+                            g.add((topicURI, FOCU.covers, topicURI))
+                            g.add((topicURI, FOCU.covers, topicURI))
+                            g.add((topicURI, FOCU.covers, topicURI))
+
 
                 # readingURI
                 readingsURI = URIRef(FOCUDATA + courseID + '_Readings' + str("%02d" % lectureNum))
