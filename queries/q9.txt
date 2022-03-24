@@ -17,7 +17,7 @@ WHERE {
   ?student rdf:type vivo:Student.
   ?student vivo:identification ?studentId.
   ?student focu:hasTaken ?completedCourse.
-  ?completedCourse focu:hasHighestGrade ?highestGrade.
+  ?completedCourse focu:grade ?highestGrade.
   ?completedCourse focu:refersTo ?course.
   ?course vivo:hasSubjectArea ?subjectArea.
   ?course vivo:Catalog ?catalog

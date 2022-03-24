@@ -79,10 +79,10 @@ focu:hasContent
   rdfs:domain vivo:Course;
   rdfs:range focu:Lecture.
 
-focu:hasHighestGrade
+focu:grade
   a rdf:Property;
-  rdfs:label "has highest grade"@en;
-  rdfs:comment "highest grade by student at a course"@en;
+  rdfs:label "grade"@en;
+  rdfs:comment "final grade of a student at a course"@en;
   rdfs:domain focu:completedCourse;
   rdfs:range xsd:string.
 
