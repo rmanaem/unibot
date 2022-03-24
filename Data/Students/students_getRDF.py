@@ -1,4 +1,5 @@
 import os
+import random
 
 import numpy as np
 import pandas as pd
@@ -7,33 +8,6 @@ from rdflib.namespace import FOAF, RDFS, XSD
 from __init__ import ROOT_DIR
 
 if __name__ == '__main__':
-
-    students_pathname = os.path.join(ROOT_DIR, 'Data', 'Students')
-    first_pathname = os.path.join(students_pathname, 'first.txt')
-    last_pathname = os.path.join(students_pathname, 'last.txt')
-    np.random.seed(77)
-    nb_students = 997
-    nb_courses = 40
-
-    # Generate the information for students
-    first = pd.read_csv(first_pathname, sep="\n").sample(
-        n=nb_students).transpose().values.tolist()[0]
-    last = pd.read_csv(last_pathname, sep="\n").sample(
-        n=nb_students).transpose().values.tolist()[0]
-    ids = np.random.randint(40000000, 50000000, nb_students)
-
-    courseTTL = os.path.join(ROOT_DIR, 'Data', 'Courses', 'Courses.ttl')
-    cg = Graph().parse(courseTTL)
-
-    courses = [str(s)[20:] for s, p, o in cg]
-    grades = [l + '+' for l in 'ABCD'] + \
-             [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
-    terms = ['FALL-2019', 'WINTER-2020', 'SUMMER-1-2020', 'SUMMER-2-2020',
-             'FALL-2020', 'WINTER-2021', 'SUMMER-1-2021', 'SUMMER-2-2021', 'WINTER-2022']
-    df = pd.DataFrame({'Firstname': first, 'Lastname': last,
-                       'ID': ids, 'University': 'Concordia_University'})
-    # Courses with topics, hard coded in phase 1
-    topic_courses = ["courseID_005484", "courseID_040353"]
 
     FOCU = Namespace("http://focu.io/schema#")
     FOCUDATA = Namespace("http://focu.io/data#")
@@ -52,55 +26,62 @@ if __name__ == '__main__':
     g.bind("focudata", FOCUDATA)
     g.bind('vivo', VIVO)
 
-    for index, row in df.iterrows():
-        student_uri = URIRef(FOCUDATA + 'studentID_' + str(row['ID']))
+    students_pathname = os.path.join(ROOT_DIR, 'Data', 'Students')
+    first_pathname = os.path.join(students_pathname, 'first.txt')
+    last_pathname = os.path.join(students_pathname, 'last.txt')
+
+    # Numerical assumptions
+    random.seed(77)
+    nb_students = 997
+    nb_courses = 40
+    grades = [l + '+' for l in 'ABCD'] + [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
+    terms = ['FALL', 'WINTER', 'SUMMER']
+    years = list(range(2018, 2023))
+
+    # Generate the information for students
+    fName = pd.read_csv(first_pathname, sep="\n").sample(n=nb_students).transpose().values.tolist()[0]
+    lName = pd.read_csv(last_pathname, sep="\n").sample(n=nb_students).transpose().values.tolist()[0]
+    studentIDs = np.random.randint(40000000, 50000000, nb_students)
+
+    # contains students' information
+    df = pd.DataFrame({'Firstname': fName, 'Lastname': lName, 'ID': studentIDs, 'University': 'Concordia_University'})
+
+    # get course IDs offered by Concordia University
+    catalog = os.path.join(ROOT_DIR, 'Data', 'Courses', 'course_catalog.csv')
+    course_data = pd.read_csv(catalog, delimiter=',', encoding='unicode_escape', dtype={'Course ID': object})
+    courseIDs = course_data['Course ID'].tolist()
+
+    # 997 students
+    for student_idx, row in df.iterrows():
+        studentID = str(row['ID'])
+        student_uri = URIRef(FOCUDATA + 'studentID_' + studentID)
         university_uri = URIRef(DBR + row['University'])
 
+        # add students identification info to graph
         g.add((student_uri, RDF.type, VIVO.Student))
-        g.add((student_uri, VIVO.identification, Literal(row['ID'], datatype=XSD.integer)))
+        g.add((student_uri, VIVO.Identification, Literal(row['ID'], datatype=XSD.integer)))
         g.add((student_uri, FOAF.givenName, Literal(row['Firstname'], datatype=XSD.string)))
         g.add((student_uri, FOAF.familyName, Literal(row['Lastname'], datatype=XSD.string)))
         g.add((student_uri, FOCU.studentAt, university_uri))
         g.add((student_uri, FOAF.mbox, Literal(
             row['Firstname'][:1] + '_' + row['Lastname'] + '@' + row['University'] + '.com', datatype=XSD.string)))
 
-        # Generate the completed course triples
-        for i in range(nb_courses):
-            course_index = np.random.randint(len(courses))
-            grade_index = np.random.randint(len(grades))
-            term_index = np.random.randint(len(terms))
-            course_uri = URIRef(FOCUDATA + courses[course_index])
-            completed_course_uri = URIRef(
-                FOCUDATA + str(row['ID']) + '_' + courses[course_index])
-            academic_term_uri = URIRef(
-                FOCUDATA + str(row['ID']) + '_' + courses[course_index] + '_' + 'term')
+        # 40 courses per student
+        for course_idx in range(nb_courses):
+            courseID = str(random.choice(courseIDs))
+            grade = str(random.choice(grades))
+            academicTerm = str(random.choice(terms))
+            academicYear = str(random.choice(years))
+
+            course_uri = URIRef(FOCUDATA + 'courseID_' + courseID)
+            completed_course_uri = URIRef(FOCUDATA + studentID + '_courseID_' + courseID + '_' + str(course_idx))
+
+            g.add((student_uri, FOCU.hasTaken, completed_course_uri))
 
             g.add((completed_course_uri, RDF.type, FOCU.completedCourse))
             g.add((completed_course_uri, FOCU.refersTo, course_uri))
-            g.add((completed_course_uri, FOCU.hasHighestGrade,
-                  Literal(grades[grade_index], datatype=XSD.string)))
-            g.add((academic_term_uri, RDF.type, VIVO.AcademicTerm))
-            g.add((academic_term_uri, VIVO.contains,
-                  Literal(terms[term_index], datatype=XSD.string)))
+            g.add((completed_course_uri, FOCU.grade, Literal(grade, datatype=XSD.string)))
+            g.add((completed_course_uri, VIVO.AcademicTerm, Literal(academicTerm, datatype=XSD.string)))
+            g.add((completed_course_uri, VIVO.AcademicYear, Literal(academicYear, datatype=XSD.string)))
 
-            # Cases where student retakes a course
-            if index % 73 == 0 and i % 2 == 1:
-                term_index_1 = np.random.randint(len(terms))
-                g.add((academic_term_uri, VIVO.contains,
-                       Literal(terms[term_index_1], datatype=XSD.string)))
-
-            g.add((completed_course_uri, FOCU.history, academic_term_uri))
-            g.add((student_uri, FOCU.hasTaken, completed_course_uri))
-
-            # Add triples for focu:hasExpertise only for courses that have topics, hard coded for phase 1
-            if courses[course_index] in topic_courses:
-                topicTTL = os.path.join(
-                    ROOT_DIR, 'Data', 'Topics', 'Topics.ttl')
-                tg = Graph().parse(topicTTL)
-                for s, p, o in tg:
-                    # Add the topic as the expertise if the student has a passing grade
-                    if p == FOCU.coveredIn and o == course_uri and grades[grade_index] != 'F':
-                        g.add((student_uri, FOCU.hasExpertise, s))
-
-    g.serialize(os.path.join(students_pathname,
-                'Students.ttl'), format='turtle')
+    g.serialize(os.path.join(students_pathname, 'Students.ttl'), format='turtle')
