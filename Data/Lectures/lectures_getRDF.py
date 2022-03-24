@@ -49,39 +49,48 @@ if __name__ == '__main__':
 
         for index, filepath in enumerate(filepaths):
             with open(filepath, mode='rb') as f:
+
+                # initialize pdf reader
                 reader = PdfFileReader(f)
+
+                # automatic extraction of lecture slides information (name, number)
                 lectureNum = index + 1 if courseName != 'COMP474' else extractFromPdf(reader, 'num')
                 lectureName = 'Lecture' + str(lectureNum) if courseName != 'COMP474' else extractFromPdf(reader, 'name')
-                courseID = str(getCourseId(course_catalog, courseName))
-
                 print(lectureNum, lectureName)
 
+                # get courseID from catalog
+                courseID = str(getCourseId(course_catalog, courseName))
+
+                # automatic extraction of readings from lecture slides
                 required, supplemental = [], []
                 if courseName == 'COMP474':
                     required, supplemental = extractFromPdf(reader, 'readings')
                     print('Required readings', required)
                     print('Supplemental readings', supplemental, '\n\n')
 
+                # connect lectureURI to courseURI
                 lectureURI = URIRef(FOCUDATA + courseID + '_Lecture' + str("%02d" % lectureNum))
                 courseURI = URIRef(FOCUDATA + 'courseID_' + courseID)
-
                 g.add((lectureURI, VIVO.Title, Literal(lectureName, datatype=XSD.string)))
                 g.add((lectureURI, BIBO.number, Literal(lectureNum, datatype=XSD.integer)))
                 g.add((courseURI, FOCU.hasContent, lectureURI))
                 g.add((lectureURI, RDF.type, URIRef(FOCU.lecture)))
 
+                # slideURI
                 slideURI = URIRef(os.path.join(courseNamePath, 'Slides',
                                                'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
                 g.add((lectureURI, VIVO.contains, slideURI))
                 g.add((slideURI, RDF.type, FOCU.slide))
                 g.add((slideURI, RDFS.subClassOf, lectureURI))
 
+                # worksheetURI
                 worksheetURI = URIRef(os.path.join(courseNamePath, 'Worksheets',
                                                    'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
                 g.add((lectureURI, VIVO.contains, worksheetURI))
                 g.add((worksheetURI, RDF.type, FOCU.worksheet))
                 g.add((worksheetURI, RDFS.subClassOf, lectureURI))
 
+                # readingURI
                 readingsURI = URIRef(FOCUDATA + courseID + '_Readings' + str("%02d" % lectureNum))
                 g.add((readingsURI, RDFS.subClassOf, lectureURI))
                 g.add((lectureURI, VIVO.contains, readingsURI))
@@ -94,6 +103,7 @@ if __name__ == '__main__':
                 it = iter(supplemental)
                 supplemental = list(zip(it, it))
 
+                # including required readings in graph
                 for index, reading in enumerate(required):
                     readingURI = URIRef(FOCUDATA + courseID + '_req_readings' + str("%02d" % lectureNum) + str(
                         "_reading%02d" % (index + 1)))
@@ -107,6 +117,7 @@ if __name__ == '__main__':
 
                     g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
+                # including supplemental readings in graph
                 for index, reading in enumerate(supplemental):
                     readingURI = URIRef(FOCUDATA + courseID + '_sup_readings' + str("%02d" % lectureNum) + str(
                         "_reading%02d" % (index + 1)))
@@ -120,12 +131,14 @@ if __name__ == '__main__':
 
                     g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
+                # automated extraction of other material (videos & images)
                 if courseName == 'COMP474':
                     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
                     g.add((lectureURI, VIVO.contains, otherMaterialURI))
                     g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
                     g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
 
+                    # extracting images and including absolute path (URIs) in graph
                     extractImages(filepath, courseName)
                     folder = glob.glob(
                         os.path.join(courseNamePath, 'OtherMaterial', 'Images', Path(filepath).stem, '*'))
@@ -134,6 +147,7 @@ if __name__ == '__main__':
                         g.add((otherMaterialURI, VIVO.contains, imageURI))
                         g.add((imageURI, RDF.type, VIVO.Image))
 
+                    # extracting videos and including absolute path (URIs) in graph
                     extractVideos(reader, courseName, lectureNum)
                     folder = glob.glob(
                         os.path.join(courseNamePath, 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
