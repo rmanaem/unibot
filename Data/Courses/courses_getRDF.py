@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # Get Concordia courses' information
     for index, row in df.iterrows():
         uri = URIRef(FOCUDATA + "courseID" + "_" + str(row['Course ID']))
-        g.add((uri, VIVO.Identification, Literal(row['Course ID'], datatype=XSD.string)))
+        g.add((uri, VIVO.Identification, Literal(row['Course ID'], datatype=XSD.string)))  # "005484" instead of 5484
         g.add((uri, VIVO.hasSubjectArea, Literal(row['Subject'], datatype=XSD.string)))
         g.add((uri, VIVO.Catalog, Literal(row['Catalog'], datatype=XSD.integer)))
         g.add((uri, VIVO.Title, Literal(row['Long Title'], datatype=XSD.string)))
