@@ -15,7 +15,6 @@ if __name__ == '__main__':
     for path, subdir, files in os.walk(os.path.join(ROOT_DIR, 'Data')):
         for name in files:
             # runs every getRDF.py in the project
-            # RUN ONLY ONCE or DONT RUN if database.ttl already exists in parent directory
             if fnmatch(name, GET_RDF_pattern):
                 pathname = os.path.join(path, name)
                 print('Running', pathname)
@@ -26,8 +25,10 @@ if __name__ == '__main__':
                 pathname = os.path.join(path, name)
                 g.parse(pathname)
 
+    # serialize to human-readable file (used for manually checking validity of queries)
     database_ttl = os.path.join(ROOT_DIR, 'database.ttl')
     g.serialize(database_ttl, format='ttl')
 
+    # serialize to n-triple file (to be ingested in fuseki server)
     database_ttl = os.path.join(ROOT_DIR, 'database.nt')
     g.serialize(database_ttl, format='nt')
