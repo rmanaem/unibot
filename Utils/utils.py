@@ -1,7 +1,8 @@
 import re
 from urllib.parse import urlparse
-import pandas
 import pandas as pd
+import requests
+import simplejson
 
 
 def insertToList(index, element, arr):
@@ -33,6 +34,10 @@ def is_url(url):
         return all([result.scheme, result.netloc])
     except ValueError:
         return False
+
+
+def has_numbers(inputString):
+    return any(char.isdigit() for char in inputString)
 
 
 def locatePage(readerObj, string):
@@ -83,6 +88,27 @@ def getCourseId(csvFile, courseName):
     return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID'].values[0]
 
 
+def DBLookup(txt):
+    spot_light_url = "https://api.dbpedia-spotlight.org/en/annotate?text=%s" % txt
+    headers = {
+        'accept': 'application/json'
+    }
+
+    try:
+        request = requests.get(url=spot_light_url, headers=headers)
+        data = request.json()
+        resources = data.get('Resources')
+
+        if resources is None:
+            return None
+        URI = resources[0]['@URI']
+        return URI
+
+    except simplejson.errors.JSONDecodeError:
+        print(None)
+        return None
+
+
 def extractFromPdf(readerObj, choice):
     page = readerObj.getPage(0)
     text = page.extractText()
@@ -99,6 +125,26 @@ def extractFromPdf(readerObj, choice):
                 # Split a string at uppercase letters
                 name = sepWord(name).split()
                 return ' '.join(name)
+
+        if choice == 'topics':
+            topics = []
+            for index in range(readerObj.getNumPages()):
+                page = readerObj.getPage(index)
+                text = page.extractText().split('\n')
+                text = removeTableContents(text)
+
+                if len(text) == 0:
+                    continue
+
+                # every encountered word is considered a topic (to be changed in assignment #2)
+                for word in text:
+                    if word != '' and word != 'Ł':
+                        newWord = re.sub('[^A-Za-z0-9]+', ' ', word)  # remove special characters
+                        newWord = sepWord(newWord)  # separate word at capital letters
+                        if len(newWord) > 2:
+                            topics.append(newWord)
+
+            return list(set(topics))
 
         if choice == 'readings':
             # get reference page contents. Merge content if there exists >1 reference pages
