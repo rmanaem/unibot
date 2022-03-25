@@ -65,13 +65,6 @@ focu:topic
   rdfs:comment "A topic that is covered in a course."@en.
 
 # Properties
-focu:hasExpertise
-  a rdf:Property;
-  rdfs:label "has expertise"@en;
-  rdfs:comment "links the student to the set of expertise that he/she acquires"@en;
-  rdfs:domain vivo:Student;
-  rdfs:range focu:topic.
-
 focu:hasContent
   a rdf:Property;
   rdfs:label "has content"@en;
@@ -107,29 +100,9 @@ focu:refersTo
   rdfs:domain focu:completedCourse;
   rdfs:range vivo:Course.
 
-#focu:source
-#  a rdf:Property;
-#  rdfs:label "source"@en;
-#  rdfs:comment "Source that recorded a topic as being covered in a course."@en;
-#  rdfs:domain focu:topic.
-#
-#focu:coveredIn
-#  a rdf:Property;
-#  rdfs:label "covered in"@en;
-#  rdfs:comment "Links a topic to a course that it was covered in."@en;
-#  rdfs:domain focu:topic;
-#  rdfs:range vivo:Course.
-
 focu:covers
   a rdf:Property;
   rdfs:label "covers"@en;
   rdfs:comment "links the topic to its source"@en;
-  rdfs:domain focu:topic;
-  rdfs:range vivo:Course.
-
-focu:history
-  a rdfs:Property;
-  rdfs:label "completed course history"@en;
-  rdfs:comment "Links a completed course to it's academic term history(to highlight when it was taken)."@en;
-  rdfs:domain focu:completedCourse;
-  rdfs:range vivo:AcademicTerm.
+  rdfs:domain focu:slide, focu:worksheet;
+  rdfs:range focu:topic.
