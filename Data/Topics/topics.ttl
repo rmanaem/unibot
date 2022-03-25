@@ -1,0 +1,2399 @@
+@prefix focu: <http://focu.io/schema#> .
+@prefix focudata: <http://focu.io/data#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf> focu:covers focudata:topic007065,
+        focudata:topic008624,
+        focudata:topic016575,
+        focudata:topic023945,
+        focudata:topic041085,
+        focudata:topic054983,
+        focudata:topic057105,
+        focudata:topic068984,
+        focudata:topic101043,
+        focudata:topic103860,
+        focudata:topic104470,
+        focudata:topic126845,
+        focudata:topic128022,
+        focudata:topic152195,
+        focudata:topic152585,
+        focudata:topic155227,
+        focudata:topic161725,
+        focudata:topic198573,
+        focudata:topic206403,
+        focudata:topic211307,
+        focudata:topic243424,
+        focudata:topic266645,
+        focudata:topic312978,
+        focudata:topic332091,
+        focudata:topic351402,
+        focudata:topic372727,
+        focudata:topic376060,
+        focudata:topic391565,
+        focudata:topic393570,
+        focudata:topic398980,
+        focudata:topic414190,
+        focudata:topic418779,
+        focudata:topic426331,
+        focudata:topic431730,
+        focudata:topic440959,
+        focudata:topic461513,
+        focudata:topic472223,
+        focudata:topic485652,
+        focudata:topic510177,
+        focudata:topic522648,
+        focudata:topic524209,
+        focudata:topic554787,
+        focudata:topic557565,
+        focudata:topic565378,
+        focudata:topic586585,
+        focudata:topic614927,
+        focudata:topic624671,
+        focudata:topic628933,
+        focudata:topic636304,
+        focudata:topic644275,
+        focudata:topic644317,
+        focudata:topic649013,
+        focudata:topic651474,
+        focudata:topic652746,
+        focudata:topic655018,
+        focudata:topic656452,
+        focudata:topic657407,
+        focudata:topic666446,
+        focudata:topic668741,
+        focudata:topic684179,
+        focudata:topic696264,
+        focudata:topic716466,
+        focudata:topic730266,
+        focudata:topic739625,
+        focudata:topic741960,
+        focudata:topic753778,
+        focudata:topic754730,
+        focudata:topic764889,
+        focudata:topic766664,
+        focudata:topic770680,
+        focudata:topic772495,
+        focudata:topic773460,
+        focudata:topic775348,
+        focudata:topic800305,
+        focudata:topic839691,
+        focudata:topic882048,
+        focudata:topic911754,
+        focudata:topic926802,
+        focudata:topic932515 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf> focu:covers focudata:topic027402,
+        focudata:topic038420,
+        focudata:topic041085,
+        focudata:topic054983,
+        focudata:topic068984,
+        focudata:topic071011,
+        focudata:topic088978,
+        focudata:topic118320,
+        focudata:topic122571,
+        focudata:topic125745,
+        focudata:topic132438,
+        focudata:topic142014,
+        focudata:topic144178,
+        focudata:topic161725,
+        focudata:topic202191,
+        focudata:topic207745,
+        focudata:topic243424,
+        focudata:topic252863,
+        focudata:topic266645,
+        focudata:topic270238,
+        focudata:topic283573,
+        focudata:topic306879,
+        focudata:topic314292,
+        focudata:topic349051,
+        focudata:topic373937,
+        focudata:topic385683,
+        focudata:topic387925,
+        focudata:topic398980,
+        focudata:topic401826,
+        focudata:topic406374,
+        focudata:topic407300,
+        focudata:topic408893,
+        focudata:topic425651,
+        focudata:topic449205,
+        focudata:topic461513,
+        focudata:topic468851,
+        focudata:topic469011,
+        focudata:topic472223,
+        focudata:topic475463,
+        focudata:topic485652,
+        focudata:topic505481,
+        focudata:topic505650,
+        focudata:topic510177,
+        focudata:topic519633,
+        focudata:topic524209,
+        focudata:topic544328,
+        focudata:topic552599,
+        focudata:topic560429,
+        focudata:topic564306,
+        focudata:topic571350,
+        focudata:topic617881,
+        focudata:topic646018,
+        focudata:topic655464,
+        focudata:topic655681,
+        focudata:topic657407,
+        focudata:topic661891,
+        focudata:topic675538,
+        focudata:topic699514,
+        focudata:topic700389,
+        focudata:topic705843,
+        focudata:topic709142,
+        focudata:topic722218,
+        focudata:topic736783,
+        focudata:topic759515,
+        focudata:topic770680,
+        focudata:topic780641,
+        focudata:topic799464,
+        focudata:topic809900,
+        focudata:topic820439,
+        focudata:topic826741,
+        focudata:topic839332,
+        focudata:topic870115,
+        focudata:topic885128,
+        focudata:topic911754,
+        focudata:topic911989,
+        focudata:topic968497,
+        focudata:topic975851 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf> focu:covers focudata:topic028944,
+        focudata:topic067527,
+        focudata:topic068984,
+        focudata:topic085501,
+        focudata:topic096012,
+        focudata:topic115164,
+        focudata:topic122571,
+        focudata:topic127239,
+        focudata:topic137910,
+        focudata:topic144178,
+        focudata:topic146655,
+        focudata:topic152020,
+        focudata:topic155953,
+        focudata:topic160717,
+        focudata:topic163114,
+        focudata:topic166409,
+        focudata:topic171841,
+        focudata:topic176263,
+        focudata:topic202123,
+        focudata:topic204183,
+        focudata:topic207745,
+        focudata:topic210035,
+        focudata:topic216154,
+        focudata:topic234959,
+        focudata:topic243424,
+        focudata:topic263327,
+        focudata:topic266391,
+        focudata:topic270238,
+        focudata:topic276956,
+        focudata:topic320642,
+        focudata:topic337137,
+        focudata:topic349051,
+        focudata:topic357770,
+        focudata:topic365360,
+        focudata:topic398980,
+        focudata:topic408893,
+        focudata:topic431921,
+        focudata:topic440959,
+        focudata:topic443225,
+        focudata:topic445219,
+        focudata:topic449599,
+        focudata:topic460541,
+        focudata:topic472863,
+        focudata:topic477801,
+        focudata:topic485652,
+        focudata:topic488066,
+        focudata:topic510177,
+        focudata:topic513042,
+        focudata:topic517815,
+        focudata:topic521038,
+        focudata:topic536257,
+        focudata:topic553393,
+        focudata:topic556154,
+        focudata:topic557565,
+        focudata:topic561189,
+        focudata:topic586585,
+        focudata:topic612536,
+        focudata:topic612840,
+        focudata:topic638526,
+        focudata:topic668741,
+        focudata:topic683455,
+        focudata:topic699514,
+        focudata:topic718588,
+        focudata:topic722218,
+        focudata:topic730006,
+        focudata:topic730266,
+        focudata:topic756799,
+        focudata:topic778904,
+        focudata:topic809497,
+        focudata:topic812134,
+        focudata:topic818920,
+        focudata:topic826741,
+        focudata:topic828741,
+        focudata:topic848104,
+        focudata:topic859985,
+        focudata:topic870115,
+        focudata:topic911754,
+        focudata:topic970450 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf> focu:covers focudata:topic051056,
+        focudata:topic067527,
+        focudata:topic068984,
+        focudata:topic088978,
+        focudata:topic115164,
+        focudata:topic122571,
+        focudata:topic123453,
+        focudata:topic145456,
+        focudata:topic157762,
+        focudata:topic160717,
+        focudata:topic171334,
+        focudata:topic176263,
+        focudata:topic191131,
+        focudata:topic196507,
+        focudata:topic204907,
+        focudata:topic206786,
+        focudata:topic215384,
+        focudata:topic225084,
+        focudata:topic257901,
+        focudata:topic270238,
+        focudata:topic301553,
+        focudata:topic326642,
+        focudata:topic337062,
+        focudata:topic349051,
+        focudata:topic361951,
+        focudata:topic362238,
+        focudata:topic365360,
+        focudata:topic388257,
+        focudata:topic398980,
+        focudata:topic400922,
+        focudata:topic408893,
+        focudata:topic408956,
+        focudata:topic427012,
+        focudata:topic432552,
+        focudata:topic479319,
+        focudata:topic480911,
+        focudata:topic485652,
+        focudata:topic504367,
+        focudata:topic508732,
+        focudata:topic510177,
+        focudata:topic516992,
+        focudata:topic519567,
+        focudata:topic570373,
+        focudata:topic593940,
+        focudata:topic601478,
+        focudata:topic608395,
+        focudata:topic624405,
+        focudata:topic629290,
+        focudata:topic644759,
+        focudata:topic654624,
+        focudata:topic664894,
+        focudata:topic672280,
+        focudata:topic686021,
+        focudata:topic699514,
+        focudata:topic712389,
+        focudata:topic717401,
+        focudata:topic722218,
+        focudata:topic733502,
+        focudata:topic738014,
+        focudata:topic739290,
+        focudata:topic756969,
+        focudata:topic777804,
+        focudata:topic813887,
+        focudata:topic835648,
+        focudata:topic836596,
+        focudata:topic868673,
+        focudata:topic871427,
+        focudata:topic877095,
+        focudata:topic892162,
+        focudata:topic909735,
+        focudata:topic911754,
+        focudata:topic937033 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf> focu:covers focudata:topic010523,
+        focudata:topic016789,
+        focudata:topic023945,
+        focudata:topic028944,
+        focudata:topic054983,
+        focudata:topic065457,
+        focudata:topic065511,
+        focudata:topic067527,
+        focudata:topic073458,
+        focudata:topic112820,
+        focudata:topic115164,
+        focudata:topic122571,
+        focudata:topic122882,
+        focudata:topic146400,
+        focudata:topic146655,
+        focudata:topic156683,
+        focudata:topic176263,
+        focudata:topic206691,
+        focudata:topic225307,
+        focudata:topic242040,
+        focudata:topic243424,
+        focudata:topic262059,
+        focudata:topic270238,
+        focudata:topic270290,
+        focudata:topic308536,
+        focudata:topic319359,
+        focudata:topic343795,
+        focudata:topic349051,
+        focudata:topic365360,
+        focudata:topic366764,
+        focudata:topic369699,
+        focudata:topic371363,
+        focudata:topic392446,
+        focudata:topic398980,
+        focudata:topic401288,
+        focudata:topic408893,
+        focudata:topic427477,
+        focudata:topic433933,
+        focudata:topic439039,
+        focudata:topic458350,
+        focudata:topic477801,
+        focudata:topic479519,
+        focudata:topic485652,
+        focudata:topic487294,
+        focudata:topic499451,
+        focudata:topic508191,
+        focudata:topic510177,
+        focudata:topic524933,
+        focudata:topic564925,
+        focudata:topic578844,
+        focudata:topic587610,
+        focudata:topic589870,
+        focudata:topic601144,
+        focudata:topic612840,
+        focudata:topic650243,
+        focudata:topic667572,
+        focudata:topic670284,
+        focudata:topic686021,
+        focudata:topic687736,
+        focudata:topic694423,
+        focudata:topic699514,
+        focudata:topic708993,
+        focudata:topic712360,
+        focudata:topic716829,
+        focudata:topic722218,
+        focudata:topic742037,
+        focudata:topic744551,
+        focudata:topic774491,
+        focudata:topic795700,
+        focudata:topic813887,
+        focudata:topic818920,
+        focudata:topic833014,
+        focudata:topic848104,
+        focudata:topic864258,
+        focudata:topic871427,
+        focudata:topic874632,
+        focudata:topic896217,
+        focudata:topic911754,
+        focudata:topic918249,
+        focudata:topic919146,
+        focudata:topic921909,
+        focudata:topic937033,
+        focudata:topic974485,
+        focudata:topic981731 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf> focu:covers focudata:topic096456,
+        focudata:topic101247,
+        focudata:topic110526,
+        focudata:topic114121,
+        focudata:topic130911,
+        focudata:topic155227,
+        focudata:topic172324,
+        focudata:topic176001,
+        focudata:topic204420,
+        focudata:topic210884,
+        focudata:topic223868,
+        focudata:topic232631,
+        focudata:topic266322,
+        focudata:topic300493,
+        focudata:topic300696,
+        focudata:topic335186,
+        focudata:topic346099,
+        focudata:topic362696,
+        focudata:topic385940,
+        focudata:topic385949,
+        focudata:topic390713,
+        focudata:topic398980,
+        focudata:topic438255,
+        focudata:topic440217,
+        focudata:topic440959,
+        focudata:topic460367,
+        focudata:topic475694,
+        focudata:topic485652,
+        focudata:topic496952,
+        focudata:topic500006,
+        focudata:topic501788,
+        focudata:topic502179,
+        focudata:topic510177,
+        focudata:topic516251,
+        focudata:topic570437,
+        focudata:topic586754,
+        focudata:topic595916,
+        focudata:topic599808,
+        focudata:topic604853,
+        focudata:topic701033,
+        focudata:topic721689,
+        focudata:topic734254,
+        focudata:topic819369,
+        focudata:topic820770,
+        focudata:topic824483,
+        focudata:topic833974,
+        focudata:topic839691,
+        focudata:topic869642,
+        focudata:topic882934,
+        focudata:topic911754,
+        focudata:topic953745,
+        focudata:topic978996,
+        focudata:topic999755 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf> focu:covers focudata:topic017025,
+        focudata:topic054772,
+        focudata:topic087942,
+        focudata:topic108887,
+        focudata:topic117520,
+        focudata:topic136464,
+        focudata:topic139436,
+        focudata:topic150929,
+        focudata:topic156820,
+        focudata:topic182169,
+        focudata:topic202116,
+        focudata:topic221207,
+        focudata:topic259881,
+        focudata:topic265380,
+        focudata:topic278256,
+        focudata:topic286997,
+        focudata:topic300493,
+        focudata:topic310362,
+        focudata:topic387375,
+        focudata:topic393721,
+        focudata:topic398980,
+        focudata:topic425902,
+        focudata:topic432992,
+        focudata:topic435049,
+        focudata:topic436709,
+        focudata:topic485652,
+        focudata:topic500008,
+        focudata:topic510177,
+        focudata:topic550751,
+        focudata:topic561309,
+        focudata:topic565687,
+        focudata:topic566835,
+        focudata:topic590484,
+        focudata:topic610443,
+        focudata:topic613933,
+        focudata:topic624753,
+        focudata:topic645704,
+        focudata:topic650875,
+        focudata:topic651543,
+        focudata:topic673609,
+        focudata:topic701657,
+        focudata:topic728054,
+        focudata:topic738188,
+        focudata:topic761229,
+        focudata:topic779820,
+        focudata:topic780715,
+        focudata:topic793534,
+        focudata:topic819830,
+        focudata:topic827515,
+        focudata:topic831521,
+        focudata:topic838628,
+        focudata:topic839519,
+        focudata:topic855912,
+        focudata:topic865319,
+        focudata:topic869886,
+        focudata:topic911754,
+        focudata:topic999755 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf> focu:covers focudata:topic068984,
+        focudata:topic130437,
+        focudata:topic132629,
+        focudata:topic185046,
+        focudata:topic232128,
+        focudata:topic282292,
+        focudata:topic312452,
+        focudata:topic349835,
+        focudata:topic472338,
+        focudata:topic534937,
+        focudata:topic561699,
+        focudata:topic886499 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf> focu:covers focudata:topic024362,
+        focudata:topic144061,
+        focudata:topic717483,
+        focudata:topic730006,
+        focudata:topic732572,
+        focudata:topic866634 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf> focu:covers focudata:topic143096,
+        focudata:topic440073,
+        focudata:topic457289,
+        focudata:topic624405,
+        focudata:topic712389,
+        focudata:topic713478,
+        focudata:topic769783,
+        focudata:topic798887,
+        focudata:topic936976 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf> focu:covers focudata:topic140259,
+        focudata:topic327002,
+        focudata:topic547862,
+        focudata:topic655026,
+        focudata:topic758643,
+        focudata:topic765217,
+        focudata:topic798736,
+        focudata:topic915030 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf> focu:covers focudata:topic195866,
+        focudata:topic284778,
+        focudata:topic300493,
+        focudata:topic300696,
+        focudata:topic336328,
+        focudata:topic344149,
+        focudata:topic394553,
+        focudata:topic566879,
+        focudata:topic571975,
+        focudata:topic840848 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf> focu:covers focudata:topic232128,
+        focudata:topic241739,
+        focudata:topic425250,
+        focudata:topic514042,
+        focudata:topic565582,
+        focudata:topic638766,
+        focudata:topic680721,
+        focudata:topic700839,
+        focudata:topic717841,
+        focudata:topic757749,
+        focudata:topic836864 .
+
+focudata:topic007065 a focu:topic ;
+    rdfs:label " Full textsearchengine  Information Retrieval "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Information_retrieval> .
+
+focudata:topic008624 a focu:topic ;
+    rdfs:label " Offers SPARQ Lquerylanguage"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic010523 a focu:topic ;
+    rdfs:label " Facebook Graph Search"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook_Graph_Search> .
+
+focudata:topic016575 a focu:topic ;
+    rdfs:label " Abranchof Ar Intelligence AI thatusesvarioustechniquestoprocess"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic016789 a focu:topic ;
+    rdfs:label " Wikidata"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic017025 a focu:topic ;
+    rdfs:label "k  Nearest  Neighbor k NN "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic024362 a focu:topic ;
+    rdfs:label "above  Forthe"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/River_Forth> .
+
+focudata:topic027402 a focu:topic ;
+    rdfs:label "  Bob isinterestedin the Mona Lisa "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic038420 a focu:topic ;
+    rdfs:label " the Mona Lisa wascreatedby  Leonardoda Vinci "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic051056 a focu:topic ;
+    rdfs:label "SPARQL Server Engines"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic054772 a focu:topic ;
+    rdfs:label " Copyright2007 2019 scikit learndevelopers BSD License https scikit learn org stable auto examples model selection plot learning curve html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/BSD_licenses> .
+
+focudata:topic057105 a focu:topic ;
+    rdfs:label " Retrievalvs  Generative  Deep Learning "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Deep_learning> .
+
+focudata:topic065457 a focu:topic ;
+    rdfs:label "skos narrow Match"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic065511 a focu:topic ;
+    rdfs:label " Linked Data  Design Issues II"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic071011 a focu:topic ;
+    rdfs:label " Graphdatabases  Thebestkeptsecretforeffective AI "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic073458 a focu:topic ;
+    rdfs:label "D Bpedia Spotlight  Disambiguation"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/The_Boston_Globe> .
+
+focudata:topic085501 a focu:topic ;
+    rdfs:label "RDF Schema Constructs  Summary"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic087942 a focu:topic ;
+    rdfs:label "k NN Algorithm"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic096012 a focu:topic ;
+    rdfs:label "rdf  Property"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic096456 a focu:topic ;
+    rdfs:label "AP rewards givesahigherscoreto higher ranked correctrecommendations"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Andhra_Pradesh> .
+
+focudata:topic101043 a focu:topic ;
+    rdfs:label " Tay"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/River_Tay> .
+
+focudata:topic101247 a focu:topic ;
+    rdfs:label "calpurnia"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Calpurnia_(wife_of_Caesar)> .
+
+focudata:topic103860 a focu:topic ;
+    rdfs:label "http www csee umbc edu courses 331 papers eliza html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/ELIZA> .
+
+focudata:topic104470 a focu:topic ;
+    rdfs:label "FOAF  Friend of a  Friend  Ontology"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic108887 a focu:topic ;
+    rdfs:label "NB  Deep Learning"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Deep_learning> .
+
+focudata:topic110526 a focu:topic ;
+    rdfs:label " Introductionto Information Retrieval"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Information_retrieval> .
+
+focudata:topic112820 a focu:topic ;
+    rdfs:label "  Yu14  Chapter12  Wikidata "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic114121 a focu:topic ;
+    rdfs:label " Basic Recommender Engineusing Vector Space Model"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Vector_space_model> .
+
+focudata:topic117520 a focu:topic ;
+    rdfs:label " Fromdatascience com https towardsdatascience com cat dog or elon musk 145658489730"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Dog> .
+
+focudata:topic118320 a focu:topic ;
+    rdfs:label " HTM Ldata forahuman "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/HTM_Personenvervoer> .
+
+focudata:topic122882 a focu:topic ;
+    rdfs:label " Frey "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Richard_Karl_Hjalmar_Frey> .
+
+focudata:topic123453 a focu:topic ;
+    rdfs:label "http www w3 org TR owl2 overview "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Web_Ontology_Language> .
+
+focudata:topic125745 a focu:topic ;
+    rdfs:label "https www youtube com watch v um Js IT Gz Xd0"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Information_technology> .
+
+focudata:topic126845 a focu:topic ;
+    rdfs:label "NLP  Text Miningcanunlockthisknowledge"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Natural_language_processing> .
+
+focudata:topic127239 a focu:topic ;
+    rdfs:label " Libraryof Congress"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/United_States_Congress> .
+
+focudata:topic128022 a focu:topic ;
+    rdfs:label " Sentiment Analysis a k a  Opinion Mining "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Sentiment_analysis> .
+
+focudata:topic130437 a focu:topic ;
+    rdfs:label "  Replacethestring  Concordia withthe"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic130911 a focu:topic ;
+    rdfs:label "GUMO"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Aksu_City> .
+
+focudata:topic132438 a focu:topic ;
+    rdfs:label " http dbpedia org resource  Leonardo da  Vinci "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic132629 a focu:topic ;
+    rdfs:label "owngraph forexample in Facebook  Linked In or Concordia sstudentdatabase  Forthisexample we"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook> .
+
+focudata:topic136464 a focu:topic ;
+    rdfs:label " Some Machine Learning Techniques"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic137910 a focu:topic ;
+    rdfs:label " Semantics"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantics> .
+
+focudata:topic139436 a focu:topic ;
+    rdfs:label " Reinforcement Learning"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Reinforcement_learning> .
+
+focudata:topic140259 a focu:topic ;
+    rdfs:label " Nowtryrunningthesamearticlethrough W3C s"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
+
+focudata:topic142014 a focu:topic ;
+    rdfs:label " subject predicate object "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/First-order_logic> .
+
+focudata:topic143096 a focu:topic ;
+    rdfs:label " Youcanrunthisqueryusing D Bpedia spublic SPARQ Lendpointat"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic144061 a focu:topic ;
+    rdfs:label " Howcanyouaddthisinformationtotheknowledgegraphusing FOAF hint lookupthevocabu "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic145456 a focu:topic ;
+    rdfs:label "DESCRIBE http dbpedia org resource  Concordia  University "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic146400 a focu:topic ;
+    rdfs:label " Towards Competency Question  Driven Ontology Authoring https link springer com chapter 10 1007 978 3 319 07443 6 50"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ontology> .
+
+focudata:topic150929 a focu:topic ;
+    rdfs:label " Document Clustering Example  Analyzing NSF Research Grants"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/National_Science_Foundation> .
+
+focudata:topic152020 a focu:topic ;
+    rdfs:label "rdfs range"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic152195 a focu:topic ;
+    rdfs:label "ultimate guide to leveraging nlp machine learning for you chatbot 531ff2dd870c"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic152585 a focu:topic ;
+    rdfs:label " Text Mining"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Text_mining> .
+
+focudata:topic155953 a focu:topic ;
+    rdfs:label "rdfs comment  The Glass Palaceisa2000historicalnovel en "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic156683 a focu:topic ;
+    rdfs:label " HB11 WZRH14  Bookson Linked Data "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic156820 a focu:topic ;
+    rdfs:label " Oursubclassinferencein RDF Salsofallsintothiscategory "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic157762 a focu:topic ;
+    rdfs:label "scanoperateonnumbers strings dates UR Is orotherdatatypes"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/String_instrument> .
+
+focudata:topic163114 a focu:topic ;
+    rdfs:label " http www w3 org 2004 02 skos core  Concept "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic166409 a focu:topic ;
+    rdfs:label "more class es "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/South_African_Class_ES> .
+
+focudata:topic171334 a focu:topic ;
+    rdfs:label "PREFI Xdbo http dbpedia org ontology "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ontology> .
+
+focudata:topic171841 a focu:topic ;
+    rdfs:label " RDF Vocabulary Description Language1 0 RDF Schema RDFS1 0 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic172324 a focu:topic ;
+    rdfs:label " Summary tf idf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic176001 a focu:topic ;
+    rdfs:label " Cambridge University Press 2008 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cambridge_University_Press> .
+
+focudata:topic182169 a focu:topic ;
+    rdfs:label " Copyrightby Chabacano https commons wikimedia org wiki  File  Ovlicenseunderthe Creative Commons Attribution  Share"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Chavacano> .
+
+focudata:topic185046 a focu:topic ;
+    rdfs:label "  Ifyes how  Ifno whynot "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Whynot_Records> .
+
+focudata:topic191131 a focu:topic ;
+    rdfs:label "graph IRI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Graph_theory> .
+
+focudata:topic195866 a focu:topic ;
+    rdfs:label " Use4tdigitsforthistable protip the"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/GamePro> .
+
+focudata:topic196507 a focu:topic ;
+    rdfs:label "https www youtube com watch v  Rl6 Uw E7k Lio"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Lio> .
+
+focudata:topic198573 a focu:topic ;
+    rdfs:label " Towards Intelligent Systems"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Intelligent_Systems> .
+
+focudata:topic202116 a focu:topic ;
+    rdfs:label "https www youtube com watch v 85f Zc K5 Epn A"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Complete_graph> .
+
+focudata:topic202123 a focu:topic ;
+    rdfs:label " Currentversion 2014 RDF Schema1 1 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic202191 a focu:topic ;
+    rdfs:label " Knowledge Acquisition Bottleneck"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Free_State_Bottleneck> .
+
+focudata:topic204183 a focu:topic ;
+    rdfs:label "RDF Sprovides"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic204420 a focu:topic ;
+    rdfs:label " Personalization  Collaborative Filtering  Content basedrecommendation"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Personalization> .
+
+focudata:topic204907 a focu:topic ;
+    rdfs:label "inference"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Inference> .
+
+focudata:topic206403 a focu:topic ;
+    rdfs:label " Information Extraction IE "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Information_extraction> .
+
+focudata:topic206691 a focu:topic ;
+    rdfs:label "international 19iht btnumbers19A 19iht btnumbers19A facebook Jumbo v2 jpg "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Jumbo> .
+
+focudata:topic206786 a focu:topic ;
+    rdfs:label " Apache Jena seehttps jena apache org "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Apache_HTTP_Server> .
+
+focudata:topic210035 a focu:topic ;
+    rdfs:label "W3C Recommendation"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
+
+focudata:topic210884 a focu:topic ;
+    rdfs:label " Intel LEO"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Intel> .
+
+focudata:topic211307 a focu:topic ;
+    rdfs:label " Intelligent Systems Introduction"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Intelligent_Systems> .
+
+focudata:topic215384 a focu:topic ;
+    rdfs:label "dcterms creator http dbpedia org resource  Leonardo da  Vinci "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic216154 a focu:topic ;
+    rdfs:label "ashttp www w3 org 2000 01 rdf schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic221207 a focu:topic ;
+    rdfs:label " Machine Learningfor Intelligent Systems"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic223868 a focu:topic ;
+    rdfs:label "AP N "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Associated_Press> .
+
+focudata:topic225084 a focu:topic ;
+    rdfs:label "OWL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Web_Ontology_Language> .
+
+focudata:topic225307 a focu:topic ;
+    rdfs:label " Shapes Constraint Language SHACL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SHACL> .
+
+focudata:topic232631 a focu:topic ;
+    rdfs:label "and Caesar Tempest"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Julius_Caesar> .
+
+focudata:topic234959 a focu:topic ;
+    rdfs:label "  Yu14  Chapter7 FOAF "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic241739 a focu:topic ;
+    rdfs:label "  Concordia U "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic242040 a focu:topic ;
+    rdfs:label " Which CE1 OPE CE2 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ope> .
+
+focudata:topic252863 a focu:topic ;
+    rdfs:label " RD Fdata foran AI "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic257901 a focu:topic ;
+    rdfs:label " Thiswillreturnaperson s URL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/URL> .
+
+focudata:topic259881 a focu:topic ;
+    rdfs:label " Thisisaso called binary "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Binary_number> .
+
+focudata:topic262059 a focu:topic ;
+    rdfs:label "https www w3 org  Design Issues  Linked Data html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Design_Issues> .
+
+focudata:topic263327 a focu:topic ;
+    rdfs:label "rdfs  Class"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic265380 a focu:topic ;
+    rdfs:label "dog"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Dog> .
+
+focudata:topic266322 a focu:topic ;
+    rdfs:label "norm "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Social_norm> .
+
+focudata:topic266391 a focu:topic ;
+    rdfs:label " http id loc gov authorities subjects sh85010023 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Library_of_Congress> .
+
+focudata:topic270290 a focu:topic ;
+    rdfs:label " Notusingfull RDF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic276956 a focu:topic ;
+    rdfs:label "rdfs domain"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic278256 a focu:topic ;
+    rdfs:label " False Negative FN "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/National_Rally_(France)> .
+
+focudata:topic282292 a focu:topic ;
+    rdfs:label "thatpointstoamachine readabledescriptioninthe RDF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic283573 a focu:topic ;
+    rdfs:label " xa http dbpedia org resource  Cypress "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Scion_xA> .
+
+focudata:topic284778 a focu:topic ;
+    rdfs:label "  Computethe AP 3and"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Andhra_Pradesh> .
+
+focudata:topic286997 a focu:topic ;
+    rdfs:label "k  Means  Outliers"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Outlier> .
+
+focudata:topic301553 a focu:topic ;
+    rdfs:label " Seehttps jena apache org documentation inference "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Jena> .
+
+focudata:topic306879 a focu:topic ;
+    rdfs:label "datatype"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Data_type> .
+
+focudata:topic308536 a focu:topic ;
+    rdfs:label " Cham 2020  Springer International Publishing "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Chams> .
+
+focudata:topic310362 a focu:topic ;
+    rdfs:label "k NN"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic312452 a focu:topic ;
+    rdfs:label "URL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/URL> .
+
+focudata:topic312978 a focu:topic ;
+    rdfs:label "https venturebeat com 2017 06 26 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/VentureBeat> .
+
+focudata:topic314292 a focu:topic ;
+    rdfs:label "RDF Literals"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic319359 a focu:topic ;
+    rdfs:label "https www youtube com watch v 3 Yc Z3 Zqk0a8"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/BMW_Z3> .
+
+focudata:topic320642 a focu:topic ;
+    rdfs:label "E g alwaysuse FOA Ftodescribenames emails etc insteadofmakingup"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Swedish_National_Defence_Research_Institute> .
+
+focudata:topic326642 a focu:topic ;
+    rdfs:label " Union  Querying Alternatives"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Union_Army> .
+
+focudata:topic327002 a focu:topic ;
+    rdfs:label "tags  Identifyentriesusedby Facebook s"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook> .
+
+focudata:topic332091 a focu:topic ;
+    rdfs:label " Eliza https en wikipedia org wiki ELIZA"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/ELIZA> .
+
+focudata:topic335186 a focu:topic ;
+    rdfs:label " Copyright 2008 Cambridge University Press"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cambridge_University_Press> .
+
+focudata:topic336328 a focu:topic ;
+    rdfs:label "AP 3"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Associated_Press> .
+
+focudata:topic337062 a focu:topic ;
+    rdfs:label " WZRH14  Chapter5 SPARQL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic337137 a focu:topic ;
+    rdfs:label " Anatomyofa URI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic343795 a focu:topic ;
+    rdfs:label "https www dbpedia spotlight org "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/DBpedia> .
+
+focudata:topic344149 a focu:topic ;
+    rdfs:label " 10 000 000 andtf idf 1 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic346099 a focu:topic ;
+    rdfs:label " Copyright2016by Manning Publications Co TB16 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Manning_Publications> .
+
+focudata:topic349835 a focu:topic ;
+    rdfs:label "D Bpediacontains amongotherinformation thelinkto Concordia s"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic351402 a focu:topic ;
+    rdfs:label " Microsoft"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Microsoft> .
+
+focudata:topic357770 a focu:topic ;
+    rdfs:label "semantics"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantics> .
+
+focudata:topic361951 a focu:topic ;
+    rdfs:label " Probablythemostwidelyusedtypeof SPARQ Lquery"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic362238 a focu:topic ;
+    rdfs:label "AVG MIN MAX COUNT SUM "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/AVG_AntiVirus> .
+
+focudata:topic362696 a focu:topic ;
+    rdfs:label "cosine"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Trigonometric_functions> .
+
+focudata:topic366764 a focu:topic ;
+    rdfs:label "competency questions to SPARQL OWL queries translations"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic369699 a focu:topic ;
+    rdfs:label " temporalelement spa spatialelement CE classexpression OPE objectpropertyexpression DP datatype"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Spa> .
+
+focudata:topic371363 a focu:topic ;
+    rdfs:label " RDF SPARQL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic372727 a focu:topic ;
+    rdfs:label " Turing Test"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Turing_test> .
+
+focudata:topic373937 a focu:topic ;
+    rdfs:label "isthecanonical URI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic376060 a focu:topic ;
+    rdfs:label "  Gartner "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Gartner> .
+
+focudata:topic385683 a focu:topic ;
+    rdfs:label "AI Winter"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/AI_winter> .
+
+focudata:topic385940 a focu:topic ;
+    rdfs:label "you re either in or out feast or famine Booleanmodel "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Famine> .
+
+focudata:topic385949 a focu:topic ;
+    rdfs:label " Item Metadata"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Metadata> .
+
+focudata:topic387375 a focu:topic ;
+    rdfs:label " nose big teeth big eyes big moustache no "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Big_Eyes> .
+
+focudata:topic387925 a focu:topic ;
+    rdfs:label " Description Logic "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Description_logic> .
+
+focudata:topic388257 a focu:topic ;
+    rdfs:label " Description Logics DL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Deputy_lieutenant> .
+
+focudata:topic390713 a focu:topic ;
+    rdfs:label " Copyright2008by Cambridge University Press MRS08 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cambridge_University_Press> .
+
+focudata:topic391565 a focu:topic ;
+    rdfs:label " Eliza DOCTO Rscript"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/R_(programming_language)> .
+
+focudata:topic392446 a focu:topic ;
+    rdfs:label "  Semi  Automaticallyconstructed e g D Bpedia  Babel Net "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Babel_Label> .
+
+focudata:topic393570 a focu:topic ;
+    rdfs:label " The  Semantic Web "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_Web> .
+
+focudata:topic393721 a focu:topic ;
+    rdfs:label "canada revenue agency launches 100 audits after paradise papers leak html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Canada_Revenue_Agency> .
+
+focudata:topic394553 a focu:topic ;
+    rdfs:label "top 3  Notetheinthe AP 3forthethreesystems "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Andhra_Pradesh> .
+
+focudata:topic400922 a focu:topic ;
+    rdfs:label "  Du C13  Learning SPARQL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic401288 a focu:topic ;
+    rdfs:label " e g  Canadain D Bpediaand Wikidata "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic401826 a focu:topic ;
+    rdfs:label "  Bob isafriendof  Alice "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Alice_and_Bob> .
+
+focudata:topic406374 a focu:topic ;
+    rdfs:label "  Mona Lisa xsd string"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic407300 a focu:topic ;
+    rdfs:label " e g  Facebook Graph Search  Google Knowledge Graph and"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook_Graph_Search> .
+
+focudata:topic408956 a focu:topic ;
+    rdfs:label " Currentversion1 1 like RDF RDFS "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic414190 a focu:topic ;
+    rdfs:label " Ethical AI  Responsible AI  Explainable AI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic418779 a focu:topic ;
+    rdfs:label "MIT"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Massachusetts_Institute_of_Technology> .
+
+focudata:topic425250 a focu:topic ;
+    rdfs:label " alreadyenrolledat Concordia "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic425651 a focu:topic ;
+    rdfs:label " Allthedetailsaboutdatatypes https www w3 org TR 2014 REC rdf11 concepts 20140225 section  Datatypes"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Renewable_Energy_Corporation> .
+
+focudata:topic425902 a focu:topic ;
+    rdfs:label " Paradise Papers 13 4millionpapersregardingoffshore"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Paradise_Papers> .
+
+focudata:topic426331 a focu:topic ;
+    rdfs:label "question answering"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Question_answering> .
+
+focudata:topic427012 a focu:topic ;
+    rdfs:label "PREFI Xrdfs http www w3 org 2000 01 rdf schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic427477 a focu:topic ;
+    rdfs:label " Knowledge Management Architecture3 0"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Knowledge_management> .
+
+focudata:topic431730 a focu:topic ;
+    rdfs:label " See Weizenbaum spaperat "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Joseph_Weizenbaum> .
+
+focudata:topic431921 a focu:topic ;
+    rdfs:label "thesubject IRI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Istituto_per_la_Ricostruzione_Industriale> .
+
+focudata:topic432552 a focu:topic ;
+    rdfs:label "1 1 modifyinggraphsvia SPARQL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic432992 a focu:topic ;
+    rdfs:label " MG17  Chapters2 3 5 k NN k  Means  Evaluation "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic433933 a focu:topic ;
+    rdfs:label " Community constructed e g  Freebase  Wikidata "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Freebase> .
+
+focudata:topic435049 a focu:topic ;
+    rdfs:label "big data analytics house of cards and future of television creation consumption "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Analytics> .
+
+focudata:topic436709 a focu:topic ;
+    rdfs:label " Luanda Leaks 715 000emails charts contracts audits etc "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Luanda> .
+
+focudata:topic438255 a focu:topic ;
+    rdfs:label "AP N"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Associated_Press> .
+
+focudata:topic439039 a focu:topic ;
+    rdfs:label "objectpropertyrelation data datatypepropertyrelation num numeric quan quantitative tem "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Transmission_electron_microscopy> .
+
+focudata:topic440073 a focu:topic ;
+    rdfs:label " http dbpedia org resource  Concordia  University "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic440217 a focu:topic ;
+    rdfs:label " Likert"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Likert_scale> .
+
+focudata:topic443225 a focu:topic ;
+    rdfs:label "apropertytypicallyusedtorefertoavocabulary RDF Schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic445219 a focu:topic ;
+    rdfs:label "rdfs label"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic449205 a focu:topic ;
+    rdfs:label "  Mona Lisa "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic449599 a focu:topic ;
+    rdfs:label " Usedtogetherwith RDF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic457289 a focu:topic ;
+    rdfs:label " Your SPARQ Lquery  Whatcanyouin D Bpediawith"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic458350 a focu:topic ;
+    rdfs:label "skos broad Match"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic460367 a focu:topic ;
+    rdfs:label " Copyright2009by Manning Publications Co  Ala09 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Manning_Publications> .
+
+focudata:topic460541 a focu:topic ;
+    rdfs:label " Thisstatesthatvaluesofapropertyareinstancesofone ormore class es "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/South_African_Class_ES> .
+
+focudata:topic468851 a focu:topic ;
+    rdfs:label "https www youtube com watch v 2 Zz G Mzit Ngo"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mobile_Suit_Gundam_ZZ> .
+
+focudata:topic469011 a focu:topic ;
+    rdfs:label " RN10  Chapter12  Knowledge Representation "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Route_nationale_10> .
+
+focudata:topic472338 a focu:topic ;
+    rdfs:label " Usingyourphoneorlaptop lookup our  Concordia Universityintheopenknowledgebase"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic472863 a focu:topic ;
+    rdfs:label " http id loc gov authorities subjects sh85031620 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Library_of_Congress> .
+
+focudata:topic475463 a focu:topic ;
+    rdfs:label " In RDF "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic475694 a focu:topic ;
+    rdfs:label " Includesslidesby Christopher D  Manning  Prabhakar Raghavanand"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Christopher_Moltisanti> .
+
+focudata:topic479319 a focu:topic ;
+    rdfs:label "RDF Dataset"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic479519 a focu:topic ;
+    rdfs:label " Spotlight"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/The_Boston_Globe> .
+
+focudata:topic480911 a focu:topic ;
+    rdfs:label " The Web Ontology Language OWL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Web_Ontology_Language> .
+
+focudata:topic487294 a focu:topic ;
+    rdfs:label " Linked Data Publishing Optionsand Wws"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Data_publishing> .
+
+focudata:topic488066 a focu:topic ;
+    rdfs:label "FOAF  Friend of a  Friend  Vocabulary"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic496952 a focu:topic ;
+    rdfs:label " Term Vector Space Model"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Vector_space_model> .
+
+focudata:topic499451 a focu:topic ;
+    rdfs:label "D Bpedia Spotlight"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/The_Boston_Globe> .
+
+focudata:topic500006 a focu:topic ;
+    rdfs:label " normalized "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Standard_score> .
+
+focudata:topic500008 a focu:topic ;
+    rdfs:label " Learning Curve"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RC2_Corporation> .
+
+focudata:topic501788 a focu:topic ;
+    rdfs:label " Cleopatra"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cleopatra> .
+
+focudata:topic502179 a focu:topic ;
+    rdfs:label " Notesand Further Reading"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Reading_F.C.> .
+
+focudata:topic504367 a focu:topic ;
+    rdfs:label " default graph"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Graph_theory> .
+
+focudata:topic505481 a focu:topic ;
+    rdfs:label "openaccess e g  Wikidata D Bpedia YAGO "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/OpenAccess> .
+
+focudata:topic505650 a focu:topic ;
+    rdfs:label " Google Assistant"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Google_Assistant> .
+
+focudata:topic508191 a focu:topic ;
+    rdfs:label "https doi org 10 1145 2506182 2506198"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Digital_object_identifier> .
+
+focudata:topic508732 a focu:topic ;
+    rdfs:label "dbr  Concordia  Universitydbo countrydbr  Mexico"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic513042 a focu:topic ;
+    rdfs:label " http www w3 org 2004 02 skos core broader "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic514042 a focu:topic ;
+    rdfs:label " notcurrentlyregisteredat Concordia "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic516251 a focu:topic ;
+    rdfs:label "vector"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Euclidean_vector> .
+
+focudata:topic516992 a focu:topic ;
+    rdfs:label " http data europeana eu item 04802 243FA8618938F4117025F17A8B813C5F9AA4D619 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Europeana> .
+
+focudata:topic517815 a focu:topic ;
+    rdfs:label " http www w3 org 2004 02 skos core narrower "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic519567 a focu:topic ;
+    rdfs:label "SELECT MAX amount as max Amount "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/MAX_Light_Rail> .
+
+focudata:topic519633 a focu:topic ;
+    rdfs:label " Historyof Knowledge Representation KR "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Knowledge_representation_and_reasoning> .
+
+focudata:topic521038 a focu:topic ;
+    rdfs:label " http www w3 org 2004 02 skos core pref Label "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic522648 a focu:topic ;
+    rdfs:label " Stanford"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Stanford_University> .
+
+focudata:topic524933 a focu:topic ;
+    rdfs:label "https en wikipedia org wiki  Wikidata"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic534937 a focu:topic ;
+    rdfs:label "  Resource Description Framework "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic536257 a focu:topic ;
+    rdfs:label "isavalid URI butnota URL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic544328 a focu:topic ;
+    rdfs:label "dbpedia  Leonardo da  Vinci"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic547862 a focu:topic ;
+    rdfs:label " Open Graph Protocol"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook_Platform> .
+
+focudata:topic550751 a focu:topic ;
+    rdfs:label " Voltaire "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Voltaire> .
+
+focudata:topic552599 a focu:topic ;
+    rdfs:label " Apple s  Knowledge Navigator  Vision 1987 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Apple_Inc.> .
+
+focudata:topic553393 a focu:topic ;
+    rdfs:label "auteur"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Auteur> .
+
+focudata:topic554787 a focu:topic ;
+    rdfs:label "CAG Rof"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Comptroller_and_Auditor_General_of_India> .
+
+focudata:topic556154 a focu:topic ;
+    rdfs:label "UR Iisnotalwaysthesameasa URL  Uniform Resource Locator "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/URL> .
+
+focudata:topic560429 a focu:topic ;
+    rdfs:label " RN10 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Route_nationale_10> .
+
+focudata:topic561189 a focu:topic ;
+    rdfs:label "rdfs label  The Glass Palace en "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic561309 a focu:topic ;
+    rdfs:label "overtraining"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Overtraining> .
+
+focudata:topic561699 a focu:topic ;
+    rdfs:label "nowsimplyusethe URI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic564306 a focu:topic ;
+    rdfs:label "RDF Triples"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic564925 a focu:topic ;
+    rdfs:label " Whensomeonelooksupa URI provideusefulinformation usingthestandards"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic565378 a focu:topic ;
+    rdfs:label " Cortana"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cortana> .
+
+focudata:topic565582 a focu:topic ;
+    rdfs:label " Youcannowmatchthenewquestionwithacorresponding SPARQ Ltemplatetoobtainaqueryfor"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic565687 a focu:topic ;
+    rdfs:label " In1959  Arthur Samuelproposedtheconcept"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/King_Arthur> .
+
+focudata:topic566835 a focu:topic ;
+    rdfs:label " Decision Trees"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Decision_tree_learning> .
+
+focudata:topic566879 a focu:topic ;
+    rdfs:label " Sci  Fi"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SCi_Games> .
+
+focudata:topic570373 a focu:topic ;
+    rdfs:label " Simple HTTP Request"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Hypertext_Transfer_Protocol> .
+
+focudata:topic570437 a focu:topic ;
+    rdfs:label " Cosine"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Trigonometric_functions> .
+
+focudata:topic571350 a focu:topic ;
+    rdfs:label "RDF XML"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic571975 a focu:topic ;
+    rdfs:label " Youcannowusethesevectorsfor cosine similaritycalculationstorecommendationsasbefore but"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Trigonometric_functions> .
+
+focudata:topic578844 a focu:topic ;
+    rdfs:label " Linked Data  Design Issues"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic586754 a focu:topic ;
+    rdfs:label " Christopher D  Manning  Prabhakar Raghavan and Hinrich Sch tze "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Christopher_Moltisanti> .
+
+focudata:topic587610 a focu:topic ;
+    rdfs:label " Wikidata  Data Model"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic589870 a focu:topic ;
+    rdfs:label "LOD Datasets https www lod cloud net "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic590484 a focu:topic ;
+    rdfs:label "AI Learnsto Park"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic593940 a focu:topic ;
+    rdfs:label "https github com openlink virtuoso opensource"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Virtuoso_Universal_Server> .
+
+focudata:topic595916 a focu:topic ;
+    rdfs:label "inversedocumentfrequency idf "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic599808 a focu:topic ;
+    rdfs:label " Computingtf idf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic601144 a focu:topic ;
+    rdfs:label "  Yu14  Chapter9  Linked Open Data "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic601478 a focu:topic ;
+    rdfs:label "dcterms title  Mona Lisa "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic604853 a focu:topic ;
+    rdfs:label " Usedin Internet"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Internet> .
+
+focudata:topic608395 a focu:topic ;
+    rdfs:label " Amazon AWS Neptune seehttps aws amazon com neptune "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Amazon_Web_Services> .
+
+focudata:topic610443 a focu:topic ;
+    rdfs:label " Remember wedonot classify documents likein spamvs ham "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ham> .
+
+focudata:topic612536 a focu:topic ;
+    rdfs:label " WZRH14  Chapters2 4 RDF FOAF "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic613933 a focu:topic ;
+    rdfs:label " Guantanamo Bay Files TPP Agreements CIA Documents  German BND NSA"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Guantanamo_Bay_detention_camp> .
+
+focudata:topic614927 a focu:topic ;
+    rdfs:label "https plato stanford edu entries arintelligence "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Stanford_University> .
+
+focudata:topic617881 a focu:topic ;
+    rdfs:label "W3C  World Wide Web Consortium standard recommendation "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
+
+focudata:topic624671 a focu:topic ;
+    rdfs:label " Google"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Google> .
+
+focudata:topic624753 a focu:topic ;
+    rdfs:label " Andreas CM llerand Sarah Guido "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Midfielder> .
+
+focudata:topic628933 a focu:topic ;
+    rdfs:label " The Linked Open Data Cloud"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic629290 a focu:topic ;
+    rdfs:label "prefixrdfs http www w3 org 2000 01 rdf schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic636304 a focu:topic ;
+    rdfs:label " Reasonablymaturetechnology opensource commercial many SAAS"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Software_as_a_service> .
+
+focudata:topic638526 a focu:topic ;
+    rdfs:label " Small Medium Enterprise"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Space_Shuttle_Enterprise> .
+
+focudata:topic638766 a focu:topic ;
+    rdfs:label "ofthesentence e g toplugitintoa SPARQL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic644275 a focu:topic ;
+    rdfs:label "NLP Pipeline"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Natural_language_processing> .
+
+focudata:topic644317 a focu:topic ;
+    rdfs:label " Apache Lucene  Solr  Elastic Search "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Apache_Lucene> .
+
+focudata:topic644759 a focu:topic ;
+    rdfs:label "schema birth Date 1990 07 04 xsd date "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/XML_schema> .
+
+focudata:topic645704 a focu:topic ;
+    rdfs:label " Natural Language Annotationfor Machine Learning"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic646018 a focu:topic ;
+    rdfs:label "AI I Ssystemssufferfromthe"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic649013 a focu:topic ;
+    rdfs:label "E g IBM s UIM Aor Universityofs GATE"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/IBM> .
+
+focudata:topic650243 a focu:topic ;
+    rdfs:label "TB Lat TE Don  Theyearopendatawentworldwide 2010 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Terabyte> .
+
+focudata:topic650875 a focu:topic ;
+    rdfs:label " Wikileaks oftenreleasesmillionsofdocuments"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/WikiLeaks> .
+
+focudata:topic651474 a focu:topic ;
+    rdfs:label "IBM"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/IBM> .
+
+focudata:topic651543 a focu:topic ;
+    rdfs:label "k NN Regression"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic652746 a focu:topic ;
+    rdfs:label " Alexa"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Alexa_Internet> .
+
+focudata:topic654624 a focu:topic ;
+    rdfs:label "SPARQ Lendpoint"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic655018 a focu:topic ;
+    rdfs:label "  Steve Jobs "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Steve_Jobs> .
+
+focudata:topic655026 a focu:topic ;
+    rdfs:label "org 2012 py Rdfa "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDFa> .
+
+focudata:topic655464 a focu:topic ;
+    rdfs:label "http dbpedia org resource  Leonardo da  Vinci"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic655681 a focu:topic ;
+    rdfs:label " Neo4J"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Neo4j> .
+
+focudata:topic656452 a focu:topic ;
+    rdfs:label " Nowin RDF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic661891 a focu:topic ;
+    rdfs:label "JSON LD"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/JSON> .
+
+focudata:topic664894 a focu:topic ;
+    rdfs:label " Likean RD Ftriple exceptsubject predicate and orobjectmaybea"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/First-order_logic> .
+
+focudata:topic666446 a focu:topic ;
+    rdfs:label " 1995 thecompanion AI"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic667572 a focu:topic ;
+    rdfs:label "schema org"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/XML_schema> .
+
+focudata:topic670284 a focu:topic ;
+    rdfs:label " Marvin Hofer  Sebastian Hellmann  Milan Dojchinovski and Johannes"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Saint_Sebastian> .
+
+focudata:topic672280 a focu:topic ;
+    rdfs:label " Apache Fuseki  Standalone Server Mode "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Apache_HTTP_Server> .
+
+focudata:topic673609 a focu:topic ;
+    rdfs:label " Facebookinternaldocumentsleaks  Cambridge Analyticascandal 7000"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/University_of_Cambridge> .
+
+focudata:topic675538 a focu:topic ;
+    rdfs:label " Wea"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wea> .
+
+focudata:topic680721 a focu:topic ;
+    rdfs:label " Whereis Concordia "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic683455 a focu:topic ;
+    rdfs:label "RDF Schema RDFS "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic684179 a focu:topic ;
+    rdfs:label " The AI Behind Watson http www aaai org  Magazine  Watson watson php"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic687736 a focu:topic ;
+    rdfs:label "SPARQ Lquery "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQ_Training> .
+
+focudata:topic694423 a focu:topic ;
+    rdfs:label "LOD compliantformat "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Level_of_detail> .
+
+focudata:topic696264 a focu:topic ;
+    rdfs:label " Gene Ontology GO "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Gene_ontology> .
+
+focudata:topic700389 a focu:topic ;
+    rdfs:label " The Resource Description Framework RDF "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic700839 a focu:topic ;
+    rdfs:label "  Universite Concor "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concor_Holdings> .
+
+focudata:topic701033 a focu:topic ;
+    rdfs:label " General Approach"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/General_officer> .
+
+focudata:topic701657 a focu:topic ;
+    rdfs:label "k NN Generalcase"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic705843 a focu:topic ;
+    rdfs:label " http dbpedia org resource  Mona  Lisa lio shows x "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Isla_de_Mona> .
+
+focudata:topic708993 a focu:topic ;
+    rdfs:label " https www w3 org TR shacl see HHDF20 foranexample "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SHACL> .
+
+focudata:topic709142 a focu:topic ;
+    rdfs:label " Makesureyouusethecorrect URI "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
+
+focudata:topic712360 a focu:topic ;
+    rdfs:label " Metaweb"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Metaweb> .
+
+focudata:topic713478 a focu:topic ;
+    rdfs:label "http dbpedia org resource  Concordia"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic716466 a focu:topic ;
+    rdfs:label " Ultimate Guideto Leveraging NLP  Machine Learningforyour Chatbot "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Natural_language_processing> .
+
+focudata:topic716829 a focu:topic ;
+    rdfs:label " Freebase"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Freebase> .
+
+focudata:topic717401 a focu:topic ;
+    rdfs:label " Public SPARQL Endpoint"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic717483 a focu:topic ;
+    rdfs:label " notareal URL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/URL> .
+
+focudata:topic717841 a focu:topic ;
+    rdfs:label "  Concordia University "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic718588 a focu:topic ;
+    rdfs:label "  Yu14  Chapter4 RDFS "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic721689 a focu:topic ;
+    rdfs:label "themostfrequenttags example  Last fm "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Last.fm> .
+
+focudata:topic728054 a focu:topic ;
+    rdfs:label "AI ML DL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Artificial_intelligence> .
+
+focudata:topic732572 a focu:topic ;
+    rdfs:label " Againusing FOAF modelthat"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic733502 a focu:topic ;
+    rdfs:label " Is Concordia Universitylocatedin Mexico "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic734254 a focu:topic ;
+    rdfs:label " Note the intf idfisahyphen notaminussign "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Institute_for_New_Testament_Textual_Research> .
+
+focudata:topic736783 a focu:topic ;
+    rdfs:label "  Yu14  Chapters1 2  Introduction RDF "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic738014 a focu:topic ;
+    rdfs:label "RDF Sreasoner "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic738188 a focu:topic ;
+    rdfs:label "k NN Regression  General Case"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Normalnull> .
+
+focudata:topic739290 a focu:topic ;
+    rdfs:label "  Yu14  Chapter6 SPARQL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic739625 a focu:topic ;
+    rdfs:label "IBM Watson https en wikipedia org wiki  Watson computer "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/IBM> .
+
+focudata:topic741960 a focu:topic ;
+    rdfs:label "NL Ptools e g UIMA GATE "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/UIMA> .
+
+focudata:topic742037 a focu:topic ;
+    rdfs:label " Usedtogetherwiththe  Like button"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Like_button> .
+
+focudata:topic744551 a focu:topic ;
+    rdfs:label "skos exact Match"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Simple_Knowledge_Organization_System> .
+
+focudata:topic753778 a focu:topic ;
+    rdfs:label " Named Entity Recognition  Information Extraction "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Named-entity_recognition> .
+
+focudata:topic754730 a focu:topic ;
+    rdfs:label " Siri"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Siri> .
+
+focudata:topic756799 a focu:topic ;
+    rdfs:label "RDFS Utility Vocabulary"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic756969 a focu:topic ;
+    rdfs:label "SPARQL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic757749 a focu:topic ;
+    rdfs:label " Whowas Steve Jobs "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Steve_Jobs> .
+
+focudata:topic758643 a focu:topic ;
+    rdfs:label "examineyourfavoritemovieon IMDB "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/IMDb> .
+
+focudata:topic759515 a focu:topic ;
+    rdfs:label "RDF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic761229 a focu:topic ;
+    rdfs:label "http www cognub com index php cognitive platform "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Cognition> .
+
+focudata:topic764889 a focu:topic ;
+    rdfs:label "bot analytics platform releases new chatbot landscape "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Chatbot> .
+
+focudata:topic765217 a focu:topic ;
+    rdfs:label " Mtl Blog"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/MTL_Blog> .
+
+focudata:topic766664 a focu:topic ;
+    rdfs:label "contentwritteninanaturallanguage e g  Englishor French "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/French_language> .
+
+focudata:topic769783 a focu:topic ;
+    rdfs:label "to Wikidata  Findthe"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Wikidata> .
+
+focudata:topic772495 a focu:topic ;
+    rdfs:label "IBM Watson"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/IBM> .
+
+focudata:topic773460 a focu:topic ;
+    rdfs:label " Natural Language Processing NLP "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Natural_language_processing> .
+
+focudata:topic774491 a focu:topic ;
+    rdfs:label "CQ Archetypes PA  Predicate Arity RT  Relation Type M DE  Domain independent Element obj "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Predicate_(grammar)> .
+
+focudata:topic775348 a focu:topic ;
+    rdfs:label " Semantic Web"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_Web> .
+
+focudata:topic777804 a focu:topic ;
+    rdfs:label " Seehttps www w3 org TR rdf11 primer "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Centerfire_ammunition> .
+
+focudata:topic778904 a focu:topic ;
+    rdfs:label "ghostwriter"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ghostwriter> .
+
+focudata:topic779820 a focu:topic ;
+    rdfs:label " False Positive FP "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/False_Positive_(How_I_Met_Your_Mother)> .
+
+focudata:topic780641 a focu:topic ;
+    rdfs:label " http purl org dc terms title  Mona Lisa "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic780715 a focu:topic ;
+    rdfs:label " Evaluationofa ML Model"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic793534 a focu:topic ;
+    rdfs:label " True Positive TP "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Township_(Canada)> .
+
+focudata:topic795700 a focu:topic ;
+    rdfs:label " Anotherapproach SHACL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SHACL> .
+
+focudata:topic798736 a focu:topic ;
+    rdfs:label "  Choose Turtleformatandcomparethetripleslinkingthearticleusing Facebook s"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook> .
+
+focudata:topic798887 a focu:topic ;
+    rdfs:label " Howis Concordia Universityinthe D Bpediaknowledgegraph"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University_Nebraska> .
+
+focudata:topic799464 a focu:topic ;
+    rdfs:label " rdf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic800305 a focu:topic ;
+    rdfs:label " Apple"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Apple_Inc.> .
+
+focudata:topic809497 a focu:topic ;
+    rdfs:label " aresource isan RDFS"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic809900 a focu:topic ;
+    rdfs:label " Familyofstandards RDF RDFS RD Fa  Turtle N3 SPARQL "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic812134 a focu:topic ;
+    rdfs:label "rdfs"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic819369 a focu:topic ;
+    rdfs:label " Alternativenames tf idf tfxidf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic819830 a focu:topic ;
+    rdfs:label " from  Alison Cawsey  The Essenceof AI 1997 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Alison_DiLaurentis> .
+
+focudata:topic820439 a focu:topic ;
+    rdfs:label " Leonardo da  Vinci"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic820770 a focu:topic ;
+    rdfs:label " Johnisquickerthan Mary"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mary_I_of_England> .
+
+focudata:topic824483 a focu:topic ;
+    rdfs:label " MRS08  Chapter6  Vector Space Model tf idf "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Vector_space_model> .
+
+focudata:topic827515 a focu:topic ;
+    rdfs:label "https www thestar com news paradise papers 2019 01 29 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Paradise_Papers> .
+
+focudata:topic828741 a focu:topic ;
+    rdfs:label "TB Lat TE Don  The Next Web 2009 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Tuberculosis> .
+
+focudata:topic831521 a focu:topic ;
+    rdfs:label " Introductionto Machine Learningwith Python"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Pythonidae> .
+
+focudata:topic833014 a focu:topic ;
+    rdfs:label " Google s Knowledge Graph"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Google> .
+
+focudata:topic833974 a focu:topic ;
+    rdfs:label " Anthony Julius The Hamlet Othello Macbeth "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Anthony_Julius> .
+
+focudata:topic835648 a focu:topic ;
+    rdfs:label " Seehttps jena apache org documentation fuseki2 index html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Jena> .
+
+focudata:topic836596 a focu:topic ;
+    rdfs:label " Example usingthe Gene Ontology "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Gene_ontology> .
+
+focudata:topic836864 a focu:topic ;
+    rdfs:label "Q1a "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Haplogroup_Q-M242> .
+
+focudata:topic838628 a focu:topic ;
+    rdfs:label "https medium com machine learning for humans neural networks deep learning cdad8aeae49b"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic839332 a focu:topic ;
+    rdfs:label " Prentice Hall 3rdedition 2010 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Prentice_Hall> .
+
+focudata:topic839519 a focu:topic ;
+    rdfs:label " Machine Learning Categories"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic840848 a focu:topic ;
+    rdfs:label "idf "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic855912 a focu:topic ;
+    rdfs:label " Machine Learning "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic859985 a focu:topic ;
+    rdfs:label " http id loc gov authorities subjects sh85109817 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Library_of_Congress> .
+
+focudata:topic864258 a focu:topic ;
+    rdfs:label " Example  African Wildlife Ontology AWO "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Ontology> .
+
+focudata:topic865319 a focu:topic ;
+    rdfs:label " Unsupervised Learning"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Unsupervised_learning> .
+
+focudata:topic866634 a focu:topic ;
+    rdfs:label " FOAF whichyou veseenbefore "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic868673 a focu:topic ;
+    rdfs:label " Knowledge Base Queries SPARQL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic869642 a focu:topic ;
+    rdfs:label "arelength normalized "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Standard_score> .
+
+focudata:topic869886 a focu:topic ;
+    rdfs:label " PS12  Chapter7 ML Training "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic874632 a focu:topic ;
+    rdfs:label " Seehttps www researchgate net publication 338424817  Dataset of ontology "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/ResearchGate> .
+
+focudata:topic877095 a focu:topic ;
+    rdfs:label " Union"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Union_Army> .
+
+focudata:topic882048 a focu:topic ;
+    rdfs:label " Determine KP Isandevaluate"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Khyber_Pakhtunkhwa> .
+
+focudata:topic882934 a focu:topic ;
+    rdfs:label " Semantic Vocabulariesfor User Modeling"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/User_modeling> .
+
+focudata:topic885128 a focu:topic ;
+    rdfs:label " Stuart Russelland Peter Norvig "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/House_of_Stuart> .
+
+focudata:topic886499 a focu:topic ;
+    rdfs:label " wewillusea URL"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/URL> .
+
+focudata:topic892162 a focu:topic ;
+    rdfs:label "  Mona Lisa https www wikidata org wiki  Special  Entity Data Q12418 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Lisa> .
+
+focudata:topic896217 a focu:topic ;
+    rdfs:label "Q5 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Audi_Q5> .
+
+focudata:topic909735 a focu:topic ;
+    rdfs:label " Currentversion OWL2 2009 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Web_Ontology_Language> .
+
+focudata:topic911989 a focu:topic ;
+    rdfs:label " Conceptshavebeenaroundforalongtime  Semantic Networks  Frames "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_network> .
+
+focudata:topic915030 a focu:topic ;
+    rdfs:label " Lookatthe HTML"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/HTML> .
+
+focudata:topic918249 a focu:topic ;
+    rdfs:label "  Yu14  Chapter11 2  Facebook s Open Graph Protocol "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook> .
+
+focudata:topic919146 a focu:topic ;
+    rdfs:label " Exportedfromotherdatasources e g  Music Brainz "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/MusicBrainz> .
+
+focudata:topic921909 a focu:topic ;
+    rdfs:label " Facebook s Open Graph Protocol"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Facebook> .
+
+focudata:topic926802 a focu:topic ;
+    rdfs:label " Machine Learning"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Machine_learning> .
+
+focudata:topic932515 a focu:topic ;
+    rdfs:label " Resource Description Framework RDF asaformallanguage"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic936976 a focu:topic ;
+    rdfs:label "comefrom "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/COMEFROM> .
+
+focudata:topic953745 a focu:topic ;
+    rdfs:label " Doug Turnbulland John Berryman "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/John_Berryman> .
+
+focudata:topic968497 a focu:topic ;
+    rdfs:label "E g FOAF friend of a friend "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic970450 a focu:topic ;
+    rdfs:label "http id loc gov authorities subjects sh85010023 html"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Library_of_Congress> .
+
+focudata:topic974485 a focu:topic ;
+    rdfs:label " Addedtometa tagsin HTM Lpage"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/HTM_Personenvervoer> .
+
+focudata:topic975851 a focu:topic ;
+    rdfs:label " Nowthesamebookin French "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/French_language> .
+
+focudata:topic978996 a focu:topic ;
+    rdfs:label " Satnam Alag "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Alag> .
+
+focudata:topic981731 a focu:topic ;
+    rdfs:label "A2012paperreportsa85 1 accuracyfor English with7 4 missinglinks "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/English_language> .
+
+focudata:topic023945 a focu:topic ;
+    rdfs:label " Entity Linking"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Entity_linking> .
+
+focudata:topic028944 a focu:topic ;
+    rdfs:label "transitive"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Transitive_verb> .
+
+focudata:topic041085 a focu:topic ;
+    rdfs:label "schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Database_schema> .
+
+focudata:topic088978 a focu:topic ;
+    rdfs:label " Serialization"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Serialization> .
+
+focudata:topic144178 a focu:topic ;
+    rdfs:label "  Wor14 RDF Primer "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic146655 a focu:topic ;
+    rdfs:label " Morgan  Claypool 2011 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Morgan_Grimes> .
+
+focudata:topic155227 a focu:topic ;
+    rdfs:label " Personalization"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Personalization> .
+
+focudata:topic160717 a focu:topic ;
+    rdfs:label " http www w3 org 1999 02 22 rdf syntax ns type "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic161725 a focu:topic ;
+    rdfs:label " schema org "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/XML_schema> .
+
+focudata:topic207745 a focu:topic ;
+    rdfs:label " World Wide Web Consortium W3C "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
+
+focudata:topic232128 a focu:topic ;
+    rdfs:label "  Concordia "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
+focudata:topic266645 a focu:topic ;
+    rdfs:label " dbpedia org resource  Leonardo da  Vinci "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+focudata:topic300696 a focu:topic ;
+    rdfs:label "tf idf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic461513 a focu:topic ;
+    rdfs:label "europeana"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Europeana> .
+
+focudata:topic472223 a focu:topic ;
+    rdfs:label " Lisa"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Lisa_Simpson> .
+
+focudata:topic477801 a focu:topic ;
+    rdfs:label "rdfs see Also"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic524209 a focu:topic ;
+    rdfs:label "PREFI Xwd "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Xwd> .
+
+focudata:topic557565 a focu:topic ;
+    rdfs:label " mbox sha1sum "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Sha1sum> .
+
+focudata:topic586585 a focu:topic ;
+    rdfs:label " Dublin Core"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Dublin_Core> .
+
+focudata:topic612840 a focu:topic ;
+    rdfs:label " Tom Heathand Christian Bizer "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Christianity> .
+
+focudata:topic624405 a focu:topic ;
+    rdfs:label "PREFI Xxsd http www w3 org 2001 XML Schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/XML_schema> .
+
+focudata:topic657407 a focu:topic ;
+    rdfs:label " Mona"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Mona_Vanderwaal> .
+
+focudata:topic668741 a focu:topic ;
+    rdfs:label "mbox sha1sum"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Sha1sum> .
+
+focudata:topic686021 a focu:topic ;
+    rdfs:label " Handbookof Semantic Web Technologies"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_Web> .
+
+focudata:topic712389 a focu:topic ;
+    rdfs:label "PREFI Xgeo http www w3 org 2003 01 geo wgs84 pos "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Geodetic_System> .
+
+focudata:topic730006 a focu:topic ;
+    rdfs:label "rdfs comment"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic730266 a focu:topic ;
+    rdfs:label "rdf type"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic770680 a focu:topic ;
+    rdfs:label " www w3 org 2001 XML Schema "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/XML_schema> .
+
+focudata:topic813887 a focu:topic ;
+    rdfs:label " Learning SPARQL  Queryingand Updatingwith SPARQL1 1"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/SPARQL> .
+
+focudata:topic818920 a focu:topic ;
+    rdfs:label "rdfs sub Property Of"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic826741 a focu:topic ;
+    rdfs:label "http www w3 org TR rdf11 primer 24 June2014 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Centerfire_ammunition> .
+
+focudata:topic839691 a focu:topic ;
+    rdfs:label " Recommender Systems"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Recommender_system> .
+
+focudata:topic848104 a focu:topic ;
+    rdfs:label " Linked Data  Evolvingthe Webintoa Global Data Space"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic870115 a focu:topic ;
+    rdfs:label " Includesslidesfrom Jay Pujara  Sameer Singh "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Sameer_(lyricist)> .
+
+focudata:topic871427 a focu:topic ;
+    rdfs:label " Copyright2011by Springer  Verlag Berlin Heidelberg DFH11 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Axel_Springer_SE> .
+
+focudata:topic937033 a focu:topic ;
+    rdfs:label " John Domingue  Dieter Fensel and James A  Hendler editors "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Dieter_Fensel> .
+
+focudata:topic999755 a focu:topic ;
+    rdfs:label " Vector Space Model"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Vector_space_model> .
+
+focudata:topic054983 a focu:topic ;
+    rdfs:label "predicate"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/First-order_logic> .
+
+focudata:topic067527 a focu:topic ;
+    rdfs:label "rdfs sub Class Of"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/RDF_Schema> .
+
+focudata:topic115164 a focu:topic ;
+    rdfs:label " Copyright2014by Manning Publications Co WZRH14 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Manning_Publications> .
+
+focudata:topic176263 a focu:topic ;
+    rdfs:label " Linked Data  Structured Dataonthe Web"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Linked_data> .
+
+focudata:topic300493 a focu:topic ;
+    rdfs:label "idf"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Israel_Defense_Forces> .
+
+focudata:topic365360 a focu:topic ;
+    rdfs:label " David Wood  Marsha Zaidman  Luke Ruth and Michael Hausenblas "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Straitjacket_Fits> .
+
+focudata:topic440959 a focu:topic ;
+    rdfs:label "FOAF"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/FOAF_(ontology)> .
+
+focudata:topic122571 a focu:topic ;
+    rdfs:label " Springer  Verlag Berlin Heidelberg 2ndedition 2014 "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Axel_Springer_SE> .
+
+focudata:topic243424 a focu:topic ;
+    rdfs:label " The W3C  Layer Cake "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
+
+focudata:topic270238 a focu:topic ;
+    rdfs:label "A Developer s Guidetothe Semantic Web"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_Web> .
+
+focudata:topic349051 a focu:topic ;
+    rdfs:label " Includesslidesby Ivan Herman W3C  Her "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Herman_and_Katnip> .
+
+focudata:topic408893 a focu:topic ;
+    rdfs:label " Tutorialon Semantic Web Technologies "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Semantic_Web> .
+
+focudata:topic699514 a focu:topic ;
+    rdfs:label " Liyang Yu "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Liyang> .
+
+focudata:topic722218 a focu:topic ;
+    rdfs:label "http www w3 org  People  Ivan  Core Presentations RDF Tutorial "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+focudata:topic068984 a focu:topic ;
+    rdfs:label "https www w3 org TR rdf11 primer "^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Centerfire_ammunition> .
+
+focudata:topic398980 a focu:topic ;
+    rdfs:label "and Software Engineering"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Software_engineering> .
+
+focudata:topic485652 a focu:topic ;
+    rdfs:label " Reading Material"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Reading_F.C.> .
+
+focudata:topic510177 a focu:topic ;
+    rdfs:label " Departmentof Computer Science"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Computer_science> .
+
+focudata:topic911754 a focu:topic ;
+    rdfs:label " Concordia University"^^xsd:string ;
+    owl:sameAs <http://dbpedia.org/resource/Concordia_University> .
+
