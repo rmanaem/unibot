@@ -31,7 +31,7 @@ if __name__ == '__main__':
     last_pathname = os.path.join(students_pathname, 'last.txt')
 
     # Numerical assumptions
-    random.seed(77)
+    np.random.seed(77)
     nb_students = 997
     nb_courses = 40
     grades = [l + '+' for l in 'ABCD'] + [l + '-' for l in 'ABCD'] + [l for l in 'ABCDF']
@@ -39,8 +39,9 @@ if __name__ == '__main__':
     years = list(range(2018, 2023))
 
     # Generate the information for students
-    fName = pd.read_csv(first_pathname, sep="\n").sample(n=nb_students).transpose().values.tolist()[0]
-    lName = pd.read_csv(last_pathname, sep="\n").sample(n=nb_students).transpose().values.tolist()[0]
+    fName = pd.read_csv(first_pathname, sep="\n").sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
+    lName = pd.read_csv(last_pathname, sep="\n").sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
+
     studentIDs = np.random.randint(40000000, 50000000, nb_students)
 
     # contains students' information
@@ -68,10 +69,10 @@ if __name__ == '__main__':
 
         # 40 courses per student
         for course_idx in range(nb_courses):
-            courseID = str(random.choice(courseIDs))
-            grade = str(random.choice(grades))
-            academicTerm = str(random.choice(terms))
-            academicYear = str(random.choice(years))
+            courseID = str(np.random.choice(courseIDs))
+            grade = str(np.random.choice(grades))
+            academicTerm = str(np.random.choice(terms))
+            academicYear = str(np.random.choice(years))
 
             course_uri = URIRef(FOCUDATA + 'courseID_' + courseID)
             completed_course_uri = URIRef(FOCUDATA + studentID + '_courseID_' + courseID + '_' + str(course_idx))
