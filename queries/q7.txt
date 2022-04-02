@@ -13,12 +13,20 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 
 
 SELECT ?label
-  WHERE {
-     ?course vivo:hasSubjectArea ?courseSub.
-     ?course vivo:Catalog ?courseNum .
-     # ?course vivo:Title ?courseTitle.
-     ?courseTopic focu:coveredIn ?course .
-	 ?courseTopic rdfs:label ?label .
-     FILTER(?courseSub = 'COMP')
-     FILTER(?courseNum = 474)
+WHERE {
+    ?uni rdf:type vivo:University .
+    ?uni rdfs:label ?uniLabel .
+    FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+
+    ?course vivo:hasSubjectArea ?subject.
+    ?course vivo:Catalog ?courseNum .
+
+    ?course focu:hasContent ?lecture .
+  	?lecture vivo:contains ?x .
+  	?x focu:covers ?topic .
+  	?topic rdfs:label ?label
+
+    FILTER(?subject = 'COMP')
+    FILTER(?courseNum = 474)
 }

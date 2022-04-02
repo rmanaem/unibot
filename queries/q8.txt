@@ -12,18 +12,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?CourseID ?subjectArea ?catalog ?studentId (count(?term) as ?nbTimesTaken)
+SELECT ?subjectArea ?catalog ?studentId (count(?studentId) as ?nbTimesTaken)
 WHERE {
   ?student rdf:type vivo:Student .
-  ?student vivo:identification ?studentId .
+  ?student vivo:Identification ?studentId .
   ?student focu:hasTaken ?completedCourse .
-  ?completedCourse focu:history ?history .
-  ?history vivo:contains ?term .
+
   ?completedCourse focu:refersTo ?course .
   ?course vivo:Identification ?CourseID .
   ?course vivo:Catalog ?catalog .
   ?course vivo:hasSubjectArea ?subjectArea
 }
-GROUP BY ?completedCourse ?studentId ?CourseID ?subjectArea ?catalog
+GROUP BY ?studentId ?CourseID ?subjectArea ?catalog
 HAVING (?nbTimesTaken >= 2)
 ORDER BY DESC (?nbTimesTaken)

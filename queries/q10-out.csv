@@ -1,5 +1,5 @@
-"uniName","subjectArea","catalog","lecNum","requirement","title","website"
-"Concordia University","COMP","474","2","http://focu.io/data#required","[Yu14,Chapters1,2](Introduction,RDF)","https://concordiauniversity.on.worldcat.org/oclc/897466408"
-"Concordia University","COMP","474","2","http://focu.io/data#supplemental","[Wor14](RDFPrimer)","http://www.w3.org/TR/rdf11-primer/"
-"Concordia University","COMP","474","2","http://focu.io/data#supplemental","[RN10,Chapter12](KnowledgeRepresentation)","https://concordiauniversity.on.worldcat.org/oclc/359890490"
-"Concordia University","COMP","474","2","http://focu.io/data#supplemental","Graphdatabases:ThebestkeptsecretforeffectiveAI","https://www.youtube.com/watch?v=2ZzGMzitNgo"
+ "requirement" , "title" , "website" ,
+ "http://focu.io/data#required" , "[Yu14,Chapters1,2](Introduction,RDF)" , "https://concordiauniversity.on.worldcat.org/oclc/897466408" ,
+ "http://focu.io/data#supplemental" , "[Wor14](RDFPrimer)" , "http://www.w3.org/TR/rdf11-primer/" ,
+ "http://focu.io/data#supplemental" , "[RN10,Chapter12](KnowledgeRepresentation)" , "https://concordiauniversity.on.worldcat.org/oclc/359890490" ,
+ "http://focu.io/data#supplemental" , "Graphdatabases:ThebestkeptsecretforeffectiveAI" , "https://www.youtube.com/watch?v=2ZzGMzitNgo" ,

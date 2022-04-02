@@ -12,23 +12,29 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?uniName ?subjectArea ?catalog ?lecNum ?requirement ?title ?website  
+SELECT ?requirement ?title ?website
 WHERE {
-  ?uni rdfs:label ?uniName.
-  ?uni vivo:offers ?course.
-  ?course vivo:hasSubjectArea ?subjectArea.
-  ?course vivo:Catalog ?catalog.
-  ?course focu:hasContent ?lecture.
-  ?lecture rdf:type focu:lecture.
-  ?lecture bibo:number ?lecNum.
-  ?lecture vivo:contains ?readings.
-  ?readings rdf:type focu:readings.
-  ?readings vivo:contains ?reading.
-  ?reading rdf:type focu:reading.
-  ?reading vivo:Title ?title.
-  ?reading vcard:URL ?website.
-  ?reading rdfs:subClassOf ?requirement
-  FILTER(?lecNum = 2)
+    ?uni rdf:type vivo:University .
+    ?uni rdfs:label ?uniLabel .
+    FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+
+    ?course vivo:hasSubjectArea ?subjectArea.
+    FILTER(?subjectArea = "COMP")
+    ?course vivo:Catalog ?catalog.
+    FILTER(?catalog = 474)
+    ?course focu:hasContent ?lecture.
+
+    ?lecture bibo:number ?lecNum.
+    FILTER(?lecNum = 2)
+    ?lecture vivo:contains ?readings.
+
+    ?readings rdf:type focu:readings.
+    ?readings vivo:contains ?reading.
+    ?reading rdf:type focu:reading.
+    ?reading vivo:Title ?title.
+    ?reading vcard:URL ?website.
+    ?reading rdfs:subClassOf ?requirement
 }
 
 ORDER BY ?lecNum

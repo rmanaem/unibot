@@ -12,17 +12,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?studentId ?subjectArea ?catalog ?highestGrade 
+SELECT ?studentId ?subjectArea ?catalog ?grade
 WHERE {
-  ?student rdf:type vivo:Student.
-  ?student vivo:identification ?studentId.
-  ?student focu:hasTaken ?completedCourse.
-  ?completedCourse focu:grade ?highestGrade.
-  ?completedCourse focu:refersTo ?course.
-  ?course vivo:hasSubjectArea ?subjectArea.
-  ?course vivo:Catalog ?catalog
-  
-  Filter(?highestGrade = 'F') 
-  Filter(?subjectArea = "CERA")
-  Filter(?catalog = 452)
+    ?uni rdf:type vivo:University .
+    ?uni rdfs:label ?uniLabel .
+    FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+
+    ?course vivo:Catalog ?catalog .
+    ?course vivo:hasSubjectArea ?subjectArea .
+    ?completedCourse focu:refersTo ?course .
+    ?completedCourse focu:grade ?grade .
+    ?student focu:hasTaken ?completedCourse .
+    ?student vivo:Identification ?studentId .
+    ?student rdf:type vivo:Student .
+
+    Filter(?grade = 'F')
+    Filter(?subjectArea = "SOCI")
+    Filter(?catalog = 336)
 }

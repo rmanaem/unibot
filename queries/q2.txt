@@ -11,14 +11,21 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?label ?expertises
+SELECT ?expertise
   WHERE {
     ?student rdf:type vivo:Student.
     ?student foaf:givenName ?givenName .
     ?student foaf:familyName ?familyName .
-    ?student focu:hasExpertise ?expertises .
-    ?expertises rdfs:label ?label
-      
-    FILTER(?givenName = 'Karra')
-    FILTER(?familyName = 'Walton')
+    ?student focu:hasTaken ?completedCourse .
+  	?completedCourse focu:grade ?grade .
+  	?completedCourse focu:refersTo ?course .
+  	?course focu:hasContent ?lecture .
+  	?lecture vivo:contains ?x .
+  	?x focu:covers ?topic .
+  	?topic rdfs:label ?expertise
+
+    FILTER(?givenName = 'Trenae')
+  	FILTER(?familyName = 'Bryan')
+	FILTER(?grade != 'F')
   }
+

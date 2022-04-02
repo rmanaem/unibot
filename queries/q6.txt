@@ -11,12 +11,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?title ?subjectCode ?courseNum ?credit
+SELECT ?title ?subject ?courseNum ?credit
   WHERE {
-      ?x rdf:type vivo:Course.
-      ?x vivo:Title ?title.
-      ?x vivo:hasSubjectArea ?subjectCode.
-      ?x vivo:Catalog ?courseNum.
-      ?x vivo:CourseCredits ?credit
-    FILTER(?credit = 4.0)
+        ?uni rdf:type vivo:University .
+        ?uni rdfs:label ?uniLabel .
+        FILTER CONTAINS (?uniLabel, "Concordia University")
+        ?uni vivo:offers ?course .
+        
+        ?course rdf:type vivo:Course.
+        ?course vivo:Title ?title.
+        ?course vivo:hasSubjectArea ?subject.
+        ?course vivo:Catalog ?courseNum.
+        ?course vivo:CourseCredits ?credit
+        FILTER(?credit = 4.0)
     }

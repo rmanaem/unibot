@@ -10,11 +10,16 @@ PREFIX vivo: <http://vivoweb.org/ontology/core#>
 
 SELECT ?courseName ?courseNumber ?title ?courseDesc
    WHERE{
-   	?x rdf:type vivo:Course.
-   	?x vivo:hasSubjectArea ?courseName.
-   	?x vivo:Catalog ?courseNumber.
-   	?x vivo:description ?courseDesc.
-   	?x vivo:Title ?title 
+    ?uni rdf:type vivo:University .
+  	?uni rdfs:label ?uniLabel .
+  	FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+
+   	?course rdf:type vivo:Course.
+   	?course vivo:hasSubjectArea ?courseName.
+   	?course vivo:Catalog ?courseNumber.
+   	?course vivo:description ?courseDesc.
+   	?course vivo:Title ?title
    	FILTER(?courseName = 'COMP')
    	FILTER(?courseNumber = 474)
    }

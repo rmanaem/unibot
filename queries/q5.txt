@@ -12,12 +12,17 @@ PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
 
-SELECT  ?id ?title (Count(?x) as ?count)
-  WHERE {
-      ?course rdf:type vivo:Course .
-      ?course vivo:Identification ?id .
-      ?course vivo:Title ?title .
-      ?x focu:refersTo ?course .
-  	  filter(?id = 47892)
-    }
-	GROUP BY ?id ?title
+SELECT ?subject ?catalog (Count(?completedCourse) as ?count)
+WHERE {
+    ?uni rdf:type vivo:University .
+    ?uni rdfs:label ?uniLabel .
+    FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+
+  	?course rdf:type vivo:Course .
+  	?completedCourse focu:refersTo ?course .
+  	?course vivo:hasSubjectArea ?subject .
+  	?course vivo:Catalog ?catalog .
+}
+GROUP BY ?uniLabel ?subject ?catalog
+ORDER BY ?subject ?catalog
