@@ -92,6 +92,13 @@ stories:
     - intent: failed_student
     - action: action_failed_student
 
+- story: course readings
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_readings
+    - action: action_course_readings
+
 - story: get person info
   steps:
     - intent: greet

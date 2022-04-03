@@ -17,6 +17,7 @@ intents:
   - specific_topics
   - course_retaken
   - failed_student
+  - course_readings
   - about_person
 
 responses:
@@ -51,6 +52,7 @@ entities:
   - university
   - topic
   - counter
+  - material_number
   - person
 
 slots:
@@ -102,6 +104,12 @@ slots:
     mappings:
       - type: custom
 
+  material_number:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
   person:
     type: any
     initial_value: "initial"
@@ -119,4 +127,5 @@ actions:
   - action_specific_topics
   - action_course_retaken
   - action_failed_student
+  - action_course_readings
   - action_person_info
