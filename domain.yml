@@ -8,10 +8,20 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - describe_course
+  - student_competency
+  - university_topics
+  - course_subject
+  - student_enrollment
+  - course_credits
+  - specific_topics
+  - course_retaken
+  - failed_student
+  - about_person
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hi, I'm a university chatbot, how can I help you?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -32,3 +42,81 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+entities:
+  - course_name
+  - course_number
+  - first_name
+  - last_name
+  - university
+  - topic
+  - counter
+  - person
+
+slots:
+  course_name:
+    type: text
+    initial_value: "placeholder"
+    mappings:
+      - type: custom
+
+  course_number:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
+  first_name:
+    type: text
+    initial_value: "initial"
+    mappings:
+      -type: custom
+
+  last_name:
+    type: text
+    initial_value: "initial"
+    mappings:
+      -type: custom
+
+  university:
+    type: text
+    initial_value: "initial"
+    mappings:
+      -type: custom
+
+  topic:
+    type: text
+    initial_value: "initial"
+    mappings:
+      -type: custom
+
+  credits:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
+  counter:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
+
+  person:
+    type: any
+    initial_value: "initial"
+    mappings:
+      - type: custom
+
+
+actions:
+  - action_describe_course
+  - action_student_competency
+  - action_university_topics
+  - action_course_subject
+  - action_student_enrollment
+  - action_course_credits
+  - action_specific_topics
+  - action_course_retaken
+  - action_failed_student
+  - action_person_info

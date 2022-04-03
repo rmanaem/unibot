@@ -89,3 +89,59 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: describe_course
+  examples: |
+    - What is [COMP](course_name) [474](course_number) about?
+    - Tell me about [COMP](course_name) [474](course_number).
+
+- intent: student_competency
+  examples: |
+    - Which topics is [John](first_name) [Smith](last_name) competent in?
+    - Tell me about the topics [John](first_name) [Smith](last_name) is competent in.
+
+- intent: university_topics
+  examples: |
+    - Which subjects at [Concordia University](university) teach [Knowledge Graphs](topic)?
+
+- intent: course_subject
+  examples: |
+    - What are all the courses with a [COMP](course_name) subject at [Concordia University](university)?
+
+- intent: student_enrollment
+  examples: |
+    - How many students are enrolled in each course that is offerec by [Concordia University](university)?
+
+- intent: course_credits
+  examples: |
+    - What courses are worth [4.0](credits) credits at [Concordia University](university)?
+
+- intent: specific_topics
+  examples: |
+    - What are the topics of [COMP](course_name) [474](course_number) at [Concordia University](university)?
+
+- intent: course_retaken
+  examples: |
+    - Which students have taken the same course at least [2](counter) times?
+
+- intent: failed_student
+  examples: |
+    - Which students have failed [COMP](course_name) [474](course_number) at [Concordia University](university)?    
+
+
+- intent: about_person
+  examples: |
+    - Who is he?
+    - Who is [Joe](person) ?
+    - Who is [Kate](person)?
+    - Who is [Harry](person)
+    - Tell me about him
+    - Tell me about
+    - Tell me about [Peter](person)
+    - Tell me about [Joe](person)
+    - Can you tell me about him?
+    - Can you tell me about [Jane](person)?
+    - Can you tell me about [Peter](person) ?
+    - Can you tell me about [Jonathan](person) ?
+    - Do you know [Alice](person) ?
+    - Tell me about [Jack](person) ?
