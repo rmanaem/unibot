@@ -93,44 +93,175 @@ nlu:
 - intent: describe_course
   examples: |
     - What is [COMP](course_name) [474](course_number) about?
+    - What is [COMP](course_name) [6741](course_number) about?
+    - What is [_oov_](course_name) [_oov_](course_number) about?
+    - What is [COMP](course_name) [474](course_number) about.
+    - What is [COMP](course_name) [6741](course_number) about.
+    - What is [_oov_](course_name) [_oov_](course_number) about.    
+    - What is [COMP](course_name) [474](course_number) about
+    - What is [COMP](course_name) [6741](course_number) about
+    - What is [_oov_](course_name) [_oov_](course_number) about
     - Tell me about [COMP](course_name) [474](course_number).
+    - Tell me about [COMP](course_name) [6741](course_number).
+    - Tell me about [_oov_](course_name) [_oov_](course_number).
+    - Tell me about [COMP](course_name) [474](course_number)
+    - Tell me about [COMP](course_name) [6741](course_number)
+    - Tell me about [_oov_](course_name) [_oov_](course_number) 
 
 - intent: student_competency
   examples: |
     - Which topics is [John](first_name) [Smith](last_name) competent in?
+    - Which topics is [_oov_](first_name) [_oov_](last_name) competent in?
+    - Which topics is [John](first_name) [Smith](last_name) competent in
+    - Which topics is [_oov_](first_name) [_oov_](last_name) competent in    
     - Tell me about the topics [John](first_name) [Smith](last_name) is competent in.
+    - Tell me about the topics [_oov_](first_name) [_oov_](last_name) is competent in.
+    - Tell me about the topics [John](first_name) [Smith](last_name) is competent in
+    - Tell me about the topics [_oov_](first_name) [_oov_](last_name) is competent in   
 
 - intent: university_topics
   examples: |
     - Which courses at [Concordia University](university) teach [Knowledge Graphs](topic)?
+    - Which courses at [_oov_](university) teach [_oov_](topic)?
+    - Which courses at [Concordia University](university) teach [Knowledge Graphs](topic).
+    - Which courses at [_oov_](university) teach [_oov_](topic).    
+    - Which courses at [Concordia University](university) teach [Knowledge Graphs](topic)
+    - Which courses at [_oov_](university) teach [_oov_](topic)
+    - Which courses at [Concordia University](university) teaches [Knowledge Graphs](topic)?
+    - Which courses at [_oov_](university) teaches [_oov_](topic)?
+    - Which courses at [Concordia University](university) teaches [Knowledge Graphs](topic).
+    - Which courses at [_oov_](university) teaches [_oov_](topic).       
+    - Which courses at [Concordia University](university) teaches [Knowledge Graphs](topic)
+    - Which courses at [_oov_](university) teaches [_oov_](topic)      
+    - Which courses at [Concordia University](university) cover [Knowledge Graphs](topic)?
+    - Which courses at [_oov_](university) cover [_oov_](topic)?
+    - Which courses at [Concordia University](university) cover [Knowledge Graphs](topic).
+    - Which courses at [_oov_](university) cover [_oov_](topic).    
+    - Which courses at [Concordia University](university) cover [Knowledge Graphs](topic)
+    - Which courses at [_oov_](university) cover [_oov_](topic)
+    - Which courses at [Concordia University](university) covers [Knowledge Graphs](topic)?
+    - Which courses at [_oov_](university) covers [_oov_](topic)?
+    - Which courses at [Concordia University](university) covers [Knowledge Graphs](topic).
+    - Which courses at [_oov_](university) covers [_oov_](topic).    
+    - Which courses at [Concordia University](university) covers [Knowledge Graphs](topic)
+    - Which courses at [_oov_](university) covers [_oov_](topic)
 
 - intent: course_subject
   examples: |
     - What are all the courses with a [COMP](course_name) subject at [Concordia University](university)?
+    - What are all the courses with a [ENGR](course_name) subject at [Concordia University](university)?
+    - What are all the courses with a [ACCT](course_name) subject at [Concordia University](university)?
+    - What are all the courses with a [_oov_](course_name) subject at [_oov_](university)?
+    - What are all the courses with a [COMP](course_name) subject at [Concordia University](university).
+    - What are all the courses with a [ENGR](course_name) subject at [Concordia University](university).
+    - What are all the courses with a [ACCT](course_name) subject at [Concordia University](university).
+    - What are all the courses with a [_oov_](course_name) subject at [_oov_](university).
+    - What are all the courses with a [COMP](course_name) subject at [Concordia University](university)
+    - What are all the courses with a [ENGR](course_name) subject at [Concordia University](university)
+    - What are all the courses with a [ACCT](course_name) subject at [Concordia University](university)
+    - What are all the courses with a [_oov_](course_name) subject at [_oov_](university)
 
 - intent: student_enrollment
   examples: |
-    - How many students are enrolled in each course that is offerec by [Concordia University](university)?
+    - How many students are enrolled in each course that is offered by [Concordia University](university)?
+    - How many students are enrolled in each course that is offered by [_oov_](university)?
+    - How many students are enrolled in each course that is offered by [Concordia University](university).
+    - How many students are enrolled in each course that is offered by [_oov_](university).    
+    - How many students are enrolled in each course that is offered by [Concordia University](university)
+    - How many students are enrolled in each course that is offered by [_oov_](university)
+    - How many students are there in each course that is offered by [Concordia University](university)?
+    - How many students are there in each course that is offered by [_oov_](university)?
+    - How many students are there in each course that is offered by [Concordia University](university).
+    - How many students are there in each course that is offered by [_oov_](university).      
+    - How many students are there in each course that is offered by [Concordia University](university)
+    - How many students are there in each course that is offered by [_oov_](university)   
 
 - intent: course_credits
   examples: |
     - What courses are worth [4.0](credits) credits at [Concordia University](university)?
+    - What courses are worth [_oov_](credits) credits at [_oov_](university)?
+    - What courses are worth [4.0](credits) credits at [Concordia University](university).
+    - What courses are worth [_oov_](credits) credits at [_oov_](university).    
+    - What courses are worth [4.0](credits) credits at [Concordia University](university)
+    - What courses are worth [_oov_](credits) credits at [_oov_](university)
+    - Which courses are worth [4.0](credits) credits at [Concordia University](university)?
+    - Which courses are worth [_oov_](credits) credits at [_oov_](university)? 
+    - Which courses are worth [4.0](credits) credits at [Concordia University](university).
+    - Which courses are worth [_oov_](credits) credits at [_oov_](university).       
+    - Which courses are worth [4.0](credits) credits at [Concordia University](university)
+    - Which courses are worth [_oov_](credits) credits at [_oov_](university)    
 
 - intent: specific_topics
   examples: |
     - What are the topics of [COMP](course_name) [474](course_number) at [Concordia University](university)?
+    - What are the topics of [COMP](course_name) [6741](course_number) at [Concordia University](university)?
+    - What are the topics of [_oov_](course_name) [_oov_](course_number) at [_oov_](university)?
+    - What are the topics of [COMP](course_name) [474](course_number) at [Concordia University](university).
+    - What are the topics of [COMP](course_name) [6741](course_number) at [Concordia University](university).
+    - What are the topics of [_oov_](course_name) [_oov_](course_number) at [_oov_](university). 
+    - What are the topics of [COMP](course_name) [474](course_number) at [Concordia University](university)
+    - What are the topics of [COMP](course_name) [6741](course_number) at [Concordia University](university)
+    - What are the topics of [_oov_](course_name) [_oov_](course_number) at [_oov_](university)
+    - What are the topics covered by [COMP](course_name) [474](course_number) at [Concordia University](university)?
+    - What are the topics covered by [COMP](course_name) [6741](course_number) at [Concordia University](university)?
+    - What are the topics covered by [_oov_](course_name) [_oov_](course_number) at [_oov_](university)?
+    - What are the topics covered by [COMP](course_name) [474](course_number) at [Concordia University](university).
+    - What are the topics covered by [COMP](course_name) [6741](course_number) at [Concordia University](university).
+    - What are the topics covered by [_oov_](course_name) [_oov_](course_number) at [_oov_](university).    
+    - What are the topics covered by [COMP](course_name) [474](course_number) at [Concordia University](university)
+    - What are the topics covered by [COMP](course_name) [6741](course_number) at [Concordia University](university)
+    - What are the topics covered by [_oov_](course_name) [_oov_](course_number) at [_oov_](university) 
 
 - intent: course_retaken
   examples: |
     - Which students have taken the same course at least [2](counter) times?
+    - Which students have taken the same course at least [10](counter) times?
+    - Which students have taken the same course at least [_oov_](counter) times?
+    - Which students have taken the same course at least [2](counter) times.
+    - Which students have taken the same course at least [10](counter) times.
+    - Which students have taken the same course at least [_oov_](counter) times.
+    - Which students have taken the same course at least [2](counter) times
+    - Which students have taken the same course at least [10](counter) times
+    - Which students have taken the same course at least [_oov_](counter) times
 
 - intent: failed_student
   examples: |
     - Which students have failed [COMP](course_name) [474](course_number) at [Concordia University](university)?    
+    - Which students have failed [COMP](course_name) [6741](course_number) at [Concordia University](university)?  
+    - Which students have failed [_oov_](course_name) [_oov_](course_number) at [_oov_](university)?
+    - Which students have failed [COMP](course_name) [474](course_number) at [Concordia University](university).    
+    - Which students have failed [COMP](course_name) [6741](course_number) at [Concordia University](university).  
+    - Which students have failed [_oov_](course_name) [_oov_](course_number) at [_oov_](university).
+    - Which students have failed [COMP](course_name) [474](course_number) at [Concordia University](university)   
+    - Which students have failed [COMP](course_name) [6741](course_number) at [Concordia University](university) 
+    - Which students have failed [_oov_](course_name) [_oov_](course_number) at [_oov_](university)
 
 - intent: course_readings
   examples: |
     - What are the readings for [COMP](course_name) [474](course_number) offered by [Concordia University](university) in lecture [2](material_number)?    
+    - What are the readings for [COMP](course_name) [6741](course_number) offered by [Concordia University](university) in lecture [10](material_number)?
+    - What are the readings for [_oov_](course_name) [_oov_](course_number) offered by [_oov_](university) in lecture [_oov_](material_number)? 
+    - What are the readings for [COMP](course_name) [474](course_number) offered by [Concordia University](university) in lecture [2](material_number).    
+    - What are the readings for [COMP](course_name) [6741](course_number) offered by [Concordia University](university) in lecture [10](material_number).
+    - What are the readings for [_oov_](course_name) [_oov_](course_number) offered by [_oov_](university) in lecture [_oov_](material_number).
+    - What are the readings for [COMP](course_name) [474](course_number) offered by [Concordia University](university) in lecture [2](material_number)    
+    - What are the readings for [COMP](course_name) [6741](course_number) offered by [Concordia University](university) in lecture [10](material_number)
+    - What are the readings for [_oov_](course_name) [_oov_](course_number) offered by [_oov_](university) in lecture [_oov_](material_number) 
+
+- intent: topics_covered
+  examples: |
+    - Which topics are covered in [Lab](course_event) [2](material_number) of [COMP](course_name) [474](course_number)?    
+    - Which topics are covered in [Lecture](course_event) [12](material_number) of [COMP](course_name) [6741](course_number)?
+    - Which topics are covered in [Worksheet](course_event) [5](material_number) of [ENGR](course_name) [371](course_number)? 
+    - Which topics are covered in [_oov_](course_event) [_oov_](material_number) of [_oov_](course_name) [_oov_](course_number)? 
+    - Which topics are covered in [Lab](course_event) [2](material_number) of [COMP](course_name) [474](course_number).    
+    - Which topics are covered in [Lecture](course_event) [12](material_number) of [COMP](course_name) [6741](course_number).
+    - Which topics are covered in [Worksheet](course_event) [5](material_number) of [ENGR](course_name) [371](course_number). 
+    - Which topics are covered in [_oov_](course_event) [_oov_](material_number) of [_oov_](course_name) [_oov_](course_number). 
+    - Which topics are covered in [Lab](course_event) [2](material_number) of [COMP](course_name) [474](course_number)   
+    - Which topics are covered in [Lecture](course_event) [12](material_number) of [COMP](course_name) [6741](course_number)
+    - Which topics are covered in [Worksheet](course_event) [5](material_number) of [ENGR](course_name) [371](course_number) 
+    - Which topics are covered in [_oov_](course_event) [_oov_](material_number) of [_oov_](course_name) [_oov_](course_number)
 
 - intent: about_person
   examples: |

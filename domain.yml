@@ -18,6 +18,7 @@ intents:
   - course_retaken
   - failed_student
   - course_readings
+  - topics_covered
   - about_person
 
 responses:
@@ -51,8 +52,10 @@ entities:
   - last_name
   - university
   - topic
+  - credits
   - counter
   - material_number
+  - course_event
   - person
 
 slots:
@@ -60,61 +63,78 @@ slots:
     type: text
     initial_value: "placeholder"
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: course_name
 
   course_number:
     type: float
     initial_value: 0
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: course_number
 
   first_name:
     type: text
     initial_value: "initial"
     mappings:
-      -type: custom
+      - type: from_entity
+        entity: first_name
 
   last_name:
     type: text
     initial_value: "initial"
     mappings:
-      -type: custom
+      - type: from_entity
+        entity: last_name
 
   university:
     type: text
     initial_value: "initial"
     mappings:
-      -type: custom
+      - type: from_entity
+        entity: university
 
   topic:
     type: text
     initial_value: "initial"
     mappings:
-      -type: custom
+      - type: from_entity
+        entity: topic
 
   credits:
     type: float
     initial_value: 0
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: credits
 
   counter:
     type: float
     initial_value: 0
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: counter
 
   material_number:
     type: float
     initial_value: 0
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: material_number
 
-  person:
-    type: any
+  course_event:
+    type: text
     initial_value: "initial"
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: course_event
+
+  person:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: person
 
 
 actions:
@@ -128,4 +148,5 @@ actions:
   - action_course_retaken
   - action_failed_student
   - action_course_readings
+  - action_topics_covered
   - action_person_info

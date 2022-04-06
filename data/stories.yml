@@ -99,6 +99,13 @@ stories:
     - intent: course_readings
     - action: action_course_readings
 
+- story: topics covered
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: topics_covered
+    - action: action_topics_covered
+
 - story: get person info
   steps:
     - intent: greet
