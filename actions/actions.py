@@ -67,15 +67,18 @@ class ActionDescribeCourse(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += results[i][index]['value'] + '\n'
-            print(s)
-        output = s
-
-        dispatcher.utter_message(text=f"No problem, the description for {tracker.slots['course_name']} {tracker.slots['course_number']} says:\n{output}")
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                for index in (indexes):
+                    s += results[i][index]['value'] + '\n'
+                #print(s)
+            output = s
+            dispatcher.utter_message(text=f"No problem, the description for {tracker.slots['course_name']} {tracker.slots['course_number']} says:\n{output}")
 
         return []
 
@@ -142,16 +145,19 @@ class ActionStudentCompetency(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + '\n'
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Sure thing, {tracker.slots['first_name']} {tracker.slots['last_name']} is competent in the following topics:\n{output}")
+            dispatcher.utter_message(text=f"Sure thing, {tracker.slots['first_name']} {tracker.slots['last_name']} is competent in the following topics:\n{output}")
 
         return []
 
@@ -179,7 +185,7 @@ class ActionUniversityTopics(Action):
         """
 
         query = f"""
-                SELECT ?title ?subjectArea  
+                SELECT ?title ?subjectArea ?courseNum 
                 WHERE{{
                     ?uni rdf:type vivo:University .
                     ?uni rdfs:label ?uniLabel .
@@ -189,7 +195,6 @@ class ActionUniversityTopics(Action):
                     ?course rdf:type vivo:Course.
                     ?course vivo:hasSubjectArea ?subjectArea.
                     ?course vivo:Title ?title.
-                    ?course vivo:hasSubjectArea ?subjectCode.
                     ?course vivo:Catalog ?courseNum.
                     ?course vivo:description ?courseDescription.
                     FILTER (regex(?courseDescription, '{tracker.slots['topic']}')).
@@ -216,16 +221,21 @@ class ActionUniversityTopics(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += index + ' ' + results[i][index]['value'] + '\n'
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Okay, the following courses at {tracker.slots['university']} that teach {tracker.slots['topic']} are:\n{output}")
+            dispatcher.utter_message(
+                text=f"Okay, the following courses at {tracker.slots['university']} that teach {tracker.slots['topic']} are:\n{output}")
 
         return []
 
@@ -287,16 +297,22 @@ class ActionCourseSubject(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Okay, the following subjects at {tracker.slots['university']} that have {tracker.slots['course_name']} as the subject are:\n {output}")
+            dispatcher.utter_message(
+                text=f"Okay, the following courses at {tracker.slots['university']} that have {tracker.slots['course_name']} as the subject are:\n {output}")
 
         return []
 
@@ -359,16 +375,22 @@ class ActionStudentEnrollment(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's the list of courses offerec by {tracker.slots['university']} and the number of students enrolled in each one:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's the list of courses offerec by {tracker.slots['university']} and the number of students enrolled in each one:\n {output}")
 
         return []
 
@@ -425,16 +447,22 @@ class ActionCourseCredits(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's the list of courses offered by {tracker.slots['university']} that are worth {tracker.slots['credits']} credits:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's the list of courses offered by {tracker.slots['university']} that are worth {tracker.slots['credits']} credits:\n {output}")
 
         return []
 
@@ -501,16 +529,22 @@ class ActionSpecificTopics(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's all the topics covered in {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's all the topics covered in {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
 
         return []
 
@@ -537,18 +571,20 @@ class ActionCourseRetaken(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-                SELECT ?subjectArea ?catalog ?studentId (count(?studentId) as ?nbTimesTaken)
+                SELECT ?subjectArea ?catalog ?firstName ?lastName ?studentId (count(?studentId) as ?nbTimesTaken)
                 WHERE {{
                   ?student rdf:type vivo:Student .
                   ?student vivo:Identification ?studentId .
                   ?student focu:hasTaken ?completedCourse .
-                
+                  ?student foaf:givenName ?firstName .
+                  ?student foaf:familyName ?lastName .
+                  
                   ?completedCourse focu:refersTo ?course .
                   ?course vivo:Identification ?CourseID .
                   ?course vivo:Catalog ?catalog .
                   ?course vivo:hasSubjectArea ?subjectArea
                 }}
-                GROUP BY ?studentId ?CourseID ?subjectArea ?catalog
+                GROUP BY ?firstName ?lastName ?studentId ?CourseID ?subjectArea ?catalog
                 HAVING (?nbTimesTaken >= {tracker.slots['counter']})
                 ORDER BY DESC (?nbTimesTaken)
         """
@@ -573,16 +609,22 @@ class ActionCourseRetaken(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's all students that have retaken a course at least {tracker.slots['counter']} times:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's all students that have retaken a course at least {tracker.slots['counter']} times:\n {output}")
 
         return []
 
@@ -609,7 +651,7 @@ class ActionFailedStudent(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-    	    SELECT ?studentId ?subjectArea ?catalog ?grade
+    	    SELECT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
@@ -623,7 +665,9 @@ class ActionFailedStudent(Action):
                 ?student focu:hasTaken ?completedCourse .
                 ?student vivo:Identification ?studentId .
                 ?student rdf:type vivo:Student .
-            
+                ?student foaf:givenName ?firstName .
+                ?student foaf:familyName ?lastName .
+                
                 Filter(?grade = 'F')
                 Filter(?subjectArea = "{tracker.slots['course_name']}")
                 Filter(?catalog = {tracker.slots['course_number']})
@@ -650,16 +694,22 @@ class ActionFailedStudent(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's all students that have failed {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's all students that have failed {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
 
         return []
 
@@ -734,16 +784,22 @@ class ActionCourseReadings(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                #print(i, '----------')
+                s = ''
+                s += str(i) + ' ----------\n'
+                for index in (indexes):
+                    s += results[i][index]['value'] + ' '
+                s += "\n"
+                #print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"Here's all the readings for {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']} for lecture #{tracker.slots['material_number']}:\n {output}")
+            dispatcher.utter_message(
+                text=f"Here's all the readings for {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']} for lecture #{tracker.slots['material_number']}:\n {output}")
 
         return []
 
@@ -810,16 +866,20 @@ class ActionTopicsCovered(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        for i in range(len(results)):
-            print(i, '----------')
-            s = ''
-            for index in (indexes):
-                s += index + ' ' + results[i][index]['value'] + '\n'
-            print(s)
-        output = s
+        if (len(results) == 0):
+            dispatcher.utter_message(
+                text=f"Sorry, I couldn't find anything about your query.")
+        else:
+            for i in range(len(results)):
+                print(i, '----------')
+                s = ''
+                for index in (indexes):
+                    s += index + ' ' + results[i][index]['value'] + '\n'
+                print(s)
+            output = s
 
-        dispatcher.utter_message(
-            text=f"These are the topics covered in {tracker.slots['course_event']} {tracker.slots['material_number']} of {tracker.slots['course_name']} {tracker.slots['course_number']}:\n {output}")
+            dispatcher.utter_message(
+                text=f"These are the topics covered in {tracker.slots['course_event']} {tracker.slots['material_number']} of {tracker.slots['course_name']} {tracker.slots['course_number']}:\n {output}")
 
         return []
 
