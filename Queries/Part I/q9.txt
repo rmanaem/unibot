@@ -1,3 +1,4 @@
+
 PREFIX dbr: <http://dbpedia.org/resource/> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX focu: <http://focu.io/schema#>
@@ -12,7 +13,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?studentId ?subjectArea ?catalog ?grade
+SELECT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
 WHERE {
     ?uni rdf:type vivo:University .
     ?uni rdfs:label ?uniLabel .
@@ -26,7 +27,9 @@ WHERE {
     ?student focu:hasTaken ?completedCourse .
     ?student vivo:Identification ?studentId .
     ?student rdf:type vivo:Student .
-
+    ?student foaf:givenName ?firstName .
+    ?student foaf:familyName ?lastName .
+  
     Filter(?grade = 'F')
     Filter(?subjectArea = "SOCI")
     Filter(?catalog = 336)

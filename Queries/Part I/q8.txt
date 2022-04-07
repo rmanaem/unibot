@@ -1,3 +1,4 @@
+
 PREFIX dbr: <http://dbpedia.org/resource/> 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX focu: <http://focu.io/schema#>
@@ -12,17 +13,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?subjectArea ?catalog ?studentId (count(?studentId) as ?nbTimesTaken)
-WHERE {
-  ?student rdf:type vivo:Student .
-  ?student vivo:Identification ?studentId .
-  ?student focu:hasTaken ?completedCourse .
-
-  ?completedCourse focu:refersTo ?course .
-  ?course vivo:Identification ?CourseID .
-  ?course vivo:Catalog ?catalog .
-  ?course vivo:hasSubjectArea ?subjectArea
-}
-GROUP BY ?studentId ?CourseID ?subjectArea ?catalog
-HAVING (?nbTimesTaken >= 2)
-ORDER BY DESC (?nbTimesTaken)
+SELECT ?subjectArea ?catalog ?firstName ?lastName ?studentId (count(?studentId) as ?nbTimesTaken)
+	WHERE {
+  		?student rdf:type vivo:Student .
+  		?student vivo:Identification ?studentId .
+  		?student focu:hasTaken ?completedCourse .
+        ?student foaf:givenName ?firstName .
+        ?student foaf:familyName ?lastName .
+  
+  		?completedCourse focu:refersTo ?course .
+  		?course vivo:Identification ?CourseID .
+  		?course vivo:Catalog ?catalog .
+  		?course vivo:hasSubjectArea ?subjectArea
+	}
+	GROUP BY ?firstName ?lastName ?studentId ?CourseID ?subjectArea ?catalog
+	HAVING (?nbTimesTaken >= 2)
+	ORDER BY DESC (?nbTimesTaken)
