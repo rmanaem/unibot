@@ -44,6 +44,11 @@ focu:slide
   rdfs:label "Slide"@en;
   rdfs:comment "Slides are offered by the instructor during a lecture"@en.
 
+focu:lab
+  a rdfs:Class;
+  rdfs:label "Lab"@en;
+  rdfs:comment "labs are offered by the instructor during a lecture"@en.
+
 focu:completedCourse
   a rdfs:Class;
   rdfs:label "completed course"@en;

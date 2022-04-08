@@ -92,6 +92,13 @@ if __name__ == '__main__':
                 g.add((worksheetURI, RDF.type, FOCU.worksheet))
                 g.add((worksheetURI, RDFS.subClassOf, lectureURI))
 
+                # labURI
+                labURI = URIRef(os.path.join(courseNamePath, 'Labs',
+                                             'lab' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+                g.add((lectureURI, VIVO.contains, labURI))
+                g.add((labURI, RDF.type, FOCU.lab))
+                g.add((labURI, RDFS.subClassOf, lectureURI))
+
                 # readingURI
                 readingsURI = URIRef(FOCUDATA + courseID + '_Readings' + str("%02d" % lectureNum))
                 g.add((readingsURI, RDFS.subClassOf, lectureURI))
@@ -116,6 +123,7 @@ if __name__ == '__main__':
                     g.add((readingURI, VCARD.URL, URIRef(reading[1])))
                     g.add((readingURI, VIVO.Title, Literal(reading[0])))
                     g.add((readingURI, RDF.type, FOCU.reading))
+                    g.add((FOCUDATA.required, RDFS.label, Literal('Required', datatype=XSD.string)))
 
                     g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
@@ -130,6 +138,7 @@ if __name__ == '__main__':
                     g.add((readingURI, VCARD.URL, URIRef(reading[1])))
                     g.add((readingURI, VIVO.Title, Literal(reading[0])))
                     g.add((readingURI, RDF.type, FOCU.reading))
+                    g.add((FOCUDATA.supplemental, RDFS.label, Literal('Supplemental', datatype=XSD.string)))
 
                     g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 

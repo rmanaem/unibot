@@ -42,7 +42,7 @@ if __name__ == '__main__':
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
                                                'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
 
-            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets')]:
+            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs')]:
                 filePath = os.path.join(
                     path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
                 with open(filePath, mode='rb') as f:
