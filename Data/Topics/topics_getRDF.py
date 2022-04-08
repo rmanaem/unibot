@@ -28,41 +28,56 @@ if __name__ == '__main__':
     g.bind('vcard', VCARD)
     g.bind('bibo', BIBO)
 
-    comp474_lecturesPath = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'COMP474')
+    comp474_lecturesPath = os.path.join(
+        ROOT_DIR, 'Data', 'Lectures', 'COMP474')
+    comp6721_lecturePath = os.path.join(
+        ROOT_DIR, 'Data', 'Lectures', 'COMP6721')
     topicsPath = os.path.join(ROOT_DIR, 'Data', 'Topics')
 
     # automated extraction of topics from slides and worksheets
-    for lectureNum in range(1, 8):
-        slideURI = URIRef(os.path.join(comp474_lecturesPath, 'Slides',
-                                       'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
-        worksheetURI = URIRef(os.path.join(comp474_lecturesPath, 'Worksheets',
-                                           'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+    for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
+        for lectureNum in range(1, 3):
+            slideURI = URIRef(os.path.join(path, 'Slides',
+                                           'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            worksheetURI = URIRef(os.path.join(path, 'Worksheets',
+                                               'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
 
-        for source in [('slides', 'Slides'), ('worksheet', 'Worksheets')]:
-            filePath = os.path.join(comp474_lecturesPath, source[1], source[0] + "%02d" % lectureNum + '.pdf')
-            with open(filePath, mode='rb') as f:
+            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets')]:
+                filePath = os.path.join(
+                    path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
+                with open(filePath, mode='rb') as f:
 
-                # initialize reader
-                reader = PdfFileReader(f)
+                    # initialize reader
+                    reader = PdfFileReader(f)
 
-                # extract topics from pdf
-                topics = extractFromPdf(reader, 'topics')
-                for i, topic in enumerate(topics):
-                    uniqueID = str(hash(('COMP474' + topic)))[1:7]
-                    topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
+                    # extract topics from pdf
+                    topics = extractFromPdf(reader, 'topics')
+                    # for None topics
+                    # if not topics:
+                    #     print('Skipped')
+                    #     continue
+                    for i, topic in enumerate(topics):
+                        if idx == 0:
+                            uniqueID = str(hash(('COMP474' + topic)))[1:7]
+                        else:
+                            uniqueID = str(hash(('COMP6721' + topic)))[1:7]
 
-                    dbpediaURI = DBLookup(topic)
-                    print(Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
-                    if DBLookup(topic) is None:
-                        continue
+                        topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
 
-                    dbpediaURI = URIRef(DBLookup(topic))
+                        dbpediaURI = DBLookup(topic)
+                        print(
+                            Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
+                        if DBLookup(topic) is None:
+                            continue
 
-                    sourceURI = slideURI if source[0] == 'slides' else worksheetURI
-                    g.add((sourceURI, FOCU.covers, topicURI))
-                    g.add((topicURI, RDF.type, FOCU.topic))
-                    g.add((topicURI, OWL.sameAs, dbpediaURI))
-                    g.add((topicURI, RDFS.label, Literal(topic, datatype=XSD.string)))
+                        dbpediaURI = URIRef(DBLookup(topic))
+
+                        sourceURI = slideURI if source[0] == 'slides' else worksheetURI
+                        g.add((sourceURI, FOCU.covers, topicURI))
+                        g.add((topicURI, RDF.type, FOCU.topic))
+                        g.add((topicURI, OWL.sameAs, dbpediaURI))
+                        g.add((topicURI, RDFS.label, Literal(
+                            topic, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')
