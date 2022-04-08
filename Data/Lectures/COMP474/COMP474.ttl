@@ -14,6 +14,27 @@ focudata:courseID_005484 focu:hasContent focudata:005484_Lecture01,
         focudata:005484_Lecture06,
         focudata:005484_Lecture07 .
 
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab01.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture01 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab02.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture02 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab03.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture03 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab04.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture04 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab05.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture05 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab06.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture06 .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab07.pdf> a focu:lab ;
+    rdfs:subClassOf focudata:005484_Lecture07 .
+
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image1.png> a vivo:Image .
 
 <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/OtherMaterial/Images/slides01/page10_image2.jpeg> a vivo:Image .
@@ -7156,7 +7177,8 @@ focudata:005484_sup_readings07_reading02 a focu:reading ;
 focudata:005484_Lecture01 a focu:lecture ;
     bibo:number 1 ;
     vivo:Title "Intelligent Systems Introduction"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab01.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf>,
         focudata:005484_Readings01,
         focudata:005484_otherMaterial01 .
@@ -7164,7 +7186,8 @@ focudata:005484_Lecture01 a focu:lecture ;
 focudata:005484_Lecture02 a focu:lecture ;
     bibo:number 2 ;
     vivo:Title "Knowledge Graphs"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab02.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf>,
         focudata:005484_Readings02,
         focudata:005484_otherMaterial02 .
@@ -7172,7 +7195,8 @@ focudata:005484_Lecture02 a focu:lecture ;
 focudata:005484_Lecture03 a focu:lecture ;
     bibo:number 3 ;
     vivo:Title "Vocabularies& Ontologies"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab03.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf>,
         focudata:005484_Readings03,
         focudata:005484_otherMaterial03 .
@@ -7180,7 +7204,8 @@ focudata:005484_Lecture03 a focu:lecture ;
 focudata:005484_Lecture04 a focu:lecture ;
     bibo:number 4 ;
     vivo:Title "Knowledge Base Queries&SPARQL"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab04.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf>,
         focudata:005484_Readings04,
         focudata:005484_otherMaterial04 .
@@ -7188,7 +7213,8 @@ focudata:005484_Lecture04 a focu:lecture ;
 focudata:005484_Lecture05 a focu:lecture ;
     bibo:number 5 ;
     vivo:Title "Knowledge Base Design& Applications"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab05.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf>,
         focudata:005484_Readings05,
         focudata:005484_otherMaterial05 .
@@ -7196,7 +7222,8 @@ focudata:005484_Lecture05 a focu:lecture ;
 focudata:005484_Lecture06 a focu:lecture ;
     bibo:number 6 ;
     vivo:Title "Recommender Systems"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab06.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf>,
         focudata:005484_Readings06,
         focudata:005484_otherMaterial06 .
@@ -7204,8 +7231,13 @@ focudata:005484_Lecture06 a focu:lecture ;
 focudata:005484_Lecture07 a focu:lecture ;
     bibo:number 7 ;
     vivo:Title "Machine Learningfor Intelligent Systems"^^xsd:string ;
-    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf>,
+    vivo:contains <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab07.pdf>,
+        <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf>,
         <C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf>,
         focudata:005484_Readings07,
         focudata:005484_otherMaterial07 .
+
+focudata:required rdfs:label "Required"^^xsd:string .
+
+focudata:supplemental rdfs:label "Supplemental"^^xsd:string .
 
