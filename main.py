@@ -2,7 +2,7 @@ import os
 import subprocess
 from fnmatch import fnmatch
 from rdflib import Graph
-from __init__ import ROOT_DIR
+from __init__ import ROOT_DIR, CONDA_EXE
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -18,7 +18,7 @@ if __name__ == '__main__':
             if fnmatch(name, GET_RDF_pattern):
                 pathname = os.path.join(path, name)
                 print('Running', pathname)
-                subprocess.run("python3 " + pathname, shell=True)
+                subprocess.run(CONDA_EXE + ' ' + pathname, shell=True)
 
             # merges the generated ttl files into one graph (database)
             if fnmatch(name, TTL_pattern):
