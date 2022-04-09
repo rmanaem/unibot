@@ -3,7 +3,7 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
 from rdflib.namespace import FOAF, RDFS, XSD, OWL
 from PyPDF2 import PdfFileReader
 
-from Utils.utils import extractFromPdf, DBLookup
+from Utils.utils import extract_ne, DBLookup
 from __init__ import ROOT_DIR
 import os
 
@@ -45,39 +45,39 @@ if __name__ == '__main__':
             for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs')]:
                 filePath = os.path.join(
                     path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
-                with open(filePath, mode='rb') as f:
+                # with open(filePath, mode='rb') as f:
 
-                    # initialize reader
-                    reader = PdfFileReader(f)
+                # initialize reader
+                # reader = PdfFileReader(f)
 
-                    # extract topics from pdf
-                    topics = extractFromPdf(reader, 'topics')
-                    # for None topics
-                    # if not topics:
-                    #     print('Skipped')
-                    #     continue
-                    for i, topic in enumerate(topics):
-                        if idx == 0:
-                            uniqueID = str(hash(('COMP474' + topic)))[1:7]
-                        else:
-                            uniqueID = str(hash(('COMP6721' + topic)))[1:7]
+                # extract topics from pdf
+                topics = extract_ne(filePath)
+                # for None topics
+                # if not topics:
+                #     print('Skipped')
+                #     continue
+                for i, topic in enumerate(topics):
+                    if idx == 0:
+                        uniqueID = str(hash(('COMP474' + topic)))[1:7]
+                    else:
+                        uniqueID = str(hash(('COMP6721' + topic)))[1:7]
 
-                        topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
+                    topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
 
-                        dbpediaURI = DBLookup(topic)
-                        print(
-                            Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
-                        if DBLookup(topic) is None:
-                            continue
+                    dbpediaURI = DBLookup(topic)
+                    print(
+                        Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
+                    if DBLookup(topic) is None:
+                        continue
 
-                        dbpediaURI = URIRef(DBLookup(topic))
+                    dbpediaURI = URIRef(DBLookup(topic))
 
-                        sourceURI = slideURI if source[0] == 'slides' else worksheetURI
-                        g.add((sourceURI, FOCU.covers, topicURI))
-                        g.add((topicURI, RDF.type, FOCU.topic))
-                        g.add((topicURI, OWL.sameAs, dbpediaURI))
-                        g.add((topicURI, RDFS.label, Literal(
-                            topic, datatype=XSD.string)))
+                    sourceURI = slideURI if source[0] == 'slides' else worksheetURI
+                    g.add((sourceURI, FOCU.covers, topicURI))
+                    g.add((topicURI, RDF.type, FOCU.topic))
+                    g.add((topicURI, OWL.sameAs, dbpediaURI))
+                    g.add((topicURI, RDFS.label, Literal(
+                        topic, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')
