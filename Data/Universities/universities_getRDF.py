@@ -1,6 +1,6 @@
 import os.path
 from __init__ import ROOT_DIR
-from SPARQLWrapper import SPARQLWrapper, CSV, JSON, XML, N3, RDFXML, TURTLE
+from SPARQLWrapper import SPARQLWrapper, N3
 
 
 def getUniversities():

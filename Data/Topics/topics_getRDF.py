@@ -27,26 +27,23 @@ if __name__ == '__main__':
     g.bind('vcard', VCARD)
     g.bind('bibo', BIBO)
 
-    comp474_lecturesPath = os.path.join(
-        ROOT_DIR, 'Data', 'Lectures', 'COMP474')
-    comp6721_lecturePath = os.path.join(
-        ROOT_DIR, 'Data', 'Lectures', 'COMP6721')
+    comp474_lecturesPath = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'COMP474')
+    comp6721_lecturePath = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'COMP6721')
     topicsPath = os.path.join(ROOT_DIR, 'Data', 'Topics')
 
     # automated extraction of topics from slides and worksheets
     for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
         for lectureNum in range(1, 8):
-            slideURI = URIRef(os.path.join(path, 'Slides',
-                                           'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            slideURI = URIRef(os.path.join(path, 'Slides', 'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
                                                'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
 
             for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs')]:
                 filePath = os.path.join(
                     path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
 
                 # with open(filePath, mode='rb') as f:
-
                 # initialize reader
                 # reader = PdfFileReader(f)
 
@@ -72,14 +69,22 @@ if __name__ == '__main__':
                     if DBLookup(topic) is None:
                         continue
 
+                    # lookup dbpedia URI
                     dbpediaURI = URIRef(DBLookup(topic))
 
-                    sourceURI = slideURI if source[0] == 'slides' else worksheetURI
+                    sourceURI = slideURI  # default value
+                    if source[0] == 'slides':
+                        sourceURI = slideURI
+                    elif source[0] == 'worksheets':
+                        sourceURI = worksheetURI
+                    elif source[0] == 'labs':
+                        sourceURI = labURI
+
+                    # update graph
                     g.add((sourceURI, FOCU.covers, topicURI))
                     g.add((topicURI, RDF.type, FOCU.topic))
                     g.add((topicURI, OWL.sameAs, dbpediaURI))
-                    g.add((topicURI, RDFS.label, Literal(
-                        topic, datatype=XSD.string)))
+                    g.add((topicURI, RDFS.label, Literal(topic, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')

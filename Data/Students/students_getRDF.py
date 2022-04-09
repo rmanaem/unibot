@@ -38,8 +38,8 @@ if __name__ == '__main__':
     years = list(range(2018, 2023))
 
     # Generate the information for students
-    fName = pd.read_csv(first_pathname, sep="\n").sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
-    lName = pd.read_csv(last_pathname, sep="\n").sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
+    fName = pd.read_csv(first_pathname).sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
+    lName = pd.read_csv(last_pathname).sample(n=nb_students, random_state=77).transpose().values.tolist()[0]
 
     studentIDs = np.random.randint(40000000, 50000000, nb_students)
 
