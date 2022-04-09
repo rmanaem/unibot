@@ -1,14 +1,13 @@
 import glob
-import hashlib
 
 from pathlib import Path
-from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
-from rdflib.namespace import FOAF, RDFS, XSD, OWL
+from rdflib import Graph, Literal, RDF, Namespace, URIRef
+from rdflib.namespace import FOAF, RDFS, XSD
 from PyPDF2 import PdfFileReader
 
 from Utils.extractImages import extractImages
 from Utils.extractVideos import extractVideos
-from Utils.utils import extractFromPdf, getCourseId, DBLookup
+from Utils.utils import extractFromPdf, getCourseId
 from __init__ import ROOT_DIR
 import os
 

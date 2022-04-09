@@ -1,7 +1,6 @@
 from pathlib import Path
 from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
 from rdflib.namespace import FOAF, RDFS, XSD, OWL
-from PyPDF2 import PdfFileReader
 
 from Utils.utils import extract_ne, DBLookup
 from __init__ import ROOT_DIR
@@ -45,6 +44,7 @@ if __name__ == '__main__':
             for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs')]:
                 filePath = os.path.join(
                     path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
+
                 # with open(filePath, mode='rb') as f:
 
                 # initialize reader
@@ -52,10 +52,12 @@ if __name__ == '__main__':
 
                 # extract topics from pdf
                 topics = extract_ne(filePath)
+
                 # for None topics
                 # if not topics:
                 #     print('Skipped')
                 #     continue
+
                 for i, topic in enumerate(topics):
                     if idx == 0:
                         uniqueID = str(hash(('COMP474' + topic)))[1:7]
@@ -65,8 +67,8 @@ if __name__ == '__main__':
                     topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
 
                     dbpediaURI = DBLookup(topic)
-                    print(
-                        Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
+                    print(Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
+
                     if DBLookup(topic) is None:
                         continue
 

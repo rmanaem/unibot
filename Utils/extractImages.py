@@ -13,7 +13,6 @@ warnings.filterwarnings("ignore")
 
 def extractImages(filepath, courseName):
     print('\nextracting images\n')
-    pdf_file = fitz.open(filepath)
 
     with fitz.open(filepath) as pdf_file:
         for page_index in range(len(pdf_file)):

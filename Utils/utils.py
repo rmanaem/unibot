@@ -1,5 +1,5 @@
-from html import entities
 import re
+from pathlib import Path
 from urllib.parse import urlparse
 import pandas as pd
 import requests
@@ -101,6 +101,8 @@ def extract_ne(path):
         "QUANTITY", "ORDINAL", "CARDINAL", "CARDINAL", "MISC",
         "EVT", "PROD", "DRV", "GPE_LOC", "GPE_ORG"
     ]
+
+    print('Running spacy nlp for', Path(path))
     doc = pdf_reader(path, nlp)
     named_entities = []
     for i in [(e.text, e.label_) for e in doc.ents]:
