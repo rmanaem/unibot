@@ -1,8 +1,11 @@
+from html import entities
 import re
 from urllib.parse import urlparse
 import pandas as pd
 import requests
 import simplejson
+import spacy
+from spacypdfreader import pdf_reader
 
 
 def insertToList(index, element, arr):
@@ -83,9 +86,28 @@ def getCourseId(csvFile, courseName):
     :param csvFile: csv
     :return: int
     """
-    df = pd.read_csv(csvFile, delimiter=',', encoding='unicode_escape', dtype={'Course ID': object})
+    df = pd.read_csv(csvFile, delimiter=',',
+                     encoding='unicode_escape', dtype={'Course ID': object})
     nameArr = re.split(r'(\d+)', courseName)[:2]
     return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID'].values[0]
+
+
+def extract_ne(path):
+    nlp = spacy.load("en_core_web_sm")
+    pos_tags = [
+        "PERSON", "NORP", "FACILITY", "FAC", "ORG",
+        "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART",
+        "LAW", "LANGUAGE", "DATE", "TIME", "PERCENT", "MONEY",
+        "QUANTITY", "ORDINAL", "CARDINAL", "CARDINAL", "MISC",
+        "EVT", "PROD", "DRV", "GPE_LOC", "GPE_ORG"
+    ]
+    doc = pdf_reader(path, nlp)
+    named_entities = []
+    for i in [(e.text, e.label_) for e in doc.ents]:
+        if i[1] in pos_tags:
+            named_entities.append(i[0])
+
+    return set(named_entities)
 
 
 def DBLookup(txt):
@@ -136,7 +158,7 @@ def extractFromPdf(readerObj, choice):
                 if len(text) == 0:
                     continue
 
-                # every encountered word is considered a topic (to be changed in assignment #2)
+                # every encountered word is considered a topic (used in phase 1)
                 for word in text:
                     if word != '' and word != 'Ł':
                         newWord = re.sub('[^A-Za-z0-9]+', ' ', word)  # remove special characters
@@ -251,7 +273,8 @@ def extractFromPdf(readerObj, choice):
                             if index % 2 == 1:
                                 # bad case (second element is string)
                                 if not is_url(lst[index]):
-                                    lst[index - 2] = lst[index - 2] + lst[index - 1]
+                                    lst[index - 2] = lst[index - 2] + \
+                                        lst[index - 1]
                                     lst.remove(lst[index - 1])
                                     index = 0
                                     continue
