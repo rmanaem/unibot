@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     # automated extraction of topics from slides and worksheets
     for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
-        for lectureNum in range(1, 3):
+        for lectureNum in range(1, 8):
             slideURI = URIRef(os.path.join(path, 'Slides',
                                            'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
