@@ -14,7 +14,9 @@ from rasa_sdk.executor import CollectingDispatcher
 import requests
 import re
 
-
+# -----------------------------------------------------------
+# Query 1.1: What is course [COURSE NAME][COURSE NUMBER] about?
+# -----------------------------------------------------------
 class ActionDescribeCourse(Action):
 
      def name(self) -> Text:
@@ -82,7 +84,9 @@ class ActionDescribeCourse(Action):
 
         return []
 
-
+# -----------------------------------------------------------------------------
+# Query 1.2: Which topics is [STUDENT FIRSTNAME] [STUDENT LASTNAME] competent in?
+# -----------------------------------------------------------------------------
 class ActionStudentCompetency(Action):
 
     def name(self) -> Text:
@@ -149,11 +153,12 @@ class ActionStudentCompetency(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
-                    s += results[i][index]['value'] + '\n'
+                    s += results[i][index]['value'] + ' '
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -161,6 +166,9 @@ class ActionStudentCompetency(Action):
 
         return []
 
+# -------------------------------------------------------
+# Query 1.3: Which courses at [UNIVERSITY] teaches [TOPIC].
+# -------------------------------------------------------
 class ActionUniversityTopics(Action):
 
     def name(self) -> Text:
@@ -189,16 +197,21 @@ class ActionUniversityTopics(Action):
                 WHERE{{
                     ?uni rdf:type vivo:University .
                     ?uni rdfs:label ?uniLabel .
-                    FILTER CONTAINS (?uniLabel, '{tracker.slots['university']}')
+                    FILTER CONTAINS (?uniLabel, "{tracker.slots['university']}")
                     ?uni vivo:offers ?course .
-            
+  
                     ?course rdf:type vivo:Course.
                     ?course vivo:hasSubjectArea ?subjectArea.
                     ?course vivo:Title ?title.
                     ?course vivo:Catalog ?courseNum.
-                    ?course vivo:description ?courseDescription.
-                    FILTER (regex(?courseDescription, '{tracker.slots['topic']}')).
-                    }}
+  
+                    ?course focu:hasContent ?lecture.
+                    ?lecture vivo:contains ?x.
+                    ?x focu:covers ?topic.
+                    ?topic rdfs:label ?label
+      
+                    FILTER CONTAINS (?label, '{tracker.slots['topic']}')
+                }}
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query
@@ -225,12 +238,12 @@ class ActionUniversityTopics(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
-                    s += index + ' ' + results[i][index]['value'] + '\n'
-                s += "\n"
+                    s += results[i][index]['value'] + ' '
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -239,6 +252,9 @@ class ActionUniversityTopics(Action):
 
         return []
 
+# ------------------------------------------------------------------------------
+# Query 1.4: What are all the courses with a [course_name] subject at [university]
+# ------------------------------------------------------------------------------
 class ActionCourseSubject(Action):
 
     def name(self) -> Text:
@@ -301,13 +317,13 @@ class ActionCourseSubject(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -316,6 +332,9 @@ class ActionCourseSubject(Action):
 
         return []
 
+# ----------------------------------------------------------------------------------------------
+# Query 1.5: How many students are enrolled [course name] courses that are offered by [university]
+# ----------------------------------------------------------------------------------------------
 class ActionStudentEnrollment(Action):
 
     def name(self) -> Text:
@@ -353,6 +372,7 @@ class ActionStudentEnrollment(Action):
             }}
             GROUP BY ?uniLabel ?subject ?catalog
             ORDER BY ?subject ?catalog
+            LIMIT 100
             """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query
@@ -379,21 +399,24 @@ class ActionStudentEnrollment(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's the list of courses offerec by {tracker.slots['university']} and the number of students enrolled in each one:\n {output}")
+                text=f"Here's the list of {tracker.slots['course_name']} courses offered by {tracker.slots['university']} and the number of students enrolled in each one:\n {output}")
 
         return []
 
+# ------------------------------------------------------------------
+# Query 1.6: What courses are worth [credits] credits at [university]?
+# ------------------------------------------------------------------
 class ActionCourseCredits(Action):
 
     def name(self) -> Text:
@@ -417,13 +440,19 @@ class ActionCourseCredits(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-            SELECT ?title ?subjectCode ?courseNum ?credit
+            SELECT ?title ?subject ?courseNum ?credit
             WHERE {{
-                ?x vivo:CourseCredits {tracker.slots['credits']}.
-                ?x vivo:Title ?title.
-                ?x vivo:hasSubjectArea ?subjectCode.
-                ?x vivo:Catalog ?courseNum.
-                ?x vivo:CourseCredits ?credit
+                    ?uni rdf:type vivo:University .
+                    ?uni rdfs:label ?uniLabel .
+                    FILTER CONTAINS (?uniLabel, "{tracker.slots['university']}")
+                    ?uni vivo:offers ?course .
+        
+                    ?course rdf:type vivo:Course.
+                    ?course vivo:Title ?title.
+                    ?course vivo:hasSubjectArea ?subject.
+                    ?course vivo:Catalog ?courseNum.
+                    ?course vivo:CourseCredits ?credit
+                    FILTER(?credit = {tracker.slots['credits']})
             }}
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -451,13 +480,13 @@ class ActionCourseCredits(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -466,6 +495,9 @@ class ActionCourseCredits(Action):
 
         return []
 
+# --------------------------------------------------------------------------------------
+# Query 1.7: What are the topics covered by [course_name] [course_number] at [university].
+# --------------------------------------------------------------------------------------
 class ActionSpecificTopics(Action):
 
     def name(self) -> Text:
@@ -533,13 +565,13 @@ class ActionSpecificTopics(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -548,6 +580,9 @@ class ActionSpecificTopics(Action):
 
         return []
 
+# ----------------------------------------------------------------------------
+# Query 1.8: Which students have taken the same course at least [counter] times.
+# ----------------------------------------------------------------------------
 class ActionCourseRetaken(Action):
 
     def name(self) -> Text:
@@ -613,13 +648,13 @@ class ActionCourseRetaken(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -628,6 +663,9 @@ class ActionCourseRetaken(Action):
 
         return []
 
+# ----------------------------------------------------------------------------------
+# Query 1.9: Which students have failed [course_name] [course_number] at [university].
+# ----------------------------------------------------------------------------------
 class ActionFailedStudent(Action):
 
     def name(self) -> Text:
@@ -698,13 +736,13 @@ class ActionFailedStudent(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -713,7 +751,9 @@ class ActionFailedStudent(Action):
 
         return []
 
-
+# ----------------------------------------------------------------------------------------------------------------------
+# Query 1.10: What are the readings for [course_name] [course_number] offered by [university] in lecture [material_number] (Fix output, replace uri for require and supplementary titles)
+# ----------------------------------------------------------------------------------------------------------------------
 class ActionCourseReadings(Action):
 
     def name(self) -> Text:
@@ -737,7 +777,7 @@ class ActionCourseReadings(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""     
-    	    SELECT ?requirement ?title ?website
+    	    SELECT ?reqLabel ?title ?website
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
@@ -760,6 +800,7 @@ class ActionCourseReadings(Action):
                 ?reading vivo:Title ?title.
                 ?reading vcard:URL ?website.
                 ?reading rdfs:subClassOf ?requirement
+                ?requirement rdfs:label ?reqLabel
             }}
             ORDER BY ?lecNum
         """
@@ -788,13 +829,13 @@ class ActionCourseReadings(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
                 #print(i, '----------')
-                s = ''
                 s += str(i) + ' ----------\n'
                 for index in (indexes):
                     s += results[i][index]['value'] + ' '
-                s += "\n"
+                s += "\n\n"
                 #print(s)
             output = s
 
@@ -803,7 +844,9 @@ class ActionCourseReadings(Action):
 
         return []
 
-
+# -------------------------------------------------------------------------------------------------------
+# Query 2.3: Which topics are covered in [course_event] [material_number] of [course_name] [course_number]
+# -------------------------------------------------------------------------------------------------------
 class ActionTopicsCovered(Action):
 
     def name(self) -> Text:
@@ -828,21 +871,18 @@ class ActionTopicsCovered(Action):
         """
         # EDIT QUERY
         query = f"""
-                SELECT ?label
+                SELECT ?topicLabel (?x as ?resourceURI)
                 WHERE {{
                 
-                    ?course vivo:hasSubjectArea ?subject.
-                    ?course vivo:Catalog ?courseNum .
-                
-                    ?course focu:hasContent ?lecture.
-                    ?lecture bibo:number ?lecNum.
-                    ?lecture vivo:contains ?x.
+                    ?topic rdf:type focu:topic .
+  	                ?topic rdfs:label ?topicLabel .
                     ?x focu:covers ?topic .
-                    ?topic rdfs:label ?label
-                    
-                    FILTER(?lecNum = {tracker.slots['material_number']})
-                    FILTER(?subject = '{tracker.slots['course_name']}')
-                    FILTER(?courseNum = {tracker.slots['course_number']})
+                    ?lecture rdf:type focu:{tracker.slots['course_event'].lower()}.
+                    ?lecture vivo:contains ?x.
+  	                ?lecture bibo:number {tracker.slots['material_number']}.
+  	                ?course focu:hasContent ?lecture.
+  	                ?course vivo:hasSubjectArea {tracker.slots['course_name']}.
+  	                ?course vivo:Catalog {tracker.slots['course_number']}.
                 }}
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -870,12 +910,14 @@ class ActionTopicsCovered(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
+            s = ''
             for i in range(len(results)):
-                print(i, '----------')
-                s = ''
+                #print(i, '----------')
+                s += str(i) + ' ----------\n'
                 for index in (indexes):
-                    s += index + ' ' + results[i][index]['value'] + '\n'
-                print(s)
+                    s += results[i][index]['value'] + ' '
+                s += "\n\n"
+                #print(s)
             output = s
 
             dispatcher.utter_message(
