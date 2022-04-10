@@ -141,30 +141,30 @@ if __name__ == '__main__':
 
                     g.add((readingURI, BIBO.number, Literal(index, datatype=XSD.integer)))
 
-                # # automated extraction of other material (videos & images)
-                # if courseName == 'COMP474':
-                #     otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
-                #     g.add((lectureURI, VIVO.contains, otherMaterialURI))
-                #     g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
-                #     g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
-                #
-                #     # extracting images and including absolute path (URIs) in graph
-                #     extractImages(filepath, courseName)
-                #     folder = glob.glob(
-                #         os.path.join(courseNamePath, 'OtherMaterial', 'Images', Path(filepath).stem, '*'))
-                #     for image in folder:
-                #         imageURI = URIRef(image.replace('\\', '/').replace(' ', '_'))
-                #         g.add((otherMaterialURI, VIVO.contains, imageURI))
-                #         g.add((imageURI, RDF.type, VIVO.Image))
-                #
-                #     # extracting videos and including absolute path (URIs) in graph
-                #     extractVideos(reader, courseName, lectureNum)
-                #     folder = glob.glob(
-                #         os.path.join(courseNamePath, 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
-                #     for video in folder:
-                #         videoURI = URIRef(video.replace('\\', '/').replace(' ', '_'))
-                #         g.add((otherMaterialURI, VIVO.contains, videoURI))
-                #         g.add((videoURI, RDF.type, VIVO.Video))
+                # automated extraction of other material (videos & images)
+                if courseName == 'COMP474':
+                    otherMaterialURI = URIRef(FOCUDATA + courseID + '_otherMaterial' + str("%02d" % lectureNum))
+                    g.add((lectureURI, VIVO.contains, otherMaterialURI))
+                    g.add((otherMaterialURI, RDF.type, FOCU.otherMaterial))
+                    g.add((otherMaterialURI, RDFS.subClassOf, lectureURI))
+
+                    # extracting images and including absolute path (URIs) in graph
+                    extractImages(filepath, courseName)
+                    folder = glob.glob(
+                        os.path.join(courseNamePath, 'OtherMaterial', 'Images', Path(filepath).stem, '*'))
+                    for image in folder:
+                        imageURI = URIRef(image.replace('\\', '/').replace(' ', '_'))
+                        g.add((otherMaterialURI, VIVO.contains, imageURI))
+                        g.add((imageURI, RDF.type, VIVO.Image))
+
+                    # extracting videos and including absolute path (URIs) in graph
+                    extractVideos(reader, courseName, lectureNum)
+                    folder = glob.glob(
+                        os.path.join(courseNamePath, 'OtherMaterial', 'Videos', Path(filepath).stem, '*'))
+                    for video in folder:
+                        videoURI = URIRef(video.replace('\\', '/').replace(' ', '_'))
+                        g.add((otherMaterialURI, VIVO.contains, videoURI))
+                        g.add((videoURI, RDF.type, VIVO.Video))
 
                 lectures_pathname = os.path.join(courseNamePath, courseName + '.ttl')
                 g.serialize(lectures_pathname, format='turtle')

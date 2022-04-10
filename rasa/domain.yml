@@ -3,25 +3,23 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - describe_course
+  - student_competency
+  - university_topics
+  - course_subject
+  - student_enrollment
+  - course_credits
+  - specific_topics
+  - course_retaken
+  - failed_student
+  - course_readings
+  - topics_covered
+  - gibberish
+  - about_person
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hi, I'm a university chatbot, how can I help you?"
 
   utter_goodbye:
   - text: "Bye"
@@ -29,6 +27,115 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_gibberish:
+  - text: "I'm not sure I understood what you said"
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+entities:
+  - course_name
+  - course_number
+  - first_name
+  - last_name
+  - university
+  - topic
+  - credits
+  - counter
+  - material_number
+  - course_event
+  - person
+
+slots:
+  course_name:
+    type: text
+    initial_value: "placeholder"
+    mappings:
+      - type: from_entity
+        entity: course_name
+
+  course_number:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: from_entity
+        entity: course_number
+
+  first_name:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: first_name
+
+  last_name:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: last_name
+
+  university:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: university
+
+  topic:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: topic
+
+  credits:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: from_entity
+        entity: credits
+
+  counter:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: from_entity
+        entity: counter
+
+  material_number:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: from_entity
+        entity: material_number
+
+  course_event:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: course_event
+
+  person:
+    type: text
+    initial_value: "initial"
+    mappings:
+      - type: from_entity
+        entity: person
+
+
+actions:
+  - action_describe_course
+  - action_student_competency
+  - action_university_topics
+  - action_course_subject
+  - action_student_enrollment
+  - action_course_credits
+  - action_specific_topics
+  - action_course_retaken
+  - action_failed_student
+  - action_course_readings
+  - action_topics_covered
+  - action_person_info
