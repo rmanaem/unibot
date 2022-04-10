@@ -99,8 +99,8 @@ def extract_ne(path):
         "PERSON", "NORP", "FACILITY", "FAC", "ORG",
         "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART",
         "LAW", "LANGUAGE", "DATE", "TIME", "PERCENT", "MONEY",
-        "QUANTITY", "ORDINAL", "CARDINAL", "CARDINAL", "MISC",
-        "EVT", "PROD", "DRV", "GPE_LOC", "GPE_ORG"
+        "QUANTITY", "MISC", "EVT", "PROD", "DRV", "GPE_LOC",
+        "GPE_ORG"
     ]
 
     print('Running spacy nlp for', Path(path))
@@ -187,8 +187,10 @@ def extractFromPdf(readerObj, choice):
                 # every encountered word is considered a topic (used in phase 1)
                 for word in text:
                     if word != '' and word != 'Ł':
-                        newWord = re.sub('[^A-Za-z0-9]+', ' ', word)  # remove special characters
-                        newWord = sepWord(newWord)  # separate word at capital letters
+                        # remove special characters
+                        newWord = re.sub('[^A-Za-z0-9]+', ' ', word)
+                        # separate word at capital letters
+                        newWord = sepWord(newWord)
                         if len(newWord) > 2:
                             topics.append(newWord)
 
