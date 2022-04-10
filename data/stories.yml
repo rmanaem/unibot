@@ -79,7 +79,7 @@ stories:
     - intent: topics_covered
     - action: action_topics_covered
 
-- story: get person info
+- story: gibberish input
   steps:
     - intent: greet
     - action: utter_greet
