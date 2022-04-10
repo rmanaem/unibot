@@ -13,7 +13,7 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX fo: <http://purl.org/ontology/fo/>
 
 
-SELECT (count(?s) as ?triples) (count(?course) as ?courses) (count(?topic) as ?topics) (count(?other) as ?otherMaterials) (count(?uni) as ?universities)
+SELECT (count(?s) as ?triples) (count(?course) as ?courses) (count(?topic) as ?topics) (count(?uni) as ?universities) (count(?student) as ?students)
 WHERE {
   {?s ?p ?o}
   UNION
@@ -21,7 +21,7 @@ WHERE {
   UNION
   {?topic rdf:type focu:topic}
   UNION
-  {?other rdf:type focu:otherMaterial}
-  UNION
   {?uni rdf:type vivo:University}
+  UNION
+  {?student rdf:type vivo:Student}
 }
