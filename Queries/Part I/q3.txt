@@ -1,28 +1,34 @@
-
-PREFIX dbr: <http://dbpedia.org/resource/> 
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX focu: <http://focu.io/schema#>
-PREFIX focudata: <http://focu.io/data#> 
-PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-PREFIX vcard: <http://www.w3.org/2006/vcard/ns#> 
+PREFIX focudata: <http://focu.io/data#>
+PREFIX ns2: <http://vivoweb.org/ontology/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX wikidata: <http://www.wikidata.org/entity/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
-           
-SELECT ?title ?subjectArea ?courseNum  
-   WHERE{
-        ?uni rdf:type vivo:University .
-  	    ?uni rdfs:label ?uniLabel .
-  	    FILTER CONTAINS (?uniLabel, "Concordia University")
-        ?uni vivo:offers ?course .
 
-        ?course rdf:type vivo:Course.
-        ?course vivo:hasSubjectArea ?subjectArea.
-        ?course vivo:Title ?title.
-        ?course vivo:Catalog ?courseNum.
-        ?course vivo:description ?courseDescription.
-        FILTER (regex(?courseDescription, 'anthropology')).
-   }
+SELECT ?title ?subjectArea ?courseNum  
+WHERE{
+    ?uni rdf:type vivo:University .
+    ?uni rdfs:label ?uniLabel .
+    FILTER CONTAINS (?uniLabel, "Concordia University")
+    ?uni vivo:offers ?course .
+  
+    ?course rdf:type vivo:Course.
+    ?course vivo:hasSubjectArea ?subjectArea.
+    ?course vivo:Title ?title.
+    ?course vivo:Catalog ?courseNum.
+  
+    ?course focu:hasContent ?lecture.
+    ?lecture vivo:contains ?x.
+    ?x focu:covers ?topic.
+    ?topic rdfs:label ?label
+      
+    FILTER CONTAINS (?label, 'Unsupervised Learning')
+}
+GROUP BY ?subjectArea ?courseNum ?title
