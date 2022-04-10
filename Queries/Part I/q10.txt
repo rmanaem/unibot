@@ -36,7 +36,6 @@ WHERE {
     ?reading vivo:Title ?title.
     ?reading vcard:URL ?website.
     ?reading rdfs:subClassOf ?requirement.
-  	?requirement rdfs:label ?reqLabel
+    ?requirement rdfs:label ?reqLabel
 }
-
 ORDER BY ?lecNum
