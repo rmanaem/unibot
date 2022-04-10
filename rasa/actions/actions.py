@@ -203,7 +203,7 @@ class ActionUniversityTopics(Action):
         """
 
         query = f"""
-                SELECT ?title ?subjectArea ?courseNum 
+                SELECT ?title ?subjectArea ?courseNum (count(?title) as ?frequency)
                 WHERE{{
                     ?uni rdf:type vivo:University .
                     ?uni rdfs:label ?uniLabel .
@@ -223,6 +223,7 @@ class ActionUniversityTopics(Action):
                     FILTER CONTAINS (?label, '{tracker.slots['topic']}')
                 }}
                 GROUP BY ?subjectArea ?courseNum ?title
+                ORDER BY DESC(?frequency)
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query

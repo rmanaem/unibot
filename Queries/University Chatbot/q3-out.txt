@@ -1,0 +1,3 @@
+ "title" , "subjectArea" , "courseNum" , "frequency" ,
+ "Intelligent Systems" , "COMP" , "474" , "9" ,
+ "INTRO TO A.I." , "COMP" , "6721" , "5" ,

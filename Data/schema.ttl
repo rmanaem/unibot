@@ -109,5 +109,5 @@ focu:covers
   a rdf:Property;
   rdfs:label "covers"@en;
   rdfs:comment "links the topic to its source"@en;
-  rdfs:domain focu:slide, focu:worksheet;
+  rdfs:domain focu:slide, focu:worksheet, focu:lab, focu:outline;
   rdfs:range focu:topic.

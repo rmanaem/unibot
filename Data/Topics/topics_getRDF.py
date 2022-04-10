@@ -1,6 +1,6 @@
 from pathlib import Path
-from rdflib import Graph, Literal, RDF, Namespace, URIRef, BNode
-from rdflib.namespace import FOAF, RDFS, XSD, OWL
+from rdflib import Graph, Literal, RDF, Namespace, URIRef
+from rdflib.namespace import FOAF, RDFS, XSD
 
 from Utils.utils import extract_ne, DBLookup
 from __init__ import ROOT_DIR
@@ -38,22 +38,24 @@ if __name__ == '__main__':
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
                                                'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
             labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            outlineURI = URIRef(os.path.join(path, 'CourseInfo', 'Outline' + '.pdf').replace('\\', '/'))
 
-            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs')]:
-                filePath = os.path.join(
-                    path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
-
-                # with open(filePath, mode='rb') as f:
-                # initialize reader
-                # reader = PdfFileReader(f)
+            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs'),
+                           ('Outline', 'CourseInfo')]:
+                if source[0] == 'Outline':
+                    if lectureNum == 1:
+                        filePath = os.path.join(path, source[1], source[0] + '.pdf')
+                    else:
+                        continue
+                else:
+                    filePath = os.path.join(path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
 
                 # extract topics from pdf
-                topics = extract_ne(filePath)
-
-                # for None topics
-                # if not topics:
-                #     print('Skipped')
-                #     continue
+                try:
+                    topics = extract_ne(filePath)
+                except Exception:
+                    print('We only have 1 outline')
+                    continue
 
                 for i, topic in enumerate(topics):
                     if idx == 0:
@@ -61,16 +63,24 @@ if __name__ == '__main__':
                     else:
                         uniqueID = str(hash(('COMP6721' + topic)))[1:7]
 
-                    topicURI = URIRef(FOCUDATA + 'topic' + uniqueID)
+                    # lookup dbpedia URI and label
+                    dbpediaURI, dbpediaLabel = None, 'None'
+                    try:
+                        dbpediaURI, dbpediaLabel = DBLookup(topic)
+                    except Exception:
+                        print('bug')
 
-                    dbpediaURI = DBLookup(topic)
-                    print(Path(filePath).stem, f'\ntopic{i}', ':', topic, '\ndbpediaURI', dbpediaURI, '\n')
+                    try:
+                        print(Path(filePath).stem, f'\ntopic{i} :', topic, '\ndbpediaURI', dbpediaURI,
+                              '\ndbpedialabel :', dbpediaLabel, '\n')
+                    except UnicodeEncodeError:
+                        print('cant print in this python console, but it doesnt affect the rest of code')
 
-                    if DBLookup(topic) is None:
+                    if dbpediaURI is None:
                         continue
 
-                    # lookup dbpedia URI
-                    dbpediaURI = URIRef(DBLookup(topic))
+                    # convert URI to URIRef object
+                    dbpediaURI = URIRef(dbpediaURI)
 
                     sourceURI = slideURI  # default value
                     if source[0] == 'slides':
@@ -79,12 +89,13 @@ if __name__ == '__main__':
                         sourceURI = worksheetURI
                     elif source[0] == 'lab':
                         sourceURI = labURI
+                    elif source[0] == 'Outline':
+                        sourceURI = outlineURI
 
                     # update graph
-                    g.add((sourceURI, FOCU.covers, topicURI))
-                    g.add((topicURI, RDF.type, FOCU.topic))
-                    g.add((topicURI, OWL.sameAs, dbpediaURI))
-                    g.add((topicURI, RDFS.label, Literal(topic, datatype=XSD.string)))
+                    g.add((sourceURI, FOCU.covers, dbpediaURI))
+                    g.add((dbpediaURI, RDF.type, FOCU.topic))
+                    g.add((dbpediaURI, RDFS.label, Literal(dbpediaLabel, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')

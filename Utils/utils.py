@@ -1,3 +1,4 @@
+import rdflib
 import re
 from pathlib import Path
 from urllib.parse import urlparse
@@ -113,6 +114,11 @@ def extract_ne(path):
 
 
 def DBLookup(txt):
+    """
+    send text to spotlight and return dbpedia URI and dbpedia's label
+    :param txt: string
+    :return: URI and dbr rdfs:label
+    """
     spot_light_url = "https://api.dbpedia-spotlight.org/en/annotate?text=%s" % txt
     headers = {
         'accept': 'application/json'
@@ -124,9 +130,27 @@ def DBLookup(txt):
         resources = data.get('Resources')
 
         if resources is None:
-            return None
+            return None, 'None'
         URI = resources[0]['@URI']
-        return URI
+
+        g = rdflib.Graph()
+        g.parse(URI)
+        output = g.query(
+            """
+            SELECT ?label
+            WHERE {
+            ?uni rdfs:label ?label .
+            FILTER(LANG(?label) = 'en') .
+            }
+            """
+        )
+
+        try:
+            label = str(list(output)[0][0])
+        except Exception:
+            return None, 'None'
+
+        return URI, label
 
     except simplejson.errors.JSONDecodeError:
         print(None)
