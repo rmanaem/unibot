@@ -13,6 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 import re
+from tabulate import tabulate
 
 
 # -----------------------------------------------------------
@@ -75,7 +76,7 @@ class ActionDescribeCourse(Action):
         res = response.json()
         # Prints the response of the SPARQL query
         results = res['results']['bindings']
-        if len(results) == 0:
+        if (len(results) == 0):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
@@ -161,14 +162,14 @@ class ActionStudentCompetency(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Sure thing, {tracker.slots['first_name']} {tracker.slots['last_name']} is competent in the following topics:\n{output}")
@@ -251,14 +252,14 @@ class ActionUniversityTopics(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Okay, the following courses at {tracker.slots['university']} that teach {tracker.slots['topic']} are:\n{output}")
@@ -331,15 +332,14 @@ class ActionCourseSubject(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Okay, the following courses at {tracker.slots['university']} that have {tracker.slots['course_name']} as the subject are:\n {output}")
@@ -414,15 +414,14 @@ class ActionStudentEnrollment(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's the list of {tracker.slots['course_name']} courses offered by {tracker.slots['university']} and the number of students enrolled in each one:\n {output}")
@@ -501,15 +500,14 @@ class ActionCourseCredits(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's the list of courses offered by {tracker.slots['university']} that are worth {credits} credits:\n {output}")
@@ -593,15 +591,14 @@ class ActionSpecificTopics(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's all the topics covered in {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']}:\n {output}")
@@ -682,15 +679,14 @@ class ActionCourseRetaken(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's all students that have retaken a course at least {counter} times:\n {output}")
@@ -777,15 +773,14 @@ class ActionFailedStudent(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's all students that have failed {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']}:\n {output}")
@@ -879,15 +874,14 @@ class ActionCourseReadings(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"Here's all the readings for {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']} for lecture #{matNum}:\n {output}")
@@ -969,15 +963,14 @@ class ActionTopicsCovered(Action):
             dispatcher.utter_message(
                 text=f"Sorry, I couldn't find anything about your query.")
         else:
-            s = ''
+            cols = []
             for i in range(len(results)):
-                # print(i, '----------')
-                s += str(i) + ' ----------\n'
-                for index in (indexes):
-                    s += results[i][index]['value'] + ' '
-                s += "\n\n"
-                # print(s)
-            output = s
+                col = []
+                col.append(i)
+                for index in indexes:
+                    col.append(results[i][index]['value'])
+                cols.append(col)
+            output = tabulate(cols, headers=indexes)
 
             dispatcher.utter_message(
                 text=f"These are the topics covered in {tracker.slots['course_event']} {matNum} of {tracker.slots['course_name']} {courseNum}:\n {output}")
