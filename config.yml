@@ -17,7 +17,7 @@ pipeline:
    - name: CountVectorsFeaturizer
      analyzer: word
      min_ngram: 1
-     max_ngram: 1
+     max_ngram: 4
      OOV_token: "_oov_"
      use_shared_vocab: false
    - name: DIETClassifier

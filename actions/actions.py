@@ -228,6 +228,7 @@ class ActionUniversityTopics(Action):
                     indexes[i] = indexes[i][:-1]
                 i += 1
         print(indexes)
+        print(tracker.slots['university'], tracker.slots['topic'])
         query = prefixes + query
         response = requests.post('http://localhost:3030/Project1/sparql',
                                  data={'query': query})
@@ -800,7 +801,7 @@ class ActionCourseReadings(Action):
                 ?reading rdf:type focu:reading.
                 ?reading vivo:Title ?title.
                 ?reading vcard:URL ?website.
-                ?reading rdfs:subClassOf ?requirement
+                ?reading rdfs:subClassOf ?requirement.
                 ?requirement rdfs:label ?reqLabel
             }}
             ORDER BY ?lecNum
@@ -882,7 +883,7 @@ class ActionTopicsCovered(Action):
                     ?lecture vivo:contains ?x.
   	                ?lecture bibo:number {tracker.slots['material_number']}.
   	                ?course focu:hasContent ?lecture.
-  	                ?course vivo:hasSubjectArea {tracker.slots['course_name']}.
+  	                ?course vivo:hasSubjectArea "{tracker.slots['course_name']}".
   	                ?course vivo:Catalog {tracker.slots['course_number']}.
                 }}
                 """
