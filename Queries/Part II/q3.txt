@@ -1,22 +1,25 @@
-PREFIX dbr: <http://dbpedia.org/resource/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dbr: <http://dbpedia.org/resource/> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX focu: <http://focu.io/schema#>
-PREFIX focudata: <http://focu.io/data#>
-PREFIX ns2: <http://vivoweb.org/ontology/core#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX focudata: <http://focu.io/data#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#> 
 PREFIX wikidata: <http://www.wikidata.org/entity/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?topicLabel (?course as ?courseURI) (?lecture as ?eventURI) (?x as ?resourceURI)
+SELECT ?topicLabel (?x as ?resourceURI)
 WHERE {
-    ?topic rdf:type focu:topic .
+    	?topic rdf:type focu:topic .
   	?topic rdfs:label ?topicLabel .
-    ?x focu:covers ?topic .
-    ?lecture vivo:contains ?x .
-  	?course focu:hasContent ?lecture
+    	?x focu:covers ?topic .
+	?lecture rdf:type focu:lecture.
+    	?lecture vivo:contains ?x.
+  	?lecture bibo:number 5.
+  	?course focu:hasContent ?lecture.
+  	?course vivo:hasSubjectArea "COMP".
+  	?course vivo:Catalog 474.
 }
