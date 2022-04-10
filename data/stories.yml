@@ -83,5 +83,12 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
+    - intent: gibberish
+    - action: utter_gibberish
+
+- story: get person info
+  steps:
+    - intent: greet
+    - action: utter_greet
     - intent: about_person
     - action: action_person_info

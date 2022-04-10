@@ -26,6 +26,11 @@ class ActionDescribeCourse(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        try:
+            courseNum = int(tracker.slots['course_number'])
+        except:
+            courseNum = 0
+
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -44,7 +49,7 @@ class ActionDescribeCourse(Action):
             SELECT ?courseDesc
             WHERE{{
     		    ?x vivo:hasSubjectArea '{tracker.slots['course_name']}'.
-    		    ?x vivo:Catalog {int(tracker.slots['course_number'])}.
+    		    ?x vivo:Catalog {courseNum}.
     		    ?x vivo:description ?courseDesc.
             }}
         """
@@ -80,7 +85,7 @@ class ActionDescribeCourse(Action):
                     s += results[i][index]['value'] + '\n'
                 #print(s)
             output = s
-            dispatcher.utter_message(text=f"No problem, the description for {tracker.slots['course_name']} {tracker.slots['course_number']} says:\n{output}")
+            dispatcher.utter_message(text=f"No problem, the description for {tracker.slots['course_name']} {courseNum} says:\n{output}")
 
         return []
 
@@ -427,6 +432,11 @@ class ActionCourseCredits(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            credits = float(tracker.slots['credits'])
+        except:
+            credits = 0
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -454,7 +464,7 @@ class ActionCourseCredits(Action):
                     ?course vivo:hasSubjectArea ?subject.
                     ?course vivo:Catalog ?courseNum.
                     ?course vivo:CourseCredits ?credit
-                    FILTER(?credit = {tracker.slots['credits']})
+                    FILTER(?credit = {credits})
             }}
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -493,7 +503,7 @@ class ActionCourseCredits(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's the list of courses offered by {tracker.slots['university']} that are worth {tracker.slots['credits']} credits:\n {output}")
+                text=f"Here's the list of courses offered by {tracker.slots['university']} that are worth {credits} credits:\n {output}")
 
         return []
 
@@ -508,6 +518,12 @@ class ActionSpecificTopics(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courseNum = int(tracker.slots['course_number'])
+        except:
+            courseNum = 0
+
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -539,7 +555,7 @@ class ActionSpecificTopics(Action):
                     ?topic rdfs:label ?label
                 
                     FILTER(?subject = '{tracker.slots['course_name']}')
-                    FILTER(?courseNum = {tracker.slots['course_number']})
+                    FILTER(?courseNum = {courseNum})
                 }}
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -578,7 +594,7 @@ class ActionSpecificTopics(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's all the topics covered in {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
+                text=f"Here's all the topics covered in {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']}:\n {output}")
 
         return []
 
@@ -593,6 +609,11 @@ class ActionCourseRetaken(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            counter = int(tracker.slots['counter'])
+        except:
+            counter = 0
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -622,7 +643,7 @@ class ActionCourseRetaken(Action):
                   ?course vivo:hasSubjectArea ?subjectArea
                 }}
                 GROUP BY ?firstName ?lastName ?studentId ?CourseID ?subjectArea ?catalog
-                HAVING (?nbTimesTaken >= {tracker.slots['counter']})
+                HAVING (?nbTimesTaken >= {counter})
                 ORDER BY DESC (?nbTimesTaken)
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -661,7 +682,7 @@ class ActionCourseRetaken(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's all students that have retaken a course at least {tracker.slots['counter']} times:\n {output}")
+                text=f"Here's all students that have retaken a course at least {counter} times:\n {output}")
 
         return []
 
@@ -676,6 +697,12 @@ class ActionFailedStudent(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courseNum = int(tracker.slots['course_number'])
+        except:
+            courseNum = 0
+
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -710,7 +737,7 @@ class ActionFailedStudent(Action):
                 
                 Filter(?grade = 'F')
                 Filter(?subjectArea = "{tracker.slots['course_name']}")
-                Filter(?catalog = {tracker.slots['course_number']})
+                Filter(?catalog = {courseNum})
             }}
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -749,7 +776,7 @@ class ActionFailedStudent(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's all students that have failed {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']}:\n {output}")
+                text=f"Here's all students that have failed {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']}:\n {output}")
 
         return []
 
@@ -764,6 +791,14 @@ class ActionCourseReadings(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courseNum = int(tracker.slots['course_number'])
+            matNum = int(tracker.slots['material_number'])
+        except:
+            courseNum = 0
+            matNum = 0
+
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -789,11 +824,11 @@ class ActionCourseReadings(Action):
                 ?course vivo:hasSubjectArea ?subjectArea.
                 FILTER(?subjectArea = '{tracker.slots['course_name']}')
                 ?course vivo:Catalog ?catalog.
-                FILTER(?catalog = {tracker.slots['course_number']})
+                FILTER(?catalog = {courseNum})
                 ?course focu:hasContent ?lecture.
             
                 ?lecture bibo:number ?lecNum.
-                FILTER(?lecNum = {tracker.slots['material_number']})
+                FILTER(?lecNum = {matNum})
                 ?lecture vivo:contains ?readings.
             
                 ?readings rdf:type focu:readings.
@@ -842,7 +877,7 @@ class ActionCourseReadings(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"Here's all the readings for {tracker.slots['course_name']} {tracker.slots['course_number']} at {tracker.slots['university']} for lecture #{tracker.slots['material_number']}:\n {output}")
+                text=f"Here's all the readings for {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']} for lecture #{matNum}:\n {output}")
 
         return []
 
@@ -857,6 +892,14 @@ class ActionTopicsCovered(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        try:
+            courseNum = int(tracker.slots['course_number'])
+            matNum = int(tracker.slots['material_number'])
+        except:
+            courseNum = 0
+            matNum = 0
+
         prefixes = """
             PREFIX dbr: <http://dbpedia.org/resource/> 
             PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
@@ -881,10 +924,10 @@ class ActionTopicsCovered(Action):
                     ?x focu:covers ?topic .
                     ?lecture rdf:type focu:{tracker.slots['course_event'].lower()}.
                     ?lecture vivo:contains ?x.
-  	                ?lecture bibo:number {tracker.slots['material_number']}.
+  	                ?lecture bibo:number {matNum}.
   	                ?course focu:hasContent ?lecture.
   	                ?course vivo:hasSubjectArea "{tracker.slots['course_name']}".
-  	                ?course vivo:Catalog {tracker.slots['course_number']}.
+  	                ?course vivo:Catalog {courseNum}.
                 }}
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -923,7 +966,7 @@ class ActionTopicsCovered(Action):
             output = s
 
             dispatcher.utter_message(
-                text=f"These are the topics covered in {tracker.slots['course_event']} {tracker.slots['material_number']} of {tracker.slots['course_name']} {tracker.slots['course_number']}:\n {output}")
+                text=f"These are the topics covered in {tracker.slots['course_event']} {matNum} of {tracker.slots['course_name']} {courseNum}:\n {output}")
 
         return []
 

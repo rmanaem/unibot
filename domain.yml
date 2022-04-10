@@ -14,6 +14,7 @@ intents:
   - failed_student
   - course_readings
   - topics_covered
+  - gibberish
   - about_person
 
 responses:
@@ -25,6 +26,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_gibberish:
+  - text: "I'm not sure I understood what you said"
 
 session_config:
   session_expiration_time: 60

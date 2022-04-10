@@ -236,6 +236,14 @@ nlu:
     - Which topics are covered in [worksheet](course_event) [5](material_number) of [ENGR](course_name) [371](course_number)     
     - Which topics are covered in [_oov_](course_event) [_oov_](material_number) of [_oov_](course_name) [_oov_](course_number)
 
+- intent: gibberish
+  examples: |
+    - jdhfwszlkhalifehlijfhaekfjhalif
+    - iqwoeejqolwjeq
+    - aisdjoajkrkwknroiawrhjo
+    - battery horse pipe laughter
+    - _oov_ _oov_ _oov_ _oov_
+
 - intent: about_person
   examples: |
     - Who is he?
