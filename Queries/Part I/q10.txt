@@ -12,7 +12,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?requirement ?title ?website
+
+SELECT ?reqLabel ?title ?website
 WHERE {
     ?uni rdf:type vivo:University .
     ?uni rdfs:label ?uniLabel .
@@ -34,7 +35,8 @@ WHERE {
     ?reading rdf:type focu:reading.
     ?reading vivo:Title ?title.
     ?reading vcard:URL ?website.
-    ?reading rdfs:subClassOf ?requirement
+    ?reading rdfs:subClassOf ?requirement.
+  	?requirement rdfs:label ?reqLabel
 }
 
 ORDER BY ?lecNum
