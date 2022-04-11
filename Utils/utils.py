@@ -120,8 +120,12 @@ def extract_ne(path):
         "GPE_ORG"
     ]
 
+    text = ''
+    with open(path, 'r') as f:
+        text = f.read()
+
     print('Running spacy nlp for', Path(path))
-    doc = pdf_reader(path, nlp)
+    doc = nlp(text)
     named_entities = []
     for i in [(e.text, e.label_) for e in doc.ents]:
         if i[1] in pos_tags:
