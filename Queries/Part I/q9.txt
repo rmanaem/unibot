@@ -13,7 +13,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
+SELECT DISTINCT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
 WHERE {
     ?uni rdf:type vivo:University .
     ?uni rdfs:label ?uniLabel .

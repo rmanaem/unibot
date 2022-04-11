@@ -12,25 +12,24 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?title ?subjectArea ?courseNum (count(?title) as ?frequency)
-WHERE{
-  	?uni rdf:type vivo:University .
-    ?uni rdfs:label ?uniLabel .
-    FILTER CONTAINS (?uniLabel, "Concordia University")
-    ?uni vivo:offers ?course .
-
-    ?course rdf:type vivo:Course.
+SELECT ?topicLabel (?x as ?resourceURI)
+WHERE {
+  	?course rdf:type vivo:Course .
     ?course vivo:hasSubjectArea ?subjectArea.
-    ?course vivo:Title ?title.
-    ?course vivo:Catalog ?courseNum.
+    FILTER (?subjectArea = "COMP")
+
+    ?course vivo:Catalog ?catalog .
+    FILTER (?catalog = 6721)
 
     ?course focu:hasContent ?lecture.
+    ?lecture bibo:number ?num.
+    FILTER (?num = 5)
+
     ?lecture vivo:contains ?x.
-    ?x focu:covers ?topic.
-    ?topic rdfs:label ?label
+    ?x rdf:type ?course_event
+    FILTER (?course_event = focu:worksheet)
 
-    FILTER CONTAINS (?label, "Canada")
-
+    ?x focu:covers ?topic .
+    ?topic rdf:type focu:topic .
+    ?topic rdfs:label ?topicLabel .
 }
-GROUP BY ?subjectArea ?courseNum ?title
-ORDER BY DESC(?frequency)

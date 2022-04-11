@@ -1,3 +1,4 @@
- "title" , "subjectArea" , "courseNum" , "frequency" ,
- "Intelligent Systems" , "COMP" , "474" , "9" ,
- "INTRO TO A.I." , "COMP" , "6721" , "5" ,
+ "topicLabel" , "resourceURI" ,
+ "Exclusive or" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "Perceptron" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "Alison DiLaurentis" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,

@@ -29,7 +29,7 @@ WHERE{
     ?x focu:covers ?topic.
     ?topic rdfs:label ?label
 
-    FILTER CONTAINS (?label, 'Unsupervised Learning')
+    FILTER CONTAINS (?label, 'Artificial intelligence')
 }
 GROUP BY ?subjectArea ?courseNum ?courseName
 ORDER BY DESC(?frequency)

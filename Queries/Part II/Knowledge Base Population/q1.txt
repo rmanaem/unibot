@@ -12,15 +12,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?subject ?catalog ?topicLabel ?dbpediaURI (?lecture as ?eventURI) (?x as ?resourceURI)
+SELECT ?subject ?catalog ?topicLabel ?topicURI (?lecture as ?eventURI) (?x as ?resourceURI)
 WHERE {
   	?course vivo:hasSubjectArea ?subject .
   	?course vivo:Catalog ?catalog .
 
   	?course focu:hasContent ?lecture .
   	?lecture vivo:contains ?x .
-  	?x focu:covers ?topic .
+  	?x focu:covers ?topicURI .
 
-  	?topic rdfs:label ?topicLabel .
-  	?topic owl:sameAs ?dbpediaURI .
+  	?topicURI rdfs:label ?topicLabel .
 }
