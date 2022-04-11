@@ -12,7 +12,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?courseName ?subjectArea ?courseNum (count(?title) as ?frequency)
+SELECT ?courseName ?subjectArea ?courseNum (count(?label) as ?frequency)
 WHERE{
     ?uni rdf:type vivo:University .
     ?uni rdfs:label ?uniLabel .
