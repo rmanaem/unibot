@@ -36,26 +36,21 @@ if __name__ == '__main__':
     # automated extraction of topics from slides and worksheets
     for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
         for lectureNum in range(1, 8):
-            slideURI = URIRef(os.path.join(
-                path, 'Slides', 'slides' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
+            slideURI = URIRef(os.path.join(path, 'Slides', 'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
-                                               'worksheet' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
-            labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" %
-                            lectureNum + '.txt').replace('\\', '/'))
-            outlineURI = URIRef(os.path.join(
-                path, 'CourseInfo', 'Outline' + '.txt').replace('\\', '/'))
+                                               'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            outlineURI = URIRef(os.path.join(path, 'CourseInfo', 'Outline' + '.pdf').replace('\\', '/'))
 
             for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs'),
                            ('Outline', 'CourseInfo')]:
                 if source[0] == 'Outline':
                     if lectureNum == 1:
-                        filePath = os.path.join(
-                            path, source[1], source[0] + '.txt')
+                        filePath = os.path.join(path, source[1], source[0] + '.txt')
                     else:
                         continue
                 else:
-                    filePath = os.path.join(
-                        path, source[1], source[0] + "%02d" % lectureNum + '.txt')
+                    filePath = os.path.join(path, source[1], source[0] + "%02d" % lectureNum + '.txt')
 
                 # extract topics from pdf
                 topics = extract_ne(filePath)
@@ -77,8 +72,7 @@ if __name__ == '__main__':
                         print(Path(filePath).stem, f'\ntopic{i} :', topic, '\ndbpediaURI', dbpediaURI,
                               '\ndbpedialabel :', dbpediaLabel, '\n')
                     except UnicodeEncodeError:
-                        print(
-                            'cant print in this python console, but it doesnt affect the rest of code')
+                        print('cant print in this python console, but it doesnt affect the rest of code')
 
                     if dbpediaURI is None:
                         continue
@@ -99,8 +93,7 @@ if __name__ == '__main__':
                     # update graph
                     g.add((sourceURI, FOCU.covers, dbpediaURI))
                     g.add((dbpediaURI, RDF.type, FOCU.topic))
-                    g.add((dbpediaURI, RDFS.label, Literal(
-                        dbpediaLabel, datatype=XSD.string)))
+                    g.add((dbpediaURI, RDFS.label, Literal(dbpediaLabel, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')
