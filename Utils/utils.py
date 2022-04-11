@@ -8,6 +8,7 @@ import simplejson
 import spacy
 from spacypdfreader import pdf_reader
 from tika import parser
+import pdfplumber
 
 
 def insertToList(index, element, arr):
@@ -158,6 +159,17 @@ def dbp_spotlight(text):
         for item in response.json()['Resources']:
             annotations.append((item['@URI'], item['@surfaceForm']))
         return annotations
+
+
+def spotlight_over_text(path):
+    pages = []
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            pages.append(page.extract_text(x_tolerance=1).replace('\n', ' '))
+    annotations = []
+    for page in pages:
+        annotations += dbp_spotlight(page)
+    return annotations
 
 
 def DBLookup(txt):
