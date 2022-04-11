@@ -134,6 +134,32 @@ def extract_ne(path):
     return set(named_entities)
 
 
+def dbp_spotlight(text):
+    """
+    send text to spotlight and return dbpedia URI and dbpedia's label
+    :param text: string
+    :return: list of URIs and labes
+    """
+    headers = {
+        'accept': 'application/json',
+    }
+
+    params = {
+        'text': text
+    }
+
+    response = requests.get(
+        'https://api.dbpedia-spotlight.org/en/annotate', headers=headers, params=params)
+    annotations = []
+    if not response:
+        # print('Error with response status', response.status_code)
+        return annotations
+    else:
+        for item in response.json()['Resources']:
+            annotations.append((item['@URI'], item['@surfaceForm']))
+        return annotations
+
+
 def DBLookup(txt):
     """
     send text to spotlight and return dbpedia URI and dbpedia's label
