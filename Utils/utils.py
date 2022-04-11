@@ -172,6 +172,25 @@ def spotlight_over_text(path):
     return annotations
 
 
+def extract_ne_list(ls):
+    nlp = spacy.load("en_core_web_sm")
+    pos_tags = [
+        "PERSON", "NORP", "FACILITY", "FAC", "ORG",
+        "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART",
+        "LAW", "LANGUAGE", "DATE", "TIME", "PERCENT", "MONEY",
+        "QUANTITY", "MISC", "EVT", "PROD", "DRV", "GPE_LOC",
+        "GPE_ORG"
+    ]
+
+    named_entities = []
+    for text in ls:
+        doc = nlp(text[1])
+        for i in [(e.text, e.label_) for e in doc.ents]:
+            if i[1] in pos_tags:
+                named_entities.append(text)
+    return set(named_entities)
+
+
 def DBLookup(txt):
     """
     send text to spotlight and return dbpedia URI and dbpedia's label
