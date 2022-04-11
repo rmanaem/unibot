@@ -7,6 +7,7 @@ import requests
 import simplejson
 import spacy
 from spacypdfreader import pdf_reader
+from tika import parser
 
 
 def insertToList(index, element, arr):
@@ -91,6 +92,12 @@ def getCourseId(csvFile, courseName):
                      encoding='unicode_escape', dtype={'Course ID': object})
     nameArr = re.split(r'(\d+)', courseName)[:2]
     return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID'].values[0]
+
+
+def pdf_to_text_tika(path):
+    text = parser.from_file(path)
+    with open(path[:-3] + 'txt', 'w') as f:
+        f.write(text['content'])
 
 
 def extract_ne(path):
