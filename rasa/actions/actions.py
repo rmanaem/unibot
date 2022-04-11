@@ -12,7 +12,6 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
-import re
 from tabulate import tabulate
 
 
@@ -48,8 +47,14 @@ class ActionDescribeCourse(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""            
-            SELECT ?courseDesc
+            SELECT DISTINCT ?courseDesc
             WHERE{{
+                ?uni rdf:type vivo:University .
+                ?uni rdfs:label ?uniLabel .
+                FILTER CONTAINS (?uniLabel, "{tracker.slots['university']}")
+                ?uni vivo:offers ?course .
+                
+                ?course rdf:type vivo:Course.
     		    ?x vivo:hasSubjectArea '{tracker.slots['course_name']}'.
     		    ?x vivo:Catalog {courseNum}.
     		    ?x vivo:description ?courseDesc.
@@ -88,7 +93,7 @@ class ActionDescribeCourse(Action):
                 # print(s)
             output = s
             dispatcher.utter_message(
-                text=f"No problem, the description for {tracker.slots['course_name']} {courseNum} says:\n{output}")
+                text=f"No problem, the description for {tracker.slots['course_name']} {courseNum} at {tracker.slots['university']} says:\n{output}")
 
         return []
 
@@ -178,7 +183,7 @@ class ActionStudentCompetency(Action):
 
 
 # -------------------------------------------------------
-# Query 1.3: Which courses at [UNIVERSITY] teaches [TOPIC].
+# Query 1.3: Which courses at [UNIVERSITY] teach [TOPIC].
 # -------------------------------------------------------
 class ActionUniversityTopics(Action):
 
@@ -204,16 +209,16 @@ class ActionUniversityTopics(Action):
         """
 
         query = f"""
-                SELECT ?title ?subjectArea ?courseNum (count(?title) as ?frequency)
+                SELECT ?courseName ?subjectArea ?courseNum (count(?label) as ?frequency)
                 WHERE{{
                     ?uni rdf:type vivo:University .
                     ?uni rdfs:label ?uniLabel .
-                    FILTER CONTAINS (?uniLabel, "{tracker.slots['university']}")
+                    FILTER CONTAINS (?uniLabel, str("{tracker.slots['university']}"))
                     ?uni vivo:offers ?course .
 
                     ?course rdf:type vivo:Course.
                     ?course vivo:hasSubjectArea ?subjectArea.
-                    ?course vivo:Title ?title.
+                    ?course vivo:Title ?courseName.
                     ?course vivo:Catalog ?courseNum.
 
                     ?course focu:hasContent ?lecture.
@@ -221,9 +226,9 @@ class ActionUniversityTopics(Action):
                     ?x focu:covers ?topic.
                     ?topic rdfs:label ?label
 
-                    FILTER CONTAINS (?label, '{tracker.slots['topic']}')
+                    FILTER CONTAINS (?label, str("{tracker.slots['topic']}"))
                 }}
-                GROUP BY ?subjectArea ?courseNum ?title
+                GROUP BY ?subjectArea ?courseNum ?courseName
                 ORDER BY DESC(?frequency)
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
@@ -295,17 +300,17 @@ class ActionCourseSubject(Action):
         query = f"""
 	        SELECT ?title ?subject ?courseNum
             WHERE {{
-            ?uni rdf:type vivo:University .
-            ?uni rdfs:label ?uniLabel .
-            FILTER CONTAINS (?uniLabel, '{tracker.slots['university']}')
-            ?uni vivo:offers ?course .
-
-            ?course rdf:type vivo:Course.
-            ?course vivo:hasSubjectArea ?subject.
-            ?course vivo:Title ?title.
-            ?course vivo:Catalog ?courseNum.
-            FILTER(?subject = '{tracker.slots['course_name']}')
-        }}
+                ?uni rdf:type vivo:University .
+                ?uni rdfs:label ?uniLabel .
+                FILTER CONTAINS (?uniLabel, '{tracker.slots['university']}')
+                ?uni vivo:offers ?course .
+    
+                ?course rdf:type vivo:Course.
+                ?course vivo:hasSubjectArea ?subject.
+                ?course vivo:Title ?title.
+                ?course vivo:Catalog ?courseNum.
+                FILTER(?subject = '{tracker.slots['course_name']}')
+            }}
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query
@@ -373,7 +378,7 @@ class ActionStudentEnrollment(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-	        SELECT ?subject ?catalog (Count(?completedCourse) as ?count)
+	        SELECT ?subject ?catalog (count(?completedCourse) as ?count)
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
@@ -473,7 +478,7 @@ class ActionCourseCredits(Action):
                     ?course vivo:Catalog ?courseNum.
                     ?course vivo:CourseCredits ?credit
                     FILTER(?credit = {credits})
-            }}
+            }} LIMIT 100
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query
@@ -653,6 +658,7 @@ class ActionCourseRetaken(Action):
                 GROUP BY ?firstName ?lastName ?studentId ?CourseID ?subjectArea ?catalog
                 HAVING (?nbTimesTaken >= {counter})
                 ORDER BY DESC (?nbTimesTaken)
+                LIMIT 150
         """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'
         end = query.find('WHERE')  # get the index at 'WHERE' from the query
@@ -726,7 +732,7 @@ class ActionFailedStudent(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-    	    SELECT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
+    	    SELECT DISTINCT ?firstName ?lastName ?studentId ?subjectArea ?catalog ?grade
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
@@ -822,7 +828,7 @@ class ActionCourseReadings(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""     
-    	    SELECT ?reqLabel ?title ?website
+    	    SELECT DISTINCT ?reqLabel ?title ?website
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
@@ -926,16 +932,24 @@ class ActionTopicsCovered(Action):
         query = f"""
                 SELECT ?topicLabel (?x as ?resourceURI)
                 WHERE {{
-
+                    ?course rdf:type vivo:Course .
+                    ?course vivo:hasSubjectArea ?subjectArea.
+                    FILTER (?subjectArea = "{tracker.slots['course_name']}")
+                    
+                    ?course vivo:Catalog ?catalog.
+                    FILTER (?catalog = {courseNum})
+                    
+                    ?course focu:hasContent ?lecture.
+                    ?lecture bibo:number ?num.  
+                    FILTER (?num = {matNum})
+                    
+                    ?lecture vivo:contains ?x.
+                    ?x rdf:type ?course_event.
+                    FILTER (?course_event = focu:{tracker.slots['course_event'].lower()})
+                    
+                    ?x focu:covers ?topic .
                     ?topic rdf:type focu:topic .
   	                ?topic rdfs:label ?topicLabel .
-                    ?x focu:covers ?topic .
-                    ?lecture rdf:type focu:{tracker.slots['course_event'].lower()}.
-                    ?lecture vivo:contains ?x.
-  	                ?lecture bibo:number {matNum}.
-  	                ?course focu:hasContent ?lecture.
-  	                ?course vivo:hasSubjectArea "{tracker.slots['course_name']}".
-  	                ?course vivo:Catalog {courseNum}.
                 }}
                 """
         beg = query.find('SELECT') + 6  # get the index right after the word 'SELECT'

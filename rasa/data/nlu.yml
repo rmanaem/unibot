@@ -32,21 +32,21 @@ nlu:
 
 - intent: describe_course
   examples: |
-    - What is [COMP](course_name) [474](course_number) about?
-    - What is [COMP](course_name) [6741](course_number) about?
-    - What is [_oov_](course_name) [_oov_](course_number) about?
-    - What is [COMP](course_name) [474](course_number) about.
-    - What is [COMP](course_name) [6741](course_number) about.
-    - What is [_oov_](course_name) [_oov_](course_number) about.
-    - What is [COMP](course_name) [474](course_number) about
-    - What is [COMP](course_name) [6741](course_number) about
-    - What is [_oov_](course_name) [_oov_](course_number) about
-    - Tell me about [COMP](course_name) [474](course_number).
-    - Tell me about [COMP](course_name) [6741](course_number).
-    - Tell me about [_oov_](course_name) [_oov_](course_number).
-    - Tell me about [COMP](course_name) [474](course_number)
-    - Tell me about [COMP](course_name) [6741](course_number)
-    - Tell me about [_oov_](course_name) [_oov_](course_number) 
+    - What is [COMP](course_name) [474](course_number), that is offered by [Concordia University](university), about?
+    - What is [COMP](course_name) [6741](course_number), that is offered by [Concordia University](university), about?
+    - What is [_oov_](course_name) [_oov_](course_number), that is offered by [_oov_](university), about?
+    - What is [COMP](course_name) [474](course_number), that is offered by [Concordia University](university), about.
+    - What is [COMP](course_name) [6741](course_number), that is offered by [Concordia University](university), about.
+    - What is [_oov_](course_name) [_oov_](course_number) about that is offered by [_oov_](university).
+    - What is [COMP](course_name) [474](course_number), that is offered by [Concordia University](university), about
+    - What is [COMP](course_name) [6741](course_number), that is offered by [Concordia University](university), about
+    - What is [_oov_](course_name) [_oov_](course_number) about that is offered by [_oov_](university)
+    - Tell me about [COMP](course_name) [474](course_number) that is offered by [Concordia University](university).
+    - Tell me about [COMP](course_name) [6741](course_number) that is offered by [Concordia University](university).
+    - Tell me about [_oov_](course_name) [_oov_](course_number) that is offered by [_oov_](university).
+    - Tell me about [COMP](course_name) [474](course_number) that is offered by [Concordia University](university)
+    - Tell me about [COMP](course_name) [6741](course_number) that is offered by [Concordia University](university)
+    - Tell me about [_oov_](course_name) [_oov_](course_number) that is offered by [_oov_](university)
 
 - intent: student_competency
   examples: |
