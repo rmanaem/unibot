@@ -2,7 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/CourseInfo/Outline.txt> focu:covers <http://dbpedia.org/resource/Andre_Drummond>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/CourseInfo/Outline.pdf> focu:covers <http://dbpedia.org/resource/Andre_Drummond>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Cody_Rhodes>,
         <http://dbpedia.org/resource/Computer_science>,
@@ -27,7 +27,7 @@
         <http://dbpedia.org/resource/Software_engineering>,
         <http://dbpedia.org/resource/Web_Ontology_Language> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab01.txt> focu:covers <http://dbpedia.org/resource/Canada>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab01.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/Corona>,
         <http://dbpedia.org/resource/ELIZA>,
@@ -37,7 +37,7 @@
         <http://dbpedia.org/resource/Moodle>,
         <http://dbpedia.org/resource/Order_of_Australia> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab02.txt> focu:covers <http://dbpedia.org/resource/Canada>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab02.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
         <http://dbpedia.org/resource/English_language>,
@@ -50,7 +50,7 @@
         <http://dbpedia.org/resource/Sport_Club_Internacional>,
         <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab03.txt> focu:covers <http://dbpedia.org/resource/Canada>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab03.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/City>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
@@ -61,7 +61,7 @@
         <http://dbpedia.org/resource/RDF_Schema>,
         <http://dbpedia.org/resource/Resource_Description_Framework> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab04.txt> focu:covers <http://dbpedia.org/resource/Alexa_Internet>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab04.pdf> focu:covers <http://dbpedia.org/resource/Alexa_Internet>,
         <http://dbpedia.org/resource/Apache>,
         <http://dbpedia.org/resource/Berlin>,
         <http://dbpedia.org/resource/Canada>,
@@ -76,7 +76,7 @@
         <http://dbpedia.org/resource/Moodle>,
         <http://dbpedia.org/resource/Siri> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab05.txt> focu:covers <http://dbpedia.org/resource/Apache>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab05.pdf> focu:covers <http://dbpedia.org/resource/Apache>,
         <http://dbpedia.org/resource/Application_programming_interface>,
         <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/Concordia_University>,
@@ -100,7 +100,7 @@
         <http://dbpedia.org/resource/Wikidata>,
         <http://dbpedia.org/resource/Wikipedia> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab06.txt> focu:covers <http://dbpedia.org/resource/Canada>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab06.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/English_language>,
         <http://dbpedia.org/resource/European_Union>,
         <http://dbpedia.org/resource/Lego>,
@@ -110,7 +110,7 @@
         <http://dbpedia.org/resource/Trigonometric_functions>,
         <http://dbpedia.org/resource/Wikidata> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab07.txt> focu:covers <http://dbpedia.org/resource/Apache_Lucene>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab07.pdf> focu:covers <http://dbpedia.org/resource/Apache_Lucene>,
         <http://dbpedia.org/resource/Apache_Solr>,
         <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/Democratic_Party_of_the_Left>,
@@ -121,7 +121,7 @@
         <http://dbpedia.org/resource/Trigonometric_functions>,
         <http://dbpedia.org/resource/Usenet> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.txt> focu:covers <http://dbpedia.org/resource/Amazon_Alexa>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf> focu:covers <http://dbpedia.org/resource/Amazon_Alexa>,
         <http://dbpedia.org/resource/Apache_Solr>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Bahar_Begum>,
@@ -153,7 +153,7 @@
         <http://dbpedia.org/resource/Tay_(bot)>,
         <http://dbpedia.org/resource/UIMA> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.txt> focu:covers <http://dbpedia.org/resource/A2_road_(England)>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf> focu:covers <http://dbpedia.org/resource/A2_road_(England)>,
         <http://dbpedia.org/resource/Alfred_Lennon>,
         <http://dbpedia.org/resource/Application_programming_interface>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
@@ -205,7 +205,7 @@
         <http://dbpedia.org/resource/YAGO_(database)>,
         <http://dbpedia.org/resource/YouTube> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.txt> focu:covers <http://dbpedia.org/resource/Academy_Awards>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf> focu:covers <http://dbpedia.org/resource/Academy_Awards>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Basketball_Super_League>,
         <http://dbpedia.org/resource/Berlin>,
@@ -242,7 +242,7 @@
         <http://dbpedia.org/resource/United_States_Congress>,
         <http://dbpedia.org/resource/VVV-Venlo> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.txt> focu:covers <http://dbpedia.org/resource/AVG_AntiVirus>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf> focu:covers <http://dbpedia.org/resource/AVG_AntiVirus>,
         <http://dbpedia.org/resource/Acceptable_quality_limit>,
         <http://dbpedia.org/resource/Amsterdam>,
         <http://dbpedia.org/resource/Berlin>,
@@ -280,7 +280,7 @@
         <http://dbpedia.org/resource/Web_Ontology_Language>,
         <http://dbpedia.org/resource/WordPress.com> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.txt> focu:covers <http://dbpedia.org/resource/Amsterdam>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf> focu:covers <http://dbpedia.org/resource/Amsterdam>,
         <http://dbpedia.org/resource/BabelNet>,
         <http://dbpedia.org/resource/Basketball_Super_League>,
         <http://dbpedia.org/resource/Berlin>,
@@ -332,7 +332,7 @@
         <http://dbpedia.org/resource/Wikipedia>,
         <http://dbpedia.org/resource/World_Wide_Web_Consortium> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.txt> focu:covers <http://dbpedia.org/resource/Anthony_Julius>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf> focu:covers <http://dbpedia.org/resource/Anthony_Julius>,
         <http://dbpedia.org/resource/Associated_Press>,
         <http://dbpedia.org/resource/Boolean_algebra>,
         <http://dbpedia.org/resource/Cambridge_University_Press>,
@@ -355,7 +355,7 @@
         <http://dbpedia.org/resource/Trigonometric_functions>,
         <http://dbpedia.org/resource/University_of_Cambridge> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.txt> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/BSD_licenses>,
         <http://dbpedia.org/resource/Cambridge_Analytica>,
@@ -386,7 +386,7 @@
         <http://dbpedia.org/resource/United_Kingdom>,
         <http://dbpedia.org/resource/Unsupervised_learning> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
         <http://dbpedia.org/resource/Facebook>,
@@ -395,7 +395,7 @@
         <http://dbpedia.org/resource/Resource_Description_Framework>,
         <http://dbpedia.org/resource/Uniform_Resource_Identifier> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/English_language>,
         <http://dbpedia.org/resource/FOAF_(ontology)>,
         <http://dbpedia.org/resource/France>,
@@ -403,7 +403,7 @@
         <http://dbpedia.org/resource/Resource_Description_Framework>,
         <http://dbpedia.org/resource/Stephanie_Brown_(character)> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
         <http://dbpedia.org/resource/Montreal>,
@@ -412,7 +412,7 @@
         <http://dbpedia.org/resource/Wikidata>,
         <http://dbpedia.org/resource/Yangtze> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Calais_(Reuters_product)>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
@@ -428,17 +428,17 @@
         <http://dbpedia.org/resource/Wikidata>,
         <http://dbpedia.org/resource/Wikipedia> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Associated_Press>,
         <http://dbpedia.org/resource/Israel_Defense_Forces>,
         <http://dbpedia.org/resource/Recommender_system> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.txt> focu:covers <http://dbpedia.org/resource/Intelligent_Systems>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf> focu:covers <http://dbpedia.org/resource/Intelligent_Systems>,
         <http://dbpedia.org/resource/K-nearest_neighbors_algorithm>,
         <http://dbpedia.org/resource/ML_(programming_language)>,
         <http://dbpedia.org/resource/Qi> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.txt> focu:covers <http://dbpedia.org/resource/2D_computer_graphics>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf> focu:covers <http://dbpedia.org/resource/2D_computer_graphics>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Concor_Holdings>,
         <http://dbpedia.org/resource/Concordia_University>,
@@ -450,7 +450,7 @@
         <http://dbpedia.org/resource/Qi>,
         <http://dbpedia.org/resource/Steve_Jobs> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/CourseInfo/Outline.txt> focu:covers <http://dbpedia.org/resource/All-Nippon_News_Network>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/CourseInfo/Outline.pdf> focu:covers <http://dbpedia.org/resource/All-Nippon_News_Network>,
         <http://dbpedia.org/resource/Andre_Drummond>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Bayes_classifier>,
@@ -473,7 +473,7 @@
         <http://dbpedia.org/resource/Reverse-Flash>,
         <http://dbpedia.org/resource/Software_engineering> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab01.txt> focu:covers <http://dbpedia.org/resource/Alain_Colmerauer>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab01.pdf> focu:covers <http://dbpedia.org/resource/Alain_Colmerauer>,
         <http://dbpedia.org/resource/Alan_Turing>,
         <http://dbpedia.org/resource/Alberta>,
         <http://dbpedia.org/resource/AlexNet>,
@@ -513,21 +513,21 @@
         <http://dbpedia.org/resource/Yann_LeCun>,
         <http://dbpedia.org/resource/Yoshua_Bengio> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab02.txt> focu:covers <http://dbpedia.org/resource/Frisbee>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab02.pdf> focu:covers <http://dbpedia.org/resource/Frisbee>,
         <http://dbpedia.org/resource/G2_phase>,
         <http://dbpedia.org/resource/OpenAI> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab03.txt> focu:covers <http://dbpedia.org/resource/Keystone_B-4>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab03.pdf> focu:covers <http://dbpedia.org/resource/Keystone_B-4>,
         <http://dbpedia.org/resource/MAX_Light_Rail> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab04.txt> focu:covers <http://dbpedia.org/resource/Bayes_classifier>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab04.pdf> focu:covers <http://dbpedia.org/resource/Bayes_classifier>,
         <http://dbpedia.org/resource/Google>,
         <http://dbpedia.org/resource/Klinga,_Norway>,
         <http://dbpedia.org/resource/Koko_the_Clown>,
         <http://dbpedia.org/resource/Naive_Bayes_classifier>,
         <http://dbpedia.org/resource/Spamming> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab05.txt> focu:covers <http://dbpedia.org/resource/Canada>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab05.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
         <http://dbpedia.org/resource/Creative_Commons>,
         <http://dbpedia.org/resource/Decision_tree>,
         <http://dbpedia.org/resource/Decision_tree_learning>,
@@ -538,7 +538,7 @@
         <http://dbpedia.org/resource/Microsoft_Outlook>,
         <http://dbpedia.org/resource/Quebec> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab06.txt> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab06.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
         <http://dbpedia.org/resource/Artificial_neural_network>,
         <http://dbpedia.org/resource/Exclusive_or>,
         <http://dbpedia.org/resource/Gail_McIntyre>,
@@ -546,14 +546,14 @@
         <http://dbpedia.org/resource/Perceptron>,
         <http://dbpedia.org/resource/Sigmoid_function> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab07.txt> focu:covers <http://dbpedia.org/resource/Artificial_neural_network>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab07.pdf> focu:covers <http://dbpedia.org/resource/Artificial_neural_network>,
         <http://dbpedia.org/resource/CNN>,
         <http://dbpedia.org/resource/Deep_learning>,
         <http://dbpedia.org/resource/ITER>,
         <http://dbpedia.org/resource/ImageNet>,
         <http://dbpedia.org/resource/PyTorch> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.txt> focu:covers <http://dbpedia.org/resource/AI_winter>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf> focu:covers <http://dbpedia.org/resource/AI_winter>,
         <http://dbpedia.org/resource/Alan_Turing>,
         <http://dbpedia.org/resource/AlphaGo>,
         <http://dbpedia.org/resource/Artificial_general_intelligence>,
@@ -582,7 +582,7 @@
         <http://dbpedia.org/resource/United_Kingdom>,
         <http://dbpedia.org/resource/Vladimir_Kramnik> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Breadth-first_search>,
         <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DFS_Furniture>,
@@ -595,7 +595,7 @@
         <http://dbpedia.org/resource/Sam_Loyd>,
         <http://dbpedia.org/resource/Tetris> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.txt> focu:covers <http://dbpedia.org/resource/Alberta>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf> focu:covers <http://dbpedia.org/resource/Alberta>,
         <http://dbpedia.org/resource/AlphaGo>,
         <http://dbpedia.org/resource/AlphaGo_Zero>,
         <http://dbpedia.org/resource/AlphaZero>,
@@ -626,7 +626,7 @@
         <http://dbpedia.org/resource/The_Blue_Planet>,
         <http://dbpedia.org/resource/Very_Large_Scale_Integration> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.txt> focu:covers <http://dbpedia.org/resource/A2_road_(England)>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf> focu:covers <http://dbpedia.org/resource/A2_road_(England)>,
         <http://dbpedia.org/resource/A3_road>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Bachelor_of_Arts>,
@@ -650,7 +650,7 @@
         <http://dbpedia.org/resource/United_States>,
         <http://dbpedia.org/resource/X500_(film)> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.txt> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Cholera>,
         <http://dbpedia.org/resource/Complicated_(Avril_Lavigne_song)>,
@@ -680,7 +680,7 @@
         <http://dbpedia.org/resource/Unsupervised_learning>,
         <http://dbpedia.org/resource/William_of_Ockham> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.txt> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
         <http://dbpedia.org/resource/Andrew_Ng>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Backpropagation>,
@@ -700,7 +700,7 @@
         <http://dbpedia.org/resource/W_postcode_area>,
         <http://dbpedia.org/resource/Wikipedia> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.txt> focu:covers <http://dbpedia.org/resource/Academic_Press>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf> focu:covers <http://dbpedia.org/resource/Academic_Press>,
         <http://dbpedia.org/resource/AlexNet>,
         <http://dbpedia.org/resource/All-Nippon_News_Network>,
         <http://dbpedia.org/resource/Artificial_intelligence>,
@@ -727,19 +727,19 @@
         <http://dbpedia.org/resource/Yann_LeCun>,
         <http://dbpedia.org/resource/Yoshua_Bengio> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.txt> focu:covers <http://dbpedia.org/resource/DFS_Furniture> .
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> focu:covers <http://dbpedia.org/resource/DFS_Furniture> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.txt> focu:covers <http://dbpedia.org/resource/Heuristic>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> focu:covers <http://dbpedia.org/resource/Heuristic>,
         <http://dbpedia.org/resource/MAX_Light_Rail>,
         <http://dbpedia.org/resource/Nim> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.txt> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
         <http://dbpedia.org/resource/Bayes_classifier>,
         <http://dbpedia.org/resource/Histone_H3>,
         <http://dbpedia.org/resource/Hydrogen>,
         <http://dbpedia.org/resource/ML_(programming_language)> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.txt> focu:covers <http://dbpedia.org/resource/Binary_logarithm>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> focu:covers <http://dbpedia.org/resource/Binary_logarithm>,
         <http://dbpedia.org/resource/Centroid>,
         <http://dbpedia.org/resource/Decision_tree>,
         <http://dbpedia.org/resource/Decision_tree_learning>,
@@ -747,15 +747,15 @@
         <http://dbpedia.org/resource/Qi>,
         <http://dbpedia.org/resource/Roulette_Records> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.txt> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
         <http://dbpedia.org/resource/Exclusive_or>,
         <http://dbpedia.org/resource/Perceptron> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.txt> focu:covers <http://dbpedia.org/resource/CNN>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> focu:covers <http://dbpedia.org/resource/CNN>,
         <http://dbpedia.org/resource/Deep_learning>,
         <http://dbpedia.org/resource/Max_Branning> .
 
-<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.txt> focu:covers <http://dbpedia.org/resource/Concordia_University>,
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> focu:covers <http://dbpedia.org/resource/Concordia_University>,
         <http://dbpedia.org/resource/DBpedia>,
         <http://dbpedia.org/resource/Facebook>,
         <http://dbpedia.org/resource/McGill_University>,
