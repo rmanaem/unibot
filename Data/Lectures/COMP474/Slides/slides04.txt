@@ -1,0 +1,4660 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.1
+
+Lecture 4
+Knowledge Base Queries & SPARQL
+
+COMP 474/6741, Winter 2022
+
+René Witte
+Department of Computer Science
+
+and Software Engineering
+Concordia University
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.2
+
+Outline
+
+1 Introduction
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.3
+
+Slides Credit
+
+• Includes slides by Ivan Herman, W3C [Her]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.4
+
+Outline
+
+1 Introduction
+Review
+OWL
+Queries
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.5
+Photo credit “Indy Reading Coalition”, Wordpress.com 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.6
+(223) 223 
+
+}  Data integration needs agreements on
+§  terms 
+
+•  “translator”, “author”
+§  categories used 
+
+•  “Person”, “literature”
+§  relationships among those 
+
+•  “an author is also a Person…”, “historical fiction is a narrower 
+term than fiction”
+
+•  ie, new relationships can be deduced
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.7
+(224) 224 
+
+}  There is a need for “languages” to define such 
+vocabularies
+§  to define those vocabularies
+§  to assign clear “semantics” on how new relationships can be 
+
+deduced
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.8
+(69) 69 
+
+}  Think of well known traditional vocabularies:
+§  use the term “novel”
+§  “every novel is a fiction”
+§  “«The Glass Palace» is a novel”
+§  etc.
+
+}  RDFS defines resources and classes:
+§  everything in RDF is a “resource”
+§  “classes” are also resources, but…
+§ …they are also a collection of possible resources (i.e., 
+
+“individuals”)
+•  “fiction”, “novel”, …
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.9
+(70) 70 
+
+}  Relationships are defined among resources:
+§  “typing”: an individual belongs to a specific class 
+
+•  “«The Glass Palace» is a novel”
+•  to be more precise: “«http://.../000651409X» is a novel”
+
+§  “subclassing”: all instances of one are also the instances of 
+the other (“every novel is a fiction”)
+
+}  RDFS formalizes these notions in RDF
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.10(71) 71 
+
+}  RDFS defines the meaning of these terms
+§  (these are all special URI-s, we just use the namespace 
+
+abbreviation)
+
+rdf:type 
+#Novel http://…isbn/000651409X 
+
+rdfs:Class 
+
+→ Worksheet #3: Tasks 1 & 2
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.11
+
+Reuse vocabularies whenever possible
+
+Copyright 2014 by Manning Publications Co., [WZRH14]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.12
+
+Core Vocabularies
+
+Copyright 2014 by Manning Publications Co., [WZRH14]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.13
+
+More authoritative vocabularies
+
+Copyright 2014 by Manning Publications Co., [WZRH14]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.14
+
+Outline
+
+1 Introduction
+Review
+OWL
+Queries
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.15
+
+OWL
+
+The Web Ontology Language (OWL)
+
+• Current version OWL2 (2009)
+• Different OWL2-Profiles (lite, full,
+
+etc.)
+• Ontology language based on
+
+Description Logics (DL)
+• Enables logic-based reasoning
+
+http://www.w3.org/TR/owl2-overview/
+
+http://www.w3.org/TR/owl2-overview/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.16
+(282) 282 
+
+OWL Full 
+
+OWL DL 
+
+OWL EL OWL RL 
+
+OWL QL 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.17
+(245) 245 
+
+}  For individuals:
+§  owl:sameAs: two URIs refer to the same concept 
+
+(“individual”)
+§  owl:differentFrom: negation of owl:sameAs
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.18
+(246) 246 
+
+owl:equivalentClass 
+a:Novel f:Roman 
+
+owl:equivalentProperty 
+a:author f:auteur 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.19(247) 247 
+
+}  Linking our example of Amsterdam from one data 
+set (DBpedia) to the other (Geonames):
+
+<http://dbpedia.org/resource/Amsterdam> 
+  owl:sameAs <http://sws.geonames.org/2759793>; 
+
+}  This is the main mechanism of “Linking” in the 
+Linked Open Data project
+
+→ Worksheet #3: Task 3
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.20
+(248) 248 
+
+}  In OWL, one can characterize the behavior of 
+properties (symmetric, transitive, functional, inverse 
+functional, reflexive, irreflexive, …)
+
+}  OWL also separates data and object properties
+§  “datatype property” means that its range are typed literals
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.21
+(249) 249 
+
+}  “foaf:email” may be defined as “inverse functional”
+§   i.e., two different subjects cannot have identical objects
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.22
+(250) 250 
+
+}  If the following holds in our triples:
+:email rdf:type owl:InverseFunctionalProperty.  
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.23
+(251) 251 
+
+}  If the following holds in our triples:
+:email rdf:type owl:InverseFunctionalProperty.  
+<A> :email "mailto:a@b.c". 
+<B> :email "mailto:a@b.c". 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.24
+(252) 252 
+
+}  If the following holds in our triples:
+:email rdf:type owl:InverseFunctionalProperty.  
+<A> :email "mailto:a@b.c". 
+<B> :email "mailto:a@b.c". 
+
+<A> owl:sameAs <B>. 
+
+then, processed through OWL, the following holds, 
+too:
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.25
+(253) 253 
+
+}  There may be an inverse relationship among 
+properties, eg:
+
+<somebook> ex:author <somebody>.  
+ex:author owl:inverseOf ex:authorOf. 
+
+<somebody> ex:authorOf <somebook>. 
+
+yields, in OWL:
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.26
+(259) 259 
+
+}  In RDFS, you can subclass existing classes… that’s 
+all
+
+}  In OWL, you can construct classes from existing 
+ones:
+§  enumerate its content
+§  through intersection, union, complement
+§  etc
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.27
+(290) 290 
+
+}  OWL DL can be interpreted as a variant of 
+Description Logic
+§  for connoisseurs: OWL (2) DL ≈ SROIQ (D)
+
+}  Hence the results of this  particular area of logic are 
+directly applicable
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.28
+(292) 292 
+
+}  There is also a compact mathematical notation for 
+axioms, assertions, etc:
+§  Literature ≣ Novel ⊔ Short_Story ⊔ Poetry
+§  Listed_Price ⊑ ∀currency.Currencies
+
+}  You may see these in papers, books…
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.29
+(307) 307 
+
+}  eClassOwl: eBusiness ontology for products and 
+services, 75,000 classes and 5,500 properties
+
+}  National Cancer Institute’s ontology: about 58,000 
+classes
+
+}  Open Biomedical Ontologies Foundry: a collection 
+of ontologies, including the Gene Ontology to 
+describe gene and gene product attributes in any 
+organism or  protein sequence and annotation 
+terminology and data (UniProt)
+
+}  BioPAX: for biological pathway data
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.30
+
+Outline
+
+1 Introduction
+Review
+OWL
+Queries
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.31
+(196) 196 
+
+}  Remember the Python+RDFLib idiom:
+
+for (s,p,o) in graph.triples((subject,None,None)) : 
+  do_something(p,o); 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.32
+(197) 197 
+
+}  In practice, more complex queries into the RDF data 
+are necessary
+§  something like: “give me the (a,b) pair of resources, for 
+
+which there is an x such that (x parent a) and (b brother x) 
+holds” (ie, return the uncles)
+•  these rules may become quite complex
+
+}  The goal of SPARQL (Query Language for RDF)
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.33
+(198) 198 
+
+subject 
+
+?o 
+
+?o 
+
+?o 
+
+?o 
+
+?p 
+
+?p 
+
+?p 
+
+?p 
+
+for (s,p,o) in graph.triples((subject,None,None)) : 
+  do_something(p,o); 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.34
+(199) 199 
+
+}  The fundamental idea: use graph patterns
+§  the pattern contains unbound symbols
+§  by binding the symbols, subgraphs of the RDF graph are 
+
+selected
+§  if there is such a selection, the query returns the bound 
+
+resources
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.35
+(200) 200 
+
+}  The triples in WHERE define the graph pattern, 
+with ?p and ?o “unbound” symbols
+
+}  The query returns all p,o pairs
+
+SELECT ?p ?o 
+WHERE {subject ?p ?o} 
+
+subject 
+
+?o 
+
+?o 
+
+?o 
+
+?o 
+
+?p 
+
+?p 
+
+?p 
+
+?p 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.36
+(201) 201 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.37
+(202) 202 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+Returns: [<…409X>,33,:£]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.38
+(203) 203 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+Returns: [<…409X>,33,:£],  [<…409X>,50,:€]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.39
+(204) 204 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+Returns: [<…409X>,33,:£],  [<…409X>,50,:€],
+               [<…6682>,60,:€]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.40
+(205) 205 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+Returns: [<…409X>,33,:£],  [<…409X>,50,:€],
+               [<…6682>,60,:€],  [<…6682>,78,:$]
+
+→ Worksheet #3: Task 4
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.41
+
+Outline
+
+1 Introduction
+
+2 SPARQL Queries
+Introduction
+Describe
+Select
+Construct
+Ask
+Other SPARQL Features
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.42
+Photo credit “reedster”, Flickr 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.43
+
+Introduction
+
+SPARQL W3C Standard
+SPARQL stands for. . .
+
+“SPARQL Protocol And RDF
+Query Language”
+
+• Current version 1.1 (like RDF, RDFS,
+etc.)
+
+• Language for querying graphs
+• and a protocol for doing this over the
+
+web using a SPARQL endpoint
+• Major difference between 1.0 and
+
+1.1: modifying graphs via SPARQL
+(insert, delete etc.)
+
+https://www.w3.org/TR/sparql11-query/
+
+https://www.w3.org/TR/sparql11-query/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.44
+
+Describe
+
+Describing a resource
+Simple query that can be used when no information about a graph’s content is
+available.
+
+Example 1
+DESCRIBE <http://dbpedia.org/resource/Concordia_University>
+
+Example 2
+
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+DESCRIBE ?s
+WHERE { ?s geo:lat "45.497002"^^xsd:float .
+
+?s geo:long "-73.578003"^^xsd:float . }
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.45
+
+Public SPARQL Endpoint
+
+→ Worksheet #3: Task 5
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.46
+
+Selecting triples from a graph
+
+Probably the most widely used type of SPARQL query
+
+• Select triples from a graph that match a given triple pattern
+• Like an RDF triple, except subject, predicate, and/or object may be a variable
+
+Copyright 2011 by Springer-Verlag Berlin Heidelberg, [DFH11]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.47
+
+Select. . . where
+
+Copyright 2013 by O’Reilly Media, [DuC13]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.48
+
+Select: some details
+
+DISTINCT
+Use SELECT DISTINCT to remove redundant triples
+
+ORDER BY
+Use ORDER BY to sort the result triples (e.g., ORDER BY ?amount)
+
+LIMIT
+Use LIMIT to restrict the number of results (e.g., LIMIT 10)
+
+Functions
+You can use functions like AVG(), MIN(), MAX(), COUNT(), SUM(), e.g.,
+
+SELECT (MAX(?amount) as ?maxAmount)
+WHERE { ?meal e:amount ?amount . }
+
+→ Worksheet #3: Task 6
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.49
+
+Union
+
+Copyright 2013 by O’Reilly Media, [DuC13]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.50
+
+Union: Querying Alternatives
+
+Example (using the Gene Ontology)
+“Find me the cellular processes that are either integral to or a refinement of signal
+transduction.”
+
+PREFIX go: <http://purl.org/obo/owl/GO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://www.obofoundry.org/ro/ro.owl#>
+
+SELECT DISTINCT ?label ?process
+WHERE {
+{ ?process obo:part_of go:GO_0007165 } # "integral to"
+
+UNION
+{ ?process rdfs:subClassOf go:GO_0007165 } # "refinement of"
+?process rdfs:label ?label
+
+}
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.51
+
+Optional
+
+Optional Information
+Use the OPTIONAL keyword to match optional information, e.g.,
+
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+
+select ?name ?url
+where {
+
+?person foaf:name ?name .
+OPTIONAL { ?person rdfs:seeAlso ?url }
+
+}
+
+• This will return a person’s URL, if there is one
+• Without the OPTIONAL, persons without URLs would not have been matched
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.52
+(207) 207 
+
+SELECT ?isbn ?price ?currency ?wiki 
+WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency. 
+        OPTIONAL ?wiki w:isbn ?isbn. } 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+http://en.wikipedia/…/The_Glass_Palace 
+
+w:isbn 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.53
+(208) 208 
+
+Returns:  [[<..09X>,33,:£,<…Palace>], … , [<..6682>,78,:$, ]]
+
+SELECT ?isbn ?price ?currency ?wiki 
+WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency. 
+        OPTIONAL ?wiki w:isbn ?isbn. } 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+http://en.wikipedia/…/The_Glass_Palace 
+
+w:isbn 
+
+→ Worksheet #3: Task 7
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.54
+
+Filter
+
+Filtering Information
+Use a FILTER to remove results that were matched by WHERE, e.g.:
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?comment
+WHERE {
+
+dbr:Linked_data rdfs:comment ?comment .
+FILTER (lang(?comment) = "en")
+
+}
+
+• Here, we restrict all matched abstracts to those with an English language tag.
+• FILTERs can operate on numbers, strings, dates, URIs, or other data types
+
+and support regular expressions.
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.55
+(206) 206 
+
+SELECT ?isbn ?price ?currency # note: not ?x! 
+WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency. 
+        FILTER(?currency == :€) } 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+Returns: [<…409X>,50,:€],  [<…6682>,60,:€]
+
+→ Worksheet #3: Task 8
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.56
+
+Construct
+
+Constructing a new graph
+Can be used to re-construct a new graph from an existing one.
+
+• For example, re-write triples from one vocabulary into another
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.57
+(209) 209 
+
+CONSTRUCT { ?isbn b:price ?price. 
+            ?isbn a:author ?y. ?y a:name ?name . } 
+WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency. 
+        ?isbn a:author ?y. ?y a:name ?name . 
+        FILTER(?currency == :€) } 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.58
+(210) 210 
+
+CONSTRUCT { ?isbn b:price ?price. 
+            ?isbn a:author ?y. ?y a:name ?name . } 
+WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency. 
+        ?isbn a:author ?y. ?y a:name ?name . 
+        FILTER(?currency == :€) } 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+50 78 
+
+Ghosh, Amitav 
+
+b:price b:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.59
+
+Ask
+
+Asking a true/false question
+ASK <graph pattern>
+
+Returns true if the pattern can be matched in the graph, otherwise false
+
+Example
+Is Concordia University located in Mexico?
+
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+ASK {
+dbr:Concordia_University dbo:country dbr:Mexico
+
+}
+
+→ Worksheet #3: Task 9
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.60
+(211) 211 
+
+}  Limit the number of returned results; remove 
+duplicates, sort them, …
+
+}  Specify several data sources (via URI-s) within the 
+query
+
+}  Construct a graph combining a separate pattern 
+and the query results
+
+}  Use datatypes and/or language tags when matching 
+a pattern
+
+}  Aggregation of the results (min, max, average, etc.)
+}  Path expressions (a bit like regular expressions)
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.61
+(212) 212 
+
+}  SPARQL is usually used over the network
+§  http request is sent to a SPARQL endpoint
+§  result is the result of the SELECT, the CONSTRUCT,…
+
+}  Separate documents define the protocol and the 
+result format
+
+•  SPARQL Protocol for RDF with HTTP and SOAP bindings
+•  SPARQL results in XML or JSON formats
+
+}  Big datasets usually offer “SPARQL endpoints” 
+using this protocol
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.62
+(213) 213 
+
+GET /qps?&query=SELECT+:…+WHERE:+… HTTP/1.1 
+User-Agent: my-sparql-client/0.0 
+Host: my.example 
+         
+HTTP/1.1 200 OK 
+Server: my-sparql-server/0.0 
+Content-Type: application/sparql-results+xml 
+ 
+<?xml version="1.0" encoding="UTF-8"?> 
+<sparql xmlns="http://www.w3.org/2005/sparql-results#> 
+  <head> 
+    <variable name="a"/> 
+    ... 
+  </head> 
+  <results> 
+    <result ordered="false" distinct="false"> 
+      <binding name="a"><uri>http:…</uri></binding> 
+      ... 
+    </result> 
+    <result> ... </result> 
+  </results> 
+</sparql> 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.63
+(214) 214 
+
+}  SPARQL CONSTRUCT returns a new, modified 
+graph
+§  the original data remains unchanged!
+
+}  SPARQL 1.1 Update modifies the original dataset!
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.64
+(215) 215 
+
+INSERT {?isbn rdf:type frbr:Work} 
+WHERE  {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.65
+(216) 216 
+
+INSERT {?isbn rdf:type frbr:Work} 
+WHERE  {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+frbr:Work 
+
+rdf:type rdf:type 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.66
+(217) 217 
+
+DELETE {?x p:currency ?currency} 
+WHERE  {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+:£ 33 
+
+p:currency rdf:value 
+
+:€ 50 
+
+p:currency rdf:value 
+
+:€ 60 
+
+p:currency rdf:value 
+
+:$ 78 
+
+p:currency rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.67
+(218) 218 
+
+DELETE {?x p:currency ?currency} 
+WHERE  {?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.} 
+
+a:name 
+
+http://…isbn/2020386682 http://…isbn/000651409X 
+
+33 
+
+rdf:value 
+
+50 
+
+rdf:value 
+
+60 
+
+rdf:value 
+
+78 
+
+rdf:value 
+
+Ghosh, Amitav 
+
+a:price a:price a:price a:price 
+
+a:author a:author 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.68
+(219) 219 
+
+SPARQL Processor 
+
+HTML Unstructured Text XML/XHTML 
+
+Relational 
+Database 
+
+S
+Q
+
+L
+R
+
+D
+F 
+
+Database S
+PA
+
+R
+Q
+
+L 
+E
+
+nd
+po
+
+in
+t 
+
+Triple store S
+PA
+
+R
+Q
+
+L 
+E
+
+nd
+po
+
+in
+t 
+
+RDF Graph 
+
+Application 
+
+N
+LP
+
+ T
+ec
+
+hn
+iq
+
+ue
+s 
+
+SPA
+RQL
+
+ Con
+struc
+
+t 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.69
+
+Outline
+
+1 Introduction
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+Named Graphs
+Serving Knowledge Graphs
+Inferencing
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.70
+
+Named Graphs
+
+RDF Dataset
+An RDF dataset may have multiple named graphs and at most one unnamed
+("default") graph.
+
+Serialization
+
+TriG: Extension of Turtle for named graphs
+See https://www.w3.org/TR/trig/
+
+N-Quads: Extension of N-Triples for named graphs
+See https://www.w3.org/TR/n-quads/
+
+https://www.w3.org/TR/trig/
+https://www.w3.org/TR/n-quads/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.71
+
+TriG Example
+
+BASE <http://example.org/>
+PREFIX ...
+
+GRAPH <http://example.org/bob>
+{
+<bob#me>
+
+a foaf:Person ;
+foaf:knows <alice#me> ;
+schema:birthDate "1990-07-04"^^xsd:date ;
+foaf:topic_interest wd:Q12418 .
+
+}
+
+GRAPH <https://www.wikidata.org/wiki/Special:EntityData/Q12418>
+{
+wd:Q12418
+
+dcterms:title "Mona Lisa" ;
+dcterms:creator <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+
+<http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619>
+dcterms:subject wd:Q12418 .
+
+}
+
+<http://example.org/bob>
+dcterms:publisher <http://example.org> ;
+dcterms:rights <http://creativecommons.org/licenses/by/3.0/> .
+
+See https://www.w3.org/TR/rdf11-primer/
+
+https://www.w3.org/TR/rdf11-primer/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.72
+
+Named Graphs Example
+
+https://www.w3.org/TR/rdf11-primer/
+
+https://www.w3.org/TR/rdf11-primer/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.73
+
+Named Graphs: N-Quads
+
+N-Quads
+N-Quads add a fourth element to a line, capturing the graph IRI of the triple
+described on that line
+
+Example
+<http://example.org/bob#me>←↩
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ←↩
+<http://xmlns.com/foaf/0.1/Person> <http://example.org/bob> .
+
+. . .
+<http://www.wikidata.org/entity/Q12418> <http://purl.org/dc/terms/title>←↩
+
+"Mona Lisa" <https://www.wikidata.org/wiki/Special:EntityData/Q12418> .
+. . .
+<http://example.org/bob> <http://purl.org/dc/terms/rights>←↩
+
+<http://creativecommons.org/licenses/by/3.0/> .
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.74
+
+RDF Datasets
+A SPARQL queries a default graph (normally) and zero or 
+
+more named graphs (when inside a GRAPH clause).
+
+ex:g1
+
+ex:g2
+
+ex:g3
+
+Default graph
+(the merge of zero or more graphs)
+
+Named graphs
+
+ex:g1
+
+ex:g4
+
+PREFIX ex: <…>
+
+SELECT …
+
+FROM ex:g1
+
+FROM ex:g4
+
+FROM NAMED ex:g1
+
+FROM NAMED ex:g2
+
+FROM NAMED ex:g3
+
+WHERE {
+
+… A …
+
+GRAPH ex:g3 {
+
+… B …
+
+}
+
+GRAPH ?g {
+
+… C …
+
+}
+
+}
+
+OR
+
+OR
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.75
+
+Simple HTTP Request
+
+Copyright 2014 by Manning Publications Co., [WZRH14]
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.76
+
+SPARQL Over HTTP (the SPARQL Protocol)
+
+http://host.domain.com/sparql/endpoint?<parameters>
+
+where <parameters> can include:
+
+query=<encoded query string>
+
+e.g. SELECT+*%0DWHERE+{…
+
+default-graph-uri=<encoded graph URI>
+
+e.g. http%3A%2F%2Fexmaple.com%2Ffoo…
+
+n.b. zero of more occurrences of default-graph-uri
+
+named-graph-uri=<encoded graph URI>
+
+e.g. http%3A%2F%2Fexmaple.com%2Fbar…
+
+n.b. zero of more occurrences of named-graph-uri
+
+HTTP GET or POST. Graphs given in the protocol override graphs given in the 
+query.
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.77
+
+Federated Query (SPARQL 1.1)
+
+PREFIX ex: <…>
+
+SELECT …
+
+FROM ex:g1
+
+WHERE {
+
+… A …
+
+SERVICE ex:s1 {
+
+… B …
+
+}
+
+SERVICE ex:s2 {
+
+… C …
+
+}
+
+}
+
+ex:g1
+
+Web
+
+SPARQL Endpoint
+
+ex:s2
+
+SPARQL Endpoint
+
+ex:s1
+
+Local Graph Store
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.78
+
+SPARQL Server Engines
+
+Examples
+
+Commercial: Virtuoso (OpenLink Software); has “open source edition” at
+https://github.com/openlink/virtuoso-opensource
+
+Cloud: Amazon AWS Neptune, see https://aws.amazon.com/neptune/
+Open Source: Apache Jena, see https://jena.apache.org/
+
+https://www.youtube.com/watch?v=Rl6UwE7kLio
+
+https://github.com/openlink/virtuoso-opensource
+https://aws.amazon.com/neptune/
+https://jena.apache.org/
+https://www.youtube.com/watch?v=Rl6UwE7kLio
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.79
+
+See https://jena.apache.org/documentation/fuseki2/index.html
+
+https://jena.apache.org/documentation/fuseki2/index.html
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.80
+
+Apache Fuseki (Standalone Server Mode)
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.81
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.82
+
+Inferencing
+
+Remember these. . .
+ex:Student rdfs:subClassOf foaf:Person
+ex:Joe a ex:Student
+
+What happens when you query for all foaf:Persons?
+
+Reasoning Engine
+
+• RDFlib will
+return empty
+result
+
+• Requires
+inference
+support (e.g.,
+RDFS reasoner,
+OWL reasoner)
+
+See https://jena.apache.org/documentation/inference/
+
+https://jena.apache.org/documentation/inference/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.83
+(349) 349 
+
+RDF Data with extra triples 
+
+SPARQL Pattern 
+
+entailment 
+
+pattern 
+matching 
+
+RDF Data 
+
+RDFS/OWL/RIF 
+data 
+SPARQL Pattern 
+
+Query 
+result 
+
+SPARQL Engine with entailment 
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.84
+
+Outline
+
+1 Introduction
+
+2 SPARQL Queries
+
+3 SPARQL Protocol
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.85
+
+Reading Material
+
+Required
+
+• [Yu14, Chapter 6] (SPARQL)
+
+Supplemental
+
+• [DuC13] (Learning SPARQL)
+• [WZRH14, Chapter 5] (SPARQL)
+• SPARQL 1.1 Overview, https://www.w3.org/TR/sparql11-overview/
+
+https://www.w3.org/TR/sparql11-overview/
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.86
+
+References I
+
+[DFH11] John Domingue, Dieter Fensel, and James A. Hendler, editors.
+Handbook of Semantic Web Technologies.
+Springer, 2011.
+https://concordiauniversity.on.worldcat.org/oclc/769756125.
+
+[DuC13] Bob DuCharme.
+Learning SPARQL: Querying and Updating with SPARQL 1.1.
+O’Reilly, 2nd edition, 2013.
+https://concordiauniversity.on.worldcat.org/oclc/853679890.
+
+[Her] Ivan Herman.
+Tutorial on Semantic Web Technologies.
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/.
+
+[WZRH14] David Wood, Marsha Zaidman, Luke Ruth, and Michael Hausenblas.
+Linked Data: Structured Data on the Web.
+Manning, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/871683907.
+
+https://concordiauniversity.on.worldcat.org/oclc/769756125
+https://concordiauniversity.on.worldcat.org/oclc/853679890
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/
+https://concordiauniversity.on.worldcat.org/oclc/871683907
+
+
+René Witte
+
+Introduction
+Review
+
+OWL
+
+Queries
+
+SPARQL Queries
+Introduction
+
+Describe
+
+Select
+
+Construct
+
+Ask
+
+Other SPARQL Features
+
+SPARQL Protocol
+Named Graphs
+
+Serving Knowledge Graphs
+
+Inferencing
+
+Notes and Further
+Reading
+
+4.87
+
+References II
+
+[Yu14] Liyang Yu.
+A Developer’s Guide to the Semantic Web.
+Springer-Verlag Berlin Heidelberg, 2nd edition, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/897466408.
+
+https://concordiauniversity.on.worldcat.org/oclc/897466408
+
+	Introduction
+	Introduction
+	Review
+	OWL
+	Queries
+
+	SPARQL Queries
+	Introduction
+	Describe
+	Select
+	Construct
+	Ask
+	Other SPARQL Features
+
+	SPARQL Protocol
+	Named Graphs
+	Serving Knowledge Graphs
+	Inferencing
+
+	Notes and Further Reading
+
+

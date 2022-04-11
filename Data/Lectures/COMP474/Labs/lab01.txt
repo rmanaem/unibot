@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4/8/22, 5:46 PM COMP-474-2214-UU: Lab Session #01
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849 1/2
+
+You are logged in as Wasim Boughattas (Log out)
+
+Home / My courses /  COMP-474-2214-UU / 16 January - 22 January /  Lab Session #01
+
+COMP 474 UU,COMP 6741 UU 2214
+
+Lab Session #01
+
+Introduction
+Welcome to the COMP474/6741 lab sessions! The goal of these labs is to:
+
+learn how to apply the material from the lectures in practice; and 
+
+discuss the course project with your team mates and the TA (as well as demo the results).
+
+Most of the examples provided in the lecture assume you run Linux. But generally, the material covered in the course works cross-
+
+platform (Linux, Mac, Windows).
+
+Task #1: Python
+The first task is to become acquainted with Python, in case you haven't worked with it before. There is a separate intro Lab #00, as well
+
+as a "mini-assignment" practice exercise you have to submit. 
+
+Task #2: Hello, Eliza! 
+In the lecture you've seen Eliza, which is probably the oldest example of a chatbot/intelligent agent:
+
+Find some version of Eliza and try it out: There are many implementations you can run online or offline, like this one or this one (note
+
+that not all versions you will find use the original DOCTOR script);
+
+Make sure you understand how Eliza works;
+
+Here's a simplified version of Eliza implemented in Python. Clone the GitHub repo so that you can modify and run it locally. Add
+
+"Concordia" as a new keyword, together with some suitable decomposition & reassembly rules and try it out, so you can have a
+
+conversation similar to this: 
+
+  is:~/eliza-master> python eliza.py 
+
+  How do you do.  Please tell me your problem. 
+
+  > Concordia is closed because of Corona! 
+
+  Please tell me more about Concordia!
+
+Last modified: Tuesday, 18 January 2022, 11:46 AM
+
+◄ Lab Slides: Introduction to Python
+
+Jump to...
+
+Lecture Slides #03 ►
+
+https://moodle.concordia.ca/moodle/user/profile.php?id=92490622
+https://moodle.concordia.ca/moodle/login/logout.php?sesskey=w3rWZhuZrc
+https://moodle.concordia.ca/moodle/
+https://moodle.concordia.ca/moodle/course/view.php?id=144446
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849
+https://en.wikipedia.org/wiki/ELIZA
+http://psych.fullerton.edu/mbirnbaum/psych101/Eliza.htm
+https://www.masswerk.at/elizabot/
+http://www.universelle-automation.de/1966_Boston.pdf
+https://github.com/wadetb/eliza
+https://moodle.concordia.ca/moodle/mod/resource/view.php?id=3010847&forceview=1
+https://moodle.concordia.ca/moodle/mod/resource/view.php?id=3010850&forceview=1
+
+
+4/8/22, 5:46 PM COMP-474-2214-UU: Lab Session #01
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849 2/2
+
+COMP-474-2214-UU
+
+Academic Integrity
+
+Academic Assessment Tool
+
+English  (en) 
+
+Deutsch  (de) 
+
+English  (en) 
+
+Español - Internacional  (es) 
+
+Français (Canada)  (fr_ca) 
+
+Français  (fr) 
+
+Italiano  (it) 
+
+ (ar)  العربیة
+
+https://moodle.concordia.ca/moodle/course/view.php?id=144446
+https://moodle.concordia.ca/moodle/course/view.php?id=131525
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=de
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=en
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=es
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=fr_ca
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=fr
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=it
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010849&lang=ar
+

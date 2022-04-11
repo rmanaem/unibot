@@ -1,0 +1,1548 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMP 6721: AI
+
+
+1
+
+Artificial Intelligence: 
+Introduction to Neural Networks
+Perceptron, Backpropagation
+
+
+
+2
+
+Today
+ Neural Networks 
+
+ Perceptrons
+ Backpropagation
+
+https://www.linkedin.com/pulse/goedels-incompleteness-theorem-emergence-ai-eberhard-schoeneburg/
+
+
+
+3
+
+Neural Networks
+ Radically different approach to reasoning and 
+
+learning
+ Inspired by biology
+
+ the neurons in the human brain
+ Set of many simple processing units (neurons) 
+
+connected together
+ Behavior of each neuron is very simple
+
+ but a collection of neurons can have sophisticated 
+behavior and can be used for complex tasks 
+
+ In a neural network, the behavior depends on 
+weights on the connection between the neurons
+
+ The weights will be learned given training data
+
+
+
+4
+
+Biological Neurons
+ Human brain = 
+
+ 100 billion neurons
+ each neuron may be connected to 
+
+10,000 other neurons
+ passing signals to each other via 
+
+1,000 trillion synapses 
+
+ A neuron is made of:
+ Dendrites: filaments that 
+
+provide input to the neuron
+ Axon: sends an output signal
+ Synapses: connection with other 
+
+neurons – releases 
+neurotransmitters to other 
+neurons
+
+Source: http://www.human-memory.net/brain_neurons.html
+
+
+
+5
+
+Behavior of a Neuron
+
+ A neuron receives inputs from its neighbors
+ If enough inputs are received at the same time:
+
+ the neuron is activated 
+ and fires an output to its neighbors
+
+ Repeated firings across a synapse increases its 
+sensitivity and the future likelihood of its firing
+
+ If a particular stimulus repeatedly causes activity in 
+a group of neurons, they become strongly associated
+
+
+
+6
+
+Today
+ Neural Networks 
+
+ Perceptrons
+ Backpropagation
+
+https://www.linkedin.com/pulse/goedels-incompleteness-theorem-emergence-ai-eberhard-schoeneburg/
+
+
+
+7
+
+A Perceptron
+ A single computational neuron 
+      (no network yet…)
+
+ Input: 
+ input signals xi 
+ weights wi for each feature xi 
+
+ represents the strength of the connection with the neighboring 
+neurons
+
+ Output:
+ if sum of input weights >= some threshold, neuron fires (output=1)
+ otherwise output = 0
+
+ If (w1 x1 + … + wn xn) >= t 
+ Then output = 1
+ Else output = 0
+
+ Learning :
+ use the training data to adjust the weights in the percetron
+
+source: Luger (2005)
+
+
+
+8
+
+ 
+1. Step 1: Set weights to random values 
+2. Step 2: Feed perceptron with a set of inputs 
+3. Step 3: Compute the network outputs
+4. Step 4: Adjust the weights 
+
+1. if output correct → weights stay the same 
+2. if output = 0 but it should be 1  →
+
+1. increase weights on active connections (i.e. input xi =1) 
+3. if output = 1 but should be 0 → 
+
+1. decrease weights on active connections (i.e. input xi =1) 
+5. Step 5: Repeat steps 2 to 4 a large number of times until the network 
+
+converges to the right results for the given training examples
+
+source: Cawsey (1998)
+
+Features (xi) Output
+
+Student First 
+last 
+year? 
+
+Male? Works 
+hard? 
+
+Drinks
+? 
+
+First 
+this 
+year?
+
+Richard Yes Yes No Yes No
+
+Alan Yes Yes Yes No Yes 
+
+…
+
+The Idea
+
+
+
+9
+
+A Simple Example
+
+ Each feature (works hard, male, …) is an xi
+ if x1 = 1, then student got an A last year,
+ if x1 = 0, then student did not get an A last year,
+  …
+
+ Initially, set all weights to random values (all 0.2 here)
+ Assume:
+
+ threshold = 0.55 
+ constant learning rate = 0.05
+
+source: Cawsey (1998)
+
+
+
+10
+
+ Richard: 
+  → Worksheet #5 (“Perceptron”)
+
+Features (xi) Output
+
+Student ‘A’ last year? Male? Works hard? Drinks? ‘A’ this year?
+
+Richard Yes Yes No Yes No
+
+Alan Yes Yes Yes No Yes 
+
+Alison No No Yes No No 
+
+Jeff No Yes No Yes No
+
+Gail Yes No Yes Yes Yes 
+
+Simon No Yes Yes Yes No 
+
+A Simple Example (2)
+
+
+
+12
+
+ Alan:
+  → Worksheet #5 (“Perceptron Learning”)
+
+ After 2 iterations over the training set (2 epochs), we get:
+ w1= 0.25 w2= 0.1 w3= 0.2 w4= 0.1
+
+A Simple Example (3)
+Features (xi) Output
+
+Student ‘A’ last year? Male? Works hard? Drinks? ‘A’ this year?
+
+Richard Yes Yes No Yes No
+
+Alan Yes Yes Yes No Yes 
+
+Alison No No Yes No No 
+
+Jeff No Yes No Yes No
+
+Gail Yes No Yes Yes Yes 
+
+Simon No Yes Yes Yes No 
+
+
+
+13
+
+ Let’s check… (w1= 0.2 w2= 0.1 w3= 0.25 w4= 0.1)
+ Richard: (1✕0.2) + (1✕0.1) + (0✕0.25) + (1✕0.1) = 0.4 < 0.55 -> output is 0 ✓
+ Alan:      (1✕0.2) + (1✕0.1) + (1✕0.25) + (0✕0.1) = 0.55 ≥ 0.55 -> output is 1 ✓
+ Alison:   (0✕0.2) + (0✕0.1) + (1✕0.25) + (0✕0.1) = 0.25 < 0.55 -> output is 0 ✓
+ Jeff:     (0✕0.2) + (1✕0.1) + (0✕0.25) + (1✕0.1) = 0.2 < 0.55 -> output is 0 ✓
+ Gail:       (1✕0.2) + (0✕0.1) + (1✕0.25) + (1✕0.1) = 0.55 ≥ 0.55 -> output is 1 ✓
+ Simon:   (0✕0.2) + (1✕0.1) + (1✕0.25) + (1✕0.1) = 0.45 < 0.55 -> output is 0 ✓
+
+A Simple Example (3)
+Features (xi) Output
+
+Student ‘A’ last year? Male? Works hard? Drinks? ‘A’ this year?
+
+Richard Yes Yes No Yes No
+
+Alan Yes Yes Yes No Yes 
+
+Alison No No Yes No No 
+
+Jeff No Yes No Yes No
+
+Gail Yes No Yes Yes Yes 
+
+Simon No Yes Yes Yes No 
+
+
+
+14
+
+Decision Boundaries of Perceptrons
+ So we have just learned the function:
+
+ If (0.2x1 + 0.1x2 + 0.25x3 + 0.1x4 ≥ 0.55) then 1 otherwise 0
+ If (0.2x1 + 0.1x2 + 0.25x3 + 0.1x4 - 0.55 ≥ 0) then 1 otherwise 0
+
+ Assume we only had 2 features:
+ If (w1x1 + w2x2 -t >= 0) then 1 otherwise 0 
+ The learned function describes a line in the input space 
+ This line is used to separate the two classes C1 and C2
+ t (the threshold, later called ‘b’) is used to shift the line on the axis 
+
+x2
+
+C1
+
+C2
+x1
+
+decision
+boundaryw1x1 + w2x2 -t = 0
+
+decision
+region for C1
+
+w1x1 + w2x2 –t ≥ 0
+
+w1x1 + w2x2 -t < 0
+
+decision
+region for C2
+
+
+
+15
+
+Decision Boundaries of Perceptrons
+ More generally, with n features, the learned function 
+
+describes a hyperplane in the input space. 
+
+x2
+
+x1
+
+decision
+boundary
+
+decision
+region for C1
+
+decision
+region for C2
+
+x3
+
+
+
+Adding a Bias
+ We can avoid having to 
+
+figure out the threshold 
+by using a “bias”
+
+ A bias is equivalent to a 
+weight on an extra input 
+feature that always has 
+a value of 1.
+
+16
+
+21 wwb
+
+i
+i
+
+iwxb 
+
+21 xx1
+
+
+
+Perceptron - More Generally
+
+x1
+
+x2
+
+xn
+
+...
+
+w1
+w2
+
+wn
+
+O
+
+inputs
+
+outputw0
+
+x0 = 1 bias input set to 1 
+(to replace the threshold) 
+
+activation function final classification
+
+17
+
+transfer function
+
+
+
+
+n
+
+0i
+i i xw
+
+
+
+
+
+
+
+
+
+
+
+
+n
+
+0i
+i ixwf 
+
+
+
+
+
+
+
+
+ 
+
+
+
+n
+
+0i
+i ixwf  O
+
+
+
+Common Activation Functions
+
+ Hard Limit activation functions:
+
+ step 
+
+ sign
+
+[Russell & Norvig, 1995]
+
+O O
+
+O=
+
+O=
+
+18
+
+
+
+
+n
+
+1i
+i i xw 
+
+
+
+n
+
+0i
+i i xw
+
+otherwise 0
+
+t xw if   1  i
+n
+
+1i
+i 
+
+
+
+
+
+
+
+
+
+
+
+otherwise 1-
+
+0 xw if   1  i
+n
+
+0i
+i 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+19
+
+Learning Rate
+1. Learning rate can be a constant value (as in the previous example)
+
+ So:
+ if T=zero and O=1 (i.e. a false positive) -> decrease w by η
+ if T=1 and O=zero (i.e. a false negative) -> increase w by η
+ if T=O (i.e. no error) -> don’t change w
+
+2. Or, a fraction of the input feature xi 
+ 
+
+ So the update is proportional to the value of x
+ if T=zero and O=1 (i.e. a false positive) -> decrease wi by ηxi
+ if T=1 and O=zero (i.e. a false negative) -> increase wi by ηxi
+ if T=O (i.e. no error) -> don’t change wi
+
+ This is called the delta rule or perceptron learning rule
+
+value of input feature xi 
+
+learning rate
+Error = target output – actual output
+
+ O)-(T  w 
+
+ii x O)-(T  w 
+
+
+
+Perceptron Convergence Theorem
+
+ Cycle through the set of training examples.
+ Suppose a solution with zero error exists.
+ The delta rule will find a solution in finite time.
+
+20
+
+
+
+21
+
+Example of the Delta Rule 
+ training data:
+
+ plot of the training data:
+
+ perceptron
+
+source: Luger (2005)
+
+
+
+22
+
+Let's Train the Perceptron
+
+ assume random initialization
+ w1 = 0.75
+ w2 = 0.5
+ w3 = -0.6
+
+ Assume:
+ sign function (threshold = 0) 
+ learning rate η = 0.2
+
+source: Luger (2005)
+
+
+
+23
+
+Training
+ data #1: 
+ data #2: 
+ data #3: 
+ ...
+  → Worksheet #5 (“Delta Rule”)
+
+ repeat… over 500 iterations, we converge to:
+w1 = -1.3  w2 = -1.1 w3 = 10.9
+
+source: Luger (2005)
+
+
+
+Remember this slide?
+
+25
+
+
+
+26
+
+Limits of the Perceptron
+ In 1969, Minsky and Papert showed 
+
+formally what functions could and 
+could not be represented by 
+perceptrons 
+
+ Only linearly separable functions 
+can be represented by a 
+perceptron
+
+source: Luger (2005)
+
+
+
+27
+
+AND and OR Perceptrons
+
+source: Luger (2005)
+
+
+
+28
+
+A Perceptron Network
+ So far, we looked at 
+
+a single perceptron
+
+ But if the output 
+needs to learn more 
+than a binary 
+(yes/no) decision
+
+ Ex: learning to 
+recognize digit --> 10 
+possible outputs --> 
+need a perceptron 
+network
+
+C1
+~C1
+C2
+
+~C2
+
+C6
+~C6
+
+C1
+~C1
+
+
+
+29
+
+Example: the XOR Function
+ We cannot build a perceptron to learn the exclusive-or function
+
+ To learn the XOR function, with:
+ two inputs x1 and x2 
+ two weights w1 and w2
+ A threshold t
+
+ i.e. must have:
+ (1 ✕ w1) + (1 ✕ w2) < t (for the first line of truth table)
+ (1 ✕ w1) + 0 >= t
+ 0 + (1 ✕ w2)  >= t
+ 0 + 0 < t 
+
+ Which has no solution… so a perceptron cannot learn the XOR 
+function
+
+x1 x2 Output
+
+1 1 0
+
+1 0 1
+
+0 1 1
+
+0 0 0
+
+
+
+30
+
+The XOR Function - Visually
+
+ In a 2-dimentional space (2 features for the X)
+ No straight line in two-dimensions can separate 
+
+ (0, 1) and (1, 0) from 
+ (0, 0) and (1, 1).
+
+source: Luger (2005)
+
+
+
+31
+
+ Real-world problems cannot always be represented by linearly-
+separable functions… 
+
+ This caused a decrease in interest in neural networks in the 1970’s
+
+http://sebastianraschka.com/Articles/2014_kernel_pca.html
+
+Non-Linearly Separable Functions 
+
+
+
+36
+
+ Solution: 
+1. to learn more complex 
+
+functions (more complex 
+decision boundaries), have 
+hidden nodes
+
+2. and for non-binary decisions, 
+have multiple output nodes
+
+3. use a non-linear activation 
+function
+
+Multilayer Neural Networks
+Non-linear, differentiable function
+
+http://www.kdnuggets.com/2016/10/deep-learning-key-terms-explained.html
+
+
+
+42
+
+The Sigmoid Function
+ Backpropagation requires a differentiable activation function
+ sigmoidal (or squashed or logistic) function                              
+
+                                                                      
+ f returns a value between 0 and 1 (instead of  0 or 1) 
+ f indicates how close/how far the output of the network is 
+
+compared to the right answer (the error term)
+
+
+
+43
+
+Typical Activation Functions
+
+https://medium.com/towards-data-science/activation-functions-and-its-types-which-is-better-a9a5310cc8f
+
+
+
+44
+
+Learning in a Neural Network
+ Learning is the same as in a perceptron:
+
+ feed network with training data
+ if there is an error (a difference between the output and 
+
+the target), adjust the weights
+ So we must assess the blame for an error to the 
+
+contributing weights
+
+
+
+45
+
+Feed-forward + Backpropagation
+ Feed-forward:  
+
+ Input from the features is 
+fed forward in the network 
+from input layer towards the 
+output layer
+
+  
+  
+
+ 
+
+ 
+
+
+
+46
+
+Backpropagation
+ In a multilayer network… 
+
+ Computing the error in the output layer is clear.
+ Computing the error in the hidden layer is not clear, 
+
+because we don’t know what its output should be
+
+ Intuitively: 
+ A hidden node h is “responsible” for some fraction of the 
+
+error in each of the output node to which it connects.
+
+ So the error values (δ):
+ are divided according to the weight of their connection 
+
+between the hidden node and the output node 
+ and are propagated back to provide the error values (δ) for 
+
+the hidden layer.
+
+
+
+Gradients 
+Gradient is just derivative in 1D
+
+Ex:                            derivative is: 
+
+derivative says increase w
+(go in opposite direction 
+of derivative)
+
+If  w=3
+
+derivative says decrease w
+(go in opposite direction 
+of derivative)
+
+If w=8
+
+w=3
+
+E(w)
+
+w
+
+negative slope/ 
+derivative
+-> increase 
+weight
+
+w=8
+
+positive slope/ 
+derivative
+-> decrease 
+weight
+
+do nothing 
+
+w=5
+
+ 5w2E
+w
+
+
+
+
+
+
+  4)53(23E
+w
+
+
+
+
+
+
+6)58(2)8(E
+w
+
+
+
+
+
+
+25)-(w E(w) 
+
+
+
+Gradient Descent Visually
+
+(w1,w2)
+
+(w1+Δw1,w2 +Δw2)
+
+ Goal: minimize E(w1,w2) by changing w1 and w2
+ But what is the best combination of change in w1 and w2 to minimize E faster?
+ The delta rule is a gradient descent technique for updating the weights in a 
+
+single-layer perceptron.
+
+48
+
+ 
+
+
+
+Gradient Descent Visually
+
+w2w1
+
+Source: Andrew Ng
+
+ need to know how much a change in w1 will affect E(w1,w2) i.e
+ need to know how much a change in w2 will affect E(w1,w2) i.e 
+ Gradient ▽E points in the opposite direction of steepest decrease of E(w1,w2)
+ i.e. hill-climbing approach…
+
+Partial derivative 
+(or gradient) of E 
+with respect to w1
+
+ 
+
+1w
+
+E
+
+
+
+
+
+2w
+
+E
+
+
+
+
+
+
+
+50
+
+Training the Network
+
+ Step 0: Initialise the weights of the network randomly 
+// feedforward
+ Step 1: Do a forward pass through the network (use sigmoid) 
+
+// propagate the errors backwards
+ Step 2:  For each output unit k, calculate its error term δk 
+
+ Step 3: For each hidden unit h, calculate its error term δh 
+
+ Step 4: Update each network weight wij:
+
+ Repeat steps 1 to 4 until the error is minimised to a given level
+
+Derivative of sigmoid 
+
+Sum of the weighted error 
+term of the output nodes 
+that h is connected to (ie. 
+h contributed to the 
+errors δk)
+
+Note: To be consistent 
+with Wikipedia, we’ll use 
+O-T instead of T-O, but 
+we will subtract the 
+error in the weight 
+update
+
+After some calculus (see: https://en.wikipedia.org/wiki/Backpropagation) we get… 
+
+)T- (O  )O-(1O Err  )(xg'δ kkkkkkk 
+
+k
+outputsk
+
+hkhhhhh δw  )O-(1O Err  )(xg'δ 
+
+
+
+
+ijijijijij O δ η-  Δw   whereΔw  ww 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+j
+j
+
+ji x w
+
+j
+
+j
+
+ jij
+
+j
+
+ jii
+
+e1
+
+1
+  xw sigmoid xwg O 
+
+g(x))-(1 g(x) (x)g'
+
+ :sigmoidg use  weif note,
+
+
+
+
+
+https://en.wikipedia.org/wiki/Backpropagation
+https://en.wikipedia.org/wiki/Backpropagation
+
+
+51
+
+Example: XOR
+
+ 2 input nodes + 2 hidden nodes + 1 output node + 3 biases
+
+source: Negnevitsky, Artificial Intelligence, p. 181
+
+O5
+
+
+
+52
+
+Example: Step 0 (initialization)
+
+ Step 0: Initialize the network at random
+
+w13 = 0.5
+
+w14 = 0.9
+
+w23 = 0.4
+
+w24 = 1.0
+
+w35 = -1.2
+
+w45 = 1.1
+
+θ4 = -0.1
+
+θ3 = 0.8
+
+θ5 = 0.3
+
+O5
+
+
+
+53
+
+Step 1: Feed Forward
+ Step 1: Feed the inputs and calculate the output 
+
+     
+
+ → Worksheet #5 (“Neural Network for XOR”)
+
+x1 x2 Target output T
+
+1 1 0
+
+0 0 0
+
+1 0 1
+
+0 1 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+j
+j
+
+ji x w
+j
+
+j
+ jii
+
+e1
+
+1  xw sigmoid O 
+
+
+
+56
+
+Step 2: Calculate error term of 
+output layer
+
+ Error term of neuron 5 in the output layer:
+ → Worksheet #5 (“Neural Network for XOR”)
+
+δ5 = error… will be 
+used to modify w35 
+and w45
+
+O5
+
+)T- (O  )O-(1O Err  )(xg'δ kkkkkkk 
+
+
+
+58
+
+Step 3: Calculate error term of 
+hidden layer
+
+ Error term of neurons 3 & 4 in the hidden layer:
+ δ3 = O3 (1-O3)  δ5 w35 
+         = ...
+
+ δ4 = O4 (1-O4) δ5 w45 
+        = ...
+
+δ3 to modify 
+w13 and w23 
+
+δ4 to modify 
+w14 and w24 
+
+k
+outputsk
+
+khkkhhh δw  )O-(1O Err  )(xg'δ 
+
+
+
+
+O5
+→ Worksheet #5 
+(“Neural Network for XOR”)
+
+
+
+60
+
+Step 4: Update Weights
+
+ Update all weights (assume a constant learning rate η = 0.1)
+ Δw13 = -η δ3 x1 = -0.1 x -0.0381 x 1 = 0.0038
+ Δw14 = -η δ4 x1 = 
+ Δw23 = -η δ3 x2 = -0.1 x -0.0381 x 1 = 0.0038
+ Δw24 = -η δ4 x2 = 
+ Δw35 = -η δ5 O3 = -0.1 x 0.1274 x 0.5250 = -0.00669 // O3 is seen as x5 (output of 3 is input to 5)
+ Δw45 = -η δ5 O4 =  
+ Δθ3  = -η δ3 (-1) = -0.1 x -0.0381 x -1 = -0.0038
+ Δθ4  = -η δ4 (-1) = -0.1 x 0.0147 x -1 = 0.0015
+ Δθ5  = -η δ5 (-1) = 
+
+δ3=-0.0381 
+
+δ4=0.0147
+
+x1=1 
+
+x2=1 
+
+ijijijijij  xδ -  Δw   whereΔw  ww 
+
+→ Worksheet #5 
+(“Neural Network for XOR”)
+
+O5
+
+
+
+62
+
+Step 4: Update Weights (con't)
+
+ Update all weights (assume a constant learning rate η = 0.1)
+
+ w13 = w13 + Δw13 = 0.5 + 0.0038 = 0.5038
+ w14 = w14 + Δw14 = 
+ w23 = w23 + Δw23 = 0.4 + 0.0038 = 0.4038
+ w24 = w24 + Δw24 = 
+ w35 = w35 + Δw35 = -1.2 – 0.00669 = -1.20669
+ w45 = w45 + Δw45 = 
+ θ3 = θ3 + Δθ3  = 0.8 - 0.0038 = 0.7962
+ θ4 = θ4 + Δθ4  = -0.1 + 0.0015 = -0.0985
+ θ5 = θ5 + Δθ5  = 
+
+ijijijijij  xδ -  Δw   whereΔw  ww 
+
+→ Worksheet #5 (“Neural Network for XOR” contd.)
+
+O5
+
+
+
+63
+
+Step 4: Iterate through data
+
+  
+
+   
+
+
+
+64
+
+The Result…
+ After 224 epochs, we get:
+
+ (1 epoch = going through all data once)
+
+W13 = 4.76
+
+W14 = 6.39
+
+W23 = 4.76
+
+W24 = 6.39
+
+W35 = -10.38
+
+W45 = 9.77
+
+θ4 = -2.84
+
+θ3 = -7.31
+
+θ5 = -4.56
+
+O5
+
+
+
+65
+
+Error is minimized
+Inputs Target Output
+
+T
+Actual Output
+
+O
+Error
+T-Ox1 x2
+
+1 1 0 0.0155 -0.0155
+0 1 1 0.9849 0.0151
+1 0 1 0.9849 0.0151
+0 0 0 0.0175 -0.0175
+
+ 
+
+May be a local minimum…
+
+
+
+68
+
+Stochastic Gradient Descent
+ Batch Gradient Descent (GD) 
+
+ updates the weights after 1 epoch
+ can be costly (time & memory) since we need to evaluate the whole 
+
+training dataset before we take one step towards the minimum.
+
+ Stochastic Gradient Descent (SGD) 
+ updates the weights after each training example
+ often converges faster compared to GD 
+ but the error function is not as well minimized as in the case of GD
+ to obtain better results, shuffle the training set for every epoch
+
+ MiniBatch Gradient Descent: 
+ compromise between GD and SGD
+ cut your dataset into sections, and update the weights after training on 
+
+each section
+
+
+
+74
+
+Applications of Neural Networks
+ Handwritten digit recognition
+
+ Training set = set of handwritten digits (0…9)
+ Task: given a bitmap, determine what digit it represents
+ Input: 1 feature for each pixel of the bitmap  
+ Output: 1 output unit for each possible character (only 1 should 
+
+be activated)
+ After training, network should work for fonts (handwriting) 
+
+never encountered
+
+ Related pattern recognition
+applications: 
+
+ recognize postal codes
+ recognize signatures
+ …
+
+
+
+75
+
+Applications of Neural Networks
+ Speech synthesis
+
+ Learning to pronounce English words
+ Difficult task for a rule-based system because English 
+
+pronunciation is highly irregular 
+ Examples:
+
+ letter “c” can be pronounced [k] (cat) or [s] (cents)
+ Woman vs Women 
+
+ NETtalk:
+ uses the context and the letters around a letter to learn how to 
+
+pronounce a letter
+ Input: letter and its surrounding letters
+ Output: phoneme
+
+
+
+76
+
+NETtalk Architecture
+
+ Network is made of 3 layers of units
+ input unit corresponds to a 7 character window in the text
+ each position in the window is represented by 29 input units 
+
+(26 letters + 3 for punctuation and spaces)
+ 26 output units – one for each possible phoneme 
+
+Ex:  a cat  → c is pronounced K
+
+source: Luger (2005)
+
+Listen to the output through iterations: https://www.youtube.com/watch?v=gakJlr3GecE
+
+https://www.youtube.com/watch?v=gakJlr3GecE
+https://www.youtube.com/watch?v=gakJlr3GecE
+
+
+77
+
+Neural Networks
+
+ Disadvantage: 
+ result is not easy to understand by humans (set of 
+
+weights compared to decision tree)… it is a black box
+
+ Advantage: 
+ robust to noise in the input (small changes in input do not 
+
+normally cause a change in output) and graceful 
+degradation
+
+
+
+79
+
+Today
+ Introduction to Neural Networks 
+
+ Perceptrons
+ Backpropagation
+
+
+	Slide 1
+	Slide 2
+	Slide 3
+	Slide 4
+	Slide 5
+	Slide 6
+	Slide 7
+	Slide 8
+	Slide 9
+	Slide 10
+	Slide 12
+	Slide 13
+	Slide 14
+	Slide 15
+	Slide 16
+	Slide 17
+	Slide 18
+	Slide 19
+	Slide 20
+	Slide 21
+	Slide 22
+	Slide 23
+	Slide 25
+	Slide 26
+	Slide 27
+	Slide 28
+	Slide 29
+	Slide 30
+	Slide 31
+	Slide 36
+	Slide 42
+	Slide 43
+	Slide 44
+	Slide 45
+	Slide 46
+	Slide 47
+	Slide 48
+	Slide 49
+	Slide 50
+	Slide 51
+	Slide 52
+	Slide 53
+	Slide 56
+	Slide 58
+	Slide 60
+	Slide 62
+	Slide 63
+	Slide 64
+	Slide 65
+	Slide 68
+	Slide 74
+	Slide 75
+	Slide 76
+	Slide 77
+	Slide 79
+

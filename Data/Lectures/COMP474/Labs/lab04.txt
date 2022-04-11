@@ -1,0 +1,307 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4/8/22, 5:51 PM COMP-474-2214-UU: Lab Session #04
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862 1/5
+
+Home / My courses /  COMP-474-2214-UU / 6 February - 12 February /  Lab Session #04
+
+COMP 474 UU,COMP 6741 UU 2214
+
+Lab Session #04
+
+Introduction
+Welcome to lab #4. This week's lab is about learning the SPARQL query language for knowledge graphs. As always, if you did not finish
+
+any of the tasks from the previous week(s), make sure you catch up with any remaining tasks, since some of the new tasks build on
+
+previous work.  
+
+Follow-up Lab #3
+Here's an example solution for the FOCU university schema & data from the previous lab. Of course, your solution might look slightly
+
+different. If you're confused about any part of it, just ask in the Moodle Discussion forum! 
+
+Task #1: SPARQL 101 
+Here is a nice SPARQL cheat sheet (well, more like cheat slides) that are helpful for getting a quick overview (note that we did not
+
+discuss all the details of SPARQL in class). To learn SPARQL it's best to experiment with a number of different queries. Many (but not
+
+all) public knowledge graphs provide a public SPARQL interface (a so-called SPARQL endpoint), for example this one at DBpedia.
+
+Note that these public, open endpoints are typically very restrictive in terms of query result size, execution time, and query memory use,
+
+so don't be surprised if you get an error message instead of a result. Sometimes it helps to retry a query or limiting the result size (e.g.,
+
+with a LIMIT 50). 
+
+Task #1.1: DBpedia
+To gain an impression on how powerful graph queries can be, here are two examples that you can try out using DBpedia's public
+
+SPARQL endpoint:
+
+1. Musicians who were born in Berlin: 
+
+SELECT ?name ?birth ?description ?person  
+
+WHERE { 
+
+      ?person a dbo:MusicalArtist . 
+
+      ?person dbo:birthPlace :Berlin . 
+
+      ?person dbo:birthDate ?birth . 
+
+      ?person foaf:name ?name . 
+
+      ?person rdfs:comment ?description . 
+
+      FILTER (LANG(?description) = 'en') .  
+
+} ORDER BY ?name 
+
+2. Soccer players, who are born in a country with more than 10 million inhabitants, who played as goalkeeper for a club that has a
+
+stadium with more than 30.000 seats and where the club's country is different from the player's birth country: 
+
+https://moodle.concordia.ca/moodle/
+https://moodle.concordia.ca/moodle/course/view.php?id=144446
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862
+https://www.w3.org/TR/sparql11-overview/
+https://moodle.concordia.ca/moodle/pluginfile.php/5267347/mod_page/content/80/focu-example.ttl
+https://moodle.concordia.ca/moodle/pluginfile.php/5267347/mod_page/content/80/sparql-1_1-cheat-sheet.pdf?time=1612892176004
+http://dbpedia.org/sparql
+http://dbpedia.org/snorql/?query=SELECT+%3Fname+%3Fbirth+%3Fdescription+%3Fperson+WHERE+%7B%0D%0A++++++%3Fperson+a+dbo%3AMusicalArtist+.%0D%0A++++++%3Fperson+dbo%3AbirthPlace+%3ABerlin+.%0D%0A++++++%3Fperson+dbo%3AbirthDate+%3Fbirth+.%0D%0A++++++%3Fperson+foaf%3Aname+%3Fname+.%0D%0A++++++%3Fperson+rdfs%3Acomment+%3Fdescription+.%0D%0A++++++FILTER+%28LANG%28%3Fdescription%29+%3D+%27en%27%29+.+%0D%0A%7D+ORDER+BY+%3Fname
+http://dbpedia.org/snorql/?query=SELECT+distinct+%3Fsoccerplayer+%3FcountryOfBirth+%3Fteam+%3FcountryOfTeam+%3Fstadiumcapacity%0D%0A{+%0D%0A%3Fsoccerplayer+a+dbo%3ASoccerPlayer+%3B%0D%0A+++dbo%3Aposition|dbp%3Aposition+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FGoalkeeper_%28association_football%29%3E+%3B%0D%0A+++dbo%3AbirthPlace%2Fdbo%3Acountry*+%3FcountryOfBirth+%3B%0D%0A+++%23dbo%3Anumber+13+%3B%0D%0A+++dbo%3Ateam+%3Fteam+.%0D%0A+++%3Fteam+dbo%3Acapacity+%3Fstadiumcapacity+%3B+dbo%3Aground+%3FcountryOfTeam+.+%0D%0A+++%3FcountryOfBirth+a+dbo%3ACountry+%3B+dbo%3ApopulationTotal+%3Fpopulation+.%0D%0A+++%3FcountryOfTeam+a+dbo%3ACountry+.%0D%0AFILTER+%28%3FcountryOfTeam+!%3D+%3FcountryOfBirth%29%0D%0AFILTER+%28%3Fstadiumcapacity+%3E+30000%29%0D%0AFILTER+%28%3Fpopulation+%3E+10000000%29%0D%0A}+order+by+%3Fsoccerplayer
+
+
+4/8/22, 5:51 PM COMP-474-2214-UU: Lab Session #04
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862 2/5
+
+SELECT DISTINCT ?soccerplayer ?countryOfBirth ?team ?countryOfTeam ?stadiumcapacity 
+
+WHERE {  
+
+     ?soccerplayer a dbo:SoccerPlayer ; 
+
+           dbo:position|dbp:position <http://dbpedia.org/resource/Goalkeeper_(association_football)>; 
+
+           dbo:birthPlace/dbo:country* ?countryOfBirth ; 
+
+           dbo:team ?team . 
+
+     ?team dbo:capacity ?stadiumcapacity ;  
+
+           dbo:ground ?countryOfTeam .  
+
+     ?countryOfBirth a dbo:Country ;  
+
+           dbo:populationTotal ?population . 
+
+     ?countryOfTeam a dbo:Country . 
+
+     FILTER (?countryOfTeam != ?countryOfBirth) 
+
+     FILTER (?stadiumcapacity > 30000) 
+
+     FILTER (?population > 10000000) 
+
+} ORDER BY ?soccerplayer 
+
+You can see how intelligent assistants like Watson, Siri, Alexa etc. are able to answer so many questions, by querying their knowledge
+
+graphs. 
+
+Now, try to write your own queries to determine:
+
+1. All universities located in Canada, with their city and optionally (if it exists) their home page. 
+
+2. All people who studied at Concordia University (and are listed in DBpedia), together with their description (in English or any other
+
+language you prefer). Hint: look for the Alma Mater predicate and make sure you understand its domain & range. 
+
+Task #2: Your own SPARQL Server 
+As discussed in the lecture, there are a number of options for setting up your own SPARQL endpoint; here, we will use the open source
+
+Apache Fuseki server.
+
+Task #2.1: Getting started with Fuseki 
+
+1. Start by downloading the fuseki binary distribution from https://jena.apache.org/download/index.cgi
+
+2. Unpack the archive and make the server script executable: 
+
+> tar xf apache-jena-fuseki-3.17.0.tar.gz 
+
+> cd apache-jena-fuseki-3.17.0 
+
+> chmod u+x fuseki-server 
+
+3. Now you can run the server (note that you must have a JDK installed): 
+
+> ./fuseki-server  
+
+[2020-02-09 09:55:15] Server     INFO  Apache Jena Fuseki 3.17.0 
+
+[2020-02-09 09:55:15] Config     INFO  FUSEKI_HOME=/home/rene/fuseki/apache-jena-fuseki-3.17.0/. 
+
+[2020-02-09 09:55:15] Config     INFO  FUSEKI_BASE=/home/rene/fuseki/apache-jena-fuseki-3.17.0/run 
+
+[2020-02-09 09:55:15] Config     INFO  Shiro file: file:///home/rene/fuseki/apache-jena-fuseki-3.17.0/run/shiro.ini 
+
+[2020-02-09 09:55:17] Server     INFO  Started 2020/02/09 09:55:17 EST on port 3030 
+
+As you can see, it starts a local server on port 3030, so open http://localhost:3030/ in your browser. You should see the main
+
+page: 
+
+http://dbpedia.org/resource/Goalkeeper_(association_football)%3E
+https://en.wikipedia.org/wiki/Alma_mater
+https://jena.apache.org/documentation/fuseki2/index.html
+https://jena.apache.org/download/index.cgi
+http://localhost:3030/
+
+
+4/8/22, 5:51 PM COMP-474-2214-UU: Lab Session #04
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862 3/5
+
+4. Before you can do anything else, you must create a Dataset, so select the first open above: 
+
+Give your dataset a name and use the "In-memory" option (this means your triples will not be stored persistently, but this is fine for
+
+some first experiments). 
+
+5. You should now see your new dataset under "existing datasets" and can start to upload triples. Use your university (FOAF/FOCU)
+
+triples from two weeks ago (or any other triple file you have): 
+
+
+
+4/8/22, 5:51 PM COMP-474-2214-UU: Lab Session #04
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862 4/5
+
+6. Now you are ready to send SPARQL queries to your server: go to the query tab and start querying your data:
+
+
+
+4/8/22, 5:51 PM COMP-474-2214-UU: Lab Session #04
+
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862 5/5
+
+You are logged in as Wasim Boughattas (Log out)
+
+COMP-474-2214-UU
+
+Academic Integrity
+
+Academic Assessment Tool
+
+English  (en) 
+
+Deutsch  (de) 
+
+English  (en) 
+
+Español - Internacional  (es) 
+
+Français (Canada)  (fr_ca) 
+
+Français  (fr) 
+
+Italiano  (it) 
+
+ (ar)  العربیة
+
+Task #2.2: Learning SPARQL with Fuseki
+With your own SPARQL server, you can now experiment with queries without relying on an external server. Go through the SPARQL
+
+Tutorial available on the Apache Jena, which comes with datasets and query exercises. 
+
+Task #3: SPARQL with Python 
+
+This task builds on the code you've previously developed with RDFlib.  
+
+Task #3.1: RDFlib
+Continue the RDFlib introduction at Querying with SPARQL.  
+
+Task #3.2: Query University Data 
+Load some of the triples you created in the lab last week (FOAF/FOCU) into your program and query it using SPARQL. Write queries to: 
+
+1. List all students, sorted by age
+
+2. Find all predicates and objects for a given student, searching by first name (e.g., "Joe") 
+
+3. Print a count of all students by university
+
+Task #3.3: Smart University Agent v1.1
+Modify the code for your intelligent university agent from the previous week to use SPARQL queries, rather than manually traversing the
+
+graph.
+
+That's all for this lab! 
+
+Last modified: Wednesday, 9 February 2022, 5:02 PM
+
+◄ Worksheet #04
+
+Jump to...
+
+Lecture Slides #06 ►
+
+https://moodle.concordia.ca/moodle/user/profile.php?id=92490622
+https://moodle.concordia.ca/moodle/login/logout.php?sesskey=w3rWZhuZrc
+https://moodle.concordia.ca/moodle/course/view.php?id=144446
+https://moodle.concordia.ca/moodle/course/view.php?id=131525
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=de
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=en
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=es
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=fr_ca
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=fr
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=it
+https://moodle.concordia.ca/moodle/mod/page/view.php?id=3010862&lang=ar
+https://jena.apache.org/tutorials/sparql.html
+https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html
+https://moodle.concordia.ca/moodle/mod/resource/view.php?id=3010861&forceview=1
+https://moodle.concordia.ca/moodle/mod/resource/view.php?id=3010864&forceview=1
+

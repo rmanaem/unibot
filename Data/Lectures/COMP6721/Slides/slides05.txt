@@ -1,0 +1,2458 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intro to AI
+
+
+1
+
+Artificial Intelligence: 
+ML: Decision Trees 
+& k-means Clustering 
+
+  Russell & Norvig: Sections 18.3, 18.4
+
+
+
+2
+
+Today
+1. Introduction to ML (contd.)
+2. Decision Trees
+3. Evaluation (contd.)
+4. Unsupervised Learning: k-means Clustering 
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+
+Applications
+ Too many to list here!
+
+ Recommender systems (eg. Netflix) 
+ Pattern Recognition (eg. Handwriting recognition)
+ Detecting credit card fraud
+ Computer vision (eg. Object recognition)
+ Discovering Genetic Causes of Diseases 
+ Natural Language Processing (eg. Spam filtering)
+ Speech Recognition / Synthesis
+ Medical Diagnostics
+ Information Retrieval (eg. Image search)
+ Learning heuristics for game playing
+ …
+ Oh… I’m out of space
+
+ 
+
+
+
+5
+
+What is Machine Learning?
+
+ Learning = crucial characteristic of an intelligent 
+agent
+
+ ML
+ Constructs algorithms that learn from data
+ i.e., perform tasks that were not explicitly programmed 
+
+and improve their performance the more tasks they 
+accomplish
+
+ generalize from given experiences and are able to make 
+judgments in new situations 
+
+
+
+Types of Machine Learning
+
+6
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+
+
+7
+
+Types of Machine Learning
+ Supervised learning
+
+ We are given a training set of (X, f(X)) pairs
+ X = <color, length> 
+
+  Unsupervised learning
+ We are only given the Xs - not the corresponding f(X)
+
+?
+
+?
+
+sea bass salmon
+
+
+
+8
+
+Types of Learning
+ In Supervised learning
+
+ We are given a training set of (X, f(X)) pairs 
+
+ In Reinforcement learning
+ We are not given the (X, f(X)) pairs
+
+ But we get a reward when our learned f(X) is right, and we try to maximize the reward
+ Goal: maximize the nb of right answers 
+
+  In Unsupervised learning
+ We are only given the Xs - not the corresponding f(X)
+
+ No teacher involved / Goal: find regularities among the Xs (clustering)
+ Data mining
+
+big nose big teeth big eyes no moustache f(X) = not person
+
+small nose small teeth small eyes no moustache f(X) = person
+
+small nose big teeth small eyes moustache f(X) = ?
+
+small nose big teeth small eyes moustache f(X) = ?
+
+big nose big teeth big eyes no moustache not given
+
+small nose small teeth small eyes no moustache not given
+
+small nose big teeth small eyes moustache f(X) = ?
+
+
+
+9
+
+Logical Inference
+ Inference: process of deriving new facts 
+
+from a set of premises
+
+ Types of logical inference:
+1. Deduction
+2. Abduction 
+3. Induction
+
+
+
+10
+
+Deduction
+ aka Natural Deduction
+ Conclusion follows necessary from the premises.  
+ From A  B and A, we conclude that B 
+ We conclude from the general case to a specific 
+
+example of the general case 
+ Ex:
+
+All men are mortal.
+Socrates is a man.
+Socrates is mortal.
+
+
+
+11
+
+Abduction
+ Conclusion is one hypothetical (most probable) 
+
+explanation for the premises
+ From A ⇒ B and B, we conclude A
+ Ex:
+
+Drunk people do not walk straight.
+John does not walk straight.
+John is drunk.
+
+ Not sound… but may be most likely explanation for B
+
+ Used in medicine…
+ in reality… disease ⇒ symptoms
+ patient complains about some symptoms… doctor concludes a disease 
+
+
+
+12
+
+Induction
+ Conclusion about all members of a class from the 
+
+examination of only a few member of the class.   
+From A C∧   ⇒ B and A D ∧  ⇒ B, we conclude A⇒B
+ We construct a general explanation based on a specific 
+
+case. 
+ Ex:
+
+All CS students in COMP 6721 are smart.
+All CS students on vacation are smart.
+All CS students are smart.
+
+ Not sound
+ But, can be seen as  hypothesis construction or generalisation
+
+
+
+13
+
+Inductive Learning
+ = learning from examples 
+ Most work in ML 
+ Examples are given (positive and/or negative) to train a 
+
+system in a classification (or regression) task
+ Extrapolate from the training set to make accurate 
+
+predictions about future examples
+ Can be seen as learning a function
+ Given a new instance X you have never seen
+ You must find an estimate of the function f(X)  where f(X) is 
+
+the desired output
+ Ex: 
+
+ X = features of a face (ex. small nose, big teeth, …)
+ f(X) = function to tell if X represents a human face or not 
+
+small nose big teeth small eyes moustache f(X) = ?
+
+X
+
+
+
+Types of Machine Learning
+
+14
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+
+
+15
+
+Example
+ Given  pairs (X,f(X)) (the training set – the data points)
+ Find a function that fits the training set well
+ So that given a new X, you can predict its f(X) value
+
+ Note: choosing one function over another beyond just looking at the 
+training set is called inductive bias (eg. prefer "smoother" functions)
+
+bass
+
+salmon
+length
+
+co
+lo
+
+r
+
+Possible decision 
+boundary
+
+decision regions
+
+Other possible decision 
+boundary
+
+
+
+16
+
+Inductive Learning Framework
+ Input data are represented by a vector of features, X
+ Each vector X is a list of (attribute, value) pairs.
+
+ Ex: X = [nose:big, teeth:big, eyes:big, moustache:no] 
+ The number of attributes is fixed (positive, finite)
+ Each attribute has a fixed, finite number of possible values 
+ Each example can be interpreted as a point in a n-dimensional 
+
+feature space
+ where n is the number of attributes
+
+Note: attribute == feature
+
+
+
+17
+
+Example
+
+Real ML applications typically require hundreds, thousands or millions of examples
+
+source: Alison Cawsey: The Essence of AI (1997).
+
+
+
+18
+
+Techniques in ML
+ Probabilistic Methods
+
+ ex: Naïve Bayes Classifier
+ Decision Trees
+
+ Use only discriminating features as questions in a big if-then-else 
+tree
+
+ Neural networks 
+ Also called parallel distributed processing or connectionist systems
+ Intelligence arise from having a large number of simple 
+
+computational units
+ …
+
+
+
+19
+
+Today
+1. Introduction to ML (contd.)
+2. Decision Trees
+3. Evaluation (contd.)
+4. Unsupervised Learning: k-means Clustering 
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+
+Guess Who?
+
+20
+
+
+
+21
+
+Decision Trees
+
+ Simplest, but most successful form of learning algorithm
+
+ Very well-know algorithm is ID3 (Quinlan, 1987) and its 
+successor C4.5
+
+ Look for features that are very good indicators of the 
+result, place these features (as questions) in nodes of 
+the tree
+
+ Split the examples so that those with different values 
+for the chosen feature are in a different set 
+
+ Repeat the same process with another feature
+
+
+
+ID3 / C4.5 Algorithm
+
+ Once the feature is selected for 
+the current node, generate 
+children nodes, one for each 
+possible value of the selected 
+attribute
+
+ Partition the examples using the 
+possible values of this attribute, 
+and assign these subsets of the 
+examples to the appropriate child 
+node
+
+ Repeat for each child node until 
+all examples associated with a 
+node are classified
+
+http://www.rulequest.com/Personal/
+
+ Top-down construction of the decision tree 
+ Recursive selection of the “best feature” to use at the current 
+
+node in the tree
+
+
+
+23
+
+Example
+Info on last year’s students to determine if a student will get an ‘A’ this year
+
+Features (X) Output f(X)
+
+Student ‘A’ last 
+year? 
+
+Black 
+hair? 
+
+Works 
+hard? 
+
+Drinks? ‘A’ this year?
+
+X1: Richard Yes Yes No Yes No 
+X2: Alan Yes Yes Yes No Yes 
+X3: Alison No No Yes No No  
+X4: Jeff No Yes No Yes No
+X5: Gail Yes No Yes Yes Yes 
+X6: Simon No Yes Yes Yes No 
+
+→ Worksheet #4 (Decision Tree)
+
+
+
+25
+
+Example 2: The Restaurant
+ Goal: learn whether one should wait for a table
+ Attributes
+
+ Alternate: another suitable restaurant nearby
+ Bar: comfortable bar for waiting
+ Fri/Sat: true on Fridays and Saturdays
+ Hungry: whether one is hungry
+ Patrons: how many people are present (none, some, full)
+ Price: price range ($, $$, $$$)
+ Raining: raining outside
+ Reservation: reservation made
+ Type: kind of restaurant (French, Italian, Thai, Burger)
+ WaitEstimate: estimated wait by host (0-10 mins, 10-30, 30-60, >60)
+
+
+
+26
+
+Example 2: The Restaurant
+ Training data:
+
+source: Norvig (2003)
+
+
+
+27
+
+A First Decision Tree
+
+ But is it the best decision tree we can build?
+source: Norvig (2003)
+
+
+
+28
+
+Ockham’s Razor Principle
+   “It is vain to do more than can be done 
+
+with less… Entities  should not be 
+multiplied beyond necessity.“
+[Ockham, 1324]
+
+ In other words… always favor the simplest answer 
+that correctly fits the training data
+
+ i.e. the smallest tree on average
+
+ This type of assumption is called inductive bias
+ inductive bias = making a choice beyond what the training 
+
+instances contain
+
+
+
+29
+
+Finding the Best Tree
+
+ can be seen as searching the space 
+of all possible decision trees
+
+ Inductive bias: prefer shorter 
+trees on average
+
+ how?
+ search the space of all decision 
+
+trees 
+ always pick the next attribute to 
+
+split the data based on its 
+"discriminating power" 
+(information gain)
+
+ in effect, steepest ascent hill-
+climbing search where heuristic is 
+information gain
+
+source: Tom Mitchell, Machine Learning (1997)
+
+empty tree
+
+complete tree
+
+
+
+30
+
+Which Tree is Best? 
+F1?
+
+F2? F3?
+
+F4? F5? F6? F7?
+
+class class class class class class class class
+
+F1?
+
+F2?
+
+F3?
+
+class
+
+class
+
+class F4?
+
+class F5?
+
+class F6?
+
+class F7?
+
+class class
+
+
+
+31
+
+Smaller trees are better
+What’s the size of a tree?
+
+ Number of leaves
+ Height of the tree
+
+ Longest path in the tree from the root to a leaf
+ External Path Length
+
+ Start at leaf, go up to the root and count the number of 
+edges 
+
+ Do this for every leaf and add up the numbers
+ Weighted External Path Length
+
+ Idea: not all paths are equally important/likely
+ Use the training data to computed a weighted sum
+
+
+
+32
+
+Choosing the Next Attribute
+
+The key problem is choosing which 
+feature to split a given set of examples
+
+ID3 uses Maximum Information-Gain:
+ Choose the attribute that has the largest 
+
+information gain
+ i.e., the attribute that will result in the smallest 
+
+expected size of the subtrees rooted at its 
+children  
+
+ information theory
+
+
+
+33
+
+Intuitively…
+ Patron:
+
+ If value is Some… all outputs=Yes
+ If value is None… all outputs=No
+ If value is Full… we need more tests
+
+ Type:
+ If value is French… we need more tests
+ If value is Italian… we need more tests
+ If value is Thai… we need more tests
+ If value is Burger… we need more tests
+
+ …
+
+ So patron  may lead to shorter tree…
+
+Output f(X)
+
+source: Norvig (2003)
+
+
+
+34
+
+Next Feature…
+
+ For only data where patron = Full
+ hungry:
+
+ If value is Yes… we need more tests
+ If value is No… all output= No
+
+ type:
+ If value is French… all output= No
+ If value is Italian… all output= No
+ If value is Thai… we need more tests
+ If value is Burger… we need more tests
+
+ …
+
+ So hungry is more discriminating (only 1 new branch)…
+
+
+
+35
+
+A Better Decision Tree
+ 4 tests instead of 9 
+ 11 branches instead of 21 
+
+source: Norvig (2003)
+
+
+
+36
+
+Essential Information Theory
+ Developed by Shannon in the 1940s
+ Notion of entropy (information content)
+ Measure how “predictable” a RV is...  
+
+ If you already have a good idea about the answer (e.g. 90/10 split)
+→ low entropy
+
+ If you have no idea about the answer (e.g. 50/50 split)
+→ high entropy
+
+
+
+37
+
+Choosing the Next Attribute
+
+ The key problem is choosing which feature to 
+split a given set of examples
+
+ Most used strategy: information theory
+ 
+
+Entropy (or information content)
+
+entropy of a fair coin toss (the 
+RV) with 2 possible outcomes, 
+each with a probability of 1/2 
+
+)p(x)logp(xH(X) i
+Xx
+
+2i
+i
+
+
+
+
+
+
+bit 1
+2
+1log
+
+2
+1
+
+2
+1log
+
+2
+1  
+
+2
+1,
+
+2
+1H  )p(x)logp(xtoss) coin H(fair
+
+22
+
+i
+Xx
+
+2i
+i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+38
+
+Why -p(x)·log2(p(x))
+
+
+
+39
+
+Entropy
+ Let X be a discrete random variable (RV) with i possible 
+
+outcomes xi
+ Entropy (or information content)
+
+ measures the amount of information in a RV
+ average uncertainty of a RV
+ the average length of the message needed to transmit an 
+
+outcome xi of that variable 
+ measured in bits
+ for only 2 outcomes x1 and x2, then 1 ≥ H(X) ≥ 0 
+
+
+
+
+
+n
+
+1i
+i2i )p(x)logp(xH(X)
+
+→ Worksheet #4 (Information Content)
+
+
+
+40
+
+Example: The Coin Flip
+ Fair coin:
+
+ Rigged coin:
+
+P(head)
+
+En
+tr
+
+op
+y
+
+fair coin -> high entropy
+
+rigged coin -> low entropy
+
+bit 1
+2
+1log
+
+2
+1
+
+2
+1log
+
+2
+1 - )p(x)logp(xH(X) 22
+
+n
+
+1i
+i2i 
+
+
+
+
+
+
+
+
+ 
+
+
+
+bits 0.08
+100
+
+1log
+100
+
+1
+100
+99log
+
+100
+99 - )p(x)logp(xH(X) 22
+
+n
+
+1i
+i2i 
+
+
+
+
+
+
+
+
+ 
+
+
+
+→ Worksheet #4 (Entropy)
+
+
+
+41
+
+Choosing the Best Feature (con't)
+ The "discriminating power" of an attribute A given a data set S
+ Let Values(A)  = the set of values that attribute A can take
+ Let Sv = the set of examples in the data set which have value v for 
+
+attribute A (for each value v from Values(A) )
+
+information gain 
+(or entropy reduction)
+
+ v
+values(A)  v
+
+v SH x
+S
+S
+
+H(S)                 
+
+A)|H(SH(S)A) gain(S,
+
+
+
+
+
+
+
+
+
+
+42
+
+Some Intuition
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+ Size is the least discriminating attribute (i.e. 
+smallest information gain)
+
+ Shape and color are the most discriminating 
+attributes (i.e. highest information gain)
+
+
+
+43
+
+A Small Example (1)
+
+n Color   
+
+n Red: 2+ 1-  n Blue: 0+ 1- 
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+Values(Color) = {red,blue}
+
+1
+4
+2log
+
+4
+2
+
+4
+2log
+
+4
+2H(S) 22 
+
+
+
+
+
+
+
+
+
+
+ v
+or)values(Col  v
+
+v SH x
+S
+S
+
+H(S) Color) gain(S, 
+
+
+
+
+ 
+
+0.31150.6885-1  Color)|H(S - H(S)  )gain(Color
+       
+
+0.6885  (0)
+4
+1(0.918)
+
+4
+3Color)|H(S
+
+0
+1
+1log
+
+1
+11,0Hblue)  Color |H(S       
+
+0.918
+3
+1log
+
+3
+1
+
+3
+2log
+
+3
+2
+
+3
+1,
+
+3
+2Hred)  Color |H(S       
+
+or)Values(Col of v each for
+
+2
+
+22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+44
+
+A Small Example (2) 
+
+Note: by definition,
+ Log 0 = -∞ 
+ 0log0 is 0
+
+n Shape  
+
+n Circle: 2+ 1-    n Square: 0+ 1-          
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+0.31150.6885-1  Shape)|H(S - H(S)  )gain(Shape
+
+0.6885(0)
+4
+1(0.918)
+
+4
+3Shape)|H(S
+
+
+
+
+
+1
+4
+2
+
+log
+4
+2
+
+4
+2
+
+log
+4
+2
+
+H(S) 22 
+
+
+
+
+
+
+
+
+
+
+
+46
+
+A Small Example (3)
+
+n Size  
+
+n Big: 1+ 1- n Small: 1+ 1-   
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+1
+4
+2
+
+log
+4
+2
+
+4
+2
+
+log
+4
+2
+
+H(S) 22 
+
+
+
+
+
+
+
+
+
+→ Worksheet #4 (“Information Gain”)
+
+
+
+47
+
+A Small Example (4)
+
+ So first separate according to either color or shape 
+(root of the tree)
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+0  gain(Size)
+0.3115  )gain(Color
+0.3115  )gain(Shape
+
+
+
+
+
+
+
+
+
+48
+
+A Small Example (5)
+ Let’s assume we pick Color for the root…
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Small Red Circle +
+
+Small Red Square -
+
+Big Blue Circle -
+
+Color
+
+Size? or 
+Shape?
+
+-
+
+bluered
+
+S2
+
+
+
+
+
+
+
+
+
+
+
+3
+1log
+
+3
+1
+
+3
+2log
+
+3
+2)H(S 222
+
+0
+
+Size
+
+
+
+50
+
+Back to the Restaurant
+ Training data:
+
+source: Norvig (2003)
+
+
+
+51
+
+ Attribute pat (Patron) has the highest gain, so root of the 
+tree should be attribute Patrons
+
+ do recursively for subtrees
+
+The Restaurant Example
+
+0.541bits...
+4
+4log
+
+4
+4   
+
+4
+0log 
+
+4
+0x
+
+12
+4
+
+2
+2log 
+
+2
+2
+
+2
+0log 
+
+2
+0- x 
+
+12
+21
+
+6
+4,
+
+6
+2H x 
+
+12
+6
+
+4
+4,
+
+4
+0H x 
+
+12
+4
+
+2
+2,
+
+2
+0H x 
+
+12
+21gain(pat)
+
+2222 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bits 0
+4
+2,
+
+4
+2H x
+
+12
+4
+
+4
+2,
+
+4
+2H x 
+
+12
+4
+
+2
+1,
+
+2
+1H x 
+
+12
+2
+
+2
+1,
+
+2
+1H x 
+
+12
+21gain(type) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...gain(alt) ...gain(bar) ...gain(fri) ...gain(hun)
+
+...)gain(price ...gain(rain) ...gain(res)
+
+...gain(est)
+
+
+
+Decision Boundaries of 
+Decision Trees
+
+Feature 2
+
+Feature 1
+
+52
+
+
+
+Decision Boundaries of 
+Decision Trees
+
+t1 Feature 2
+
+Feature 1
+Feature 2 > t1
+
+??
+
+53
+
+
+
+Decision Boundaries of 
+Decision Trees
+
+t1
+
+t2
+
+Feature 2
+
+Feature 1
+Feature 2 > t1
+
+Feature 1 > t2
+
+??
+
+54
+
+
+
+Decision Boundaries of 
+Decision Trees
+
+t1t3
+
+t2
+
+Feature 2
+
+Feature 1
+
+Feature 2 > t1
+
+Feature 1 > t2
+
+Feature 2 > t3
+
+55
+
+
+
+56
+
+Applications of Decision Trees
+
+ One of the most widely used learning methods in 
+practice 
+ Fast, simple, and traceable 
+
+ Can out-perform human experts in many problems
+
+
+
+57
+
+Today
+1. Introduction to ML (contd.)
+2. Decision Trees
+3. Evaluation (contd.)
+4. Unsupervised Learning: k-means Clustering 
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+
+60
+
+Metrics, revisited
+ Accuracy 
+
+ % of instances of the test set the algorithm correctly 
+classifies
+
+ when all classes are equally important and represented 
+
+ Recall, Precision & F-measure
+ when one class is more important and the others
+
+
+
+62
+
+Confusion Matrix
+
+TP
+
+TP+FN
+Recall=
+
+TP+FP
+TP
+
+Precision =
+
+ Not all errors are equal
+ Type I error (FP) might be worse than Type II error (FN)
+
+(depends on the application, e.g., spam filtering)
+ “It is better to risk saving a guilty man than to condemn an 
+
+innocent one.” (Voltaire)
+
+TP+TN
+
+TP+TN+FP+FN
+Accuracy=  
+
+TP
+
+TP+FN
+Recall=
+
+TP
+
+TP+FN
+Recall=
+
+ 
+
+ 
+ 
+Model says… 
+
+In reality, the instance is… 
+in class C Is not in class C 
+
+   instance is in class C True Positive 
+(TP) 
+
+False Positive  
+(FP) 
+
+   instance is NOT in class C False Negative 
+(FN) 
+
+True Negative 
+(TN) 
+
+ 
+
+ 
+
+
+
+64
+
+Evaluation: A Single Value Measure
+
+ cannot take mean of P&R
+ if R = 50%    P = 50% M = 50%
+ if R = 100%  P = 10% M = 55% (not fair)
+
+ take harmonic mean
+HM is high only when both P&R are high
+
+if R = 50% and P = 50%    HM = 50%
+if R = 100% and P = 10%   HM = 18.2%
+
+ take weighted harmonic mean
+wr: weight of R wp: weight of P a = 1/wr b= 1/wp
+
+ let β2 = a/b                                                      
+          
+
+… which is called the F-measure
+
+P
+1
+
+R
+1
+
+2HM
+
+
+
+
+     P1bR
+a
+
+b
+a
+
+Pb
+b
+
+Rb
+a
+
+b
+b)(a
+
+P
+b
+
+R
+a
+
+baWHM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+RPβ
+PR 1)(β
+
+P
+1
+
+R
+β
+
+1βWHM 2
+2
+
+2
+
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65
+
+Evaluation: the F-measure
+
+ A weighted combination of precision and recall
+
+ β represents the relative importance of precision 
+and recall
+ when β = 1, precision & recall have same importance
+ when β > 1, precision is favored
+ when β < 1, recall is favored
+
+R)P(β
+1)PR(βF 2
+
+2
+
+
+
+
+
+
+
+
+67
+
+Example
+
+✔ ❌ ✔ ✔
+
+✔ ❌ ❌ ✔
+✔ ❌ ✔ ✔
+✔ ❌ ✔ ✔
+✔ ❌ ❌ ✔
+❌ ❌ ❌ ✔
+❌ ❌ ❌ ✔
+❌ ❌ ❌
+❌ ❌ ❌
+❌ ❌ ❌ ❌
+
+(B=1)  
+ 
+ 
+ → Worksheet #4 (F-Measure)
+
+
+
+68
+
+Error Analysis
+ Where did the learner go wrong ?
+ Use a confusion matrix / contingency table
+
+ 
+correct class 
+(that should have 
+been assigned) 
+
+classes assigned by the learner 
+
+ C1 C2 C3 C4 C5 C6 … Total 
+C1 94 3 0 0 3 0  100 
+C2 0 93 3 4 0 0  100 
+C3 0 1 94 2 1 2  100 
+C4 0 1 3 94 2 0  100 
+C5 0 0 3 2 92 3  100 
+C6 0 0 5 0 10 85  100 
+…         
+
+ 
+ 
+
+
+
+69
+
+A Learning Curve 
+
+ Size of training set 
+ the more, the better
+ but after a while, not much improvement…
+
+source: Mitchell (1997)
+
+
+
+70
+
+Some Words on Training
+
+ In all types of learning… watch out for:
+
+ Noisy input
+ Overfitting/underfitting the training data
+
+
+
+71
+
+Noisy Input
+ In all types of learning… watch out for:
+
+ Noisy Input:
+ Two examples have the same feature-value pairs, but different 
+
+outputs 
+
+ Some values of features are incorrect or missing (ex. errors in 
+the data acquisition)
+
+ Some relevant attributes are not taken into account in the data 
+set 
+
+Size Color Shape Output
+
+Big Red Circle +
+
+Big Red Circle -
+
+
+
+Overfitting
+
+ Complicated boundaries 
+overfit the data
+
+ they are too tuned to the 
+particular training data at 
+hand
+
+ They do not generalize well to 
+the new data 
+
+ Extreme case: “rote learning”
+
+ Training error is low
+ Testing error is high 
+
+ If a large number of irrelevant features are there, we may find 
+meaningless regularities in the data that are particular to the 
+training data but irrelevant to the problem.
+
+
+
+Underfitting
+ We can also underfit data, i.e. 
+
+use too simple decision 
+boundary 
+
+ Model is not expressive 
+enough (not enough features)
+
+ There is no way to fit a linear 
+decision boundary so that the 
+training examples are well 
+separated
+
+ Training error is high
+ Testing error is high 
+
+
+
+74
+
+Cross-validation
+ K-fold cross-validation 
+
+ run k experiments, each time you test on 1/k of the data, and train on the rest
+ than you average the results
+
+ ex: 10-fold cross validation
+1. Collect a large set of examples (all with correct classifications)
+2. Divide collection into two disjoint sets:  training (90%) and test (10% = 1/k)
+3. Apply learning algorithm to training set 
+4. Measure performance with the test set
+5. Repeat steps 2-4, with the 10 different portions
+6. Average the results of the 10 experiments
+
+exp1: train test
+
+exp2: train test train
+
+exp3: train test train
+
+… …
+
+
+
+75
+
+Today
+1. Introduction to ML (contd.)
+2. Decision Trees
+3. Evaluation (contd.)
+4. Unsupervised Learning: k-means Clustering 
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+
+Types of Machine Learning
+
+76
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+
+
+Remember this slide?
+
+77
+
+sea bass
+
+
+
+78
+
+Unsupervised Learning
+
+ Learn without labeled examples 
+ i.e. X is given, but not f(X) 
+
+ Without a f(X), you can't really identify/label a 
+test instance
+
+ But you can:
+ Cluster/group the features of the test data into a 
+
+number of groups 
+ Discriminate between these groups without 
+
+actually labeling them
+
+small nose big teeth small eyes moustache f(X) = ?
+
+
+
+79
+
+What is Clustering
+ The organization of unlabeled data into similarity groups 
+
+called clusters.
+ A cluster is a collection of data items which are “similar” 
+
+between them, and “dissimilar” to data items in other 
+clusters.
+
+
+
+80
+
+Historic Application of Clustering
+ John Snow, a London physician plotted the 
+
+location of cholera on a map during an 
+outbreak in the 1850s.
+
+ The locations indicated that cases were 
+clustered arounds certain intersections 
+where there were polluted wells – thus 
+exposing both the problem and the solution.
+
+FROM: Nina Mishra HP Labs
+
+
+
+81
+
+Clustering
+ Represent each instance as a vector <a1, a2, a3,…, an>
+ Each vector can be visually represented in an n-dimensional 
+
+space
+
+X2
+
+X1
+X3
+
+a1 a2 a3 Output
+
+X1 1 0 0 ?
+
+X2 1 6 0 ?
+
+X3 8 0 1 ?
+
+X4 6 1 0 ?
+
+X5 1 7 1 ?
+
+X4
+
+X5
+
+
+
+82
+
+Clustering
+ Clustering algorithm
+
+ Represent test instances on a n dimensional space 
+ Partition them into regions of high density
+
+ How?  … many algorithms (ex. k-means)
+ Compute the centroïd of each region as the  
+
+average of data points in the cluster
+
+
+
+83
+
+Clustering Techniques
+
+K-means
+
+
+
+84
+
+k-means Clustering
+ User selects how many clusters they want… (the value of k)
+
+1. Place k points into the space (ex. at random). 
+These points represent initial group centroïds.
+
+2. Assign each data point xnto the nearest centroïd.
+
+3. When all data points have been assigned, 
+recalculate the positions of the K centroïds as the 
+average of the cluster
+
+4. Repeat Steps 2 and 3 until none of the data 
+instances change group.
+
+
+
+85
+
+Euclidean Distance
+
+10
+
+1 2 3 4 5 6 7 8 9 10
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+ To find the nearest 
+centroïd…
+
+ a possible metric is the 
+Euclidean distance
+
+ distance between 2 pts 
+p = (p1, p2, ....,pn)
+q = (q1, q2, ....,qn)  
+
+ where to assign a data point 
+x?
+
+ For all k clusters, chose the 
+one where x has the 
+smallest distance
+
+ 
+
+
+
+n
+
+1i
+
+2
+ii qpd
+
+
+
+86
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0 1 2 3 4 5
+
+Example (in 2-D… i.e. 2 features)
+initial 3 centroïds (ex. at random)
+
+c1
+
+c2
+
+c3
+
+
+
+87
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0 1 2 3 4 5
+
+Example
+partition data points to closest centroïd
+
+c1
+
+c2
+
+c3
+
+
+
+88
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0 1 2 3 4 5
+
+Example
+re-compute new centroïds
+
+c1
+
+c2
+c3
+
+
+
+89
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0 1 2 3 4 5
+
+Example
+re-assign data points to new closest centroïds
+
+c1
+
+c2
+c3
+
+
+
+90
+
+Example
+
+c1
+
+c2 c3
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+0 1 2 3 4 5
+
+→ Worksheet #4 (k-Means Clustering)
+
+
+
+92
+
+Why use k-means?
+
+ Strengths:
+ Simple
+
+ Easy to understand and implement
+ Efficient: Time complexity O(t·k·n)
+
+ n number of data points
+ k number of clusters
+ t number of iterations
+
+ With small k and t, linear performance on practical 
+problems
+
+
+
+93
+
+Weakness of k-means
+
+ User needs to specify k
+ Algorithm is sensitive to outliers
+
+ i.e., data points that are far away from others
+ Could be errors in the data or special data 
+
+points with very different characteristics
+
+
+
+94
+
+Outliers
+outlier
+
+(A) Undesirable clusters
+
+(B) Ideal clusters
+
+outlier
+
+
+
+95
+
+Special data structures
+
+(A) Two natural clusters                                      (B) k-means clusters
+
+
+
+96
+
+Sensitivity to initial seeds
+
+
+
+97
+
+K-means: Summary
+
+ Despite weaknesses, k-means is still one of 
+the most popular algorithms, due to its 
+simplicity and efficiency
+
+ No clear evidence that any other 
+clustering algorithm performs better in 
+general
+
+ Comparing different clustering algorithms 
+is a difficult task. 
+No one knows the correct clusters!
+
+
+
+98
+
+Today
+1. Introduction to ML (contd.)
+2. Decision Trees
+3. Evaluation (contd.)
+4. Unsupervised Learning: k-means Clustering 
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+	Slide 1
+	Slide 2
+	Slide 4
+	Slide 5
+	Slide 6
+	Slide 7
+	Slide 8
+	Slide 9
+	Slide 10
+	Slide 11
+	Slide 12
+	Slide 13
+	Slide 14
+	Slide 15
+	Slide 16
+	Slide 17
+	Slide 18
+	Slide 19
+	Slide 20
+	Slide 21
+	Slide 22
+	Slide 23
+	Slide 25
+	Slide 26
+	Slide 27
+	Slide 28
+	Slide 29
+	Slide 30
+	Slide 31
+	Slide 32
+	Slide 33
+	Slide 34
+	Slide 35
+	Slide 36
+	Slide 37
+	Slide 38
+	Slide 39
+	Slide 40
+	Slide 41
+	Slide 42
+	Slide 43
+	Slide 44
+	Slide 46
+	Slide 47
+	Slide 48
+	Slide 50
+	Slide 51
+	Slide 52
+	Slide 53
+	Slide 54
+	Slide 55
+	Slide 56
+	Slide 57
+	Slide 60
+	Slide 62
+	Slide 64
+	Slide 65
+	Slide 67
+	Slide 68
+	Slide 69
+	Slide 70
+	Slide 71
+	Slide 72
+	Slide 73
+	Slide 74
+	Slide 75
+	Slide 76
+	Slide 77
+	Slide 78
+	Slide 79
+	Slide 80
+	Slide 81
+	Slide 82
+	Slide 83
+	Slide 84
+	Slide 85
+	Slide 86
+	Slide 87
+	Slide 88
+	Slide 89
+	Slide 90
+	Slide 92
+	Slide 93
+	Slide 94
+	Slide 95
+	Slide 96
+	Slide 97
+	Slide 98
+

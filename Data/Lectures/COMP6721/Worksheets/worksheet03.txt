@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMP 6721 Applied Artificial Intelligence (Winter 2022)
+
+Worksheet #3: Näıve Bayes Classifier
+
+Joint Probabilities. Given the following joint probability distribution:
+
+Compute the probability that someone has a cavity, given a toothache:
+
+P (cavity|toothache) =
+
+Bayes’ Theorem. Assume students come to the lecture either by car (event A) or by metro. Event B means the
+student arrives on-time for the lecture. One student uses the car 70% of the time, i.e., P (car) = P (A) = 0.7. In this
+case, the student is 80% on-time, i.e., P (ontime|car) = P (B|A) = 0.8. Also, this student is on-time in general in 60%
+of all cases, i.e., P (ontime) = P (B) = 0.6. Today the student arrived on time. How likely is it that this student came
+by car? Apply Bayes’ Theorem:
+
+P (A|B) =
+P (B|A) · P (A)
+
+P (B)
+=
+
+AI Fraud Detection. You just built your first AI system for detecting fraudulent credit card transactions (event B).
+In your company, 0.01% of all transactions are fraudulent, i.e., P (B) = 0.0001. Event A is “system detected fraud”.
+You tested your system with existing training data and determined that it finds fraudulent cases with a 96% success
+rate, i.e., P (A|B) = 0.96. Unfortunately, it also sounds an alarm in 1% of non-fraudulent cases, i.e., P (A|B) = 0.01
+(B is the complement of B).
+
+So, when your system sounds the fraud alarm, in how many percent of the cases was it a false alarm?
+
+Hint: You will need P (A), which you can compute using P (A) = P (A|B) · P (B) + P (A|B) · P (B).
+
+AI Weather Prediction. Now we can build a weather-predicting AI using Bayes’ theorem:
+
+Today we observe an average sunset (E2). What kind of weather will we have tomorrow? Compute the probabilities
+for each hypothesis (H1, H2, H3) using
+
+P (Hi|E2) =
+P (Hi) · P (E2|Hi)
+
+P (E2)
+,with P (E2) = P (H1) · P (E2|H1) + P (H2) · P (E2|H2) + P (H3) · P (E2|H3) = 0.31
+
+1. P (H1|E2) =
+
+2. P (H2|E2) =
+
+3. P (H3|E2) =
+
+So, tomorrow’s weather will be:
+
+
+
+COMP 6721 Worksheet: Näıve Bayes Classifier Winter 2022
+
+Email Spam Detector. Let’s train an email spam detector using a Multinomial Näıve Bayes Classifier, so it can
+classify future emails for you into the classes spam & ham. Here is your training data:
+
+c1: SPAM documents:
+
+• d1: “cheap meds for sale”
+• d2: “click here for the best meds”
+• d3: “book your trip”
+
+c2: HAM documents:
+
+• d4: “cheap book sale, not meds”
+• d5: “here is the book for you”
+
+1. Record the count of each word per class below. Ignore words from the documents that are not in the table:
+
+best book cheap sale trip meds #words
+
+c1: SPAM
+
+c2: HAM
+
+2. Now compute the conditional probabilities P (wj |ci) for each word/class, as well as the prior probability P (ci)
+for each class, based on your training data:
+
+best book cheap sale trip meds P (ci)
+
+c1: SPAM
+
+c2: HAM
+
+3. Now you have a new email coming in:
+
+• d6: “the cheap book”
+
+Is this email spam or ham? Apply Bayes’ Algorithm to find out which class has a higher probability:
+
+(a) P (c1) =
+
+(b) P (c2) =
+
+So, the new email is:
+
+Machine Learning System Evaluation. Consider the results from three different ML systems on a binary classification
+task. Here, X1–X5 are the instances that the systems should have recognized as belonging to a specific class (e.g.,
+spam email, cat photo, fraud transaction). The remaining 495 instances do not belong to this class:
+
+Evaluate the performance of the three systems using the measures Accuracy, Precision, and Recall :
+
+system 1 system 2 system 3
+
+Accuracy
+
+Precision
+
+Recall
+
+

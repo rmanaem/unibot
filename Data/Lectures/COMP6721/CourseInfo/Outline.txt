@@ -1,0 +1,380 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Syllabus
+
+
+COMP 6721 Applied Artificial Intelligence
+Dept. of Computer Science Syllabus – Winter 2022 Concordia University
+and Software Engineering Page 1 of 4 COMP 6721 (4 credits)
+
+Lectures: Online (pre-recorded) or on-campus Labs: Online (Zoom) or on-campus
+Instructor: Dr. René Witte (Associate Professor) Office: Online (Zoom) or on-campus
+Email: rene.witte@concordia.ca Office hours: scheduled on Moodle
+
+Calendar Course Description
+The  course  covers  heuristic  and  adversarial  searches  for  concrete  applications.  It  then  discusses  automated
+reasoning,  advanced  knowledge  representation  and  dealing  with  uncertainty  for  Artificial  Intelligence
+applications. Finally, it introduces autoencoders, recurrent neural networks and sequence to sequence models. A
+project is required. Laboratory: two hours per week.
+
+Objectives
+The  purpose  of  the  course  is  to  provide  a  broad  technical  introduction  of  the  core  concepts  of  Artificial
+Intelligence  (AI).  Topics  include:  state-space  search  (uninformed  and  informed/heuristic  search),  adversarial
+search,  machine learning (ML),  natural  language processing (NLP),  artificial  neural  networks,  deep learning,
+knowledge graphs & intelligent agent design. It is intended as an overview or first introduction to AI, as there are
+dedicated courses covering ML, NLP, Intelligent Systems and other areas introduced here in more detail.
+
+Prerequisite Knowledge
+For the lab sessions, assignments and course project, you must be familiar with general programming in Python
+(we will provide a brief introduction to Python as part of the first lab session). Several course topics require a solid
+grasp of mathematical foundations, in particular probability theory and linear algebra. 
+
+General Information
+The course will start online for at least the first two weeks of the term. Changes to the delivery format (online vs.
+on-campus) will be announced on the course Moodle web site.
+
+This course has weekly lectures and lab sessions. For each week, lecture slides will be made available through the
+course Moodle web site. During remote delivery, pre-recorded lectures will be published on Moodle for each
+week. 
+
+For most lectures,  worksheets will be provided that you must go through while following the lecture material.
+While  the  course  is  offered  online,  you  can  post  your  answers  on  Moodle  to  receive  feedback  (detailed
+instructions will be provided on Moodle); otherwise, they will be used in class.
+
+Additional online activities and office hours will also be announced and scheduled on Moodle.
+
+Textbook
+There is no single textbook that will be used for this course. For each lecture topic, required and recommended
+readings will be posted as part of the lecture information on Moodle. Generally, these readings will be available
+online or as an electronic resource through the Concordia Library.
+
+Moodle Web Site
+Amendments to this syllabus, if any, as well as other important information will be made available through the
+course's Moodle site. The Moodle site also provides additional reading material, as well as discussion forums for
+asking questions on lecture topics,  the project,  quizzes, etc.  Note that you must be registered for the course to
+access the Moodle site (there is typically a one-day delay between registering and receiving Moodle access).
+
+
+
+COMP 6721 Applied Artificial Intelligence
+Dept. of Computer Science Syllabus – Winter 2022 Concordia University
+and Software Engineering Page 2 of 4 COMP 6721 (4 credits)
+
+Evaluation
+Your  grade  will  be  based  on  both  individual  assignments,  as  well  as  a  team  project  (split  into  multiple
+submissions).  Additionally, there will  be exams, where the format depends on the delivery format (online on
+Moodle  if  the  course  continues  to  be  offered  remote,  otherwise  on-campus  exams,  or  a  mix  of  both).  The
+distribution of these deliverables is as follows:
+
+15% Assignments (individual work)
+40% Course Project (team work, split into multiple submissions)
+45% Exams (On-campus mid-term/final and/or online Moodle Quizzes) 
+ 
+
+There is no standard relationship between percentages and letter grades assigned for this course. In order to pass
+the course you must receive at least 50% of the overall possible marks.
+
+Should you fail to write one of the quizzes/mid-term exams and you have valid justification (e.g., doctor’s note)
+then the weight of the missed quiz/midterm will be added to the other quizzes/final exam.
+
+Note: It is your responsibility to adhere to the university’s code of conduct as detailed in the calendar.
+
+Conditions Specific to Remote Teaching and Assessment
+1 All students are expected to have access to a computer with the following capabilities:
+
+1.a reliable internet connection
+1.b camera and microphone (your computer and/or cellphone)
+
+2 All  students  should  install  VPN  for  remote  desktop  access  to  Concordia  University  computer  labs
+https://www.concordia.ca/it/support/connect-from-home.html
+Once you have VPN connection to Concordia University, you can access all available software in Gina
+Cody School labs by following the process described in:
+https://www.concordia.ca/ginacody/aits/support/faq/connect-from-home.html
+
+3 Course specific software: You should install the Python programming language, together with a suitable
+IDE. Further details on the required course software will be available on the course Moodle web site.
+
+4 If the course continues to be delivered remotely, all students will be required to do online, timed exams:
+4.a Exams will be done through Moodle Quiz.
+4.b The exams will  take place during the  lecture time period  on dates that will  be announced on
+
+Moodle at least a week in advance.
+4.c You will be responsible for ensuring appropriate, properly functioning technology (webcam, a
+
+microphone, appropriate browser and an ability to download any necessary software, as well as a
+reliable internet connection with a minimum of a 3G connection).
+
+4.d You  will  need  a  quiet  place  within  which  to  take  the  quizzes.  Earplugs  or  noise-canceling
+headphones that are not connected to a device may also be used to allow you to focus for the
+duration of the exam.
+
+4.e The  course  instructor  reserves  the  right  to  conduct  an  individual  oral  examination  to  verify
+student’s response to online exam, project, or assignment questions.
+
+5 Academic Integrity
+Violation  of  the  Academic Code  of  Conduct  in  any form will  be  severely dealt  with.  This  includes
+copying (even with modifications) of  program segments.  You must  demonstrate  independent  thought
+through your submitted work. The Academic Code of Conduct of Concordia University is available at:
+https://www.concordia.ca/conduct/academic-integrity.html
+
+It is expected that during class discussions, in the online forums and in your written assignments you will
+communicate constructively and respectfully. Sexist, racist, homophobic, ageist, and ablest expressions
+will not be tolerated.
+
+All students must read and sign the Expectations of Originality form and submit the signed copy with their
+assignments and project.
+
+https://www.concordia.ca/it/support/connect-from-home.html
+https://www.concordia.ca/content/dam/ginacody/docs/Expectations-of-Originality-Feb14-2012.pdf
+https://www.concordia.ca/conduct/academic-integrity.html
+http://www.concordia.ca/ctl/digital-teaching/using-moodle/assignments.html
+https://www.concordia.ca/ginacody/aits/support/faq/connect-from-home.html
+
+
+COMP 6721 Applied Artificial Intelligence
+Dept. of Computer Science Syllabus – Winter 2022 Concordia University
+and Software Engineering Page 3 of 4 COMP 6721 (4 credits)
+
+Course Content and Schedule
+We will  cover the following topic(s)  in each lecture week (note that the weekly schedule may be subject to
+change): 
+
+(Week 1)    Introduction to AI: Overview & History
+(Week 2)    State-Space Search: Uninformed & Heuristic Search
+(Week 3)    Adversarial Search: Mini-Max & Alpha-Beta Pruning
+(Week 4)    Introduction to Machine Learning (ML), Naïve Bayes Classifier
+(Week 5)    ML: Decision Trees, Evaluation & Unsupervised Learning
+(Week 6)    Introduction to Artificial Neural Networks (ANN)
+(Week 7)    Introduction to Deep Learning, Convolutional Neural Networks (CNN)
+(Week 8)    Knowledge Graphs & Intelligent Agents (I)
+(Week 9)    Knowledge Graphs & Intelligent Agents (II)
+(Week 10)  Introduction to Natural Language Processing (NLP)
+(Week 11)  NLP: Vector Space Model, Applications
+(Week 12)  Deep Learning for NLP
+(Week 13)  Conclusions
+
+There will not be time to cover all of these topics in depth. Other topics of interest to the class may also be
+included. A more detailed week-by-week breakdown, as well as additional information for each topic, will be
+available on the Moodle web site.
+
+Course Project
+As part of the course, you will work on an AI project related to the topics covered in the lectures. In addition to
+submitting your project  (through Moodle),  you will  have to demo it  during dedicated (online or on-campus)
+sessions. Details on the project will be announced in class and on Moodle. The project is team work.
+
+Lab Sessions
+There will be a weekly lab session, starting Week 2. Note that lab sessions are a mandatory part of the course. Lab
+sessions will be either online (remote) or on-campus:
+
+1. Remote lab sessions take place online,  during the dedicated lab time slots,  using Zoom and are  not
+recorded.
+
+2. On-campus lab sessions take place as scheduled and you have to attend the section (room, time) you are
+registered in.
+
+Please confirm on Moodle whether the lab sessions for a given week take place on-campus or online.
+
+The weekly lab sessions generally cover the lecture material from the previous week. It is a prerequisite before
+attending each lab that you studies the lecture material, readings, and worked on the corresponding worksheet
+from the week before.
+
+Disclaimer
+In the event of extraordinary circumstances beyond the University's control, the content and/or evaluation scheme 
+in this course is subject to change.
+
+
+
+COMP 6721 Applied Artificial Intelligence
+Dept. of Computer Science Syllabus – Winter 2022 Concordia University
+and Software Engineering Page 4 of 4 COMP 6721 (4 credits)
+
+On Campus Resources
+
+HEALTH SERVICES
+
+An on-campus health clinic and health promotion center with 
+nurses and doctors.
+
+SGW 514-848-2424 ext. 3565
+
+LOY 514-848-2424 ext. 3575
+
+COUNSELLING AND PSYCHOLOGICAL SERVICES
+
+Counsellors (licensed mental health professionals)  work with
+students to address their mental health and wellbeing needs.
+
+SGW 514-848-2424 ext. 3545
+
+LOY 514 848-2424 ext. 3555
+
+ACCESS CENTRE FOR STUDENTS WITH DISABILITIES
+
+Supports students with a variety of disability conditions (including 
+temporary disabilities arising from illness or injury). Students 
+receive academic support for their educational experience at 
+Concordia.
+
+acsdinfo@concordia.ca 514-848-2424 ext. 3525
+
+SEXUAL ASSAULT RESOURCE CENTRE
+
+Provides confidential and non-judgemental support and services 
+to students, staff and faculty of all genders and orientations 
+affected by sexual violence and/or harassment.
+
+Jennifer Drummond, Coordinator
+
+jennifer.drummond@concordia.ca 
+sarc@concordia.ca
+
+514-848-2424 ext. 3353
+
+STUDENT SUCCESS CENTRE
+
+Support network from first-year to graduation. You’ll find one-on-
+one tutors, study groups, workshops as well as learning and 
+career advisors
+
+514-848-2424, ext. 3921
+
+DEAN OF STUDENTS
+
+Supports students to enhance their Concordia experience by 
+engaging in student life outside the classroom.
+
+Terry Kyle, Manager
+
+deanof      s      tuden      t      s.office@conco      r  dia.ca   SGW 514-848-2424 ext. 
+3517
+
+LOY 514-848-2424 ext. 4239
+
+ABORIGINAL STUDENT RESOURCE CENTRE
+
+An on-campus resource for First Nations, Métis and Inuit students
+that helps them make the most of the many resources available at
+the university.
+
+Orenda Konwawennotion Boucher-Curotte, Coordinator
+
+orenda.boucher@concordia.ca 514-848-2424 ext. 
+7327
+
+INTERNATIONAL STUDENTS OFFICE
+
+Supporting international students with immigration documents, 
+health insurance, social events, and workshops.
+
+iso@concordia.ca
+
+514-848-2424 ext. 3515
+
+STUDENT ADVOCACY OFFICE
+
+Advocating for students facing charges under
+the Academic Code of Conduct or the Code of Rights and 
+Responsibilities.
+
+studentadvocates@concordia.ca 514-848-2424, ext. 
+3992
+
+MULTI-FAITH & SPIRITUALITY CENTRE
+
+Provides a home for all those wishing to celebrate the  human
+spirit in the widest sense of the word, through programs, events
+and a quiet space for reflection.
+
+Ellie Hummel, Coordinator
+
+mfsc@concordia.ca
+
+514-848-2424, ext. 3593
+
+CAMPUS SECURITY
+
+Ensures the safety of our members and campus property through 
+prevention, surveillance, intervention, training, and education. 
+Provides emergency medical services.
+
+security@concordia.ca 514-848-3717
+(dial 1 for urgent situations; dial 2 for non-urgent situations)
+
+CONCORDIA UNIVERSITY STUDENT PARENTS CENTRE
+
+An accessible space for student parents to study, share interests 
+and develop a support network.
+
+Sumaiya Gangat, Coordinator
+
+cusp@concordia.ca
+
+514-848-2424, ext. 2431
+
+mailto:cusp@concordia.ca
+mailto:security@concordia.ca
+mailto:mfsc@concordia.ca
+mailto:studentadvocates@concordia.ca
+mailto:iso@concordia.ca
+mailto:orenda.boucher@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:deanofstudents.office@concordia.ca
+mailto:sarc@concordia.ca
+mailto:jennifer.drummond@concordia.ca
+mailto:acsdinfo@concordia.ca
+
+	Calendar Course Description
+	Objectives
+	Prerequisite Knowledge
+	General Information
+	Textbook
+	Moodle Web Site
+	Evaluation
+	Conditions Specific to Remote Teaching and Assessment
+	Course Content and Schedule
+	Course Project
+	Lab Sessions
+	On Campus Resources
+

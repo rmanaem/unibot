@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMP 6721 Applied Artificial Intelligence (Winter 2022)
+
+Worksheet #4: Decision Trees & k-means Clustering
+
+Decision Tree. Given the following training data:
+
+Create a decision tree that decides if a student will get an ‘A’ this year, based on an input feature vector X.
+(Note: check that your tree would return the correct answer for all of the training data above.)
+
+Your Decision Tree
+
+Information Content. The information content of an event x with P (x) > 0 is defined as:
+
+−P (x) · log2(P (x))
+
+An impossible event (P (x) = 0) is defined as having an information content of 0. What’s the information content
+of a certain event (P (x) = 1)?
+
+
+
+COMP6721 Worksheet: Decision Trees & k-means Clustering Winter 2022
+
+Entropy. Using the definition of Entropy for a discrete random variable X with possible outcomes x1, x2, . . . , xn:
+
+H(X) = −
+n∑
+
+i=1
+
+p(xi) · log2 p(xi)
+
+compute the entropy for the outcome of the color in Roulette, where you have the numbers 1–36 (half red, half black)
+and the 0 with the color green: H(X) =
+
+Note: make sure you use log2(x); if you have a calculator with log10 only, you can compute it using the formula
+log2(x) = log10(x)/ log10(2).
+
+Information Gain. Compute the Information Gain (IG) for the following training data when splitting using the
+“Size” attribute:
+
+gain(S,A)
+
+= H(S)−H(S|A)
+
+= H(S)−
+∑
+
+v∈values(A)
+
+|Sv|
+|S|
+·H(Sv)
+
+H(S|Size) =
+
+gain(Size) = H(S)−H(S|Size) =
+
+F-Measure. Compute the F-Measure, which combines precision and recall into a single number, using β = 1
+(called F1-measure):
+
+F1 =
+2 · P ·R
+P +R
+
+For the systems from the previous lecture worksheet:
+
+1. s2 : P = 100%, R = 60%⇒ F1 =
+
+2. s3 : P = 71%, R = 100%⇒ F1 =
+
+k-Means Clustering. Here is a dataset with two attributes, to be grouped into two clusters. Compute the
+distance d(~p, ~q) =
+
+√∑n
+i=1(pi − qi)2 of each data point to the two initial centroids and assign each point to its
+
+closest cluster:
+
+Centroid
+
+a1 a2
+
+Cluster 1 1.0 1.0
+
+Cluster 2 5.0 7.0
+
+a1 a2 Distance to C1 Distance to C2 Cluster
+
+Data1 1.5 2.0
+
+Data2 3.0 4.0
+
+Data3 4.5 5.0
+
+Data4 3.5 4.5
+
+

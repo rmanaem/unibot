@@ -1,0 +1,880 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intro to A.I.
+
+
+1
+
+Artificial Intelligence: 
+Introduction
+
+
+
+2
+
+Today
+1. The current “AI Hype”
+2. Important questions
+
+a) What is artificial intelligence?
+b) What is intelligence?
+c) Is there a test for intelligence?
+
+3. What do we do in AI?
+4. History of AI
+5. An example: Eliza
+
+
+
+The current “AI Hype”
+ Major breakthroughs in many AI 
+
+topics
+ Thanks to a 
+
+technique called
+Deep Learning
+
+https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55
+
+
+
+Recent Breakthroughs
+
+
+
+Recent Breakthroughs
+
+
+
+Recent Breakthroughs
+
+
+
+7
+
+Today
+1. The current “AI Hype”
+2. Important questions
+
+a) What is artificial intelligence?
+b) What is intelligence?
+c) Is there a test for intelligence?
+
+3. What do we do in AI?
+4. History of AI
+5. An example: Eliza
+
+
+
+8
+
+1. What is artificial intelligence?
+
+ No standard definition of AI 
+among those working in the field
+
+  AI has even been defined as:
+
+“… the collection of problems and methodologies
+studied by artificial intelligence researchers."
+- Luger and StubbleField
+
+
+
+9
+
+Other Definitions
+Machines that think like humans
+ The exciting new effort to make computers think… machines with minds, in the full and 
+
+literal sense (Haugeland, 1985)
+ The automation of activities that we associate with human thinking, activities such as 
+
+decision-making, problem solving, learning… (Bellmann 1978)
+
+Machines that act like humans
+ The art of creating machines that perform functions that require intelligence when 
+
+performed by people (Kurzweil, 1990)
+ The study of how to make computers do things at which, at the moment, people are 
+
+better. (Rich and Knight, 1991)
+
+Machines that think intelligently
+ The study of mental faculties through the use of computational models (Charniak and 
+
+McDermott, 1985)
+ The study of the computations that make it possible to perceive, reason, and act 
+
+(Winston, 1992)
+
+Machines that act intelligently
+ A field of study that seeks to explain and emulate intelligent behavior in terms in 
+
+terms of computational processes (Schalkoff, 1990)
+ The branch of computer science that is concerned with the automation of intelligent 
+
+behavior (Luger & Stubblefield, 1993)
+
+
+
+10
+
+Approaches to AI: 
+Engineering VS Cognitive Approach 
+
+ Engineering Approach: 
+ Tries to find optimal solutions
+ No matter how (not necessarily what human do)
+
+ Cognitive Approach:
+ Tries to understand the process
+ Tries to reproduce human behavior (even if wrong result)
+
+ 4 points of view: Systems that can…
+
+Cognitive 
+approach
+
+Engineering / Rational 
+approach
+
+Behavior act like humans act intelligently
+Reasoning think like humans think intelligently
+
+
+
+11
+
+Approaches to AI: Weak VS Strong AI
+ Weak AI :
+
+ A system whose capabilities are not intended to 
+match or exceed the capabilities of human beings.
+ A system can demonstrate intelligence, but does not 
+
+necessarily have a mind, mental states or consciousness. 
+ Usually, a small application with a single purpose
+
+ Strong AI: 
+ typically used in science fiction
+ A system that matches or exceeds human intelligence. 
+ A system that could have: consciousness, self-awareness, the 
+
+ability to feel sentiments,  …
+ Usually, a “general purpose” application capable of several 
+
+tasks
+
+
+
+12
+
+Today
+ The current “AI Hype”
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence? 
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+
+13
+
+What is Intelligence, Anyways?
+ are you intelligent if you:
+
+ can do complex arithmetic quickly?
+ humans are bad at it
+ … but computers are good at it
+
+ can recognize a face in a picture?
+ humans are good at it
+ … but hard to automate in a computer
+
+ hold a 15 min. conversation? 
+ humans are good at it
+ … but really hard to automate in a computer
+
+
+
+14
+
+What is Intelligence?
+ intellectual vs physical capabilities
+
+ a dog has a more acute sense of smell…
+ a bat can see at night…
+
+ reflex vs planned/reasoned action
+ when the female wasp returns to her burrow with food, she first 
+
+deposits it on the threshold, checks for intruders inside, and only 
+then, if the coast is clear, carries her food inside. 
+
+ but that's instinctual behavior
+ if the food is moved a few inches away while she is inside: on 
+
+emerging, she will repeat the whole procedure as often as the food 
+is displaced. 
+
+ awareness of existence (consciousness of itself) 
+ if a system passes a test for intelligence but is not aware of it, 
+
+is it intelligent?  
+ but the only way to really know if a machine is thinking is to be 
+
+the machine…
+
+source of picture http://upload.wikimedia.org/wikipedia/en/8/85/Cicada_Killer_Wasp.jpg
+
+
+
+15
+
+Is Deep Blue Intelligent?
+ In 1996 and 1997 IBM's Deep Blue beat the 
+
+human chess champion Kasparov in a 
+six-games match. 
+
+ But Deep Blue uses:
+ plain brute force technique 
+ on a massively parallel supercomputer
+ can explore 200,000,000 positions per second (Kasparov can 
+
+examine 3/sec)  
+ Today, emphasis on more intelligent chess programs
+ in Nov. 2006, Deep Fritz vs. Kramnik, ran on an ordinary  
+
+Intel Core 2 Duo CPUs
+
+source of image: 
+http://upload.wikimedia.org/wikipedia/en/c/c6/P11_kasparov_breakout.jpg
+
+
+
+16
+
+Is Chess Playing Intelligent?
+
+“Chess is far easier than innumerable tasks performed by an 
+infant, such as understanding a simple story, recognizing 
+objects and their relationships, understanding speech, and so 
+forth. For these and nearly all realistic AI problems, the 
+brute force methods in Deep Blue are hopelessly inadequate.” 
+
+– David Stork
+
+
+
+17
+
+Is Watson Intelligent?
+
+ In 2011, IBM’s Watson competed on 
+Jeopardy!
+
+ Watson beat Brad Rutter, the biggest all-time money 
+winner on Jeopardy!, and Ken Jennings, the record 
+holder for the longest championship streak 
+
+ Watson received the first prize of $1 million
+ Watson is a question answering system... "an application 
+
+of advanced Natural Language Processing, Information 
+Retrieval, Knowledge Representation and Reasoning, and 
+Machine Learning technologies to the field of open 
+domain question answering”
+
+source: http://en.wikipedia.org/wiki/Watson_%28artificial_intelligence_software%29
+
+
+
+Is AlphaGo Intelligent?
+
+
+
+19
+
+Today
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence?
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+
+20
+
+A Test for Intelligence…
+ The Turing Test
+
+ The “imitation game”
+ Proposed by Alan Turing in 1950
+ If a human interrogator cannot tell the 
+
+computer and human apart, then the computer 
+is intelligent
+
+ Measures the intelligence of a computer vs. a 
+human
+
+ Turing predicted that by 2000, a machine 
+might have a 30% chance of fooling a person 
+for 5 minutes
+
+
+
+21
+
+The Turing Test
+
+ A human mediates between the interrogator and 
+the machine
+
+
+
+22
+
+The Turing Test
+
+ Some capabilities required to pass the 
+Turing test:
+ Natural Language Processing (NLP) to 
+
+communicate
+ Knowledge Representation to store knowledge
+ Automated Reasoning  to infer new knowledge
+ Machine Learning
+ …
+
+
+
+23
+
+Arguments For the Turing Test
+
+ Objective notion of intelligence
+ Prevents us from arguments about the 
+
+computer’s consciousness
+ Eliminates bias in favor of humans
+ …
+
+
+
+24
+
+Arguments Against Turing Test
+
+ Not reproducible
+ Not constructive 
+ Machine intelligence designed w.r.t. humans
+
+ test is anthropomorphic. It only tests if the subject 
+resembles a human being. 
+
+ unnecessarily restrict machines
+ ex: x-ray vision, fast computations
+
+source of image:
+http://en.wikipedia.org/wiki/Image:Weakness_of_Turing_test_1.jpg
+
+
+
+25
+
+Did anyone pass the Turing Test yet?
+ The Long Bets Foundation has $20,000 bet between
+
+ Mitchell Kapor, founder of Lotus Development,  and 
+ Ray Kurzweil, inventor
+ Kapor bets that "By 2029 no computer - or "machine 
+
+intelligence" - will have passed the Turing Test. “
+
+ After more than 60 year ... <drum roll please> ... In 2014, the 
+news reported that a chatbot passed the Turing Test! 
+
+ But, Kurzweil himself is not convinced... because the 
+test had restrictions... 
+
+ the chatbot claimed to be a 13-year-old, and 
+ one for whom English is not a first language
+
+
+
+26
+
+Current Turing Test
+CAPTCHA: 
+
+ Completely Automated Public Turing test to tell Computers 
+and Humans Apart 
+
+ the system asks a user to complete a test which the 
+computer is able to generate and grade, but not able to 
+solve. 
+
+ Because computers are unable to solve the CAPTCHA, any 
+user entering a correct solution is presumed to be human.
+
+ also known as reverse Turing test, because it is:
+ given by a machine and targeted to a human
+ in contrast to the Turing test that is given by a human and 
+
+targeted to a machine.
+
+source of image: 
+http://upload.wikimedia.org/wikipedia/commons/b/b6/Modern-captcha.jpg
+
+
+
+27
+
+Today
+ The current “AI Hype”
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence?
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+
+What do we do in AI?
+ Knowledge representation 
+
+(including formal logic)
+ Search, especially 
+
+heuristic search 
+(puzzles, games)
+
+ Planning
+ Reasoning under 
+
+uncertainty, including 
+probabilistic reasoning
+
+ Learning
+ Agent architectures
+ Robotics and perception
+ Natural language 
+
+processing
+ ...
+
+Search
+
+Knowledge
+rep.Planning
+
+Reasoning
+
+Learning
+
+Agent
+
+Robotics
+Perception
+
+Natural
+language
+
+... Expert
+Systems
+
+Constraint
+satisfaction   
+
+26
+
+
+
+The Periodic Table Of AI
+
+https://www.datasciencecentral.com/profiles/blogs/the-periodic-table-of-ai
+
+
+
+32
+
+Successes of AI…
+ A few years ago, all these were considered AI 
+
+problems… now, no one thinks of them as AI
+ OCR – Optical Character Recognition
+ Speech Recognition
+ Information Retrieval
+ Spell checker and Grammar checker
+ Expert Systems
+ Data Mining
+ Word Prediction
+ …
+
+
+
+33
+
+Some Successes of AI…
+ A more  pragmatic definition of AI today : 
+
+"AI research is that which computing scientists do not know how 
+to do cost-effectively today.” 
+
+
+
+
+
+What do we do in AI?
+
+
+
+36
+
+Today
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence?
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+
+History of AI
+
+
+
+
+
+
+
+Unrealistic Predictions
+
+
+
+43
+
+Example of a Toy-World
+ toy-world = micro-word
+ 1973: Winograd developed SHRDLU to understand 
+
+English sentences in a restricted world and carried 
+out instructions typed in English with a robot arm.
+
+
+
+46
+
+History of AI
+ Reality hits (late 60s - early 70s)
+
+ 1966: the ALPAC report kills work in machine translation (and 
+NLP in general)
+
+ People realized that scaling up from micro-worlds (toy-
+worlds) to reality is not just a manner of faster machines and 
+larger memories… 
+
+ Minsky & Papert’s paper on the limits of perceptrons (cannot 
+learn just any function…) kills work in neural networks 
+
+ in 1971, the British government stops funding research in AI 
+due to no significant results
+
+ it’s the first major AI Winter…
+
+https://www.vectorstock.com/royalty-free-vector/freezing-snowman-vector-689086
+
+
+
+
+
+
+
+
+
+
+
+54
+
+Today
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence?
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+
+55
+
+Eliza
+
+ Developed by Joseph Weizenbaum 
+ In the 1960’s 
+ Simulation of a dialogue with a psychologist 
+ Great success at the time
+
+ Led at least one psychologist to seriously suggest 
+that computers might help alleviate the shortage of 
+trained psychotherapists (!)
+
+ Weizenbaum later questioned his own work and 
+became one of the field’s biggest critics
+
+GOF
+AI
+
+
+
+56
+
+Eliza is...
+
+ An example of a simple production system
+(see later for a discussion of this type of systems)
+
+ Example dialogs with our new 
+psychotherapist...
+
+
+
+57
+
+Session with Eliza
+ I am the psychotherapist.  Please, describe your problems.  Each time you 
+
+are finished talking, type RET twice.
+ I am very unhappy these days
+ Are you unhappy often?
+ Always after the new classes start
+ Tell me about your classes.
+ I am registered for artificial intelligence
+ Why do you say you are registered for artificial intelligence?
+ I feel I should understand more about AI
+ Earlier you said you felt unhappy?
+ I am unhappy because of the examinations
+ Are you sure that is the real reason?
+ Not really
+ Maybe the examinations have something to do with this.
+ This could be one of the reasons
+ Is it because of your plans that you say this could be one of the reasons?
+
+
+
+59
+
+How does Eliza work?
+
+ See Weizenbaum’s paper at:
+ http://www.csee.umbc.edu/courses/331/papers/eliza.html
+
+“Input sentences are analyzed on the basis of 
+decomposition rules which are triggered by key 
+words appearing in the input text. Responses are 
+generated by reassembly rules associated with 
+selected decomposition rules.”
+
+http://www.csee.umbc.edu/courses/331/papers/eliza.html
+
+
+60
+
+Algorithm
+1. Identify Keywords:
+
+1. Scan the input sentence to look for words in a dictionary of keywords. 
+2. Keywords are given a rank, and the highest ranking keyword is considered 
+
+first
+2. Get Decomposition Patterns
+
+1. For each keyword, there is an associated list of decomposition patterns  
+2. The first decomposition pattern that matches the input sentence is 
+
+selected. 
+3. If the decomposition rule does not match, then the next best ranking 
+
+keyword is selected (and go back to step 2.1). 
+3. Apply Reassembly Pattern
+
+1. For each decomposition rule, there is a set of associated reassembly 
+patterns to generate a response.
+
+2. If a subsequent sentence selects the same decomposition pattern, the 
+next reassembly pattern is used (so the output is not repetitive)
+
+4. If there is no keywords in the input sentence, then generate a canned 
+response
+
+
+
+61
+
+Example
+ If the input sentence is: 
+
+ I am very unhappy these days.
+ Eliza's response will be: 
+
+ How long have you been very unhappy these days?
+
+ Keyword: 
+ I am
+
+ Decomposition pattern: 
+ I am <whatever>
+
+ Reassembly Pattern: 
+ How long have you been <whatever>?
+
+
+
+62
+
+A More Complex Example
+  Input sentence:
+
+"It seems that you hate me".
+
+  Keywords: "you" and "me“ 
+  Decomposition pattern: 
+
+ <whatever1> you <whatever2> me
+ It seems that you hate me
+
+ Reassembly pattern
+ What makes you think I hate you?
+
+notice the pronoun 
+(me from the user --> you for Eliza)
+
+notice the pronoun 
+(you from the user --> I for Eliza)
+
+
+
+65
+
+Today
+ Important questions
+
+1. What is artificial intelligence?
+2. What is intelligence?
+3. Is there a test for intelligence?
+
+ What do we do in AI?
+ History of AI
+ An example: Eliza
+
+
+	Slide 1
+	Slide 2
+	Slide 3
+	Slide 4
+	Slide 5
+	Slide 6
+	Slide 7
+	Slide 8
+	Slide 9
+	Slide 10
+	Slide 11
+	Slide 12
+	Slide 13
+	Slide 14
+	Slide 15
+	Slide 16
+	Slide 17
+	Slide 18
+	Slide 19
+	Slide 20
+	Slide 21
+	Slide 22
+	Slide 23
+	Slide 24
+	Slide 25
+	Slide 26
+	Slide 27
+	Slide 28
+	Slide 29
+	Slide 32
+	Slide 33
+	Slide 34
+	Slide 35
+	Slide 36
+	Slide 37
+	Slide 39
+	Slide 41
+	Slide 42
+	Slide 43
+	Slide 46
+	Slide 48
+	Slide 49
+	Slide 51
+	Slide 53
+	Slide 54
+	Slide 55
+	Slide 56
+	Slide 57
+	Slide 59
+	Slide 60
+	Slide 61
+	Slide 62
+	Slide 65
+

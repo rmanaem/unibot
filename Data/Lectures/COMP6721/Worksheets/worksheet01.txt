@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMP 6721 Applied Artificial Intelligence (Winter 2022)
+
+Worksheet #1: Solving Problems by Searching
+
+Breadth-First Search. Let’s apply the BFS algorithm discussed in the lecture on an example:
+
+Assume U is the goal state. Note that open is a queue:
+
+1. open = [Anull], closed = [ ]
+
+2. open = [BA CA DA], closed = [A]
+
+3. open = [CA DA EB FB ], closed = [B A]
+
+4. open = [ ], closed = [ ]
+
+5. open = [ ], closed = [ ]
+
+6. open = [ ], closed = [ ]
+
+7. open = [ ], closed = [ ]
+
+Depth-First Search. Now we do the same for the DFS algorithm:
+
+Again, assume U is the goal state. Note that open is a stack:
+
+1. open = [Anull], closed = [ ]
+
+2. open = [BA CA DA], closed = [A]
+
+3. open = [EB FB CA DA], closed = [B A]
+
+4. open = [KE LE FB CA DA], closed = [E B A]
+
+5. open = [SK LE FB CA DA], closed = [K E B A]
+
+6. open = [ ], closed = [ ]
+
+7. open = [ ], closed = [ ]
+
+8. open = [ ], closed = [ ]
+
+9. open = [ ], closed = [ ]
+
+10. open = [ ], closed = [ ]
+
+
+
+COMP6721 Worksheet: Solving Problems by Searching Winter 2022
+
+Best-First Search. Next, we try a best-first (greedy) search. We have a heuristic h(n) that estimates the cost for
+each path. The goal is P. At each step, expand the node with the lowest cost (as predicted by the heuristic):
+
+1. open = [A5
+null
+
+], closed = [ ]
+
+2. open = [B4A C
+4
+A D
+
+6
+A] (random choice), closed = [A]
+
+3. open = [C 4A E
+5
+B F
+
+5
+B D
+
+6
+A], closed = [B A]
+
+4. open = [ ], closed = [ ]
+
+5. open = [ ], closed = [ ]
+
+6. ???
+
+Finally, extract the path to the solution from the search result:
+
+Algorithm A. Compute the next step of the Algorithm A on the 8-puzzle:
+
+1. Pick the state with the lowest total cost f (n)
+
+2. and compute the next possible search states, including the new values of f (n), g(n) and h(n).
+
+

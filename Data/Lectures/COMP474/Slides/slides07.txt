@@ -1,0 +1,4002 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.1
+
+Lecture 7
+Machine Learning for Intelligent Systems
+Introduction, Clustering, Classification, Regression, Evaluation
+
+COMP 474/6741, Winter 2022
+
+René Witte
+Department of Computer Science
+
+and Software Engineering
+Concordia University
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.2
+
+Outline
+1 Machine Learning Primer
+
+History
+ML Types
+Process
+
+2 Clustering Documents
+Motivation
+k-Means Clustering
+Application Example
+
+3 Classifications & Predictions
+Introduction
+Classification with kNN
+Regression with kNN
+
+4 Machine Learning Evaluation
+Evaluation Methodology
+Evaluation Metrics
+Error Analysis
+Overfitting
+Underfitting
+Cross-Validation
+
+5 Notes and Further Reading
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.3
+
+AI, ML, DL
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+https://medium.com/machine-learning-for-humans/neural-networks-deep-learning-cdad8aeae49b
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.4
+
+History
+
+Learn from experience
+In 1959, Arthur Samuel first proposed the concept
+Machine Learning:
+
+“A computer program is said to learn from
+experience E with respect to some class of tasks
+T and performance measure P if its performance
+at tasks in T, as measured by P, improves with
+experience E.”
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.5
+
+Automated Reasoning
+
+Inference
+Process of deriving new facts from a set of premises
+
+Types of logical inference
+
+1 Deduction
+2 Abduction
+3 Induction
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.6
+
+Deduction
+
+aka Natural Deduction
+
+• Conclusion follows necessary from the premises.
+• From A⇒ B and A, we conclude that B
+• We conclude from the general case to a specific example of the general case
+• Example:
+
+1 All men are mortal.
+2 Socrates is a man.
+3 from 1 ∧ 2 ⇒ Socrates is mortal.
+
+• Our subclass inference in RDFS also falls into this category.
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.7
+
+Abduction
+
+Abductive Reasoning
+
+• Conclusion is one hypothetical (most probable) explanation for the premises
+• From A⇒ B and B, we conclude A
+• Example:
+
+1 Drunk people do not walk straight.
+2 John does not walk straight.
+3 from 1 ∧ 2 ⇒ John is drunk.
+
+• Not sound. . . but may be most likely explanation for B
+• Used in medicine. . .
+
+1 in reality: disease⇒ symptoms
+2 patient complains about some symptoms. . . doctor concludes a disease
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.8
+
+Induction
+
+Inductive Reasoning
+
+• Conclusion about all members of a class from the examination of only a few
+member of the class.
+
+• From A∧C⇒ B and A∧D⇒ B, we conclude A⇒B
+• We construct a general explanation based on specific cases
+• Example:
+
+1 All CS students in COMP 474 are smart.
+2 All CS students on vacation are smart.
+3 from 1 ∧ 2 ⇒ All CS students are smart.
+
+• Not sound
+• But, can be seen as hypothesis construction or generalisation
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.9
+
+Inductive Learning
+
+Learning from examples
+
+• Most work in ML
+• Examples are given (positive and/or negative) to train a system in a
+
+classification (or regression) task
+• Extrapolate from the training set to make accurate predictions about future
+
+examples
+• Given a new instance X you have never seen, you must find an estimate of the
+
+function f(X) where f(X) is the desired output
+
+From datascience.com, https://towardsdatascience.com/cat- dog- or- elon- musk- 145658489730
+
+https://towardsdatascience.com/cat-dog-or-elon-musk-145658489730
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.10
+
+Example
+
+• Given pairs (X , f (X )) (the training set – the data points)
+• Find a function f that fits the training set well
+• So that given a new X , you can predict its f (X ) value
+
+Note: choosing one function over another beyond just looking at the training set is
+called inductive bias (eg. prefer “smoother” functions)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.11
+
+Inductive Learning Framework
+
+Feature Vectors
+
+• Input data are represented by a vector of features, X
+• Each vector X is a list of (attribute, value) pairs.
+• Ex: X =[nose:big, teeth:big, eyes:big, moustache:no]
+• The number of attributes is fixed (positive, finite)
+• Each attribute has a fixed, finite number of possible values
+• Each example can be interpreted as a point in a n-dimensional feature space,
+
+where n is the number of attributes (features)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.12
+
+Some Machine Learning Techniques
+
+Probabilistic Methods
+
+• e.g., Naïve Bayes Classifier
+
+Decision Trees
+
+• Use only discriminating features as questions in a big if-then-else tree
+
+Neural Networks
+
+• Also called parallel distributed processing or connectionist systems
+• Intelligence arise from having a large number of simple computational units
+
+NB: Deep Learning ≈ Neural Networks “on steroids”
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.13
+
+Supervised Learning
+
+Labeled Data
+In Supervised Learning, we train a system using data with known labels.
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.14
+
+Unsupervised Learning
+
+Unlabeled Data
+In Unsupervised Learning, we have only unlabeled data and train a system without
+guidance from an expected output.
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.15
+
+Reinforcement Learning
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.16
+
+AI Learns to Park
+
+https://www.youtube.com/watch?v=VMp6pq6_QjI
+
+https://www.youtube.com/watch?v=VMp6pq6_QjI
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.17
+
+Machine Learning Categories
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.18
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.19
+
+General machine learning process
+
+→ Worksheet #6: Task 1
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.20
+
+Outline
+
+1 Machine Learning Primer
+
+2 Clustering Documents
+Motivation
+k-Means Clustering
+Application Example
+
+3 Classifications & Predictions
+
+4 Machine Learning Evaluation
+
+5 Notes and Further Reading
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.21
+
+Math with Words
+
+Vector Space Model
+
+• A mathematical model to portray an n-dimensional space
+
+• Entities are described by vectors with n coordinates in a real space Rn
+
+• Given two vectors, we can compute a similarity coefficient between them
+
+• Cosine of the angle between two vectors reflects their degree of similarity
+
+tf = 1 + log(tft,d ) (1)
+
+idf = log
+N
+dft
+
+(2)
+
+cos(~q , ~d ) =
+∑|v|
+
+i=1 qi · di√∑|v|
+i=1 q i
+
+2 ·
+√∑|v|
+
+i=1 d i
+2
+
+(3)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.22
+
+Motivation
+
+Intelligent Systems for Investigative Journalism
+Organize large, unstructured document collections:
+
+• Enron email dataset – ca. 500,000 emails from management
+• Wikileaks – often releases millions of documents
+
+• Guantanamo Bay Files, TPP Agreements, CIA Documents, German BND-NSA
+Inquiry, . . .
+
+• Facebook internal documents leaks (Cambridge Analytica scandal, 7000
+documents)
+
+• Luanda Leaks (715,000 emails, charts, contracts, audits, etc.)
+• Paradise Papers (13.4 million confidential papers regarding offshore
+
+investments)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.23
+
+https://www.thestar.com/news/paradise-papers/2019/01/29/
+
+canada-revenue-agency-launches-100-audits-after-paradise-papers-leak.html
+
+https://www.thestar.com/news/paradise-papers/2019/01/29/canada-revenue-agency-launches-100-audits-after-paradise-papers-leak.html
+https://www.thestar.com/news/paradise-papers/2019/01/29/canada-revenue-agency-launches-100-audits-after-paradise-papers-leak.html
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.24https://opensemanticsearch.org
+
+https://opensemanticsearch.org
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.25
+
+Clustering
+
+Unsupervised Learning
+
+• Remember, we do not “classify” documents (like in “spam vs. ham”)
+• Rather, we group similar documents together
+• Often used as a first exploratory step in data analysis
+
+• Data points (here: documents) in individual clusters can be further analyzed,
+possibly with different methods
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.26
+
+What are Clusters?
+
+Clustering
+
+• The organization of unlabeled data into similarity groups, called clusters
+• A cluster is a collection of data items which are “similar” between them, and
+
+“dissimilar” to data items in other clusters.
+• Generally, there is no right or wrong answer to what the clusters in a dataset
+
+are.
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.27
+
+Clustering Techniques
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.28
+
+k-Means Clustering
+
+Partition-based Clustering
+K-means (MacQueen, 1967) is a partitional clustering algorithm:
+
+• Given m vectors in an n-dimensional space, ~x1, . . . , ~xm ∈ Rn
+
+• User defines k , the number of clusters
+
+Algorithm
+
+1 Pick k points from the dataset (usually at random).
+These points represent our initial group centroïds.
+
+2 Assign each data point ~xi to the nearest centroïd.
+3 When all data points have been assigned, recalculate the positions of the k
+
+centroïds as the average of the cluster.
+4 Repeat Steps 2 and 3 until none of the data instances change group
+
+(or changes stay below a given convergence limit ∆).
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.29
+
+Euclidian Distance
+
+To find the nearest centroïd:
+• a possible metric is the
+
+Euclidean distance
+• distance d between 2 points p, q
+
+p = (p1,p2, . . . ,pn)
+q = (q1,q2, . . . ,qn)
+
+d =
+
+√√√√ n∑
+i=1
+
+(pi − qi )2
+
+• where to assign a data point ~x?
+• → for all k clusters, choose the one
+
+where ~x has the smallest distance
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.30
+
+Example (1/5)
+2D-vectors, k=3: Initialize random centroïds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.31
+
+Example (2/5)
+Partition data points to closest centroïds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.32
+
+Example (3/5)
+Compute new centroïds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.33
+
+Example (4/5)
+Re-assign data points to closest new centroïds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.34
+
+Example (5/5)
+Repeat until clusters stabilize
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.35
+
+k-Means Clustering Illustrated
+
+https://www.youtube.com/watch?v=5I3Ei69I40s
+→ Worksheet #6: Task 2
+
+https://www.youtube.com/watch?v=5I3Ei69I40s
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.36
+
+k-Means: Pros & Cons
+
+Pros
+
+• Simple, easy to understand and implement
+• Converges very fast
+• Efficient: Time complexity O(t · k · n), with
+
+• n number of data points
+• k number of clusters
+• t number of iterations
+
+→ considered linear for practical purposes
+
+Cons
+
+• User needs to choose k (usually not known)
+• Sensitive to outliers
+• Different results on same dataset, based on initial (random) centroïds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.37
+
+k-Means & Outliers
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.38
+
+k-Means: Sensitivity to Initial Seeds
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.39
+
+k-Means
+
+Summary
+
+• Despite weaknesses, k-means is still one of the most popular algorithms, due
+to its simplicity and efficiency
+
+• No clear evidence that any other clustering algorithm performs better in general
+• Comparing different clustering algorithms is a difficult task:
+
+No one knows the correct clusters!
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.40
+
+Document Clustering Example: Analyzing NSF Research Grants
+
+https://www.youtube.com/watch?v=85fZcK5EpnA
+
+https://www.youtube.com/watch?v=85fZcK5EpnA
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.41
+
+Outline
+
+1 Machine Learning Primer
+
+2 Clustering Documents
+
+3 Classifications & Predictions
+Introduction
+Classification with kNN
+Regression with kNN
+
+4 Machine Learning Evaluation
+
+5 Notes and Further Reading
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.42
+
+Classification of Data
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.43
+
+Classification Algorithms
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.44
+
+k-Nearest-Neighbor (kNN) Classification
+
+kNN Algorithm
+
+Training: only store feature vectors + class labels
+Testing: Find the k data points nearest (e.g., Euclidian distance) to the new
+
+value. Resulting class is decided by majority vote.
+
+Note: in this simple form, kNN has no training effort, but large testing effort
+(so-called lazy learning)
+
+Copyright Antti Ajanki (https://commons.wikimedia.org/wiki/File:KnnClassification.svg), “KnnClassification”,
+licensed under https://creativecommons.org/licenses/by- sa/3.0/legalcode
+
+https://commons.wikimedia.org/wiki/File:KnnClassification.svg
+https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.45
+
+kNN Classification
+
+With k = 1
+
+• Compute the distance of the unknown sample to all existing samples
+• Assign the class of the closest neighbor to the new sample
+
+• Distance can be computed with different metrics, e.g.,
+Euclidean distance or Manhattan distance
+
+Copyright 2017 by O’Reilly Media, Inc., [MG17]
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.46
+
+kNN Classification: General case
+
+With arbitrary k
+
+• kNN classification becomes a voting algorithm
+• assign the same class as the majority of the k closest neighbors to the new
+
+sample
+• Choice of k is dependent on data set
+
+Copyright 2017 by O’Reilly Media, Inc., [MG17]
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.47
+
+Netflix: Predict Success of Original Content
+
+In 2013, Netflix decided to commission two seasons of the U.S. remake of the
+British series House of Cards based on an analysis of its customers’ data
+
+https://informationstrategyrsm.wordpress.com/2014/10/19/
+
+big-data-analytics-house-of-cards-and-future-of-television-creation-consumption/
+
+→ Worksheet #6: Task 3
+
+https://informationstrategyrsm.wordpress.com/2014/10/19/big-data-analytics-house-of-cards-and-future-of-television-creation-consumption/
+https://informationstrategyrsm.wordpress.com/2014/10/19/big-data-analytics-house-of-cards-and-future-of-television-creation-consumption/
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.48
+
+Regression
+Forecasting or predicting a value: e.g., house price, movie rating, temperature at noon, ...
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+http://www.cognub.com/index.php/cognitive-platform/
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.49
+
+kNN Regression
+
+With k = 1
+
+• Find the nearest existing data point to a new sample as before
+• Assign the value of this point (e.g., price, rating, ...) to the new instance
+
+• Note: given n-dimensional vectors, we are using n − 1 dimensions for the similarity
+and the final for the predicted value
+
+Copyright 2017 by O’Reilly Media, Inc., [MG17]
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.50
+
+kNN Regression: General Case
+
+Find the k nearest existing data points
+Assign the average of their values to the new point
+
+• Note that this algorithm cannot extrapolate
+
+Copyright 2017 by O’Reilly Media, Inc., [MG17]
+
+→ Worksheet #6: Task 4
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.51
+
+Machine Learning at Netflix
+
+https://www.youtube.com/watch?v=X9ZES-fsxgU
+
+https://www.youtube.com/watch?v=X9ZES-fsxgU
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.52
+
+Outline
+
+1 Machine Learning Primer
+
+2 Clustering Documents
+
+3 Classifications & Predictions
+
+4 Machine Learning Evaluation
+Evaluation Methodology
+Evaluation Metrics
+Error Analysis
+Overfitting
+Underfitting
+Cross-Validation
+
+5 Notes and Further Reading
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.53
+
+Evaluation of a ML Model
+
+Methodology
+
+• How do you know if what you learned is correct?
+• You run your classifier on a data set of unseen examples (that you did not use
+
+for training) for which you know the correct classification (“gold standard”)
+
+Training vs. testing data
+
+• Split data into training (80%) and testing (20%) sets
+• Depending on ML algorithm, the training set can be further split into:
+
+• Actual training set (80%)
+• Validation set (20%)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.54
+
+Standard Methodology
+
+1 Collect a large set of examples (all with correct classifications)
+2 Divide collection into training, validation and test set
+3 Apply learning algorithm to training set to learn the parameters
+4 Measure performance with the validation set, and adjust hyper-parameters to
+
+improve performance
+5 Performance not good enough? ⇒ 3
+6 Measure performance with the test set
+
+DO NOT LOOK AT THE TEST SET
+until you arrived at Step 6.
+
+Parameters
+Basic values learned by the ML
+model, e.g.:
+
+• for NB: prior & conditional
+probabilities
+
+• for DTs: features to split
+• for ANNs: weights
+
+Hyper-Parameters
+Parameters used to set up the ML
+model, e.g.:
+
+• for NB: value of delta for
+smoothing
+
+• for DTs: pruning level
+• for ANNs: # of hidden layers, # of
+
+nodes per layer. . .
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.55
+
+Metrics
+
+Accuracy
+
+• % of instances of the test set the algorithm correctly classifies
+• when all classes are equally important and represented
+
+Recall & Precision
+
+• when one class is more important than the others
+
+F-Measure
+
+• Combined Precision & Recall (harmonic mean)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.56
+
+ML Evaluation
+
+Evaluation of Classifiers
+What kind of errors can we make?
+
+Reality says. . .
+Positive Negative
+
+Model predicts. . .
+Positive True Positive (TP) False Positive (FP)
+Negative False Negative (FN) True Negative (TN)
+
+This is a so-called (binary) confusion matrix
+
+Error Types
+
+• False positive classification: Type I error
+(“convict the innocent!”)
+
+• False negative classification: Type II error
+(“free the guilty!”)
+
+Important realization: not all errors are created equal!
+
+Voltaire: “It is better to risk saving a guilty man than to condemn an innocent one.”
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.57
+
+Evaluation Metrics
+
+Commonly used
+
+• Accuracy = (TP + TN)/(TP + TN + FP + FN)
+• Recall = TP/(TP + FN)
+• Precision = TP/(TP + FP)
+• F1-score = 2·Precision·RecallPrecision+Recall (harmonic mean)
+
+Mind the evaluation task
+Precision, recall etc. are defined slightly differently
+for:
+
+• Information retrieval tasks
+• Classification tasks
+• Ranked retrieval tasks
+• Information extraction tasks
+
+→ Worksheet #6: Task 5
+
+Copyright by Walber (https://commons.wikimedia.org/wiki/File:Precisionrecall.svg), licensed under the Creative
+Commons Attribution-Share Alike 4.0 International license
+https://creativecommons.org/licenses/by- sa/4.0/legalcode
+
+→ Worksheet #6: Task 5
+
+https://commons.wikimedia.org/wiki/File:Precisionrecall.svg
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.58
+
+Confusion Matrix
+
+• Where did the learner go wrong ?
+• Use a confusion matrix (contingency table)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.59
+
+Learning Curve
+
+Copyright 2007–2019, scikit-learn developers (BSD License), https://scikit- learn.org/stable/auto_examples/model_selection/plot_learning_curve.html
+
+Plot evaluation metric vs. size of training set
+
+• the more, the better
+• but after a while, not much improvement. . .
+
+https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.60
+
+Some Words on Training. . .
+
+Watch out for:
+
+• Noisy Data
+• Overfitting/Underfitting
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.61
+
+Noisy Data
+
+Common issues
+
+• Two examples have the same feature-value pairs, but different outputs
+• Some values of features are incorrect or missing (ex. errors in the data
+
+acquisition)
+• Some relevant attributes are not taken into account in the data set
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.62
+
+Overfitting
+
+• If a large number of irrelevant
+features are there, we may find
+meaningless regularities in the data
+that are particular to the training data
+but irrelevant to the problem.
+
+• Complicated boundaries overfit the
+data (a.k.a. overtraining)
+
+• they are too tuned to the particular
+training data at hand
+
+• They do not generalize well to the
+new data
+
+• Extreme case: “rote learning”
+• Training error is low
+• Testing error is high
+
+Copyright by Chabacano (https://commons.wikimedia.org/wiki/File:Overfitting.svg) license under the Creative Commons Attribution-Share
+Alike 4.0 International license, https://creativecommons.org/licenses/by- sa/4.0/legalcode
+
+https://commons.wikimedia.org/wiki/File:Overfitting.svg
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.63
+
+Underfitting
+
+• We can also underfit data, i.e. use
+too simple decision boundary
+
+• Model is not expressive enough (not
+enough features)
+
+• a.k.a. Undertraining
+• There is no way to fit a linear
+
+decision boundary so that the
+training examples are well separated
+
+• Training error is high
+• Testing error is high
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.64
+
+Example: Animal Classification
+
+Features
+What about cat vs. dog?
+
+[from: Alison Cawsey: The Essence of AI (1997)]
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.65
+
+Cross-Validation
+
+Data Scarcity
+
+• there is never enough training data
+• so testing data is precious as well
+
+k-fold Cross-Validation
+‘Re-use’ different parts of the training data for testing. E.g., 10-fold cross-validation:
+
+• split data into 10 equal parts
+• train on 9 of these, test on the 10th
+• repeat 10 times, resulting in 10 different performance results
+• average these for overall performance
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.66
+
+Outline
+
+1 Machine Learning Primer
+
+2 Clustering Documents
+
+3 Classifications & Predictions
+
+4 Machine Learning Evaluation
+
+5 Notes and Further Reading
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.67
+
+Reading Material
+
+Required
+
+• [MG17, Chapters 2, 3, 5] (kNN, k-Means, Evaluation)
+
+Supplemental
+
+• [PS12, Chapter 7] (ML Training)
+• [PS12, Chapter 8] (Testing and Evaluation)
+
+
+
+René Witte
+
+Machine Learning
+Primer
+History
+
+ML Types
+
+Process
+
+Clustering Documents
+Motivation
+
+k-Means Clustering
+
+Application Example
+
+Classifications &
+Predictions
+Introduction
+
+Classification with kNN
+
+Regression with kNN
+
+Machine Learning
+Evaluation
+Evaluation Methodology
+
+Evaluation Metrics
+
+Error Analysis
+
+Overfitting
+
+Underfitting
+
+Cross-Validation
+
+Notes and Further
+Reading
+
+7.68
+
+References
+
+[MG17] Andreas C Müller and Sarah Guido.
+Introduction to Machine Learning with Python.
+O’Reilly, 2017.
+https://concordiauniversity.on.worldcat.org/oclc/960211579.
+
+[PS12] James Pustejovsky and Amber Stubbs.
+Natural Language Annotation for Machine Learning.
+O’Reilly, 2012.
+https://concordiauniversity.on.worldcat.org/oclc/801812987.
+
+https://concordiauniversity.on.worldcat.org/oclc/960211579
+https://concordiauniversity.on.worldcat.org/oclc/801812987
+
+	Intro to ML
+	Machine Learning Primer
+	History
+	ML Types
+	Process
+
+	Clustering Documents
+	Motivation
+	k-Means Clustering
+	Application Example
+
+	Classifications & Predictions
+	Introduction
+	Classification with kNN
+	Regression with kNN
+
+	Machine Learning Evaluation
+	Evaluation Methodology
+	Evaluation Metrics
+	Error Analysis
+	Overfitting
+	Underfitting
+	Cross-Validation
+
+	Notes and Further Reading
+
+

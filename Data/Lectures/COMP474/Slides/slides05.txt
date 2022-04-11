@@ -1,0 +1,5137 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.1
+
+Lecture 5
+Knowledge Base Design & Applications
+
+COMP 474/6741, Winter 2022
+
+René Witte
+Department of Computer Science
+
+and Software Engineering
+Concordia University
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.2
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.3
+
+Slides Credit
+
+• Includes slides by Ivan Herman, W3C [Her]
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.4
+
+Outline
+
+1 Linked Open Data (LOD)
+Queries Review
+The Linked Open Data Initiative
+DBpedia
+The LOD Cloud
+Linked Data Design Issues
+Summary
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.5
+
+The W3C “Layer Cake”
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.6
+
+Select
+
+Copyright 2011 by Springer-Verlag Berlin Heidelberg, [DFH11]
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.7
+
+Select. . . where
+
+Copyright 2013 by O’Reilly Media, [DuC13]
+
+→ Worksheet #4: Tasks 1, 2
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.8
+
+TBL at TED on “The year open data went worldwide” (2010)
+
+https://www.youtube.com/watch?v=3YcZ3Zqk0a8
+
+https://www.youtube.com/watch?v=3YcZ3Zqk0a8
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.9
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.10
+(171) 171 
+
+}  Goal: “expose” datasets on the Web
+§  remember the importance of data!
+
+}  Set links among the data items from different 
+datasets
+§ we want to avoid the silo effects
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.11
+(172) 172 
+
+Available on the web (whatever format), but with an 
+open license 
+ 
+Available as machine-readable structured data (e.g., 
+excel instead of an image scan) 
+ 
+As before, but using a non-proprietary format (e.g., 
+CSV instead of excel) 
+ 
+All the above, plus use open standards (RDF & Co.) to 
+identify things, so that people could point at your stuff 
+ 
+All the above, plus link your data to other people’s data 
+to provide context 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.12
+(173) 173 
+
+}  DBpedia is a community effort to
+§  extract structured (“infobox”) information from Wikipedia
+§  provide a query endpoint to the dataset
+§  interlink the DBpedia dataset with other datasets on the Web
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.13
+(174) 174 
+
+@prefix dbpedia <http://dbpedia.org/resource/>. 
+@prefix dbterm  <http://dbpedia.org/property/>. 
+ 
+dbpedia:Amsterdam 
+
+  dbterm:officialName "Amsterdam" ; 
+
+  dbterm:longd "4" ; 
+  dbterm:longm "53" ; 
+  dbterm:longs "32" ; 
+
+  dbterm:website <http://www.amsterdam.nl> ; 
+  dbterm:populationUrban "1364422" ; 
+  dbterm:areaTotalKm "219" ; 
+  ... 
+dbpedia:ABN_AMRO 
+  dbterm:location dbpedia:Amsterdam ; 
+  ... 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.14
+(175) 175 
+
+<http://dbpedia.org/resource/Amsterdam> 
+  owl:sameAs <http://rdf.freebase.com/ns/...> ; 
+  owl:sameAs <http://sws.geonames.org/2759793> ; 
+  ... 
+
+<http://sws.geonames.org/2759793> 
+  owl:sameAs <http://dbpedia.org/resource/Amsterdam> 
+
+  wgs84_pos:lat "52.3666667" ; 
+  wgs84_pos:long "4.8833333"; 
+  geo:inCountry <http://www.geonames.org/countries/#NL> ; 
+ ... 
+
+Processors can switch automatically from one to the other…
+ 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.15
+(176) 176 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.16
+(177) 177 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.17
+(178) 178 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.18
+(179) 179 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.19
+(180) 180 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.20
+(181) 181 Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.21
+(182) 182 
+
+}  Eg, “bio” related datasets
+§  done, partially, by the “Linking Open Drug Data” task force 
+
+of the HCLS IG at W3C
+
+Courtesy of Richard Cyganiak and Anja Jentzsch 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.22
+
+LOD Datasets: https://www.lod-cloud.net/
+
+https://www.lod-cloud.net/
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.23
+
+Linked Data: Design Issues
+
+Origin
+First proposed by Tim Berners-Lee in 2006
+https://www.w3.org/DesignIssues/LinkedData.html
+
+What’s a “link”?
+Technically, a link is a triple where
+
+• the subject IRI is in one graph (namespace) and
+• the predicate and/or object are in a different graph (namespace)
+
+Types of Links
+
+Identity Link: points to the same object or concept in another knowledge graph
+(e.g., Canada in DBpedia and Wikidata)
+
+Relationship Link: points to other objects related to a given one (e.g., from a person
+to the city they live in)
+
+Vocabulary Link: between data and their vocabulary term
+(e.g., IRI is a foaf:Person) or between vocabulary terms
+(e.g., ex:Student rdfs:subClassOf foaf:Person)
+
+https://www.w3.org/DesignIssues/LinkedData.html
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.24
+
+Creating Links
+
+Instance Level
+Creating links on the instance level (IRIs):
+owl:sameAs Most widely used, but makes strong assumptions about both IRIs
+
+being identical (it is symmetric and transitive)
+rdfs:seeAlso Just a reference, makes no claim about the IRIs being identical
+
+(no specific semantics)
+using vocabularies e.g., skos:exactMatch, foaf:knows
+
+Schema Level
+Two graphs can also be linked on the schema level:
+
+• Using owl:equivalentClass and owl:equivalentProperty
+• Using rdfs:subClassOf and rdfs:subPropertyOf
+• Using vocabularies, e.g., skos:broadMatch or skos:narrowMatch
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.25
+
+Linked Data: Design Issues II
+
+The “four rules”
+
+1 Use URIs as names for things.
+2 Use HTTP URIs so that people can look up those names.
+3 When someone looks up a URI, provide useful information, using the standards
+
+(RDF, SPARQL).
+4 Include links to other URIs, so that they can discover more things.
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.26
+
+How to create your own URIs
+
+Copyright 2014 by Manning Publications Co., [WZRH14]
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.27
+
+Summary
+
+Major Points
+To create a knowledge base in
+LOD-compliant format:
+
+1 Make your data “5-star”
+2 Create URIs following the
+
+guidelines
+3 Select appropriate
+
+vocabularies
+4 Extend existing vocabularies
+
+if necessary
+5 Link your data to other
+
+knowledge graphs
+6 Publish your knowledge
+
+graph on the web
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.28
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+Some History
+Freebase, DBpedia & Wikidata
+Publishing Options and Workflows
+Relational Databases and RDF
+Competency Questions
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.29
+
+http://andrea-index.blogspot.com/2015/06/wikipedia-dbpedia-wikidata.html
+
+http://andrea-index.blogspot.com/2015/06/wikipedia-dbpedia-wikidata.html
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.30
+
+Freebase
+
+• One of the first major public knowledge
+graphs, started in 2007
+
+• Startup Metaweb bought by Google in 2010
+• Shutdown in 2016...
+• ...but data was donated to Wikidata
+
+
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.32
+
+DBpedia: Part of Watson’s brain
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.33
+
+DBpedia Release Cycle
+
+“The New DBpedia Release Cycle: Increasing Agility and Efficiency in Knowledge Extraction Workflows” [HHDF20]
+
+→ Worksheet #4: Task 3
+
+
+
+
+
+Wikidata: Wiki principle applied to structured data
+
+→ Worksheet #4: Task 4
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.36
+
+Wikidata: Data Model
+
+https://en.wikipedia.org/wiki/Wikidata
+
+https://en.wikipedia.org/wiki/Wikidata
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.37
+
+Knowledge Base Construction
+
+Approaches
+
+• Community-constructed (e.g., Freebase, Wikidata)
+• (Semi-)Automatically constructed (e.g., DBpedia, BabelNet)
+• Exported from other data sources (e.g., MusicBrainz)
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.38
+
+Linked Data Publishing Options and Workflows
+
+Copyright 2011 by Morgan & Claypool, [HB11]
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.39
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+Some History
+Freebase, DBpedia & Wikidata
+Publishing Options and Workflows
+Relational Databases and RDF
+Competency Questions
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.40
+Photo credit “mayhem”, Flickr 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.41
+(145) 145 
+
+}  Most of the data on the Web is, in fact, in RDB-s
+}  Proven technology, huge systems, many vendors…
+}  Data integration on the Web must provide access to 
+
+RDB-s
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.42
+(147) 147 
+
+}  “Export” does not necessarily mean physical 
+conversion
+§  for very large databases a “duplication” would not be an option
+§  systems may provide SQL “bridges” to make queries on the fly
+
+}  Result of export is a “logical” view of the RDB content
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.43
+(159) 159 
+
+}  An R2RML processor has access to:
+§  an RDB schema
+§  an R2RML instance
+§  a database governed by the schema
+
+}  … and produces an RDF graph
+
+RDB 
+Schema 
+
+R2RML 
+Instance 
+
+R2RML 
+Processing 
+
+Tables
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.44
+(160) 160 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.45
+(161) 161 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.46
+(162) 162 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.47
+(163) 163 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.48
+(164) 164 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+<Person>  
+  rr:tableName "Person_Table" ; 
+  rr:subjectMap [ 
+    rr:termtype rr:BlankNode ; 
+  ] ; 
+  rr:predicateObjectMap [ 
+    rr:predicate a:name  
+    rr:objectMap [ 
+      rr:column "Name"  
+    ] 
+  ] ; 
+  rr:predicateObjectMap [ 
+    rr:predicate a:homepage ; 
+    rr:objectMap [ 
+      rr:column "Homepage" ; 
+      rr:termtype "IRI"  
+    ]  
+  ] ; 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.49
+(165) 165 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+<Book> 
+  rr:tableName "Book_Table" ; 
+  rr:subjectMap [ 
+    rr:template "http://...isbn/{ISBN}" ;   
+  ]; 
+  rr:predicateObjectMap [ 
+    rr:predicate a:title ; 
+    rr:objectMap [ 
+      rr:column "Title"  
+    ]  
+  ] ; 
+  rr:predicateObjectMap [ 
+    rr:predicate a:year ; 
+    rr:objectMap [ 
+      rr:column "Year" ; 
+    ]  
+  ] ; 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.50
+(166) 166 
+
+http://…isbn/000651409X 
+
+Ghosh, Amitav http://www.amitavghosh.com 
+
+The Glass Palace 
+
+2000 
+
+a:title 
+
+a:year 
+
+a:name 
+a:homepage 
+
+a:author 
+
+ISBN Author Title Publisher Year 
+0006511409X id_xyz The Glass Palace id_qpr 2000 
+
+ID Name Homepage 
+id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+
+<Book> 
+  ... 
+  rr:refPredicateObjectMap [ 
+    rr:predicate a:author ; 
+    rr:objectMap [ 
+      rr:parentTriplesMap <Person> ; 
+      rr:joinCondition  
+        rr:child "Author" ; 
+        rr:parent "ID”   
+      ] 
+    ]  
+  ]. 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.51
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+Some History
+Freebase, DBpedia & Wikidata
+Publishing Options and Workflows
+Relational Databases and RDF
+Competency Questions
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.52
+
+Competency Questions
+
+Knowledge Base Design
+Unlike (relational) databases, knowledge bases do not have a rigid, pre-defined
+design for a specific application
+
+• Encourage inter-connection of knowledge
+• Still helpful to have an idea of possible use cases
+
+Design Method
+
+• Start with a set of questions to guide the design of the vocabulary and data
+triples
+
+• It must be possible to answer the questions when the knowledge base has
+been constructed
+
+• These competency questions can be seen as a requirements specification for a
+vocabulary or knowledge base
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.53
+
+Competency Questions: Examples
+
+Examples
+Some possible competency questions for a university knowledge graph:
+Q1: Which courses are offered at University X?
+Q2: Which topics are covered by a course C?
+Q3: Which professors teach at university X?
+Q4: What are the prerequisites for a given course C?
+Q5: Which universities offer courses that cover topic T ?
+
+Note
+These mostly follow a single pattern
+
+Which [CE1] [OPE] [CE2]?
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.54
+
+Competency Question: Patterns
+
+Towards Competency Question-Driven Ontology Authoring, https://link.springer.com/chapter/10.1007/978- 3- 319- 07443- 6_50
+
+CQ Archetypes (PA = Predicate Arity, RT = Relation Type, M = Modifier, DE = Domain-independent Element; obj. =
+object property relation, data. = datatype property relation, num. = numeric modifier, quan. = quantitative modifier, tem.
+= temporal element, spa. = spatial element; CE = class expression, OPE = object property expression, DP = datatype
+property, I = individual, NM = numeric modifier, PE = property expression, QM = quantity modifier)
+
+https://link.springer.com/chapter/10.1007/978-3-319-07443-6_50
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.55
+
+Testing Competency Questions
+
+Example: African Wildlife Ontology (AWO)
+Competency question awo_6 “Which plants eat animals?”
+Verify using a SPARQL query:
+
+SELECT DISTINCT ?eats
+WHERE {
+
+?eats rdfs:subClassOf awo:plant, [
+a owl:Restriction ;
+owl:onProperty awo:eats;
+owl:someValuesFrom awo:animal
+
+] .
+FILTER(?eats != owl:Nothing)
+
+}
+
+See https://www.researchgate.net/publication/338424817_Dataset_of_ontology_
+competency_questions_to_SPARQL-OWL_queries_translations
+
+Another approach: SHACL
+There is also a separate standard, the Shapes Constraint Language (SHACL)
+(https://www.w3.org/TR/shacl/), see [HHDF20] for an example.
+→ Worksheet #4: Task 5
+
+https://www.researchgate.net/publication/338424817_Dataset_of_ontology_competency_questions_to_SPARQL-OWL_queries_translations
+https://www.researchgate.net/publication/338424817_Dataset_of_ontology_competency_questions_to_SPARQL-OWL_queries_translations
+https://www.w3.org/TR/shacl/
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.56
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+Linking Documents and Knowledge Graphs
+Structured Data on the Web
+Facebook’s Open Graph Protocol
+Google’s Knowledge Graph
+Summary
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.57
+
+Knowledge Management Architecture 3.0
+
+Knowledge BaseKnowledge Worker
+
+Linked Open Data (LOD)
+
+NLP Pipeline
+
+Documents
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.58
+
+Entity Linking
+
+the efficient computation of the tree architecture ..."
+
+http://dbpedia.org/resource/Tree_(data structure) http://dbpedia.org/resource/Tree
+
+"The proposed approach takes advantage of both
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.59
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.60
+
+→
+Worksheet #4: Task 6
+
+
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.62
+
+DBpedia Spotlight
+
+https://www.dbpedia-spotlight.org/
+
+https://www.dbpedia-spotlight.org/
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.63
+
+DBpedia Spotlight: Disambiguation
+
+→ Worksheet #4: Task 7
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.64
+
+DBpedia Spotlight: Disambiguation
+
+Approach
+Spotlight uses a statistical model for disambiguation
+
+• Using the context of a word/phrase
+• Learned from the Wikipedia pages including the links (for multiple languages)
+
+A 2012 paper reports a 85.1% accuracy for English (with 7.4% missing links)
+
+Discussion
+
+• Modern approaches for disambiguation use word embeddings (discussed later
+in the course), with better performance
+
+• However, Spotlight is a stable, easy-to-install tool and useful for first
+experiments
+
+Improving Efficiency and Accuracy in Multilingual Entity Extraction,
+https://doi.org/10.1145/2506182.2506198
+
+https://doi.org/10.1145/2506182.2506198
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.65
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+Linking Documents and Knowledge Graphs
+Structured Data on the Web
+Facebook’s Open Graph Protocol
+Google’s Knowledge Graph
+Summary
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.66
+
+RDF Data and Web Pages? 
+(RDFa, microdata, microformats, 
+ GRDDL) 
+
+Photo credit “shetladd”, Flickr 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.67
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.68
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.69
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.70
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.71
+(118) 118 
+
+<html> 
+.... 
+<body prefix="schema: http://schema.org/  
+              foaf:   http://xmlns.com/foaf/0.1/" 
+ 
+  <div about="http://www.ivan-herman.net/foaf#me" ... > 
+    ... 
+    <p>I graduated as mathematician at the  
+       <a rel="foaf:schoolHomepage schema:alumniOf"  
+          href="http://www.elte.hu/"> 
+           <span property="dc:title">Eötvös Loránd University of  
+             Budapest</span> 
+       </a>, ... 
+ 
+    ... 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.72
+(119) 119 
+
+<html> 
+.... 
+<body prefix="schema: http://schema.org/  
+              foaf:   http://xmlns.com/foaf/0.1/" 
+ 
+  <div about="http://www.ivan-herman.net/foaf#me" ... > 
+    ... 
+    <p>I graduated as mathematician at the  
+       <a rel="foaf:schoolHomepage schema:alumniOf"  
+          href="http://www.elte.hu/"> 
+           <span property="dc:title">Eötvös Loránd University of  
+             Budapest</span> 
+       </a>, ... 
+ 
+    ... 
+
+Triple 
+
+Triple 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.73
+(120) 120 
+
+ 
+<http://www.ivan-herman.net/foaf#me> 
+    schema:alumniOf     <http://www.elte.hu> ; 
+    foaf:schoolHomePage <http://www.elte.hu> ; 
+    schema:worksFor     <http://www.w3.org/W3C#data> ; 
+    … 
+<http://www.elte.hu>  
+    dc:title "Eötvös Loránd University of Budapest" . 
+… 
+<http://www.w3.org/W3C#data>  
+    dc:title "World Wide Web Consortium (W3C)” 
+… 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.74
+
+Extracting Structured Data
+
+→ Worksheet #4: Task 8
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.75
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+Linking Documents and Knowledge Graphs
+Structured Data on the Web
+Facebook’s Open Graph Protocol
+Google’s Knowledge Graph
+Summary
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.76
+
+Facebook’s Open Graph Protocol
+
+Idea
+
+• Turn web page into graph object
+• Provide rich information when pages are “shared”
+• Similar idea to schema.org, except now
+
+Facebook is the consumer (instead of search
+engines)
+
+• Vocabulary at http://ogp.me/ns#
+
+Used together with the “Like” button
+
+• When clicked, Facebook creates a connection in its graph between the page
+and the user
+
+• If the user was logged in, add information to user’s profile
+
+Facebook Graph Search
+
+• Facebook provided public graph search functionality from 2013–2019
+• These have been largely removed, most likely due to privacy concerns
+
+http://ogp.me/ns#
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.77
+
+Example
+
+Page with OGP annotations
+
+• Simple vocabulary for title,
+description, images, videos, music,
+etc.
+
+• Added to meta-tags in HTML page
+• Not using full RDF
+
+<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/
+international/when-great-minds-dont-think-alike.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="When Great Minds Don’t Think Alike" />
+<meta property="og:description" content="How much does culture influence creative thinking?" />
+<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/
+
+international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+
+See https://developers.facebook.com/docs/sharing/webmasters/
+
+→ Worksheet #4: Task 9
+
+https://developers.facebook.com/docs/sharing/webmasters/
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.78
+
+Google’s Knowledge Graph
+
+https://www.youtube.com/watch?v=mmQl6VGvX-c
+
+https://www.youtube.com/watch?v=mmQl6VGvX-c
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.79
+(40) 40 
+
+Data in various formats 
+
+Data represented in abstract format 
+
+Applications 
+
+Map, 
+Expose, 
+… 
+
+Manipulate 
+Query 
+… 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.80
+(41) 41 
+
+Inferencing 
+
+Query and Update 
+
+Web of Data 
+Applications 
+
+Browser 
+Applications 
+
+Stand Alone 
+Applications 
+
+Common “Graph” 
+Format & 
+Common 
+
+Vocabularies 
+
+“Bridges” 
+
+Data on the Web 
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.81
+
+Outline
+
+1 Linked Open Data (LOD)
+
+2 Knowledge Base Construction
+
+3 Knowlege Base Applications
+
+4 Notes and Further Reading
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.82
+
+Reading Material
+
+Required
+
+• [Yu14, Chapter 9] (Linked Open Data)
+• [Yu14, Chapter 11.2] (Facebook’s Open Graph Protocol)
+
+Supplemental
+
+• [HB11, WZRH14] (Books on Linked Data)
+• [Yu14, Chapter 3.3] (RDFa)
+• [Yu14, Chapter 8] (DBpedia)
+• [Yu14, Chapter 12] (Wikidata)
+• [HHDF20] (DBpedia Release Cycle)
+
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.83
+
+References I
+
+[DFH11] John Domingue, Dieter Fensel, and James A. Hendler, editors.
+Handbook of Semantic Web Technologies.
+Springer, 2011.
+https://concordiauniversity.on.worldcat.org/oclc/769756125.
+
+[DuC13] Bob DuCharme.
+Learning SPARQL: Querying and Updating with SPARQL 1.1.
+O’Reilly, 2nd edition, 2013.
+https://concordiauniversity.on.worldcat.org/oclc/853679890.
+
+[HB11] Tom Heath and Christian Bizer.
+Linked Data: Evolving the Web into a Global Data Space.
+Morgan & Claypool, 2011.
+https://concordiauniversity.on.worldcat.org/oclc/704257552.
+
+[Her] Ivan Herman.
+Tutorial on Semantic Web Technologies.
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/.
+
+https://concordiauniversity.on.worldcat.org/oclc/769756125
+https://concordiauniversity.on.worldcat.org/oclc/853679890
+https://concordiauniversity.on.worldcat.org/oclc/704257552
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/
+
+
+René Witte
+
+Linked Open Data
+(LOD)
+Queries Review
+
+The LOD Initiative
+
+DBpedia
+
+The LOD Cloud
+
+Linked Data Design Issues
+
+Summary
+
+Knowledge Base
+Construction
+Some History
+
+Freebase, DBpedia &
+Wikidata
+
+Publishing Options and
+Workflows
+
+Relational Databases and
+RDF
+
+Competency Questions
+
+Knowlege Base
+Applications
+Linking Documents and
+Knowledge Graphs
+
+Structured Data on the Web
+
+Open Graph Protocol
+
+Google’s Knowledge Graph
+
+Summary
+
+Notes and Further
+Reading
+
+5.84
+
+References II
+
+[HHDF20] Marvin Hofer, Sebastian Hellmann, Milan Dojchinovski, and Johannes
+Frey.
+The New DBpedia Release Cycle: Increasing Agility and Efficiency
+in Knowledge Extraction Workflows.
+In Semantic Systems. In the Era of Knowledge Graphs, pages 1–18,
+Cham, 2020. Springer International Publishing.
+https://link.springer.com/chapter/10.1007/978-3-030-59833-4_1.
+
+[WZRH14] David Wood, Marsha Zaidman, Luke Ruth, and Michael Hausenblas.
+Linked Data: Structured Data on the Web.
+Manning, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/871683907.
+
+[Yu14] Liyang Yu.
+A Developer’s Guide to the Semantic Web.
+Springer-Verlag Berlin Heidelberg, 2nd edition, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/897466408.
+
+https://link.springer.com/chapter/10.1007/978-3-030-59833-4_1
+https://concordiauniversity.on.worldcat.org/oclc/871683907
+https://concordiauniversity.on.worldcat.org/oclc/897466408
+
+	Introduction
+	Linked Open Data (LOD)
+	Queries Review
+	The Linked Open Data Initiative
+	DBpedia
+	The LOD Cloud
+	Linked Data Design Issues
+	Summary
+
+	Knowledge Base Construction
+	Some History
+	Freebase, DBpedia & Wikidata
+	Publishing Options and Workflows
+	Relational Databases and RDF
+	Competency Questions
+
+	Knowlege Base Applications
+	Linking Documents and Knowledge Graphs
+	Structured Data on the Web
+	Facebook's Open Graph Protocol
+	Google's Knowledge Graph
+	Summary
+
+	Notes and Further Reading
+
+
