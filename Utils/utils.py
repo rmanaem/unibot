@@ -100,6 +100,16 @@ def pdf_to_text_tika(path):
         f.write(text['content'])
 
 
+def pdf_to_text_spacy(path):
+    nlp = spacy.load("en_core_web_sm")
+    doc = pdf_reader(path, nlp)
+    text = ''
+    for i in doc._.page_range:
+        text += doc._.page(i).text
+    with open(path[:-3] + 'text', 'w', encoding='utf-8') as f:
+        f.write(text)
+
+
 def extract_ne(path):
     nlp = spacy.load("en_core_web_sm")
     pos_tags = [
