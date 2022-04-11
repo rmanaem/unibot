@@ -96,7 +96,7 @@ def getCourseId(csvFile, courseName):
 
 def pdf_to_text_tika(path):
     text = parser.from_file(path)
-    with open(path[:-3] + 'txt', 'w') as f:
+    with open(path[:-3] + 'txt', 'w', encoding='utf-8') as f:
         f.write(text['content'])
 
 
