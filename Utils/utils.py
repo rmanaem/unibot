@@ -121,7 +121,7 @@ def extract_ne(path):
     ]
 
     text = ''
-    with open(path, 'r') as f:
+    with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
 
     print('Running spacy nlp for', Path(path))
