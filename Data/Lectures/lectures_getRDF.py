@@ -45,7 +45,7 @@ if __name__ == '__main__':
         courseNamePath = os.path.join(lecturesParentDir, courseName)
 
         slidesDir = os.path.join(courseNamePath, 'Slides')
-        slidesCount = len(os.listdir(slidesDir))
+        slidesCount = len([i for i in os.listdir(slidesDir) if os.path.splitext(i)[1] == '.pdf'])
         filepaths = [os.path.join(slidesDir, 'slides') + "%02d" % num + '.pdf' for num in range(1, slidesCount + 1)]
 
         for index, filepath in enumerate(filepaths):

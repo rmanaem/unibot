@@ -8,7 +8,7 @@ PREFIX focudata: <http://focu.io/data#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 
-SELECT ?courseName ?courseNumber ?title ?courseDesc
+SELECT DISTINCT ?courseName ?courseNumber ?title ?courseDesc
    WHERE{
     ?uni rdf:type vivo:University .
   	?uni rdfs:label ?uniLabel .
