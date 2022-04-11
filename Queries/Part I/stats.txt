@@ -13,15 +13,31 @@ PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX fo: <http://purl.org/ontology/fo/>
 
 
-SELECT (count(?s) as ?triples) (count(?course) as ?courses) (count(?topic) as ?topics) (count(?uni) as ?universities) (count(?student) as ?students)
+SELECT (count(?s) as ?triples) (count(?distinct_topic) as ?distinct_topics) (count(?topic_instance) as ?topic_instances)
 WHERE {
-  {?s ?p ?o}
+  {
+  	SELECT ?s WHERE{
+    	?s ?p ?o
+    }
+  }
   UNION
-  {?course rdf:type vivo:Course}
+  {
+  	SELECT ?topic_instance WHERE {
+      	?lecture rdf:type focu:lecture .
+      	?lecture vivo:contains ?x .
+      	?x focu:covers ?topicURI .
+        ?topicURI rdf:type focu:topic .
+        ?topicURI rdfs:label ?topic_instance
+  	}
+  }
   UNION
-  {?topic rdf:type focu:topic}
-  UNION
-  {?uni rdf:type vivo:University}
-  UNION
-  {?student rdf:type vivo:Student}
+  {
+    SELECT DISTINCT ?distinct_topic WHERE {
+      	?lecture rdf:type focu:lecture .
+      	?lecture vivo:contains ?x .
+      	?x focu:covers ?topicURI .
+        ?topicURI rdf:type focu:topic .
+        ?topicURI rdfs:label ?distinct_topic
+    }
+  }
 }
