@@ -101,7 +101,7 @@ def pdf_to_text_tika(path):
         f.write(text['content'])
 
 
-def pdf_to_text_spacy(path):
+def pdf_to_txt_spacy(path):
     nlp = spacy.load("en_core_web_sm")
     doc = pdf_reader(path, nlp)
     text = ''
