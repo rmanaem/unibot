@@ -107,7 +107,7 @@ def pdf_to_text_spacy(path):
     text = ''
     for i in doc._.page_range:
         text += doc._.page(i).text
-    with open(path[:-3] + 'text', 'w', encoding='utf-8') as f:
+    with open(path[:-3] + 'txt', 'w', encoding='utf-8') as f:
         f.write(text)
 
 
