@@ -111,7 +111,7 @@ def pdf_to_text_spacy(path):
         f.write(text)
 
 
-def pdf_to_text_pdfplumber(path):
+def pdf_to_txt_pdfplumber(path):
     text = ''
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
