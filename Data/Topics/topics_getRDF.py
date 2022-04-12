@@ -37,25 +37,25 @@ if __name__ == '__main__':
     for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
         for lectureNum in range(1, 8):
             slideURI = URIRef(os.path.join(
-                path, 'Slides', 'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+                path, 'Slides', 'slides' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
             worksheetURI = URIRef(os.path.join(path, 'Worksheets',
-                                               'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+                                               'worksheet' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
             labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" %
-                            lectureNum + '.pdf').replace('\\', '/'))
+                            lectureNum + '.txt').replace('\\', '/'))
             outlineURI = URIRef(os.path.join(
-                path, 'CourseInfo', 'Outline' + '.pdf').replace('\\', '/'))
+                path, 'CourseInfo', 'Outline' + '.txt').replace('\\', '/'))
 
             for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs'),
                            ('Outline', 'CourseInfo')]:
                 if source[0] == 'Outline':
                     if lectureNum == 1:
                         filePath = os.path.join(
-                            path, source[1], source[0] + '.pdf')
+                            path, source[1], source[0] + '.txt')
                     else:
                         continue
                 else:
                     filePath = os.path.join(
-                        path, source[1], source[0] + "%02d" % lectureNum + '.pdf')
+                        path, source[1], source[0] + "%02d" % lectureNum + '.txt')
 
                 # extract topics from pdf
                 topics = extract_ne_list(spotlight_over_text(filePath))
