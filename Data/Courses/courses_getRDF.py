@@ -5,6 +5,11 @@ from rdflib import Graph, Literal, RDF, Namespace, URIRef
 from rdflib.namespace import FOAF, RDFS, XSD
 from __init__ import ROOT_DIR
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
+
 if __name__ == '__main__':
 
     courses = os.path.join(ROOT_DIR, 'Data', 'Courses')

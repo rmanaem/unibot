@@ -6,6 +6,11 @@ from Utils.utils import extract_ne_list, spotlight_over_text
 from __init__ import ROOT_DIR
 import os
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
+
 if __name__ == '__main__':
 
     g = Graph()
@@ -27,26 +32,19 @@ if __name__ == '__main__':
     g.bind('vcard', VCARD)
     g.bind('bibo', BIBO)
 
-    comp474_lecturesPath = os.path.join(
-        ROOT_DIR, 'Data', 'Lectures', 'COMP474')
-    comp6721_lecturePath = os.path.join(
-        ROOT_DIR, 'Data', 'Lectures', 'COMP6721')
+    comp474_lecturesPath = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'COMP474')
+    comp6721_lecturePath = os.path.join(ROOT_DIR, 'Data', 'Lectures', 'COMP6721')
     topicsPath = os.path.join(ROOT_DIR, 'Data', 'Topics')
 
     # automated extraction of topics from slides and worksheets
     for idx, path in enumerate([comp474_lecturesPath, comp6721_lecturePath]):
         for lectureNum in range(1, 8):
-            slideURI = URIRef(os.path.join(
-                path, 'Slides', 'slides' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
-            worksheetURI = URIRef(os.path.join(path, 'Worksheets',
-                                               'worksheet' + "%02d" % lectureNum + '.txt').replace('\\', '/'))
-            labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" %
-                            lectureNum + '.txt').replace('\\', '/'))
-            outlineURI = URIRef(os.path.join(
-                path, 'CourseInfo', 'Outline' + '.txt').replace('\\', '/'))
+            slideURI = URIRef(os.path.join(path, 'Slides', 'slides' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            worksheetURI = URIRef(os.path.join(path, 'Worksheets', 'worksheet' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            labURI = URIRef(os.path.join(path, 'Labs', 'lab' + "%02d" % lectureNum + '.pdf').replace('\\', '/'))
+            outlineURI = URIRef(os.path.join(path, 'CourseInfo', 'Outline' + '.pdf').replace('\\', '/'))
 
-            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs'),
-                           ('Outline', 'CourseInfo')]:
+            for source in [('slides', 'Slides'), ('worksheet', 'Worksheets'), ('lab', 'Labs'), ('Outline', 'CourseInfo')]:
                 if source[0] == 'Outline':
                     if lectureNum == 1:
                         filePath = os.path.join(
@@ -61,18 +59,10 @@ if __name__ == '__main__':
                 topics = extract_ne_list(spotlight_over_text(filePath))
 
                 for i, topic in enumerate(topics):
-                    if idx == 0:
-                        uniqueID = str(hash(('COMP474' + topic[1])))[1:7]
-                    else:
-                        uniqueID = str(hash(('COMP6721' + topic[1])))[1:7]
-
                     dbpediaURI, dbpediaLabel = topic[0], topic[1]
+                    dbpediaURI = URIRef(dbpediaURI)  # convert URI to URIRef object
 
-                    # convert URI to URIRef object
-                    dbpediaURI = URIRef(dbpediaURI)
-
-                    print(Path(filePath).stem, f'\ntopic{i} :', topic, '\ndbpediaURI',
-                          dbpediaURI, '\ndbpedialabel :', dbpediaLabel, '\n')
+                    print(Path(filePath).stem, f'\ntopic{i} :', topic, '\ndbpediaURI', dbpediaURI, '\ndbpedialabel :', dbpediaLabel, '\n')
 
                     sourceURI = slideURI  # default value
                     if source[0] == 'slides':
@@ -87,8 +77,7 @@ if __name__ == '__main__':
                     # update graph
                     g.add((sourceURI, FOCU.covers, dbpediaURI))
                     g.add((dbpediaURI, RDF.type, FOCU.topic))
-                    g.add((dbpediaURI, RDFS.label, Literal(
-                        dbpediaLabel, datatype=XSD.string)))
+                    g.add((dbpediaURI, RDFS.label, Literal(dbpediaLabel, datatype=XSD.string)))
 
     lectures_pathname = os.path.join(topicsPath, 'topics.ttl')
     g.serialize(lectures_pathname, format='turtle')

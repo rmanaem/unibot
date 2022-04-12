@@ -158,16 +158,19 @@ def dbp_spotlight(text):
         'text': text
     }
 
-    response = requests.get(
-        'https://api.dbpedia-spotlight.org/en/annotate', headers=headers, params=params)
-    annotations = []
-    if not response:
-        # print('Error with response status', response.status_code)
-        return annotations
-    else:
-        for item in response.json()['Resources']:
-            annotations.append((item['@URI'], item['@surfaceForm']))
-        return annotations
+    try:
+        response = requests.get(
+            'https://api.dbpedia-spotlight.org/en/annotate', headers=headers, params=params)
+        annotations = []
+        if not response:
+            # print('Error with response status', response.status_code)
+            return annotations
+        else:
+            for item in response.json()['Resources']:
+                annotations.append((item['@URI'], item['@surfaceForm']))
+            return annotations
+    except:
+        return []
 
 
 def spotlight_over_text(path):
