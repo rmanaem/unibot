@@ -378,7 +378,7 @@ class ActionStudentEnrollment(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-	        SELECT ?subject ?catalog (count(?completedCourse) as ?count)
+	        SELECT DISTINCT ?subject ?catalog (count(?completedCourse) as ?count)
             WHERE {{
                 ?uni rdf:type vivo:University .
                 ?uni rdfs:label ?uniLabel .
