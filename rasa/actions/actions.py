@@ -124,7 +124,7 @@ class ActionStudentCompetency(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-    	        SELECT ?expertise
+    	        SELECT DISTINCT ?expertise
                 WHERE {{
                     ?student rdf:type vivo:Student.
                     ?student foaf:givenName ?givenName .
@@ -552,7 +552,7 @@ class ActionSpecificTopics(Action):
             PREFIX bibo: <http://purl.org/ontology/bibo/>
         """
         query = f"""
-                SELECT ?label
+                SELECT DISTINCT ?label
                 WHERE {{
                     ?uni rdf:type vivo:University .
                     ?uni rdfs:label ?uniLabel .

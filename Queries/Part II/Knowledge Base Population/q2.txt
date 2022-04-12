@@ -12,7 +12,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT DISTINCT ?topicURI ?topicLabel ?catalog ?subject (count(?topicURI) as ?topicCount)
+SELECT DISTINCT ?topicURI (sample(?topic_Label) as ?topicLabel) ?catalog ?subject (count(?topic_Label) as ?topicCount)
 WHERE {
     ?course vivo:Catalog ?catalog .
     ?course vivo:hasSubjectArea ?subject .
@@ -21,8 +21,8 @@ WHERE {
     ?x focu:covers ?topicURI .
 
     ?topicURI rdf:type focu:topic .
-    ?topicURI rdfs:label ?topicLabel .
+    ?topicURI rdfs:label ?topic_Label .
 
 }
-GROUP BY ?topicURI ?topicLabel ?catalog ?subject
+GROUP BY ?topicURI ?catalog ?subject
 ORDER BY DESC (?topicCount)

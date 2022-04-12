@@ -29,7 +29,7 @@ WHERE{
     ?x focu:covers ?topic.
     ?topic rdfs:label ?label
 
-    FILTER CONTAINS (?label, 'Artificial intelligence')
+    FILTER CONTAINS (?label, 'DBpedia')
 }
 GROUP BY ?subjectArea ?courseNum ?courseName
 ORDER BY DESC(?frequency)

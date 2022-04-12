@@ -11,7 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-SELECT ?expertise
+SELECT DISTINCT ?expertise
   WHERE {
     ?student rdf:type vivo:Student.
     ?student foaf:givenName ?givenName .
