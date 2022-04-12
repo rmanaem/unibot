@@ -111,6 +111,15 @@ def pdf_to_text_spacy(path):
         f.write(text)
 
 
+def pdf_to_text_pdfplumber(path):
+    text = ''
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text(x_tolerance=1).replace('\n', ' ') + ' BreakPage '
+    with open(path[:-3] + 'txt', 'w', encoding='utf-8') as f:
+        f.write(text)
+
+
 def extract_ne(path):
     nlp = spacy.load("en_core_web_sm")
     pos_tags = [
