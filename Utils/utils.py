@@ -95,7 +95,7 @@ def getCourseId(csvFile, courseName):
     return df.loc[(df['Subject'] == nameArr[0]) & (df['Catalog'] == nameArr[1])]['Course ID'].values[0]
 
 
-def pdf_to_text_tika(path):
+def pdf_to_txt_tika(path):
     text = parser.from_file(path)
     with open(path[:-3] + 'txt', 'w', encoding='utf-8') as f:
         f.write(text['content'])
