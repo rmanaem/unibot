@@ -172,9 +172,13 @@ def dbp_spotlight(text):
 
 def spotlight_over_text(path):
     pages = []
-    with pdfplumber.open(path) as pdf:
-        for page in pdf.pages:
-            pages.append(page.extract_text(x_tolerance=1).replace('\n', ' '))
+    if '.txt' in path:
+        with open(path, 'r', encoding='utf-8') as txt:
+            pages += txt.read().split(' BreakPage')
+    else:       
+        with pdfplumber.open(path) as pdf:
+            for page in pdf.pages:
+                pages.append(page.extract_text(x_tolerance=1).replace('\n', ' '))
     annotations = []
     for page in pages:
         annotations += dbp_spotlight(page)
