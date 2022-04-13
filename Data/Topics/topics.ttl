@@ -1,0 +1,1664 @@
+@prefix focu: <http://focu.io/schema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/CourseInfo/Outline.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Artificial_neural_network>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Dean_(South_Korean_singer)>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Gina_Cody>,
+        <http://dbpedia.org/resource/Hummel_International>,
+        <http://dbpedia.org/resource/Indigenous_peoples_in_Canada>,
+        <http://dbpedia.org/resource/Integrated_development_environment>,
+        <http://dbpedia.org/resource/Level_of_detail>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Master_of_Fisheries_Science>,
+        <http://dbpedia.org/resource/Moodle>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Orenda_Engines>,
+        <http://dbpedia.org/resource/Recommender_system>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Virtual_private_network> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab01.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/GitHub> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab02.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Exclusive_or>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/Internet_slang>,
+        <http://dbpedia.org/resource/Jena>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/RDF_Schema>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/XML> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab03.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/RDF_Schema> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab04.pdf> focu:covers <http://dbpedia.org/resource/Amazon_Alexa>,
+        <http://dbpedia.org/resource/Apache_Jena>,
+        <http://dbpedia.org/resource/Berlin>,
+        <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/Fuseki>,
+        <http://dbpedia.org/resource/Jaguar_XF>,
+        <http://dbpedia.org/resource/Java_Development_Kit>,
+        <http://dbpedia.org/resource/Jena>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Moodle>,
+        <http://dbpedia.org/resource/This_Week_(American_TV_program)> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab05.pdf> focu:covers <http://dbpedia.org/resource/Application_programming_interface>,
+        <http://dbpedia.org/resource/Application_programming_interface_key>,
+        <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/European_Union>,
+        <http://dbpedia.org/resource/Fuseki>,
+        <http://dbpedia.org/resource/GitHub>,
+        <http://dbpedia.org/resource/Level_of_detail>,
+        <http://dbpedia.org/resource/Library_of_Congress>,
+        <http://dbpedia.org/resource/Loyola_University_Maryland>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Moodle>,
+        <http://dbpedia.org/resource/NeXtProt>,
+        <http://dbpedia.org/resource/Paris_Hilton>,
+        <http://dbpedia.org/resource/Quebec>,
+        <http://dbpedia.org/resource/This_Week_(American_TV_program)>,
+        <http://dbpedia.org/resource/Wikipedia> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab06.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/European_Union>,
+        <http://dbpedia.org/resource/Lego>,
+        <http://dbpedia.org/resource/This_Week_(American_TV_program)> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Labs/lab07.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Elasticsearch>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Moodle>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/NuBus>,
+        <http://dbpedia.org/resource/Processor_Direct_Slot>,
+        <http://dbpedia.org/resource/Tf–idf>,
+        <http://dbpedia.org/resource/Usenet_newsgroup> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides01.pdf> focu:covers <http://dbpedia.org/resource/Amazon_Alexa>,
+        <http://dbpedia.org/resource/Amazon_rainforest>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Cortana>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Detection_limit>,
+        <http://dbpedia.org/resource/Dublin_Core>,
+        <http://dbpedia.org/resource/ELIZA>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/French_language>,
+        <http://dbpedia.org/resource/Gene_ontology>,
+        <http://dbpedia.org/resource/IBM>,
+        <http://dbpedia.org/resource/Jeopardy!>,
+        <http://dbpedia.org/resource/Knowledge_worker>,
+        <http://dbpedia.org/resource/Layer_cake>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Massachusetts_Institute_of_Technology>,
+        <http://dbpedia.org/resource/Microsoft>,
+        <http://dbpedia.org/resource/Mona_Lisa>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Recommender_system>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Stanford_University>,
+        <http://dbpedia.org/resource/Steve_Jobs>,
+        <http://dbpedia.org/resource/Tay_(bot)>,
+        <http://dbpedia.org/resource/UIMA> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides02.pdf> focu:covers <http://dbpedia.org/resource/AI_winter>,
+        <http://dbpedia.org/resource/Alfred_Lennon>,
+        <http://dbpedia.org/resource/Apple_Inc.>,
+        <http://dbpedia.org/resource/Application_programming_interface>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/David_Rumelhart>,
+        <http://dbpedia.org/resource/Diffbot>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/French_language>,
+        <http://dbpedia.org/resource/GeoNames>,
+        <http://dbpedia.org/resource/HarperCollins>,
+        <http://dbpedia.org/resource/Heidelberg>,
+        <http://dbpedia.org/resource/Humboldt_University_of_Berlin>,
+        <http://dbpedia.org/resource/IBM>,
+        <http://dbpedia.org/resource/Internationalized_Resource_Identifier>,
+        <http://dbpedia.org/resource/Layer_cake>,
+        <http://dbpedia.org/resource/Le_Titre>,
+        <http://dbpedia.org/resource/Leonardo_da_Vinci>,
+        <http://dbpedia.org/resource/Liverpool>,
+        <http://dbpedia.org/resource/Liyang>,
+        <http://dbpedia.org/resource/London>,
+        <http://dbpedia.org/resource/Microsoft>,
+        <http://dbpedia.org/resource/Mona_Lisa>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Neo4j>,
+        <http://dbpedia.org/resource/Nissan_A_engine>,
+        <http://dbpedia.org/resource/Open_Mind_Common_Sense>,
+        <http://dbpedia.org/resource/Oracle_Spatial_and_Graph>,
+        <http://dbpedia.org/resource/PHP>,
+        <http://dbpedia.org/resource/Peter_Norvig>,
+        <http://dbpedia.org/resource/Prentice_Hall>,
+        <http://dbpedia.org/resource/Prime_Video>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/SHRDLU>,
+        <http://dbpedia.org/resource/Sameer_(lyricist)>,
+        <http://dbpedia.org/resource/Semantic_network>,
+        <http://dbpedia.org/resource/Space_Shuttle_Discovery>,
+        <http://dbpedia.org/resource/Stuart_J._Russell>,
+        <http://dbpedia.org/resource/Taylorcraft_Auster>,
+        <http://dbpedia.org/resource/Tbox>,
+        <http://dbpedia.org/resource/Terry_Winograd>,
+        <http://dbpedia.org/resource/The_Glass_Palace>,
+        <http://dbpedia.org/resource/Tranche>,
+        <http://dbpedia.org/resource/Wikipedia>,
+        <http://dbpedia.org/resource/WordNet>,
+        <http://dbpedia.org/resource/World_Wide_Web>,
+        <http://dbpedia.org/resource/XML>,
+        <http://dbpedia.org/resource/YAGO_(database)> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides03.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Association_for_Computing_Machinery>,
+        <http://dbpedia.org/resource/Basketball_Super_League>,
+        <http://dbpedia.org/resource/Chapter_VII_of_the_United_Nations_Charter>,
+        <http://dbpedia.org/resource/Christianity>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Dewey_Decimal_Classification>,
+        <http://dbpedia.org/resource/Dublin_Core>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/Google_Nexus>,
+        <http://dbpedia.org/resource/Gospel_of_Luke>,
+        <http://dbpedia.org/resource/HarperCollins>,
+        <http://dbpedia.org/resource/Heidelberg>,
+        <http://dbpedia.org/resource/Humboldt_University_of_Berlin>,
+        <http://dbpedia.org/resource/International_Organization_for_Standardization>,
+        <http://dbpedia.org/resource/Internationalized_Resource_Identifier>,
+        <http://dbpedia.org/resource/Layer_cake>,
+        <http://dbpedia.org/resource/Library_of_Congress>,
+        <http://dbpedia.org/resource/Liyang>,
+        <http://dbpedia.org/resource/London>,
+        <http://dbpedia.org/resource/Morgan_Motor_Company>,
+        <http://dbpedia.org/resource/RDF_Schema>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Sameer_(lyricist)>,
+        <http://dbpedia.org/resource/Schema.org>,
+        <http://dbpedia.org/resource/Semantic_triple>,
+        <http://dbpedia.org/resource/Straitjacket_Fits>,
+        <http://dbpedia.org/resource/TED_(conference)>,
+        <http://dbpedia.org/resource/The_Artist_(film)>,
+        <http://dbpedia.org/resource/The_Glass_Palace>,
+        <http://dbpedia.org/resource/The_Next_Web>,
+        <http://dbpedia.org/resource/Thesaurus>,
+        <http://dbpedia.org/resource/URL>,
+        <http://dbpedia.org/resource/Unicode>,
+        <http://dbpedia.org/resource/United_States_Congress>,
+        <http://dbpedia.org/resource/XML> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides04.pdf> focu:covers <http://dbpedia.org/resource/.QL>,
+        <http://dbpedia.org/resource/AVG_AntiVirus>,
+        <http://dbpedia.org/resource/Amazon_Web_Services>,
+        <http://dbpedia.org/resource/Amsterdam>,
+        <http://dbpedia.org/resource/Apache_Jena>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Fuseki>,
+        <http://dbpedia.org/resource/Gene_ontology>,
+        <http://dbpedia.org/resource/Gospel_of_Luke>,
+        <http://dbpedia.org/resource/Heidelberg>,
+        <http://dbpedia.org/resource/Humboldt_University_of_Berlin>,
+        <http://dbpedia.org/resource/Inference>,
+        <http://dbpedia.org/resource/Internationalized_Resource_Identifier>,
+        <http://dbpedia.org/resource/James_VI_and_I>,
+        <http://dbpedia.org/resource/Liyang>,
+        <http://dbpedia.org/resource/MAX_Light_Rail>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Mexico>,
+        <http://dbpedia.org/resource/Mona_Lisa>,
+        <http://dbpedia.org/resource/N-Triples>,
+        <http://dbpedia.org/resource/National_Cancer_Institute>,
+        <http://dbpedia.org/resource/Power-on_self-test>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Semantic_triple>,
+        <http://dbpedia.org/resource/Straitjacket_Fits>,
+        <http://dbpedia.org/resource/The_Glass_Palace>,
+        <http://dbpedia.org/resource/TriG_(syntax)>,
+        <http://dbpedia.org/resource/UniProt>,
+        <http://dbpedia.org/resource/Web_Ontology_Language>,
+        <http://dbpedia.org/resource/WordPress.com>,
+        <http://dbpedia.org/resource/X86> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides05.pdf> focu:covers <http://dbpedia.org/resource/Amsterdam>,
+        <http://dbpedia.org/resource/Audi_Q5>,
+        <http://dbpedia.org/resource/BabelNet>,
+        <http://dbpedia.org/resource/Basketball_Super_League>,
+        <http://dbpedia.org/resource/Berlin>,
+        <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Christianity>,
+        <http://dbpedia.org/resource/Comma-separated_values>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Data_publishing>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Eötvös_Loránd_University>,
+        <http://dbpedia.org/resource/Facebook_Platform>,
+        <http://dbpedia.org/resource/Genetic_linkage>,
+        <http://dbpedia.org/resource/Gospel_of_Luke>,
+        <http://dbpedia.org/resource/Heidelberg>,
+        <http://dbpedia.org/resource/Inspector_general>,
+        <http://dbpedia.org/resource/Internationalized_Resource_Identifier>,
+        <http://dbpedia.org/resource/James_VI_and_I>,
+        <http://dbpedia.org/resource/Knowledge_worker>,
+        <http://dbpedia.org/resource/Layer_cake>,
+        <http://dbpedia.org/resource/Level_of_detail>,
+        <http://dbpedia.org/resource/Linked_data>,
+        <http://dbpedia.org/resource/Liyang>,
+        <http://dbpedia.org/resource/MOS_Technology_TED>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Milan>,
+        <http://dbpedia.org/resource/Morgan_Motor_Company>,
+        <http://dbpedia.org/resource/MusicBrainz>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Ope>,
+        <http://dbpedia.org/resource/Oracle_Rdb>,
+        <http://dbpedia.org/resource/Pareto_efficiency>,
+        <http://dbpedia.org/resource/RDF_Schema>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Reverse_transcriptase>,
+        <http://dbpedia.org/resource/Springer_Nature>,
+        <http://dbpedia.org/resource/Straitjacket_Fits>,
+        <http://dbpedia.org/resource/The_Glass_Palace>,
+        <http://dbpedia.org/resource/Tim_Berners-Lee>,
+        <http://dbpedia.org/resource/Wikipedia> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides06.pdf> focu:covers <http://dbpedia.org/resource/Advanced_Placement>,
+        <http://dbpedia.org/resource/Aksu_City>,
+        <http://dbpedia.org/resource/Alag>,
+        <http://dbpedia.org/resource/Anthony_Julius>,
+        <http://dbpedia.org/resource/Boolean_model_(probability_theory)>,
+        <http://dbpedia.org/resource/Brutus_the_Younger>,
+        <http://dbpedia.org/resource/CAESAR_self-propelled_howitzer>,
+        <http://dbpedia.org/resource/Cambridge_University_Press>,
+        <http://dbpedia.org/resource/Christopher_Tolkien>,
+        <http://dbpedia.org/resource/Cleopatra>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Doug_Turnbull>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/Hamlet>,
+        <http://dbpedia.org/resource/Israel_Defense_Forces>,
+        <http://dbpedia.org/resource/John_Berryman>,
+        <http://dbpedia.org/resource/Prabhakar_Raghavan>,
+        <http://dbpedia.org/resource/Recommender_system>,
+        <http://dbpedia.org/resource/The_Tempest>,
+        <http://dbpedia.org/resource/Wireless_access_point> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Slides/slides07.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Cambridge_Analytica>,
+        <http://dbpedia.org/resource/Central_Intelligence_Agency>,
+        <http://dbpedia.org/resource/Chapter_VII_of_the_United_Nations_Charter>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Enron>,
+        <http://dbpedia.org/resource/False_Positive_(How_I_Met_Your_Mother)>,
+        <http://dbpedia.org/resource/Guantanamo_Bay_detention_camp>,
+        <http://dbpedia.org/resource/Inference>,
+        <http://dbpedia.org/resource/James_Pustejovsky>,
+        <http://dbpedia.org/resource/K-nearest_neighbors_algorithm>,
+        <http://dbpedia.org/resource/King_Arthur>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Naive_Bayes_classifier>,
+        <http://dbpedia.org/resource/National_Science_Foundation>,
+        <http://dbpedia.org/resource/Pros_&_Cons>,
+        <http://dbpedia.org/resource/RC2_Corporation>,
+        <http://dbpedia.org/resource/Taxicab_geometry>,
+        <http://dbpedia.org/resource/Time_complexity>,
+        <http://dbpedia.org/resource/United_Kingdom>,
+        <http://dbpedia.org/resource/Unsupervised_learning>,
+        <http://dbpedia.org/resource/X86> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet01.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/McGill_University>,
+        <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet02.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/FOAF_(ontology)>,
+        <http://dbpedia.org/resource/French_language>,
+        <http://dbpedia.org/resource/Internationalized_Resource_Identifier>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Semantic_triple> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet03.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/RDF_Schema> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet04.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Calais_(Reuters_product)>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Facebook_Platform>,
+        <http://dbpedia.org/resource/MTL_Blog>,
+        <http://dbpedia.org/resource/Meta_element>,
+        <http://dbpedia.org/resource/Paris>,
+        <http://dbpedia.org/resource/Paris_Hilton>,
+        <http://dbpedia.org/resource/Resource_Description_Framework>,
+        <http://dbpedia.org/resource/Wikipedia> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet05.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Associated_Press>,
+        <http://dbpedia.org/resource/BMW_X5>,
+        <http://dbpedia.org/resource/Recommender_system> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet06.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/K-nearest_neighbors_algorithm>,
+        <http://dbpedia.org/resource/Machine_learning> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP474/Worksheets/worksheet07.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Concor_Holdings>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Dimension>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/K-nearest_neighbors_algorithm>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/McGill_University>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Steve_Jobs> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/CourseInfo/Outline.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Artificial_neural_network>,
+        <http://dbpedia.org/resource/Bayes_classifier>,
+        <http://dbpedia.org/resource/Computer_science>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Convolutional_neural_network>,
+        <http://dbpedia.org/resource/Dean_(South_Korean_singer)>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Gina_Cody>,
+        <http://dbpedia.org/resource/Hummel_International>,
+        <http://dbpedia.org/resource/Indigenous_peoples_in_Canada>,
+        <http://dbpedia.org/resource/Integrated_development_environment>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/Master_of_Fisheries_Science>,
+        <http://dbpedia.org/resource/Mini-MAX>,
+        <http://dbpedia.org/resource/Moodle>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Orenda_Engines>,
+        <http://dbpedia.org/resource/Unsupervised_learning>,
+        <http://dbpedia.org/resource/Virtual_private_network> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab01.pdf> focu:covers <http://dbpedia.org/resource/AI_winter>,
+        <http://dbpedia.org/resource/Alain_Colmerauer>,
+        <http://dbpedia.org/resource/Alan_Turing>,
+        <http://dbpedia.org/resource/AlexNet>,
+        <http://dbpedia.org/resource/AlphaGo>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Artificial_neuron>,
+        <http://dbpedia.org/resource/Association_for_Computing_Machinery>,
+        <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Environment_and_Climate_Change_Canada>,
+        <http://dbpedia.org/resource/Frank_Rosenblatt>,
+        <http://dbpedia.org/resource/French_language>,
+        <http://dbpedia.org/resource/GEC_Plessey_Telecommunications>,
+        <http://dbpedia.org/resource/Generative_adversarial_network>,
+        <http://dbpedia.org/resource/Geoffrey_Hinton>,
+        <http://dbpedia.org/resource/Ian_Goodfellow>,
+        <http://dbpedia.org/resource/ImageNet>,
+        <http://dbpedia.org/resource/Joseph_Weizenbaum>,
+        <http://dbpedia.org/resource/Marvin_Minsky>,
+        <http://dbpedia.org/resource/McGill_University>,
+        <http://dbpedia.org/resource/Mycin>,
+        <http://dbpedia.org/resource/New_York_City>,
+        <http://dbpedia.org/resource/Prolog>,
+        <http://dbpedia.org/resource/SHRDLU>,
+        <http://dbpedia.org/resource/Support-vector_machine>,
+        <http://dbpedia.org/resource/Terry_Winograd>,
+        <http://dbpedia.org/resource/Toronto>,
+        <http://dbpedia.org/resource/University_of_Alberta>,
+        <http://dbpedia.org/resource/Vladimir_Vapnik>,
+        <http://dbpedia.org/resource/Yann_LeCun>,
+        <http://dbpedia.org/resource/Yoshua_Bengio> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab02.pdf> focu:covers <http://dbpedia.org/resource/Frisbee> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab03.pdf> focu:covers <http://dbpedia.org/resource/MAX_Light_Rail> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab04.pdf> focu:covers <http://dbpedia.org/resource/Jack_Harkness>,
+        <http://dbpedia.org/resource/Kami>,
+        <http://dbpedia.org/resource/Naive_Bayes_classifier> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab05.pdf> focu:covers <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Centroid>,
+        <http://dbpedia.org/resource/Forillon_National_Park>,
+        <http://dbpedia.org/resource/Iris_subg._Iris>,
+        <http://dbpedia.org/resource/Iris_versicolor>,
+        <http://dbpedia.org/resource/Microsoft_Outlook>,
+        <http://dbpedia.org/resource/Naive_Bayes_classifier>,
+        <http://dbpedia.org/resource/Petal>,
+        <http://dbpedia.org/resource/Quebec> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab06.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+        <http://dbpedia.org/resource/Artificial_neuron>,
+        <http://dbpedia.org/resource/BMW_X5>,
+        <http://dbpedia.org/resource/CXCR4>,
+        <http://dbpedia.org/resource/Exclusive_or>,
+        <http://dbpedia.org/resource/Perceptron>,
+        <http://dbpedia.org/resource/Sigmoid_function> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Labs/lab07.pdf> focu:covers <http://dbpedia.org/resource/Convolutional_neural_network>,
+        <http://dbpedia.org/resource/Deep_learning> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides01.pdf> focu:covers <http://dbpedia.org/resource/AI_winter>,
+        <http://dbpedia.org/resource/Alan_Turing>,
+        <http://dbpedia.org/resource/AlphaGo>,
+        <http://dbpedia.org/resource/Artificial_general_intelligence>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Brad_Rutter>,
+        <http://dbpedia.org/resource/CAPTCHA>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Expert_system>,
+        <http://dbpedia.org/resource/Fritz_(chess)>,
+        <http://dbpedia.org/resource/Garry_Kasparov>,
+        <http://dbpedia.org/resource/Grammar_checker>,
+        <http://dbpedia.org/resource/IBM>,
+        <http://dbpedia.org/resource/Jeopardy!>,
+        <http://dbpedia.org/resource/Joseph_Weizenbaum>,
+        <http://dbpedia.org/resource/Ken_Jennings>,
+        <http://dbpedia.org/resource/Lotus_Software>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Mitch_Kapor>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Ray_Kurzweil>,
+        <http://dbpedia.org/resource/Rotterdamse_Elektrische_Tram>,
+        <http://dbpedia.org/resource/SHRDLU>,
+        <http://dbpedia.org/resource/Seymour_Papert>,
+        <http://dbpedia.org/resource/Terry_Winograd>,
+        <http://dbpedia.org/resource/United_Kingdom>,
+        <http://dbpedia.org/resource/Weak_AI> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides02.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Breadth-first_search>,
+        <http://dbpedia.org/resource/Brute-force_search>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/Douglas_A-4_Skyhawk>,
+        <http://dbpedia.org/resource/Heureka_(science_center)>,
+        <http://dbpedia.org/resource/Iterative_deepening_depth-first_search>,
+        <http://dbpedia.org/resource/McGraw-Hill_Education>,
+        <http://dbpedia.org/resource/Sam_Loyd>,
+        <http://dbpedia.org/resource/Taxicab_geometry>,
+        <http://dbpedia.org/resource/Tetris> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides03.pdf> focu:covers <http://dbpedia.org/resource/AlphaGo>,
+        <http://dbpedia.org/resource/AlphaGo_Zero>,
+        <http://dbpedia.org/resource/AlphaZero>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Central_processing_unit>,
+        <http://dbpedia.org/resource/Comet_Man>,
+        <http://dbpedia.org/resource/Dice>,
+        <http://dbpedia.org/resource/Garry_Kasparov>,
+        <http://dbpedia.org/resource/Haruki_Murakami>,
+        <http://dbpedia.org/resource/Jonathan_Schaeffer>,
+        <http://dbpedia.org/resource/Ke_Jie>,
+        <http://dbpedia.org/resource/Lee_Sedol>,
+        <http://dbpedia.org/resource/MAX_Light_Rail>,
+        <http://dbpedia.org/resource/Monte_Carlo_tree_search>,
+        <http://dbpedia.org/resource/Nim>,
+        <http://dbpedia.org/resource/Reversi>,
+        <http://dbpedia.org/resource/Stratego>,
+        <http://dbpedia.org/resource/The_Prisoner>,
+        <http://dbpedia.org/resource/University_of_Alberta>,
+        <http://dbpedia.org/resource/Very_Large_Scale_Integration> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides04.pdf> focu:covers <http://dbpedia.org/resource/Americans>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/BMW_X5>,
+        <http://dbpedia.org/resource/Bayes'_theorem>,
+        <http://dbpedia.org/resource/Bayes_classifier>,
+        <http://dbpedia.org/resource/Bayes_estimator>,
+        <http://dbpedia.org/resource/C3_carbon_fixation>,
+        <http://dbpedia.org/resource/CXCR4>,
+        <http://dbpedia.org/resource/Conditional_probability>,
+        <http://dbpedia.org/resource/Data_mining>,
+        <http://dbpedia.org/resource/Dice>,
+        <http://dbpedia.org/resource/Hum_TV>,
+        <http://dbpedia.org/resource/Inference>,
+        <http://dbpedia.org/resource/K-nearest_neighbors_algorithm>,
+        <http://dbpedia.org/resource/King_Arthur>,
+        <http://dbpedia.org/resource/Linear_regression>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Microsoft_Outlook>,
+        <http://dbpedia.org/resource/Naive_Bayes_classifier>,
+        <http://dbpedia.org/resource/Speech_recognition>,
+        <http://dbpedia.org/resource/Unsupervised_learning> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides05.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/BMW_X5>,
+        <http://dbpedia.org/resource/Bayes_classifier>,
+        <http://dbpedia.org/resource/C3_carbon_fixation>,
+        <http://dbpedia.org/resource/C4.5_algorithm>,
+        <http://dbpedia.org/resource/CXCR4>,
+        <http://dbpedia.org/resource/Cholera>,
+        <http://dbpedia.org/resource/Claude_Shannon>,
+        <http://dbpedia.org/resource/Credit_card_fraud>,
+        <http://dbpedia.org/resource/European_bass>,
+        <http://dbpedia.org/resource/False_Positive_(How_I_Met_Your_Mother)>,
+        <http://dbpedia.org/resource/French_language>,
+        <http://dbpedia.org/resource/Italian_cuisine>,
+        <http://dbpedia.org/resource/Italian_language>,
+        <http://dbpedia.org/resource/John_Snow>,
+        <http://dbpedia.org/resource/London>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Milwaukee_Road_class_F7>,
+        <http://dbpedia.org/resource/RC2_Corporation>,
+        <http://dbpedia.org/resource/Ralph_Nader>,
+        <http://dbpedia.org/resource/Red_Square>,
+        <http://dbpedia.org/resource/Sea_bass>,
+        <http://dbpedia.org/resource/Thai_cuisine>,
+        <http://dbpedia.org/resource/Thai_language>,
+        <http://dbpedia.org/resource/The_Restaurant_(Irish_TV_series)>,
+        <http://dbpedia.org/resource/Time_complexity>,
+        <http://dbpedia.org/resource/Tom_M._Mitchell>,
+        <http://dbpedia.org/resource/Unsupervised_learning>,
+        <http://dbpedia.org/resource/William_of_Ockham> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides06.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+        <http://dbpedia.org/resource/Andrew_Ng>,
+        <http://dbpedia.org/resource/Artificial_neuron>,
+        <http://dbpedia.org/resource/Delta_State>,
+        <http://dbpedia.org/resource/English_language>,
+        <http://dbpedia.org/resource/Exclusive_or>,
+        <http://dbpedia.org/resource/Jaguar_XJ>,
+        <http://dbpedia.org/resource/Neuron>,
+        <http://dbpedia.org/resource/Neurotransmitter>,
+        <http://dbpedia.org/resource/Perceptron>,
+        <http://dbpedia.org/resource/Seymour_Papert>,
+        <http://dbpedia.org/resource/Sigmoid_function>,
+        <http://dbpedia.org/resource/Singapore_dollar>,
+        <http://dbpedia.org/resource/Speech_synthesis>,
+        <http://dbpedia.org/resource/Wikipedia> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Slides/slides07.pdf> focu:covers <http://dbpedia.org/resource/AlexNet>,
+        <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Artificial_neuron>,
+        <http://dbpedia.org/resource/CNN>,
+        <http://dbpedia.org/resource/Canada>,
+        <http://dbpedia.org/resource/Comet_Man>,
+        <http://dbpedia.org/resource/Computer_vision>,
+        <http://dbpedia.org/resource/Convolutional_neural_network>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Edmonton>,
+        <http://dbpedia.org/resource/Geoffrey_Hinton>,
+        <http://dbpedia.org/resource/Graphics_processing_unit>,
+        <http://dbpedia.org/resource/ImageNet>,
+        <http://dbpedia.org/resource/London_Borough_of_Sutton>,
+        <http://dbpedia.org/resource/Machine_learning>,
+        <http://dbpedia.org/resource/Natural_language_processing>,
+        <http://dbpedia.org/resource/Normalnull>,
+        <http://dbpedia.org/resource/Question_answering>,
+        <http://dbpedia.org/resource/Support-vector_machine>,
+        <http://dbpedia.org/resource/Toronto>,
+        <http://dbpedia.org/resource/Unsupervised_learning>,
+        <http://dbpedia.org/resource/X86>,
+        <http://dbpedia.org/resource/Yann_LeCun>,
+        <http://dbpedia.org/resource/Yoshua_Bengio> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet01.pdf> focu:covers <http://dbpedia.org/resource/Breadth-first_search>,
+        <http://dbpedia.org/resource/ISO_216> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet02.pdf> focu:covers <http://dbpedia.org/resource/Nim> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet03.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/BMW_X5>,
+        <http://dbpedia.org/resource/Bayes'_theorem>,
+        <http://dbpedia.org/resource/Machine_learning> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet04.pdf> focu:covers <http://dbpedia.org/resource/Centroid>,
+        <http://dbpedia.org/resource/Inspector_general> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf> focu:covers <http://dbpedia.org/resource/Alison_DiLaurentis>,
+        <http://dbpedia.org/resource/Artificial_neuron>,
+        <http://dbpedia.org/resource/Delta_State>,
+        <http://dbpedia.org/resource/Exclusive_or>,
+        <http://dbpedia.org/resource/Perceptron> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet06.pdf> focu:covers <http://dbpedia.org/resource/Comet_Man>,
+        <http://dbpedia.org/resource/Convolutional_neural_network>,
+        <http://dbpedia.org/resource/Deep_learning>,
+        <http://dbpedia.org/resource/Sigmoid_function> .
+
+<C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet07.pdf> focu:covers <http://dbpedia.org/resource/Artificial_intelligence>,
+        <http://dbpedia.org/resource/Concordia_University>,
+        <http://dbpedia.org/resource/DBpedia>,
+        <http://dbpedia.org/resource/Main_Page>,
+        <http://dbpedia.org/resource/McGill_University>,
+        <http://dbpedia.org/resource/Resource_Description_Framework> .
+
+<http://dbpedia.org/resource/.QL> a focu:topic ;
+    rdfs:label "QL"^^xsd:string .
+
+<http://dbpedia.org/resource/AVG_AntiVirus> a focu:topic ;
+    rdfs:label "AVG"^^xsd:string .
+
+<http://dbpedia.org/resource/Advanced_Placement> a focu:topic ;
+    rdfs:label "AP"^^xsd:string .
+
+<http://dbpedia.org/resource/Aksu_City> a focu:topic ;
+    rdfs:label "GUMO"^^xsd:string .
+
+<http://dbpedia.org/resource/Alag> a focu:topic ;
+    rdfs:label "Alag"^^xsd:string .
+
+<http://dbpedia.org/resource/Alain_Colmerauer> a focu:topic ;
+    rdfs:label "Alain Colmerauer"^^xsd:string .
+
+<http://dbpedia.org/resource/Alfred_Lennon> a focu:topic ;
+    rdfs:label "Alfred Lennon"^^xsd:string .
+
+<http://dbpedia.org/resource/AlphaGo_Zero> a focu:topic ;
+    rdfs:label "AlphaGo Zero"^^xsd:string .
+
+<http://dbpedia.org/resource/AlphaZero> a focu:topic ;
+    rdfs:label "AlphaZero"^^xsd:string .
+
+<http://dbpedia.org/resource/Amazon_Web_Services> a focu:topic ;
+    rdfs:label "Amazon AWS"^^xsd:string .
+
+<http://dbpedia.org/resource/Amazon_rainforest> a focu:topic ;
+    rdfs:label "Amazon"^^xsd:string .
+
+<http://dbpedia.org/resource/Americans> a focu:topic ;
+    rdfs:label "American"^^xsd:string .
+
+<http://dbpedia.org/resource/Andrew_Ng> a focu:topic ;
+    rdfs:label "Andrew Ng"^^xsd:string .
+
+<http://dbpedia.org/resource/Anthony_Julius> a focu:topic ;
+    rdfs:label "Anthony Julius"^^xsd:string .
+
+<http://dbpedia.org/resource/Apple_Inc.> a focu:topic ;
+    rdfs:label "Apple"^^xsd:string .
+
+<http://dbpedia.org/resource/Application_programming_interface_key> a focu:topic ;
+    rdfs:label "API key"^^xsd:string .
+
+<http://dbpedia.org/resource/Artificial_general_intelligence> a focu:topic ;
+    rdfs:label "AI"^^xsd:string .
+
+<http://dbpedia.org/resource/Associated_Press> a focu:topic ;
+    rdfs:label "AP"^^xsd:string .
+
+<http://dbpedia.org/resource/Audi_Q5> a focu:topic ;
+    rdfs:label "Q5"^^xsd:string .
+
+<http://dbpedia.org/resource/BabelNet> a focu:topic ;
+    rdfs:label "BabelNet"^^xsd:string .
+
+<http://dbpedia.org/resource/Bayes_estimator> a focu:topic ;
+    rdfs:label "Bayes Rule"^^xsd:string .
+
+<http://dbpedia.org/resource/Boolean_model_(probability_theory)> a focu:topic ;
+    rdfs:label "Boolean model"^^xsd:string .
+
+<http://dbpedia.org/resource/Brad_Rutter> a focu:topic ;
+    rdfs:label "Brad Rutter"^^xsd:string .
+
+<http://dbpedia.org/resource/Brute-force_search> a focu:topic ;
+    rdfs:label "brute force search"^^xsd:string .
+
+<http://dbpedia.org/resource/Brutus_the_Younger> a focu:topic ;
+    rdfs:label "BRUTUS"^^xsd:string .
+
+<http://dbpedia.org/resource/C4.5_algorithm> a focu:topic ;
+    rdfs:label "C4.5 Algorithm"^^xsd:string .
+
+<http://dbpedia.org/resource/CAESAR_self-propelled_howitzer> a focu:topic ;
+    rdfs:label "CAESAR"^^xsd:string .
+
+<http://dbpedia.org/resource/CAPTCHA> a focu:topic ;
+    rdfs:label "CAPTCHA"^^xsd:string .
+
+<http://dbpedia.org/resource/CNN> a focu:topic ;
+    rdfs:label "CNN"^^xsd:string .
+
+<http://dbpedia.org/resource/Calais_(Reuters_product)> a focu:topic ;
+    rdfs:label "OpenCalais"^^xsd:string .
+
+<http://dbpedia.org/resource/Cambridge_Analytica> a focu:topic ;
+    rdfs:label "Cambridge Analytica"^^xsd:string .
+
+<http://dbpedia.org/resource/Cambridge_University_Press> a focu:topic ;
+    rdfs:label "Cambridge University Press"^^xsd:string .
+
+<http://dbpedia.org/resource/Central_Intelligence_Agency> a focu:topic ;
+    rdfs:label "CIA"^^xsd:string .
+
+<http://dbpedia.org/resource/Central_processing_unit> a focu:topic ;
+    rdfs:label "CPU"^^xsd:string .
+
+<http://dbpedia.org/resource/Cholera> a focu:topic ;
+    rdfs:label "cholera"^^xsd:string .
+
+<http://dbpedia.org/resource/Christopher_Tolkien> a focu:topic ;
+    rdfs:label "Christopher"^^xsd:string .
+
+<http://dbpedia.org/resource/Claude_Shannon> a focu:topic ;
+    rdfs:label "Shannon"^^xsd:string .
+
+<http://dbpedia.org/resource/Cleopatra> a focu:topic ;
+    rdfs:label "CLEOPATRA"^^xsd:string .
+
+<http://dbpedia.org/resource/Comma-separated_values> a focu:topic ;
+    rdfs:label "CSV"^^xsd:string .
+
+<http://dbpedia.org/resource/Computer_vision> a focu:topic ;
+    rdfs:label "Computer Vision"^^xsd:string .
+
+<http://dbpedia.org/resource/Concor_Holdings> a focu:topic ;
+    rdfs:label "Concor"^^xsd:string .
+
+<http://dbpedia.org/resource/Conditional_probability> a focu:topic ;
+    rdfs:label "Conditional Probability"^^xsd:string .
+
+<http://dbpedia.org/resource/Cortana> a focu:topic ;
+    rdfs:label "Microsoft Cortana"^^xsd:string .
+
+<http://dbpedia.org/resource/Credit_card_fraud> a focu:topic ;
+    rdfs:label "credit card fraud"^^xsd:string .
+
+<http://dbpedia.org/resource/Data_mining> a focu:topic ;
+    rdfs:label "KDD"^^xsd:string .
+
+<http://dbpedia.org/resource/Data_publishing> a focu:topic ;
+    rdfs:label "Data Publishing"^^xsd:string .
+
+<http://dbpedia.org/resource/David_Rumelhart> a focu:topic ;
+    rdfs:label "Rumelhart"^^xsd:string .
+
+<http://dbpedia.org/resource/Detection_limit> a focu:topic ;
+    rdfs:label "LOD"^^xsd:string .
+
+<http://dbpedia.org/resource/Dewey_Decimal_Classification> a focu:topic ;
+    rdfs:label "Dewey Decimal"^^xsd:string .
+
+<http://dbpedia.org/resource/Diffbot> a focu:topic ;
+    rdfs:label "Diffbot"^^xsd:string .
+
+<http://dbpedia.org/resource/Dimension> a focu:topic ;
+    rdfs:label "2D"^^xsd:string .
+
+<http://dbpedia.org/resource/Doug_Turnbull> a focu:topic ;
+    rdfs:label "Doug Turnbull"^^xsd:string .
+
+<http://dbpedia.org/resource/Douglas_A-4_Skyhawk> a focu:topic ;
+    rdfs:label "A-4"^^xsd:string .
+
+<http://dbpedia.org/resource/ELIZA> a focu:topic ;
+    rdfs:label "ELIZA"^^xsd:string .
+
+<http://dbpedia.org/resource/Edmonton> a focu:topic ;
+    rdfs:label "Edmonton"^^xsd:string .
+
+<http://dbpedia.org/resource/Elasticsearch> a focu:topic ;
+    rdfs:label "Elasticsearch"^^xsd:string .
+
+<http://dbpedia.org/resource/Enron> a focu:topic ;
+    rdfs:label "Enron"^^xsd:string .
+
+<http://dbpedia.org/resource/Environment_and_Climate_Change_Canada> a focu:topic ;
+    rdfs:label "Environment Canada"^^xsd:string .
+
+<http://dbpedia.org/resource/European_bass> a focu:topic ;
+    rdfs:label "sea bass"^^xsd:string .
+
+<http://dbpedia.org/resource/Expert_system> a focu:topic ;
+    rdfs:label "Expert Systems"^^xsd:string .
+
+<http://dbpedia.org/resource/Eötvös_Loránd_University> a focu:topic ;
+    rdfs:label "Eötvös Loránd University"^^xsd:string .
+
+<http://dbpedia.org/resource/Forillon_National_Park> a focu:topic ;
+    rdfs:label "Forillon National Park"^^xsd:string .
+
+<http://dbpedia.org/resource/Frank_Rosenblatt> a focu:topic ;
+    rdfs:label "Frank Rosenblatt"^^xsd:string .
+
+<http://dbpedia.org/resource/Frisbee> a focu:topic ;
+    rdfs:label "Frisbee"^^xsd:string .
+
+<http://dbpedia.org/resource/Fritz_(chess)> a focu:topic ;
+    rdfs:label "Deep Fritz"^^xsd:string .
+
+<http://dbpedia.org/resource/GEC_Plessey_Telecommunications> a focu:topic ;
+    rdfs:label "GPT"^^xsd:string .
+
+<http://dbpedia.org/resource/Generative_adversarial_network> a focu:topic ;
+    rdfs:label "Generative Adversarial Networks"^^xsd:string .
+
+<http://dbpedia.org/resource/Genetic_linkage> a focu:topic ;
+    rdfs:label "LOD"^^xsd:string .
+
+<http://dbpedia.org/resource/GeoNames> a focu:topic ;
+    rdfs:label "GeoNames"^^xsd:string .
+
+<http://dbpedia.org/resource/Google_Nexus> a focu:topic ;
+    rdfs:label "Nexus"^^xsd:string .
+
+<http://dbpedia.org/resource/Grammar_checker> a focu:topic ;
+    rdfs:label "Grammar checker"^^xsd:string .
+
+<http://dbpedia.org/resource/Graphics_processing_unit> a focu:topic ;
+    rdfs:label "GPU"^^xsd:string .
+
+<http://dbpedia.org/resource/Guantanamo_Bay_detention_camp> a focu:topic ;
+    rdfs:label "Guantanamo Bay"^^xsd:string .
+
+<http://dbpedia.org/resource/Hamlet> a focu:topic ;
+    rdfs:label "Hamlet"^^xsd:string .
+
+<http://dbpedia.org/resource/Haruki_Murakami> a focu:topic ;
+    rdfs:label "Murakami"^^xsd:string .
+
+<http://dbpedia.org/resource/Heureka_(science_center)> a focu:topic ;
+    rdfs:label "Heureka"^^xsd:string .
+
+<http://dbpedia.org/resource/Hum_TV> a focu:topic ;
+    rdfs:label "Hum"^^xsd:string .
+
+<http://dbpedia.org/resource/ISO_216> a focu:topic ;
+    rdfs:label "A5"^^xsd:string .
+
+<http://dbpedia.org/resource/Ian_Goodfellow> a focu:topic ;
+    rdfs:label "Ian Goodfellow"^^xsd:string .
+
+<http://dbpedia.org/resource/International_Organization_for_Standardization> a focu:topic ;
+    rdfs:label "ISO"^^xsd:string .
+
+<http://dbpedia.org/resource/Internet_slang> a focu:topic ;
+    rdfs:label "ttl"^^xsd:string .
+
+<http://dbpedia.org/resource/Iris_subg._Iris> a focu:topic ;
+    rdfs:label "Iris"^^xsd:string .
+
+<http://dbpedia.org/resource/Iris_versicolor> a focu:topic ;
+    rdfs:label "Iris versicolor"^^xsd:string .
+
+<http://dbpedia.org/resource/Israel_Defense_Forces> a focu:topic ;
+    rdfs:label "IDF"^^xsd:string .
+
+<http://dbpedia.org/resource/Italian_cuisine> a focu:topic ;
+    rdfs:label "Italian"^^xsd:string .
+
+<http://dbpedia.org/resource/Italian_language> a focu:topic ;
+    rdfs:label "Italian"^^xsd:string .
+
+<http://dbpedia.org/resource/Iterative_deepening_depth-first_search> a focu:topic ;
+    rdfs:label "Depth-Limited Search"^^xsd:string .
+
+<http://dbpedia.org/resource/Jack_Harkness> a focu:topic ;
+    rdfs:label "Jack"^^xsd:string .
+
+<http://dbpedia.org/resource/Jaguar_XF> a focu:topic ;
+    rdfs:label "xf"^^xsd:string .
+
+<http://dbpedia.org/resource/Jaguar_XJ> a focu:topic ;
+    rdfs:label "xj"^^xsd:string .
+
+<http://dbpedia.org/resource/James_Pustejovsky> a focu:topic ;
+    rdfs:label "James Pustejovsky"^^xsd:string .
+
+<http://dbpedia.org/resource/Java_Development_Kit> a focu:topic ;
+    rdfs:label "JDK"^^xsd:string .
+
+<http://dbpedia.org/resource/John_Berryman> a focu:topic ;
+    rdfs:label "John Berryman"^^xsd:string .
+
+<http://dbpedia.org/resource/John_Snow> a focu:topic ;
+    rdfs:label "John Snow"^^xsd:string .
+
+<http://dbpedia.org/resource/Jonathan_Schaeffer> a focu:topic ;
+    rdfs:label "Jonathan Schaeffer"^^xsd:string .
+
+<http://dbpedia.org/resource/Kami> a focu:topic ;
+    rdfs:label "kami"^^xsd:string .
+
+<http://dbpedia.org/resource/Ke_Jie> a focu:topic ;
+    rdfs:label "Ke Jie"^^xsd:string .
+
+<http://dbpedia.org/resource/Ken_Jennings> a focu:topic ;
+    rdfs:label "Ken Jennings"^^xsd:string .
+
+<http://dbpedia.org/resource/Le_Titre> a focu:topic ;
+    rdfs:label "le titre"^^xsd:string .
+
+<http://dbpedia.org/resource/Lee_Sedol> a focu:topic ;
+    rdfs:label "Lee Se-dol"^^xsd:string,
+        "Lee Sedol"^^xsd:string .
+
+<http://dbpedia.org/resource/Lego> a focu:topic ;
+    rdfs:label "Lego"^^xsd:string .
+
+<http://dbpedia.org/resource/Leonardo_da_Vinci> a focu:topic ;
+    rdfs:label "Leonardo da Vinci"^^xsd:string,
+        "Léonard de Vinci"^^xsd:string .
+
+<http://dbpedia.org/resource/Linear_regression> a focu:topic ;
+    rdfs:label "Linear Regression"^^xsd:string .
+
+<http://dbpedia.org/resource/Linked_data> a focu:topic ;
+    rdfs:label "LOD Datasets"^^xsd:string .
+
+<http://dbpedia.org/resource/Liverpool> a focu:topic ;
+    rdfs:label "Liverpool"^^xsd:string .
+
+<http://dbpedia.org/resource/London_Borough_of_Sutton> a focu:topic ;
+    rdfs:label "Sutton"^^xsd:string .
+
+<http://dbpedia.org/resource/Lotus_Software> a focu:topic ;
+    rdfs:label "Lotus Development"^^xsd:string .
+
+<http://dbpedia.org/resource/Loyola_University_Maryland> a focu:topic ;
+    rdfs:label "Loyola College"^^xsd:string .
+
+<http://dbpedia.org/resource/MOS_Technology_TED> a focu:topic ;
+    rdfs:label "TED"^^xsd:string .
+
+<http://dbpedia.org/resource/MTL_Blog> a focu:topic ;
+    rdfs:label "Mtl Blog"^^xsd:string .
+
+<http://dbpedia.org/resource/Marvin_Minsky> a focu:topic ;
+    rdfs:label "Marvin Minsky"^^xsd:string .
+
+<http://dbpedia.org/resource/Massachusetts_Institute_of_Technology> a focu:topic ;
+    rdfs:label "MIT"^^xsd:string .
+
+<http://dbpedia.org/resource/McGraw-Hill_Education> a focu:topic ;
+    rdfs:label "McGraw-Hill"^^xsd:string .
+
+<http://dbpedia.org/resource/Meta_element> a focu:topic ;
+    rdfs:label "META tags"^^xsd:string .
+
+<http://dbpedia.org/resource/Mexico> a focu:topic ;
+    rdfs:label "Mexico"^^xsd:string .
+
+<http://dbpedia.org/resource/Milan> a focu:topic ;
+    rdfs:label "Milan"^^xsd:string .
+
+<http://dbpedia.org/resource/Milwaukee_Road_class_F7> a focu:topic ;
+    rdfs:label "class F7"^^xsd:string .
+
+<http://dbpedia.org/resource/Mini-MAX> a focu:topic ;
+    rdfs:label "Mini-Max"^^xsd:string .
+
+<http://dbpedia.org/resource/Mitch_Kapor> a focu:topic ;
+    rdfs:label "Mitchell Kapor"^^xsd:string .
+
+<http://dbpedia.org/resource/Monte_Carlo_tree_search> a focu:topic ;
+    rdfs:label "Monte Carlo tree search"^^xsd:string .
+
+<http://dbpedia.org/resource/MusicBrainz> a focu:topic ;
+    rdfs:label "MusicBrainz"^^xsd:string .
+
+<http://dbpedia.org/resource/Mycin> a focu:topic ;
+    rdfs:label "MYCIN"^^xsd:string .
+
+<http://dbpedia.org/resource/N-Triples> a focu:topic ;
+    rdfs:label "N-Quads"^^xsd:string .
+
+<http://dbpedia.org/resource/National_Cancer_Institute> a focu:topic ;
+    rdfs:label "National Cancer Institute"^^xsd:string .
+
+<http://dbpedia.org/resource/National_Science_Foundation> a focu:topic ;
+    rdfs:label "NSF"^^xsd:string .
+
+<http://dbpedia.org/resource/NeXtProt> a focu:topic ;
+    rdfs:label "NextProt"^^xsd:string .
+
+<http://dbpedia.org/resource/Neo4j> a focu:topic ;
+    rdfs:label "Neo4J"^^xsd:string .
+
+<http://dbpedia.org/resource/Neuron> a focu:topic ;
+    rdfs:label "neuron"^^xsd:string .
+
+<http://dbpedia.org/resource/Neurotransmitter> a focu:topic ;
+    rdfs:label "neurotransmitters"^^xsd:string .
+
+<http://dbpedia.org/resource/New_York_City> a focu:topic ;
+    rdfs:label "New York"^^xsd:string .
+
+<http://dbpedia.org/resource/Nissan_A_engine> a focu:topic ;
+    rdfs:label "A12"^^xsd:string .
+
+<http://dbpedia.org/resource/Normalnull> a focu:topic ;
+    rdfs:label "NN"^^xsd:string .
+
+<http://dbpedia.org/resource/NuBus> a focu:topic ;
+    rdfs:label "NuBus"^^xsd:string .
+
+<http://dbpedia.org/resource/Ope> a focu:topic ;
+    rdfs:label "OPE"^^xsd:string .
+
+<http://dbpedia.org/resource/Open_Mind_Common_Sense> a focu:topic ;
+    rdfs:label "ConceptNet"^^xsd:string .
+
+<http://dbpedia.org/resource/Oracle_Rdb> a focu:topic ;
+    rdfs:label "RDB"^^xsd:string .
+
+<http://dbpedia.org/resource/Oracle_Spatial_and_Graph> a focu:topic ;
+    rdfs:label "Oracle Spatial"^^xsd:string .
+
+<http://dbpedia.org/resource/PHP> a focu:topic ;
+    rdfs:label "PHP"^^xsd:string .
+
+<http://dbpedia.org/resource/Pareto_efficiency> a focu:topic ;
+    rdfs:label "PE"^^xsd:string .
+
+<http://dbpedia.org/resource/Paris> a focu:topic ;
+    rdfs:label "Paris"^^xsd:string .
+
+<http://dbpedia.org/resource/Petal> a focu:topic ;
+    rdfs:label "Petal"^^xsd:string .
+
+<http://dbpedia.org/resource/Peter_Norvig> a focu:topic ;
+    rdfs:label "Peter Norvig"^^xsd:string .
+
+<http://dbpedia.org/resource/Power-on_self-test> a focu:topic ;
+    rdfs:label "POST"^^xsd:string .
+
+<http://dbpedia.org/resource/Prabhakar_Raghavan> a focu:topic ;
+    rdfs:label "Prabhakar Raghavan"^^xsd:string .
+
+<http://dbpedia.org/resource/Prentice_Hall> a focu:topic ;
+    rdfs:label "Prentice Hall"^^xsd:string .
+
+<http://dbpedia.org/resource/Prime_Video> a focu:topic ;
+    rdfs:label "Amazon"^^xsd:string .
+
+<http://dbpedia.org/resource/Processor_Direct_Slot> a focu:topic ;
+    rdfs:label "PDS"^^xsd:string .
+
+<http://dbpedia.org/resource/Prolog> a focu:topic ;
+    rdfs:label "Prolog"^^xsd:string .
+
+<http://dbpedia.org/resource/Pros_&_Cons> a focu:topic ;
+    rdfs:label "Pros & Cons"^^xsd:string .
+
+<http://dbpedia.org/resource/Question_answering> a focu:topic ;
+    rdfs:label "Question Answering"^^xsd:string .
+
+<http://dbpedia.org/resource/Ralph_Nader> a focu:topic ;
+    rdfs:label "Essential Information"^^xsd:string .
+
+<http://dbpedia.org/resource/Ray_Kurzweil> a focu:topic ;
+    rdfs:label "Kurzweil"^^xsd:string,
+        "Ray Kurzweil"^^xsd:string .
+
+<http://dbpedia.org/resource/Red_Square> a focu:topic ;
+    rdfs:label "Red Square"^^xsd:string .
+
+<http://dbpedia.org/resource/Reverse_transcriptase> a focu:topic ;
+    rdfs:label "RT"^^xsd:string .
+
+<http://dbpedia.org/resource/Reversi> a focu:topic ;
+    rdfs:label "Takeshi Murakami"^^xsd:string .
+
+<http://dbpedia.org/resource/Rotterdamse_Elektrische_Tram> a focu:topic ;
+    rdfs:label "RET"^^xsd:string .
+
+<http://dbpedia.org/resource/Sam_Loyd> a focu:topic ;
+    rdfs:label "Sam Loyd"^^xsd:string .
+
+<http://dbpedia.org/resource/Schema.org> a focu:topic ;
+    rdfs:label "Schema.org"^^xsd:string .
+
+<http://dbpedia.org/resource/Sea_bass> a focu:topic ;
+    rdfs:label "sea bass"^^xsd:string .
+
+<http://dbpedia.org/resource/Semantic_network> a focu:topic ;
+    rdfs:label "Semantic Networks"^^xsd:string .
+
+<http://dbpedia.org/resource/Singapore_dollar> a focu:topic ;
+    rdfs:label "SGD"^^xsd:string .
+
+<http://dbpedia.org/resource/Space_Shuttle_Discovery> a focu:topic ;
+    rdfs:label "Discovery"^^xsd:string .
+
+<http://dbpedia.org/resource/Speech_recognition> a focu:topic ;
+    rdfs:label "Speech recognition"^^xsd:string .
+
+<http://dbpedia.org/resource/Speech_synthesis> a focu:topic ;
+    rdfs:label "Speech synthesis"^^xsd:string .
+
+<http://dbpedia.org/resource/Springer_Nature> a focu:topic ;
+    rdfs:label "Springer International Publishing"^^xsd:string .
+
+<http://dbpedia.org/resource/Stanford_University> a focu:topic ;
+    rdfs:label "Stanford"^^xsd:string .
+
+<http://dbpedia.org/resource/Stratego> a focu:topic ;
+    rdfs:label "Stratego"^^xsd:string .
+
+<http://dbpedia.org/resource/Stuart_J._Russell> a focu:topic ;
+    rdfs:label "Stuart Russell"^^xsd:string .
+
+<http://dbpedia.org/resource/TED_(conference)> a focu:topic ;
+    rdfs:label "TED"^^xsd:string .
+
+<http://dbpedia.org/resource/Tay_(bot)> a focu:topic ;
+    rdfs:label "Microsoft Tay"^^xsd:string .
+
+<http://dbpedia.org/resource/Taylorcraft_Auster> a focu:topic ;
+    rdfs:label "A11"^^xsd:string .
+
+<http://dbpedia.org/resource/Tbox> a focu:topic ;
+    rdfs:label "TBox"^^xsd:string .
+
+<http://dbpedia.org/resource/Tetris> a focu:topic ;
+    rdfs:label "Tetris"^^xsd:string .
+
+<http://dbpedia.org/resource/Tf–idf> a focu:topic ;
+    rdfs:label "TF-IDF"^^xsd:string .
+
+<http://dbpedia.org/resource/Thai_cuisine> a focu:topic ;
+    rdfs:label "Thai"^^xsd:string .
+
+<http://dbpedia.org/resource/Thai_language> a focu:topic ;
+    rdfs:label "Thai"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Artist_(film)> a focu:topic ;
+    rdfs:label "The Artist"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Next_Web> a focu:topic ;
+    rdfs:label "The Next Web"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Prisoner> a focu:topic ;
+    rdfs:label "The Prisoner"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Restaurant_(Irish_TV_series)> a focu:topic ;
+    rdfs:label "The Restaurant"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Tempest> a focu:topic ;
+    rdfs:label "Tempest"^^xsd:string .
+
+<http://dbpedia.org/resource/Thesaurus> a focu:topic ;
+    rdfs:label "thesauri"^^xsd:string .
+
+<http://dbpedia.org/resource/Tim_Berners-Lee> a focu:topic ;
+    rdfs:label "Tim Berners-Lee"^^xsd:string .
+
+<http://dbpedia.org/resource/Tom_M._Mitchell> a focu:topic ;
+    rdfs:label "Tom Mitchell"^^xsd:string .
+
+<http://dbpedia.org/resource/Tranche> a focu:topic ;
+    rdfs:label "A Notes"^^xsd:string .
+
+<http://dbpedia.org/resource/TriG_(syntax)> a focu:topic ;
+    rdfs:label "TriG"^^xsd:string .
+
+<http://dbpedia.org/resource/UIMA> a focu:topic ;
+    rdfs:label "UIMA"^^xsd:string .
+
+<http://dbpedia.org/resource/URL> a focu:topic ;
+    rdfs:label "Uniform Resource Locator"^^xsd:string .
+
+<http://dbpedia.org/resource/UniProt> a focu:topic ;
+    rdfs:label "UniProt"^^xsd:string .
+
+<http://dbpedia.org/resource/Unicode> a focu:topic ;
+    rdfs:label "Unicode"^^xsd:string .
+
+<http://dbpedia.org/resource/United_States_Congress> a focu:topic ;
+    rdfs:label "Congress"^^xsd:string .
+
+<http://dbpedia.org/resource/Usenet_newsgroup> a focu:topic ;
+    rdfs:label "Newsgroup"^^xsd:string .
+
+<http://dbpedia.org/resource/Very_Large_Scale_Integration> a focu:topic ;
+    rdfs:label "VLSI"^^xsd:string .
+
+<http://dbpedia.org/resource/Vladimir_Vapnik> a focu:topic ;
+    rdfs:label "Vladimir Vapnik"^^xsd:string .
+
+<http://dbpedia.org/resource/Weak_AI> a focu:topic ;
+    rdfs:label "Weak AI"^^xsd:string .
+
+<http://dbpedia.org/resource/Web_Ontology_Language> a focu:topic ;
+    rdfs:label "Web Ontology Language (OWL)"^^xsd:string .
+
+<http://dbpedia.org/resource/William_of_Ockham> a focu:topic ;
+    rdfs:label "Ockham"^^xsd:string .
+
+<http://dbpedia.org/resource/Wireless_access_point> a focu:topic ;
+    rdfs:label "AP"^^xsd:string .
+
+<http://dbpedia.org/resource/WordNet> a focu:topic ;
+    rdfs:label "WordNet"^^xsd:string .
+
+<http://dbpedia.org/resource/WordPress.com> a focu:topic ;
+    rdfs:label "Wordpress.com"^^xsd:string .
+
+<http://dbpedia.org/resource/World_Wide_Web> a focu:topic ;
+    rdfs:label "WWW"^^xsd:string .
+
+<http://dbpedia.org/resource/YAGO_(database)> a focu:topic ;
+    rdfs:label "YAGO"^^xsd:string .
+
+<http://dbpedia.org/resource/Alan_Turing> a focu:topic ;
+    rdfs:label "Alan Turing"^^xsd:string .
+
+<http://dbpedia.org/resource/AlexNet> a focu:topic ;
+    rdfs:label "AlexNet"^^xsd:string .
+
+<http://dbpedia.org/resource/Amazon_Alexa> a focu:topic ;
+    rdfs:label "Alexa"^^xsd:string,
+        "Amazon Alexa"^^xsd:string .
+
+<http://dbpedia.org/resource/Amsterdam> a focu:topic ;
+    rdfs:label "Amsterdam"^^xsd:string .
+
+<http://dbpedia.org/resource/Apache_Jena> a focu:topic ;
+    rdfs:label "Jena"^^xsd:string .
+
+<http://dbpedia.org/resource/Application_programming_interface> a focu:topic ;
+    rdfs:label "API"^^xsd:string .
+
+<http://dbpedia.org/resource/Artificial_neural_network> a focu:topic ;
+    rdfs:label "Artificial Neural Networks"^^xsd:string .
+
+<http://dbpedia.org/resource/Association_for_Computing_Machinery> a focu:topic ;
+    rdfs:label "ACM"^^xsd:string .
+
+<http://dbpedia.org/resource/Basketball_Super_League> a focu:topic ;
+    rdfs:label "TBL"^^xsd:string .
+
+<http://dbpedia.org/resource/Bayes'_theorem> a focu:topic ;
+    rdfs:label "Bayes' theorem"^^xsd:string .
+
+<http://dbpedia.org/resource/Berlin> a focu:topic ;
+    rdfs:label "Berlin"^^xsd:string .
+
+<http://dbpedia.org/resource/Breadth-first_search> a focu:topic ;
+    rdfs:label "Breadth-First Search"^^xsd:string .
+
+<http://dbpedia.org/resource/C3_carbon_fixation> a focu:topic ;
+    rdfs:label "C3"^^xsd:string .
+
+<http://dbpedia.org/resource/Centroid> a focu:topic ;
+    rdfs:label "Centroid"^^xsd:string .
+
+<http://dbpedia.org/resource/Chapter_VII_of_the_United_Nations_Charter> a focu:topic ;
+    rdfs:label "Chapter 7"^^xsd:string .
+
+<http://dbpedia.org/resource/Christianity> a focu:topic ;
+    rdfs:label "Christian"^^xsd:string .
+
+<http://dbpedia.org/resource/Dean_(South_Korean_singer)> a focu:topic ;
+    rdfs:label "DEAN"^^xsd:string .
+
+<http://dbpedia.org/resource/Delta_State> a focu:topic ;
+    rdfs:label "Delta"^^xsd:string .
+
+<http://dbpedia.org/resource/Dice> a focu:topic ;
+    rdfs:label "dice"^^xsd:string .
+
+<http://dbpedia.org/resource/Dublin_Core> a focu:topic ;
+    rdfs:label "Dublin Core"^^xsd:string .
+
+<http://dbpedia.org/resource/European_Union> a focu:topic ;
+    rdfs:label "EU"^^xsd:string .
+
+<http://dbpedia.org/resource/Facebook_Platform> a focu:topic ;
+    rdfs:label "Open Graph Protocol"^^xsd:string .
+
+<http://dbpedia.org/resource/False_Positive_(How_I_Met_Your_Mother)> a focu:topic ;
+    rdfs:label "False Positive"^^xsd:string .
+
+<http://dbpedia.org/resource/Garry_Kasparov> a focu:topic ;
+    rdfs:label "Garry Kasparov"^^xsd:string,
+        "Kasparov"^^xsd:string .
+
+<http://dbpedia.org/resource/Gene_ontology> a focu:topic ;
+    rdfs:label "Gene Ontology"^^xsd:string .
+
+<http://dbpedia.org/resource/Geoffrey_Hinton> a focu:topic ;
+    rdfs:label "Geoff Hinton"^^xsd:string,
+        "Hinton"^^xsd:string .
+
+<http://dbpedia.org/resource/Gina_Cody> a focu:topic ;
+    rdfs:label "Gina Cody"^^xsd:string .
+
+<http://dbpedia.org/resource/GitHub> a focu:topic ;
+    rdfs:label "GitHub"^^xsd:string,
+        "Github"^^xsd:string .
+
+<http://dbpedia.org/resource/HarperCollins> a focu:topic ;
+    rdfs:label "Harper Collins"^^xsd:string .
+
+<http://dbpedia.org/resource/Hummel_International> a focu:topic ;
+    rdfs:label "Hummel"^^xsd:string .
+
+<http://dbpedia.org/resource/ImageNet> a focu:topic ;
+    rdfs:label "ImageNet"^^xsd:string .
+
+<http://dbpedia.org/resource/Indigenous_peoples_in_Canada> a focu:topic ;
+    rdfs:label "First Nations"^^xsd:string .
+
+<http://dbpedia.org/resource/Inspector_general> a focu:topic ;
+    rdfs:label "IG"^^xsd:string .
+
+<http://dbpedia.org/resource/Integrated_development_environment> a focu:topic ;
+    rdfs:label "IDE"^^xsd:string .
+
+<http://dbpedia.org/resource/James_VI_and_I> a focu:topic ;
+    rdfs:label "James"^^xsd:string .
+
+<http://dbpedia.org/resource/Jena> a focu:topic ;
+    rdfs:label "Jena"^^xsd:string .
+
+<http://dbpedia.org/resource/Jeopardy!> a focu:topic ;
+    rdfs:label "Jeopardy!"^^xsd:string .
+
+<http://dbpedia.org/resource/Joseph_Weizenbaum> a focu:topic ;
+    rdfs:label "Joseph Weizenbaum"^^xsd:string .
+
+<http://dbpedia.org/resource/King_Arthur> a focu:topic ;
+    rdfs:label "Arthur"^^xsd:string .
+
+<http://dbpedia.org/resource/Knowledge_worker> a focu:topic ;
+    rdfs:label "Knowledge Worker"^^xsd:string .
+
+<http://dbpedia.org/resource/Library_of_Congress> a focu:topic ;
+    rdfs:label "LOC"^^xsd:string,
+        "loc"^^xsd:string .
+
+<http://dbpedia.org/resource/Master_of_Fisheries_Science> a focu:topic ;
+    rdfs:label "mfsc"^^xsd:string .
+
+<http://dbpedia.org/resource/Microsoft> a focu:topic ;
+    rdfs:label "Microsoft"^^xsd:string .
+
+<http://dbpedia.org/resource/Microsoft_Outlook> a focu:topic ;
+    rdfs:label "Outlook"^^xsd:string .
+
+<http://dbpedia.org/resource/Morgan_Motor_Company> a focu:topic ;
+    rdfs:label "Morgan"^^xsd:string .
+
+<http://dbpedia.org/resource/Nim> a focu:topic ;
+    rdfs:label "Nim"^^xsd:string .
+
+<http://dbpedia.org/resource/Orenda_Engines> a focu:topic ;
+    rdfs:label "Orenda"^^xsd:string .
+
+<http://dbpedia.org/resource/Paris_Hilton> a focu:topic ;
+    rdfs:label "Paris Hilton"^^xsd:string .
+
+<http://dbpedia.org/resource/Quebec> a focu:topic ;
+    rdfs:label "Quebec"^^xsd:string .
+
+<http://dbpedia.org/resource/RC2_Corporation> a focu:topic ;
+    rdfs:label "Learning Curve"^^xsd:string .
+
+<http://dbpedia.org/resource/Sameer_(lyricist)> a focu:topic ;
+    rdfs:label "Sameer"^^xsd:string .
+
+<http://dbpedia.org/resource/Seymour_Papert> a focu:topic ;
+    rdfs:label "Papert"^^xsd:string .
+
+<http://dbpedia.org/resource/Steve_Jobs> a focu:topic ;
+    rdfs:label "Steve Jobs"^^xsd:string .
+
+<http://dbpedia.org/resource/Support-vector_machine> a focu:topic ;
+    rdfs:label "SVM"^^xsd:string .
+
+<http://dbpedia.org/resource/Taxicab_geometry> a focu:topic ;
+    rdfs:label "Manhattan distance"^^xsd:string .
+
+<http://dbpedia.org/resource/Time_complexity> a focu:topic ;
+    rdfs:label "Time complexity"^^xsd:string .
+
+<http://dbpedia.org/resource/Toronto> a focu:topic ;
+    rdfs:label "Toronto"^^xsd:string .
+
+<http://dbpedia.org/resource/United_Kingdom> a focu:topic ;
+    rdfs:label "British"^^xsd:string .
+
+<http://dbpedia.org/resource/University_of_Alberta> a focu:topic ;
+    rdfs:label "Alberta"^^xsd:string .
+
+<http://dbpedia.org/resource/Virtual_private_network> a focu:topic ;
+    rdfs:label "VPN"^^xsd:string .
+
+<http://dbpedia.org/resource/Yann_LeCun> a focu:topic ;
+    rdfs:label "Yann LeCun"^^xsd:string,
+        "Yann Lecun"^^xsd:string .
+
+<http://dbpedia.org/resource/Yoshua_Bengio> a focu:topic ;
+    rdfs:label "Yoshua Bengio"^^xsd:string .
+
+<http://dbpedia.org/resource/AI_winter> a focu:topic ;
+    rdfs:label "AI Winter"^^xsd:string .
+
+<http://dbpedia.org/resource/AlphaGo> a focu:topic ;
+    rdfs:label "AlphaGo"^^xsd:string .
+
+<http://dbpedia.org/resource/Bayes_classifier> a focu:topic ;
+    rdfs:label "Bayes Classifier"^^xsd:string .
+
+<http://dbpedia.org/resource/CXCR4> a focu:topic ;
+    rdfs:label "X4"^^xsd:string .
+
+<http://dbpedia.org/resource/Comet_Man> a focu:topic ;
+    rdfs:label "Max"^^xsd:string .
+
+<http://dbpedia.org/resource/Fuseki> a focu:topic ;
+    rdfs:label "Fuseki"^^xsd:string,
+        "fuseki"^^xsd:string .
+
+<http://dbpedia.org/resource/Gospel_of_Luke> a focu:topic ;
+    rdfs:label "Luke"^^xsd:string .
+
+<http://dbpedia.org/resource/Humboldt_University_of_Berlin> a focu:topic ;
+    rdfs:label "Berlin"^^xsd:string .
+
+<http://dbpedia.org/resource/IBM> a focu:topic ;
+    rdfs:label "IBM"^^xsd:string .
+
+<http://dbpedia.org/resource/Inference> a focu:topic ;
+    rdfs:label "inference"^^xsd:string .
+
+<http://dbpedia.org/resource/Level_of_detail> a focu:topic ;
+    rdfs:label "LOD"^^xsd:string .
+
+<http://dbpedia.org/resource/London> a focu:topic ;
+    rdfs:label "London"^^xsd:string .
+
+<http://dbpedia.org/resource/MAX_Light_Rail> a focu:topic ;
+    rdfs:label "MAX"^^xsd:string .
+
+<http://dbpedia.org/resource/Mona_Lisa> a focu:topic ;
+    rdfs:label "Mona Lisa"^^xsd:string .
+
+<http://dbpedia.org/resource/Perceptron> a focu:topic ;
+    rdfs:label "Perceptron"^^xsd:string .
+
+<http://dbpedia.org/resource/SHRDLU> a focu:topic ;
+    rdfs:label "SHRDLU"^^xsd:string .
+
+<http://dbpedia.org/resource/Semantic_triple> a focu:topic ;
+    rdfs:label "RDF Triple"^^xsd:string,
+        "RDF triple"^^xsd:string .
+
+<http://dbpedia.org/resource/Sigmoid_function> a focu:topic ;
+    rdfs:label "Sigmoid"^^xsd:string,
+        "Sigmoid function"^^xsd:string,
+        "sigmoid function"^^xsd:string .
+
+<http://dbpedia.org/resource/Straitjacket_Fits> a focu:topic ;
+    rdfs:label "David Wood"^^xsd:string .
+
+<http://dbpedia.org/resource/Terry_Winograd> a focu:topic ;
+    rdfs:label "Terry Winograd"^^xsd:string,
+        "Winograd"^^xsd:string .
+
+<http://dbpedia.org/resource/This_Week_(American_TV_program)> a focu:topic ;
+    rdfs:label "This week"^^xsd:string .
+
+<http://dbpedia.org/resource/X86> a focu:topic ;
+    rdfs:label "DL"^^xsd:string .
+
+<http://dbpedia.org/resource/XML> a focu:topic ;
+    rdfs:label "RDF/XML"^^xsd:string .
+
+<http://dbpedia.org/resource/Convolutional_neural_network> a focu:topic ;
+    rdfs:label "CNN"^^xsd:string,
+        "Convolutional Neural Networks"^^xsd:string,
+        "convolutional neural network"^^xsd:string .
+
+<http://dbpedia.org/resource/Exclusive_or> a focu:topic ;
+    rdfs:label "XOR"^^xsd:string .
+
+<http://dbpedia.org/resource/Heidelberg> a focu:topic ;
+    rdfs:label "Heidelberg"^^xsd:string .
+
+<http://dbpedia.org/resource/K-nearest_neighbors_algorithm> a focu:topic ;
+    rdfs:label "KNN"^^xsd:string,
+        "kNN"^^xsd:string .
+
+<http://dbpedia.org/resource/Layer_cake> a focu:topic ;
+    rdfs:label "Layer Cake"^^xsd:string .
+
+<http://dbpedia.org/resource/Liyang> a focu:topic ;
+    rdfs:label "Liyang"^^xsd:string .
+
+<http://dbpedia.org/resource/McGill_University> a focu:topic ;
+    rdfs:label "McGill"^^xsd:string,
+        "McGill College"^^xsd:string,
+        "McGill University"^^xsd:string .
+
+<http://dbpedia.org/resource/Naive_Bayes_classifier> a focu:topic ;
+    rdfs:label "Naive Bayes Classification"^^xsd:string,
+        "Naïve Bayes"^^xsd:string .
+
+<http://dbpedia.org/resource/Recommender_system> a focu:topic ;
+    rdfs:label "Recommender Systems"^^xsd:string .
+
+<http://dbpedia.org/resource/The_Glass_Palace> a focu:topic ;
+    rdfs:label "The Glass Palace"^^xsd:string .
+
+<http://dbpedia.org/resource/Alison_DiLaurentis> a focu:topic ;
+    rdfs:label "Alison"^^xsd:string .
+
+<http://dbpedia.org/resource/Artificial_neuron> a focu:topic ;
+    rdfs:label "neuron"^^xsd:string .
+
+<http://dbpedia.org/resource/BMW_X5> a focu:topic ;
+    rdfs:label "X5"^^xsd:string .
+
+<http://dbpedia.org/resource/French_language> a focu:topic ;
+    rdfs:label "French"^^xsd:string .
+
+<http://dbpedia.org/resource/Internationalized_Resource_Identifier> a focu:topic ;
+    rdfs:label "IRI"^^xsd:string .
+
+<http://dbpedia.org/resource/Moodle> a focu:topic ;
+    rdfs:label "Moodle"^^xsd:string .
+
+<http://dbpedia.org/resource/RDF_Schema> a focu:topic ;
+    rdfs:label "RDF Schema"^^xsd:string,
+        "RDF schema"^^xsd:string .
+
+<http://dbpedia.org/resource/Unsupervised_learning> a focu:topic ;
+    rdfs:label "Unsupervised"^^xsd:string,
+        "Unsupervised learning"^^xsd:string .
+
+<http://dbpedia.org/resource/Wikipedia> a focu:topic ;
+    rdfs:label "Wikipedia"^^xsd:string .
+
+<http://dbpedia.org/resource/FOAF_(ontology)> a focu:topic ;
+    rdfs:label "FOAF"^^xsd:string .
+
+<http://dbpedia.org/resource/Computer_science> a focu:topic ;
+    rdfs:label "Computer Science"^^xsd:string .
+
+<http://dbpedia.org/resource/Deep_learning> a focu:topic ;
+    rdfs:label "Deep Learning"^^xsd:string .
+
+<http://dbpedia.org/resource/Natural_language_processing> a focu:topic ;
+    rdfs:label "NLP"^^xsd:string,
+        "Natural Language Processing (NLP)"^^xsd:string,
+        "natural language processing (NLP)"^^xsd:string .
+
+<http://dbpedia.org/resource/Canada> a focu:topic ;
+    rdfs:label "Canada"^^xsd:string .
+
+<http://dbpedia.org/resource/Machine_learning> a focu:topic ;
+    rdfs:label "ML"^^xsd:string,
+        "Machine Learning"^^xsd:string .
+
+<http://dbpedia.org/resource/Resource_Description_Framework> a focu:topic ;
+    rdfs:label "RDF"^^xsd:string,
+        "Resource Description Framework (RDF)"^^xsd:string .
+
+<http://dbpedia.org/resource/Main_Page> a focu:topic ;
+    rdfs:label "Concordia University"^^xsd:string .
+
+<http://dbpedia.org/resource/DBpedia> a focu:topic ;
+    rdfs:label "DBPedia"^^xsd:string,
+        "DBpedia"^^xsd:string,
+        "DBpedia Spotlight"^^xsd:string .
+
+<http://dbpedia.org/resource/English_language> a focu:topic ;
+    rdfs:label "English"^^xsd:string,
+        "English language"^^xsd:string .
+
+<http://dbpedia.org/resource/Concordia_University> a focu:topic ;
+    rdfs:label "CONCORDIA UNIVERSITY"^^xsd:string,
+        "Concordia"^^xsd:string,
+        "Concordia University"^^xsd:string,
+        "Sir George Williams University"^^xsd:string .
+
+<http://dbpedia.org/resource/Artificial_intelligence> a focu:topic ;
+    rdfs:label "AI"^^xsd:string,
+        "Intelligent Systems"^^xsd:string .
+

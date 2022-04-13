@@ -1,0 +1,326 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr:	<http://dbpedia.org/resource/> .
+@prefix ns2:	<http://vivoweb.org/ontology/core#> .
+dbr:Concordia_University_of_Edmonton	rdf:type	ns2:University .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+dbr:Concordia_University_of_Edmonton	rdfs:label	"Concordia University of Edmonton"@en .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix wikidata:	<http://www.wikidata.org/entity/> .
+dbr:Concordia_University_of_Edmonton	owl:sameAs	wikidata:Q5159003 .
+<http://dbpedia.org/resource/Thompson_Rivers_University,_Open_Learning>	rdf:type	ns2:University ;
+	rdfs:label	"Thompson Rivers University, Open Learning"@en ;
+	owl:sameAs	wikidata:Q7795772 .
+dbr:Carleton_University	rdf:type	ns2:University ;
+	rdfs:label	"Carleton University"@en ;
+	owl:sameAs	wikidata:Q1041737 .
+dbr:Fairleigh_Dickinson_University	rdf:type	ns2:University ;
+	rdfs:label	"Fairleigh Dickinson University"@en ;
+	owl:sameAs	wikidata:Q1393301 .
+dbr:Mount_Allison_University	rdf:type	ns2:University ;
+	rdfs:label	"Mount Allison University"@en ;
+	owl:sameAs	wikidata:Q742150 .
+<http://dbpedia.org/resource/St._Thomas_University_(Canada)>	rdf:type	ns2:University ;
+	rdfs:label	"St. Thomas University (Canada)"@en ;
+	owl:sameAs	wikidata:Q3551491 .
+dbr:Trent_University	rdf:type	ns2:University ;
+	rdfs:label	"Trent University"@en ;
+	owl:sameAs	wikidata:Q3075124 .
+dbr:University_of_Alberta	rdf:type	ns2:University ;
+	rdfs:label	"University of Alberta"@en ;
+	owl:sameAs	wikidata:Q640694 .
+dbr:University_of_British_Columbia	rdf:type	ns2:University ;
+	rdfs:label	"University of British Columbia"@en ;
+	owl:sameAs	wikidata:Q3551708 ,
+		wikidata:Q391028 .
+<http://dbpedia.org/resource/University_of_King\u0027s_College>	rdf:type	ns2:University ;
+	rdfs:label	"University of King's College"@en ;
+	owl:sameAs	wikidata:Q3551609 .
+dbr:University_of_Northern_British_Columbia	rdf:type	ns2:University ;
+	rdfs:label	"University of Northern British Columbia"@en ;
+	owl:sameAs	wikidata:Q1165458 .
+dbr:University_of_Ottawa	rdf:type	ns2:University ;
+	rdfs:label	"University of Ottawa"@en ;
+	owl:sameAs	wikidata:Q627969 .
+dbr:University_of_Saskatchewan	rdf:type	ns2:University ;
+	rdfs:label	"University of Saskatchewan"@en ;
+	owl:sameAs	wikidata:Q1514848 .
+dbr:University_of_Western_Ontario	rdf:type	ns2:University ;
+	rdfs:label	"University of Western Ontario"@en ;
+	owl:sameAs	wikidata:Q1144262 .
+<http://dbpedia.org/resource/Bishop\u0027s_University>	rdf:type	ns2:University ;
+	rdfs:label	"Bishop's University"@en ;
+	owl:sameAs	wikidata:Q3551383 .
+dbr:Brock_University	rdf:type	ns2:University ;
+	rdfs:label	"Brock University"@en ;
+	owl:sameAs	wikidata:Q923624 .
+<http://dbpedia.org/resource/HEC_Montr\u00E9al>	rdf:type	ns2:University ;
+	rdfs:label	"HEC Montr\u00E9al"@en ;
+	owl:sameAs	wikidata:Q273527 .
+dbr:Institut_national_de_la_recherche_scientifique	rdf:type	ns2:University ;
+	rdfs:label	"Institut national de la recherche scientifique"@en ;
+	owl:sameAs	wikidata:Q3152403 .
+dbr:Lakehead_University	rdf:type	ns2:University ;
+	rdfs:label	"Lakehead University"@en ;
+	owl:sameAs	wikidata:Q1165215 .
+dbr:Laurentian_University	rdf:type	ns2:University ;
+	rdfs:label	"Laurentian University"@en ;
+	owl:sameAs	wikidata:Q3551432 .
+dbr:McMaster_University	rdf:type	ns2:University ;
+	rdfs:label	"McMaster University"@en ;
+	owl:sameAs	wikidata:Q632891 .
+dbr:Memorial_University_of_Newfoundland	rdf:type	ns2:University ;
+	rdfs:label	"Memorial University of Newfoundland"@en ;
+	owl:sameAs	wikidata:Q1895354 .
+dbr:Nipissing_University	rdf:type	ns2:University ;
+	rdfs:label	"Nipissing University"@en ;
+	owl:sameAs	wikidata:Q6421119 .
+dbr:OCAD_University	rdf:type	ns2:University ;
+	rdfs:label	"OCAD University"@en ;
+	owl:sameAs	wikidata:Q1632007 .
+dbr:Ontario_Tech_University	rdf:type	ns2:University ;
+	rdfs:label	"Ontario Tech University"@en ;
+	owl:sameAs	wikidata:Q2495899 .
+dbr:Royal_Roads_University	rdf:type	ns2:University ;
+	rdfs:label	"Royal Roads University"@en ;
+	owl:sameAs	wikidata:Q1813315 .
+dbr:University_of_Regina	rdf:type	ns2:University ;
+	rdfs:label	"University of Regina"@en ;
+	owl:sameAs	wikidata:Q3104287 .
+dbr:University_of_Windsor	rdf:type	ns2:University ;
+	rdfs:label	"University of Windsor"@en ;
+	owl:sameAs	wikidata:Q2065769 .
+<http://dbpedia.org/resource/Universit\u00E9_Laval>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 Laval"@en ;
+	owl:sameAs	wikidata:Q1067935 .
+<http://dbpedia.org/resource/Universit\u00E9_de_Saint-Boniface>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 de Saint-Boniface"@en ;
+	owl:sameAs	wikidata:Q3551667 .
+<http://dbpedia.org/resource/Universit\u00E9_de_Sherbrooke>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 de Sherbrooke"@en ;
+	owl:sameAs	wikidata:Q2579532 .
+<http://dbpedia.org/resource/Universit\u00E9_du_Qu\u00E9bec_\u00E0_Trois-Rivi\u00E8res>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 du Qu\u00E9bec \u00E0 Trois-Rivi\u00E8res"@en ;
+	owl:sameAs	wikidata:Q919256 .
+<http://dbpedia.org/resource/\u00C9cole_de_technologie_sup\u00E9rieure>	rdf:type	ns2:University ;
+	rdfs:label	"\u00C9cole de technologie sup\u00E9rieure"@en ;
+	owl:sameAs	wikidata:Q3577916 .
+<http://dbpedia.org/resource/\u00C9cole_nationale_d\u0027administration_publique>	rdf:type	ns2:University ;
+	rdfs:label	"\u00C9cole nationale d'administration publique"@en ;
+	owl:sameAs	wikidata:Q3578074 .
+dbr:McGill_University	rdf:type	ns2:University ;
+	rdfs:label	"McGill University"@en ;
+	owl:sameAs	wikidata:Q201492 .
+<http://dbpedia.org/resource/Queen\u0027s_University_at_Kingston>	rdf:type	ns2:University ;
+	rdfs:label	"Queen's University at Kingston"@en ;
+	owl:sameAs	wikidata:Q1420038 .
+dbr:University_of_Toronto	rdf:type	ns2:University ;
+	rdfs:label	"University of Toronto"@en ;
+	owl:sameAs	wikidata:Q180865 .
+dbr:Athabasca_University	rdf:type	ns2:University ;
+	rdfs:label	"Athabasca University"@en ;
+	owl:sameAs	wikidata:Q754656 .
+dbr:NSCAD_University	rdf:type	ns2:University ;
+	rdfs:label	"NSCAD University"@en ;
+	owl:sameAs	wikidata:Q1131966 .
+<http://dbpedia.org/resource/St._Francis_Xavier_University>	rdf:type	ns2:University ;
+	rdfs:label	"St. Francis Xavier University"@en ;
+	owl:sameAs	wikidata:Q2038889 .
+dbr:University_of_Winnipeg	rdf:type	ns2:University ;
+	rdfs:label	"University of Winnipeg"@en ;
+	owl:sameAs	wikidata:Q472167 .
+<http://dbpedia.org/resource/Universit\u00E9_T\u00C9LUQ>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 T\u00C9LUQ"@en ;
+	owl:sameAs	wikidata:Q288006 .
+<http://dbpedia.org/resource/Universit\u00E9_de_Moncton>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 de Moncton"@en ;
+	owl:sameAs	wikidata:Q2557355 .
+dbr:Capilano_University	rdf:type	ns2:University ;
+	rdfs:label	"Capilano University"@en ;
+	owl:sameAs	wikidata:Q1034602 .
+<http://dbpedia.org/resource/St._Mary\u0027s_University_(Calgary)>	rdf:type	ns2:University ;
+	rdfs:label	"St. Mary's University (Calgary)"@en ;
+	owl:sameAs	wikidata:Q7590444 ,
+		wikidata:Q7590448 .
+<http://dbpedia.org/resource/The_King\u0027s_University_(Edmonton)>	rdf:type	ns2:University ;
+	rdfs:label	"The King's University (Edmonton)"@en ;
+	owl:sameAs	wikidata:Q6411128 .
+dbr:Tyndale_University	rdf:type	ns2:University ;
+	rdfs:label	"Tyndale University"@en ;
+	owl:sameAs	wikidata:Q13428647 .
+dbr:Glendon_College	rdf:type	ns2:University ;
+	rdfs:label	"Glendon College"@en ;
+	owl:sameAs	wikidata:Q2493808 .
+<http://dbpedia.org/resource/Universit\u00E9_du_Qu\u00E9bec_\u00E0_Chicoutimi>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 du Qu\u00E9bec \u00E0 Chicoutimi"@en ;
+	owl:sameAs	wikidata:Q2562289 .
+dbr:Crandall_University	rdf:type	ns2:University ;
+	rdfs:label	"Crandall University"@en ;
+	owl:sameAs	wikidata:Q4475796 .
+dbr:Dalhousie_University	rdf:type	ns2:University ;
+	rdfs:label	"Dalhousie University"@en ;
+	owl:sameAs	wikidata:Q579321 .
+dbr:Blue_Quills_University	rdf:type	ns2:University ;
+	rdfs:label	"Blue Quills University"@en ;
+	owl:sameAs	wikidata:Q106645836 .
+dbr:Ryerson_University	rdf:type	ns2:University ;
+	rdfs:label	"Ryerson University"@en ;
+	owl:sameAs	wikidata:Q611723 .
+dbr:University_of_Calgary	rdf:type	ns2:University ;
+	rdfs:label	"University of Calgary"@en ;
+	owl:sameAs	wikidata:Q1067471 .
+dbr:University_of_Waterloo	rdf:type	ns2:University ;
+	rdfs:label	"University of Waterloo"@en ;
+	owl:sameAs	wikidata:Q1049470 .
+dbr:Cape_Breton_University	rdf:type	ns2:University ;
+	rdfs:label	"Cape Breton University"@en ;
+	owl:sameAs	wikidata:Q3551748 .
+dbr:Concordia_University	rdf:type	ns2:University ;
+	rdfs:label	"Concordia University"@en ;
+	owl:sameAs	wikidata:Q326342 .
+dbr:Simon_Fraser_University	rdf:type	ns2:University ;
+	rdfs:label	"Simon Fraser University"@en ;
+	owl:sameAs	wikidata:Q201603 .
+dbr:University_of_Manitoba	rdf:type	ns2:University ;
+	rdfs:label	"University of Manitoba"@en ;
+	owl:sameAs	wikidata:Q1191833 .
+dbr:University_of_New_Brunswick	rdf:type	ns2:University ;
+	rdfs:label	"University of New Brunswick"@en ;
+	owl:sameAs	wikidata:Q1112515 .
+dbr:University_of_Prince_Edward_Island	rdf:type	ns2:University ;
+	rdfs:label	"University of Prince Edward Island"@en ;
+	owl:sameAs	wikidata:Q1030305 .
+dbr:University_of_Victoria	rdf:type	ns2:University ;
+	rdfs:label	"University of Victoria"@en ;
+	owl:sameAs	wikidata:Q1458113 .
+dbr:York_University	rdf:type	ns2:University ;
+	rdfs:label	"York University"@en ;
+	owl:sameAs	wikidata:Q849751 .
+dbr:Algoma_University	rdf:type	ns2:University ;
+	rdfs:label	"Algoma University"@en ;
+	owl:sameAs	wikidata:Q1261103 .
+dbr:Atlantic_Veterinary_College	rdf:type	ns2:University ;
+	rdfs:label	"Atlantic Veterinary College"@en ;
+	owl:sameAs	wikidata:Q4816588 .
+dbr:Canadian_Mennonite_University	rdf:type	ns2:University ;
+	rdfs:label	"Canadian Mennonite University"@en ;
+	owl:sameAs	wikidata:Q5030319 .
+dbr:Emily_Carr_University_of_Art_and_Design	rdf:type	ns2:University ;
+	rdfs:label	"Emily Carr University of Art and Design"@en ;
+	owl:sameAs	wikidata:Q1337587 .
+dbr:First_Nations_University_of_Canada	rdf:type	ns2:University ;
+	rdfs:label	"First Nations University of Canada"@en ;
+	owl:sameAs	wikidata:Q1381496 .
+dbr:Kingswood_University	rdf:type	ns2:University ;
+	rdfs:label	"Kingswood University"@en ;
+	owl:sameAs	wikidata:Q6413788 .
+dbr:Redeemer_University	rdf:type	ns2:University ;
+	rdfs:label	"Redeemer University"@en ;
+	owl:sameAs	wikidata:Q7305718 .
+<http://dbpedia.org/resource/Saint_Dunstan\u0027s_University>	rdf:type	ns2:University ;
+	rdfs:label	"Saint Dunstan's University"@en ;
+	owl:sameAs	wikidata:Q14768306 .
+<http://dbpedia.org/resource/St._Stephen\u0027s_University>	rdf:type	ns2:University ;
+	rdfs:label	"St. Stephen's University"@en ;
+	owl:sameAs	wikidata:Q7591785 .
+dbr:University_of_the_Fraser_Valley	rdf:type	ns2:University ;
+	rdfs:label	"University of the Fraser Valley"@en ;
+	owl:sameAs	wikidata:Q2495961 .
+dbr:Yukon_University	rdf:type	ns2:University ;
+	rdfs:label	"Yukon University"@en ;
+	owl:sameAs	wikidata:Q16211981 .
+dbr:MacEwan_University	rdf:type	ns2:University ;
+	rdfs:label	"MacEwan University"@en ;
+	owl:sameAs	wikidata:Q6721877 .
+dbr:Wilfrid_Laurier_University	rdf:type	ns2:University ;
+	rdfs:label	"Wilfrid Laurier University"@en ;
+	owl:sameAs	wikidata:Q2166701 .
+dbr:Kwantlen_Polytechnic_University	rdf:type	ns2:University ;
+	rdfs:label	"Kwantlen Polytechnic University"@en ;
+	owl:sameAs	wikidata:Q3335261 .
+dbr:Alberta_University_of_the_Arts	rdf:type	ns2:University ;
+	rdfs:label	"Alberta University of the Arts"@en ;
+	owl:sameAs	wikidata:Q4063387 .
+dbr:Brandon_University	rdf:type	ns2:University ;
+	rdfs:label	"Brandon University"@en ;
+	owl:sameAs	wikidata:Q4957110 .
+dbr:Mount_Royal_University	rdf:type	ns2:University ;
+	rdfs:label	"Mount Royal University"@en ;
+	owl:sameAs	wikidata:Q13650869 .
+dbr:New_York_Institute_of_Technology	rdf:type	ns2:University ;
+	rdfs:label	"New York Institute of Technology"@en ;
+	owl:sameAs	wikidata:Q1709596 .
+dbr:Thompson_Rivers_University	rdf:type	ns2:University ;
+	rdfs:label	"Thompson Rivers University"@en ;
+	owl:sameAs	wikidata:Q3551501 .
+dbr:Trinity_Western_University	rdf:type	ns2:University ;
+	rdfs:label	"Trinity Western University"@en ;
+	owl:sameAs	wikidata:Q6569551 .
+dbr:University_Canada_West	rdf:type	ns2:University ;
+	rdfs:label	"University Canada West"@en ;
+	owl:sameAs	wikidata:Q7894536 .
+dbr:University_College_of_the_North	rdf:type	ns2:University ;
+	rdfs:label	"University College of the North"@en ;
+	owl:sameAs	wikidata:Q7894664 .
+dbr:University_of_Lethbridge	rdf:type	ns2:University ;
+	rdfs:label	"University of Lethbridge"@en ;
+	owl:sameAs	wikidata:Q1689439 .
+<http://dbpedia.org/resource/Universit\u00E9_Sainte-Anne>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 Sainte-Anne"@en ;
+	owl:sameAs	wikidata:Q3058135 .
+<http://dbpedia.org/resource/Universit\u00E9_du_Qu\u00E9bec_en_Abitibi-T\u00E9miscamingue>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 du Qu\u00E9bec en Abitibi-T\u00E9miscamingue"@en ;
+	owl:sameAs	wikidata:Q2077260 .
+<http://dbpedia.org/resource/Universit\u00E9_du_Qu\u00E9bec_en_Outaouais>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 du Qu\u00E9bec en Outaouais"@en ;
+	owl:sameAs	wikidata:Q2562148 .
+<http://dbpedia.org/resource/Universit\u00E9_du_Qu\u00E9bec_\u00E0_Rimouski>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 du Qu\u00E9bec \u00E0 Rimouski"@en ;
+	owl:sameAs	wikidata:Q170288 .
+dbr:Vancouver_Island_University	rdf:type	ns2:University ;
+	rdfs:label	"Vancouver Island University"@en ;
+	owl:sameAs	wikidata:Q7914214 .
+dbr:Providence_University_College_and_Theological_Seminary	rdf:type	ns2:University ;
+	rdfs:label	"Providence University College and Theological Seminary"@en ;
+	owl:sameAs	wikidata:Q7252500 .
+<http://dbpedia.org/resource/Saint_Mary\u0027s_University_(Halifax)>	rdf:type	ns2:University ;
+	rdfs:label	"Saint Mary's University (Halifax)"@en ;
+	owl:sameAs	wikidata:Q2212977 .
+dbr:Burman_University	rdf:type	ns2:University ;
+	rdfs:label	"Burman University"@en ;
+	owl:sameAs	wikidata:Q5030647 .
+dbr:Ontario_Institute_for_Studies_in_Education	rdf:type	ns2:University ;
+	rdfs:label	"Ontario Institute for Studies in Education"@en ;
+	owl:sameAs	wikidata:Q7094796 .
+dbr:Dominican_University_College	rdf:type	ns2:University ;
+	rdfs:label	"Dominican University College"@en ;
+	owl:sameAs	wikidata:Q5290853 .
+dbr:Atlantic_School_of_Theology	rdf:type	ns2:University ;
+	rdfs:label	"Atlantic School of Theology"@en ;
+	owl:sameAs	wikidata:Q4816532 .
+<http://dbpedia.org/resource/Universit\u00E9_de_l\u0027Ontario_fran\u00E7ais>	rdf:type	ns2:University ;
+	rdfs:label	"Universit\u00E9 de l'Ontario fran\u00E7ais"@en ;
+	owl:sameAs	wikidata:Q83804736 .
+dbr:Quest_University	rdf:type	ns2:University ;
+	rdfs:label	"Quest University"@en ;
+	owl:sameAs	wikidata:Q7271467 .
+dbr:University_of_Fredericton	rdf:type	ns2:University ;
+	rdfs:label	"University of Fredericton"@en ;
+	owl:sameAs	wikidata:Q7895437 .
+dbr:Booth_University_College	rdf:type	ns2:University ;
+	rdfs:label	"Booth University College"@en ;
+	owl:sameAs	wikidata:Q4943892 .
+dbr:University_of_Alberta_Campus_Saint-Jean	rdf:type	ns2:University ;
+	rdfs:label	"University of Alberta Campus Saint-Jean"@en ;
+	owl:sameAs	wikidata:Q2935649 .
+dbr:University_of_Guelph	rdf:type	ns2:University ;
+	rdfs:label	"University of Guelph"@en ;
+	owl:sameAs	wikidata:Q795988 .
+dbr:Ambrose_University	rdf:type	ns2:University ;
+	rdfs:label	"Ambrose University"@en ;
+	owl:sameAs	wikidata:Q4741870 .
+<http://dbpedia.org/resource/University_of_British_Columbia_(Okanagan_Campus)>	rdf:type	ns2:University ;
+	rdfs:label	"University of British Columbia (Okanagan Campus)"@en ;
+	owl:sameAs	wikidata:Q3551709 .
+dbr:Prince_of_Wales_College	rdf:type	ns2:University ;
+	rdfs:label	"Prince of Wales College"@en ;
+	owl:sameAs	wikidata:Q7244377 .

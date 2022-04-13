@@ -1,0 +1,94 @@
+version: "3.1"
+
+stories:
+
+- story: describing course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: describe_course
+    - action: action_describe_course
+
+- story: student competencies
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: student_competency
+    - action: action_student_competency
+
+- story: university topics
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: university_topics
+    - action: action_university_topics
+
+- story: course subjects
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_subject
+    - action: action_course_subject
+
+- story: student enrollment
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: student_enrollment
+    - action: action_student_enrollment
+
+- story: course credits
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_credits
+    - action: action_course_credits
+
+- story: specific topics
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: specific_topics
+    - action: action_specific_topics
+
+- story: course retaken
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_retaken
+    - action: action_course_retaken
+
+- story: failed student
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: failed_student
+    - action: action_failed_student
+
+- story: course readings
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_readings
+    - action: action_course_readings
+
+- story: topics covered
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: topics_covered
+    - action: action_topics_covered
+
+- story: gibberish input
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: gibberish
+    - action: utter_gibberish
+
+- story: get person info
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: about_person
+    - action: action_person_info

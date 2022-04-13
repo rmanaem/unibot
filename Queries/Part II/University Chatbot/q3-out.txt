@@ -1,0 +1,6 @@
+ "topicLabel" , "resourceURI" ,
+ "XOR" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "neuron" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "Perceptron" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "Delta" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,
+ "Alison" , "C:/Users/Admin/PycharmProjects/unibot/Data/Lectures/COMP6721/Worksheets/worksheet05.pdf" ,

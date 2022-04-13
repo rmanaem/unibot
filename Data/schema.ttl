@@ -1,0 +1,113 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix focu: <http://focu.io/schema#>.
+@prefix focudata: <http://focu.io/data#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vivo: <http://vivoweb.org/ontology/core#>.
+
+# Classes
+focu:outline
+  a rdfs:Class;
+  rdfs:label "Outline"@en;
+  rdfs:comment "A document used to communicate important information regarding a course."@en.
+
+focu:lecture
+  a rdfs:Class;
+  rdfs:label "Lecture"@en;
+  rdfs:comment "An educational talk to students in a university."@en.
+
+focu:worksheet
+  a rdfs:Class;
+  rdfs:label "Worksheet"@en;
+  rdfs:comment "A worksheet of problems to practice offered during each lecture"@en.
+
+focu:readings
+  a rdfs:Class;
+  rdfs:label "readings"@en;
+  rdfs:comment "A list of readings assigned by the professor specific to a lecture"@en.
+
+focu:reading
+  a rdfs:Class;
+  rdfs:label "reading"@en;
+  rdfs:comment "an instance of readings assigned by the professor specific to a lecture"@en.
+
+focu:otherMaterial
+  a rdfs:Class;
+  rdfs:label "Other Material"@en;
+  rdfs:comment "Includes videos and images usually included in lecture slides"@en.
+
+focu:slide
+  a rdfs:Class;
+  rdfs:label "Slide"@en;
+  rdfs:comment "Slides are offered by the instructor during a lecture"@en.
+
+focu:lab
+  a rdfs:Class;
+  rdfs:label "Lab"@en;
+  rdfs:comment "labs are offered by the instructor during a lecture"@en.
+
+focu:completedCourse
+  a rdfs:Class;
+  rdfs:label "completed course"@en;
+  rdfs:comment "A course completed by a student"@en.
+
+focu:required
+  a rdfs:Class;
+  rdfs:label "required"@en;
+  rdfs:comment "A classification of a reading"@en.
+
+focu:supplemental
+  a rdfs:Class;
+  rdfs:label "supplemental"@en;
+  rdfs:comment "A classification of a reading"@en.
+
+focu:topic
+  a rdfs:Class;
+  rdfs:label "topic"@en;
+  rdfs:comment "A topic that is covered in a course."@en.
+
+# Properties
+focu:hasContent
+  a rdf:Property;
+  rdfs:label "has content"@en;
+  rdfs:comment "Link between course and its contents"@en;
+  rdfs:domain vivo:Course;
+  rdfs:range focu:Lecture.
+
+focu:grade
+  a rdf:Property;
+  rdfs:label "grade"@en;
+  rdfs:comment "final grade of a student at a course"@en;
+  rdfs:domain focu:completedCourse;
+  rdfs:range xsd:string.
+
+focu:studentAt
+  a rdf:Property;
+  rdfs:label "student at"@en;
+  rdfs:comment "links the student to the university at which he/she is enrolled"@en;
+  rdfs:domain vivo:Student;
+  rdfs:range vivo:University.
+
+focu:hasTaken
+  a rdf:Property;
+  rdfs:label "has taken"@en;
+  rdfs:comment "links the student to the classes that he/she takes"@en;
+  rdfs:domain vivo:Student;
+  rdfs:range focu:completedCourse.
+
+focu:refersTo
+  a rdf:Property;
+  rdfs:label "refers to"@en;
+  rdfs:comment "links a blank node to a course. The blank node's domain is student and range is course"@en;
+  rdfs:domain focu:completedCourse;
+  rdfs:range vivo:Course.
+
+focu:covers
+  a rdf:Property;
+  rdfs:label "covers"@en;
+  rdfs:comment "links the topic to its source"@en;
+  rdfs:domain focu:slide, focu:worksheet, focu:lab, focu:outline;
+  rdfs:range focu:topic.
