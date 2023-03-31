@@ -87,3 +87,7 @@ You can now talk to unibot, try one of the questions below:
 - Which topics is Trenae Bryan competent in?
 - Which students have retaken the same course at least 2 times?
 - How many students are enrolled in each course that is offered by Concordia University?
+
+# License
+
+Unibot is licensed under the terms of [MIT License](LICENSE)
