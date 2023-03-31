@@ -44,6 +44,8 @@ Unibot's knowledge graph re-uses existing vocabularies including [FOAF](http://x
 
 The diagram below illustrates the design of the graph. You can get a closer and more detailed look at the graph through its [schema](https://github.com/rmanaem/unibot/blob/master/database.ttl).
 
+<p alt="diagram" align="center"><a href="https://github.com/rmanaem/unibot/blob/master/img/diagram.png"><img src="https://github.com/rmanaem/unibot/blob/master/img/diagram.png?raw=true"/></a></p>
+
 ## Installation
 
 1. Create new empty conda environment and follow instructions in requirements.txt to install dependencies;
