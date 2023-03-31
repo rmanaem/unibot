@@ -4,6 +4,10 @@
 
 A pattern-based intelligent agent that responds to university course and student-related questions, using a knowledge graph and natrual language processing (NLP).
 
+## Architecture
+
+Unibot is developed in Python using a number of libraries including [rdflib](https://rdflib.readthedocs.io/en/stable/), [pandas](https://pandas.pydata.org/), [spaCy](https://spacy.io/), and [tika](https://github.com/chrismattmann/tika-python) to process and represent information as a knowledge graph. It utilizes various other tools like [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) to offer a SPARQL server and [Rasa chatbot framework](https://rasa.com/) to offer a natural language interface that can be used to query the knowledge graph through natural language.
+
 ## Installation
 
 1. Create new empty conda environment and follow instructions in requirements.txt to install dependencies;
