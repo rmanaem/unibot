@@ -2,13 +2,13 @@
 
 <p alt="illustration" align="center"><a href="https://github.com/rmanaem/unibot/blob/master/img/illustration.png"><img src="https://github.com/rmanaem/unibot/blob/master/img/illustration.png?raw=true"/></a></p>
 
-A pattern-based intelligent agent that responds to university course and student-related questions, using a knowledge graph and natrual language processing (NLP).
+A pattern-based intelligent agent that responds to university course and student-related questions, using an RDF graph database and natrual language processing (NLP).
 
 ## Architecture
 
-Unibot is developed in Python using a number of libraries including [rdflib](https://rdflib.readthedocs.io/en/stable/), [pandas](https://pandas.pydata.org/), [spaCy](https://spacy.io/), and [tika](https://github.com/chrismattmann/tika-python) to process and represent information as a knowledge graph. It utilizes various other tools like [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) to offer a SPARQL server and [Rasa chatbot framework](https://rasa.com/) to offer a natural language interface that can be used to query the knowledge graph through natural language.
+Unibot is developed in Python using a number of libraries including [rdflib](https://rdflib.readthedocs.io/en/stable/), [pandas](https://pandas.pydata.org/), [spaCy](https://spacy.io/), and [tika](https://github.com/chrismattmann/tika-python) to process and represent information as an interconnected knowledge base (graph). It utilizes various other tools like [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) to offer a SPARQL server and [Rasa chatbot framework](https://rasa.com/) to offer a natural language interface that can be used to query the knowledge graph through natural language.
 
-### Knowledge Graph
+### Knowledge Base
 
 Unibot contains a set of scripts that given the data can automatically construct a knowledge graph to represent information about:
 
@@ -45,6 +45,48 @@ Unibot's knowledge graph re-uses existing vocabularies including [FOAF](http://x
 The diagram below illustrates the design of the graph. You can get a closer and more detailed look at the graph through its [schema](https://github.com/rmanaem/unibot/blob/master/database.ttl).
 
 <p alt="diagram" align="center"><a href="https://github.com/rmanaem/unibot/blob/master/img/diagram.png"><img src="https://github.com/rmanaem/unibot/blob/master/img/diagram.png?raw=true"/></a></p>
+
+## Local Setup
+
+After cloning the repository, install the dependencies outlined in the requirements.txt file. For convenience, you can use Python's `venv` package to install dependencies in a virtual environment. You can find the instructions on creating and activating a virtual environment in the official [documentation](https://docs.python.org/3.10/library/venv.html). After setting up and activating your environment, you can install the dependencies by running the following command in your terminal:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Now the instructions below in order:
+
+1. Convert pdf files to text files by running the following command in your terminal:
+
+```bash
+python -m /Data/Topics/txt_generator.py
+```
+
+2. Construct the knowledge base by running the following command in your terminal:
+
+```bash
+python -m main.py
+```
+
+3. Populate the fuseki database by creating a project named `Project1` and upload database.nt.
+
+4. Lastly, run the fuseki server in the background, move to the `rasa` directory by running the following command in your terminal:
+
+```bash
+cd rasa
+```
+
+Launch unibot by running the following command in your terminal:
+
+```bash
+rasa run actions && rasa shell
+```
+
+You can now talk to unibot, try one of the questions below:
+
+- Which topics is Trenae Bryan competent in?
+- Which students have retaken the same course at least 2 times?
+- How many students are enrolled in each course that is offered by Concordia University?
 
 ## Installation
 
